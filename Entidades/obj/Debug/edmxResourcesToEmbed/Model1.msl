@@ -1,0 +1,196 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="InmobiliariaModelStoreContainer" CdmEntityContainer="InmobiliariaEntities">
+    <EntitySetMapping Name="Administradores">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Administrador">
+        <MappingFragment StoreEntitySet="Administradores">
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="IDadmin" ColumnName="IDadmin" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Alquileres">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Alquiler">
+        <MappingFragment StoreEntitySet="Alquileres">
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contratistas">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Contratista">
+        <MappingFragment StoreEntitySet="Contratistas">
+          <ScalarProperty Name="cod_contratista" ColumnName="cod_contratista" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="disponibilidad" ColumnName="disponibilidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Contratos">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Contrato">
+        <MappingFragment StoreEntitySet="Contratos">
+          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="fecha_realizacion" ColumnName="fecha_realizacion" />
+          <ScalarProperty Name="fecha_caducidad" ColumnName="fecha_caducidad" />
+          <ScalarProperty Name="descripcion_unidad" ColumnName="descripcion_unidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cuentas_corrientes">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Cuenta_corriente">
+        <MappingFragment StoreEntitySet="Cuenta_corriente">
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="saldo" ColumnName="saldo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Fotos">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Foto">
+        <MappingFragment StoreEntitySet="Fotos">
+          <ScalarProperty Name="cod_foto" ColumnName="cod_foto" />
+          <ScalarProperty Name="ruta_foto" ColumnName="ruta_foto" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Inquilinos">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Inquilino">
+        <MappingFragment StoreEntitySet="Inquilinos">
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="usuario" ColumnName="usuario" />
+          <ScalarProperty Name="contrasena" ColumnName="contrasena" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="apellido" ColumnName="apellido" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="telefono" ColumnName="telefono" />
+          <ScalarProperty Name="e_mail" ColumnName="e-mail" />
+          <ScalarProperty Name="dni" ColumnName="dni" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Mejoras">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Mejora">
+        <MappingFragment StoreEntitySet="Mejoras">
+          <ScalarProperty Name="cod_contratista" ColumnName="cod_contratista" />
+          <ScalarProperty Name="nro_mejora" ColumnName="nro_mejora" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos_alquiler">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Pago_alquiler">
+        <MappingFragment StoreEntitySet="Pagos_alquiler">
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pagos_seguro">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Pago_seguro">
+        <MappingFragment StoreEntitySet="Pagos_seguro">
+          <ScalarProperty Name="cod_seguro" ColumnName="cod_seguro" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="monto" ColumnName="monto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Propiedades">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Propiedad">
+        <MappingFragment StoreEntitySet="Propiedades">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_propiedad" ColumnName="cod_propiedad" />
+          <ScalarProperty Name="ciudad" ColumnName="ciudad" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="m2" ColumnName="m2" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Reparaciones">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Reparacion">
+        <MappingFragment StoreEntitySet="Reparaciones">
+          <ScalarProperty Name="nro_reparacion" ColumnName="nro_reparacion" />
+          <ScalarProperty Name="cod_contratista" ColumnName="cod_contratista" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="detalles" ColumnName="detalles" />
+          <ScalarProperty Name="observaciones" ColumnName="observaciones" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Seguros">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Seguro">
+        <MappingFragment StoreEntitySet="Seguros">
+          <ScalarProperty Name="cod_seguro" ColumnName="cod_seguro" />
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="fecha_desde" ColumnName="fecha_desde" />
+          <ScalarProperty Name="fecha_hasta" ColumnName="fecha_hasta" />
+          <ScalarProperty Name="aseguradora" ColumnName="aseguradora" />
+          <ScalarProperty Name="tipo_seguro" ColumnName="tipo_seguro" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Unidades">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Unidad">
+        <MappingFragment StoreEntitySet="Unidades">
+          <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
+          <ScalarProperty Name="cod_propiedad" ColumnName="cod_propiedad" />
+          <ScalarProperty Name="m2" ColumnName="m2" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Valores_mensuales">
+      <EntityTypeMapping TypeName="InmobiliariaModel.Valor_mensual">
+        <MappingFragment StoreEntitySet="Valores_mensuales">
+          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NumeroUltimaFoto">
+      <EntityTypeMapping TypeName="InmobiliariaModel.NumeroUltimaFoto">
+        <MappingFragment StoreEntitySet="NumeroUltimaFoto">
+          <ScalarProperty Name="numero" ColumnName="numero" />
+          <ScalarProperty Name="NumeroFoto" ColumnName="NumeroFoto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="InmobiliariaModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="definition" ColumnName="definition" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

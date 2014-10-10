@@ -1,0 +1,10 @@
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\Entidades.dll.config
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\Entidades.dll
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\Entidades.pdb
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\EntityFramework.dll
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\EntityFramework.xml
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\obj\Debug\Entidades.dll
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\obj\Debug\Entidades.pdb
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Entidades\obj\Debug\Entidades.csprojResolveAssemblyReference.cache
