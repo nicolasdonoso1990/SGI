@@ -10,3 +10,15 @@ C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Datos\bin\Debug\Entit
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Datos\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Datos\obj\Debug\Datos.dll
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Datos\obj\Debug\Datos.pdb
+C:\SGI\Datos\bin\Debug\Datos.dll.config
+C:\SGI\Datos\bin\Debug\Datos.dll
+C:\SGI\Datos\bin\Debug\Datos.pdb
+C:\SGI\Datos\bin\Debug\Entidades.dll
+C:\SGI\Datos\bin\Debug\EntityFramework.dll
+C:\SGI\Datos\bin\Debug\EntityFramework.SqlServer.dll
+C:\SGI\Datos\bin\Debug\Entidades.pdb
+C:\SGI\Datos\bin\Debug\EntityFramework.xml
+C:\SGI\Datos\bin\Debug\EntityFramework.SqlServer.xml
+C:\SGI\Datos\obj\Debug\Datos.csprojResolveAssemblyReference.cache
+C:\SGI\Datos\obj\Debug\Datos.dll
+C:\SGI\Datos\obj\Debug\Datos.pdb

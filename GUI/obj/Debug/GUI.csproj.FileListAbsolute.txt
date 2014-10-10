@@ -25,3 +25,30 @@ C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\GUI\bin\Debug\EntityF
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\GUI\obj\Debug\GUI.frmAltaPropiedad.resources
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\GUI\obj\Debug\GUI.frmTablaModificarPropiedad.resources
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\GUI\obj\Debug\GUI.frmAltaUnidad.resources
+C:\SGI\GUI\bin\Debug\GUI.exe.config
+C:\SGI\GUI\obj\Debug\GUI.exe
+C:\SGI\GUI\obj\Debug\GUI.pdb
+C:\SGI\GUI\bin\Debug\GUI.exe
+C:\SGI\GUI\bin\Debug\GUI.pdb
+C:\SGI\GUI\bin\Debug\Entidades.dll
+C:\SGI\GUI\bin\Debug\EntityFramework.dll
+C:\SGI\GUI\bin\Debug\EntityFramework.SqlServer.dll
+C:\SGI\GUI\bin\Debug\Negocio.dll
+C:\SGI\GUI\bin\Debug\Datos.dll
+C:\SGI\GUI\bin\Debug\Entidades.pdb
+C:\SGI\GUI\bin\Debug\Negocio.pdb
+C:\SGI\GUI\bin\Debug\EntityFramework.xml
+C:\SGI\GUI\bin\Debug\EntityFramework.SqlServer.xml
+C:\SGI\GUI\bin\Debug\Datos.pdb
+C:\SGI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
+C:\SGI\GUI\obj\Debug\GUI.frmAltaPropiedad.resources
+C:\SGI\GUI\obj\Debug\GUI.frmAltaUnidad.resources
+C:\SGI\GUI\obj\Debug\GUI.frmAltaAdministrador.resources
+C:\SGI\GUI\obj\Debug\GUI.frmAltaInquilino.resources
+C:\SGI\GUI\obj\Debug\GUI.FrmLogin.resources
+C:\SGI\GUI\obj\Debug\GUI.frmMenu.resources
+C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionAdministrador.resources
+C:\SGI\GUI\obj\Debug\GUI.frmTablaModificaInquilino.resources
+C:\SGI\GUI\obj\Debug\GUI.frmTablaModificarPropiedad.resources
+C:\SGI\GUI\obj\Debug\GUI.Properties.Resources.resources
+C:\SGI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache

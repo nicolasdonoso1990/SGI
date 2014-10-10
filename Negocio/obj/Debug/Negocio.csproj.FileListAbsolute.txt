@@ -12,3 +12,17 @@ C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Negocio\obj\Debug\Neg
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Negocio\bin\Debug\Negocio.dll.config
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Negocio\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Usuario\documents\visual studio 2013\Projects\SGI\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\SGI\Negocio\bin\Debug\Negocio.dll.config
+C:\SGI\Negocio\bin\Debug\Negocio.dll
+C:\SGI\Negocio\bin\Debug\Negocio.pdb
+C:\SGI\Negocio\bin\Debug\Datos.dll
+C:\SGI\Negocio\bin\Debug\Entidades.dll
+C:\SGI\Negocio\bin\Debug\EntityFramework.dll
+C:\SGI\Negocio\bin\Debug\EntityFramework.SqlServer.dll
+C:\SGI\Negocio\bin\Debug\Datos.pdb
+C:\SGI\Negocio\bin\Debug\Entidades.pdb
+C:\SGI\Negocio\bin\Debug\EntityFramework.xml
+C:\SGI\Negocio\bin\Debug\EntityFramework.SqlServer.xml
+C:\SGI\Negocio\obj\Debug\Negocio.csprojResolveAssemblyReference.cache
+C:\SGI\Negocio\obj\Debug\Negocio.dll
+C:\SGI\Negocio\obj\Debug\Negocio.pdb

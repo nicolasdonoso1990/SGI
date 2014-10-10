@@ -46,3 +46,19 @@ Temporary Items
 #ESTO ES DE NUESTRO PROYECTO
 .config
 App.config
+Entidades/App.Config
+Entidades/Model1.Context.cs
+Entidades/Model1.Context.tt
+Entidades/Model1.cs
+Entidades/Model1.edmx.sql
+Entidades/Model1.edmx.diagram
+Entidades/Model1.edmx
+Entidades/Model1.Designer.cs
+Entidades/Model1.cs
+Entidades/Model1.Context.tt
+Entidades/obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+Entidades/obj/Debug/edmxResourcesToEmbed/Model1.csdl
+Entidades/obj/Debug/edmxResourcesToEmbed/Model1.msl
+Entidades/obj/Debug/edmxResourcesToEmbed/Model1.ssdl
+Entidades/obj/Debug/Entidades.csproj.FileListAbsolute.txt
+Entidades/obj/Debug/Entidades.csprojResolveAssemblyReference.cache
