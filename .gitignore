@@ -66,3 +66,5 @@ SGI.v12.suo
 *.dll
 *.suo
 *.config
+bin/
+obj/
