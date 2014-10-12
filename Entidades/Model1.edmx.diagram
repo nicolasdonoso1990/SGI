@@ -35,7 +35,6 @@
         <AssociationConnector Association="InmobiliariaModel.FK_Unidades_Propiedades" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Reparaciones_Unidades" ManuallyRouted="false" />
         <EntityTypeShape EntityType="InmobiliariaModel.NumeroUltimaFoto" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="InmobiliariaModel.sysdiagrams" Width="1.5" PointX="5.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

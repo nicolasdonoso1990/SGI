@@ -41,6 +41,5 @@ namespace Entidades
         public DbSet<Unidad> Unidades { get; set; }
         public DbSet<Valor_mensual> Valores_mensuales { get; set; }
         public DbSet<NumeroUltimaFoto> NumeroUltimaFoto { get; set; }
-        public DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }
