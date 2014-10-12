@@ -63,3 +63,5 @@ Entidades/obj/Debug/edmxResourcesToEmbed/Model1.ssdl
 Entidades/obj/Debug/Entidades.csproj.FileListAbsolute.txt
 Entidades/obj/Debug/Entidades.csprojResolveAssemblyReference.cache
 SGI.v12.suo
+*.dll
+*.suo
