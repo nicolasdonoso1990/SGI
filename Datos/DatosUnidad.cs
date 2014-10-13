@@ -28,11 +28,87 @@ namespace Datos
             
         
         }
+
+        public List<Unidad> BuscaUnidades(Propiedad pro) 
+        {
+
+            using (var context = new InmobiliariaEntities()) 
+            {
+
+                var query=from c in context.Unidades where c.cod_propiedad==pro.cod_propiedad && c.estado=="habilitado" select c;
+                return query.ToList();
+
+
+            
+            }
+        
+        
         
         
         }
- 
 
+        public void BajaUnidad(string codigo) 
+        {
+            using (var context = new InmobiliariaEntities())
+            {
+
+                Int32 num = Convert.ToInt32(codigo);
+                Unidad uni = context.Unidades.First(i => i.cod_unidad == num);
+                uni.estado = "deshabilitado";
+                context.SaveChanges();
+
+            }
+
+        
+        }
+
+        public Unidad BuscaUnidad(string codUni) 
+        {
+
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Int32 cod = Convert.ToInt32(codUni);
+                Unidad uni = context.Unidades.First(i => i.cod_unidad == cod);
+                return uni;
+
+            
+            }
+
+
+        
+        }
+
+
+        public void ModificaUnidad(string [] datos) 
+        {
+
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Int32 num = Convert.ToInt32(datos[0]);
+
+                Unidad uni = context.Unidades.First(i => i.cod_unidad == num);
+                uni.descripcion=datos[1];
+                uni.m2 = Convert.ToDouble(datos[2]);
+                context.SaveChanges();
+            
+            }
+        
+        
+        
+        
+        }
+
+        
+
+
+
+
+
+
+
+
+        }
+ 
 
 
 

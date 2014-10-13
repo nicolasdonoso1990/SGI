@@ -110,6 +110,12 @@ namespace GUI
 
         }
 
+        private void modificarUnidadToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTablaModificacionUnidad modUni = new frmTablaModificacionUnidad();
+            modUni.ShowDialog();
+        }
+
 
 
     

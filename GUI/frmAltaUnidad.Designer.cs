@@ -301,6 +301,7 @@
             // 
             // foto4
             // 
+            this.foto4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foto4.Location = new System.Drawing.Point(775, 29);
             this.foto4.Name = "foto4";
             this.foto4.Size = new System.Drawing.Size(156, 87);
@@ -309,6 +310,7 @@
             // 
             // foto3
             // 
+            this.foto3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foto3.Location = new System.Drawing.Point(532, 29);
             this.foto3.Name = "foto3";
             this.foto3.Size = new System.Drawing.Size(156, 87);
@@ -317,6 +319,7 @@
             // 
             // foto2
             // 
+            this.foto2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foto2.Location = new System.Drawing.Point(295, 29);
             this.foto2.Name = "foto2";
             this.foto2.Size = new System.Drawing.Size(156, 87);
@@ -325,6 +328,7 @@
             // 
             // foto1
             // 
+            this.foto1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.foto1.Location = new System.Drawing.Point(32, 29);
             this.foto1.Name = "foto1";
             this.foto1.Size = new System.Drawing.Size(156, 87);

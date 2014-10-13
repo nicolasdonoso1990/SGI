@@ -31,7 +31,13 @@ namespace Negocio
        
        }
 
+       public List<Foto> BuscaFoto(string codUni) 
+       {
 
+
+          List<Foto>fotos= FotoData.BuscaFoto(codUni);
+          return fotos;
+       }
 
 
     }

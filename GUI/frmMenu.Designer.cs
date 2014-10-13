@@ -179,6 +179,7 @@
             this.modificarUnidadToolStripMenuItem.Name = "modificarUnidadToolStripMenuItem";
             this.modificarUnidadToolStripMenuItem.Size = new System.Drawing.Size(166, 22);
             this.modificarUnidadToolStripMenuItem.Text = "Modificar Unidad";
+            this.modificarUnidadToolStripMenuItem.Click += new System.EventHandler(this.modificarUnidadToolStripMenuItem_Click);
             // 
             // label1
             // 

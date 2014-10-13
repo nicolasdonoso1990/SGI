@@ -95,6 +95,12 @@
     <Compile Include="frmTablaModificacionAdministrador.Designer.cs">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTablaModificacionUnidad.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTablaModificacionUnidad.Designer.cs">
+      <DependentUpon>frmTablaModificacionUnidad.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificaInquilino.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionAdministrador.resx">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTablaModificacionUnidad.resx">
+      <DependentUpon>frmTablaModificacionUnidad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificaInquilino.resx">
       <DependentUpon>frmTablaModificaInquilino.cs</DependentUpon>

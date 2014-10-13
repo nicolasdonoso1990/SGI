@@ -30,8 +30,34 @@ namespace Negocio
         
         }
 
+        public List<Unidad> BuscaUnidades(Propiedad pro) 
+        {
+            List<Unidad> unidades = UnidadData.BuscaUnidades(pro);
+            return unidades;
+        
+        }
 
+        public void BajaUnidad(string codigo) 
+        {
+            UnidadData.BajaUnidad(codigo);
 
+        
+        }
+
+        public Unidad BuscaUnidad(string codUni) 
+        {
+            Unidad uni = UnidadData.BuscaUnidad(codUni);
+            return uni;
+        
+        }
+
+        public void ModificaUnidad(string[] datos) 
+        {
+
+            UnidadData.ModificaUnidad(datos);
+        
+        
+        }
 
 
     }

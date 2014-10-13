@@ -48,7 +48,21 @@ namespace Datos
         }
 
 
+        public List<Foto> BuscaFoto(string codUni) 
+        {
 
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Int32 num=Convert.ToInt32(codUni);
+
+                var query= from c in context.Fotos where c.cod_unidad==num select c;
+                return query.ToList();
+
+            
+            }
+
+
+        }
 
 
 
