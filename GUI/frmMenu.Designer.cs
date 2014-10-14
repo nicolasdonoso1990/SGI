@@ -45,7 +45,10 @@
             this.unidadesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.contratistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.altaContratistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+            this.modificarContratistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -56,7 +59,8 @@
             this.inquilinosToolStripMenuItem,
             this.administradoresToolStripMenuItem,
             this.propiedadesToolStripMenuItem,
-            this.unidadesToolStripMenuItem});
+            this.unidadesToolStripMenuItem,
+            this.contratistasToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(848, 24);
@@ -181,6 +185,22 @@
             this.modificarUnidadToolStripMenuItem.Text = "Modificar Unidad";
             this.modificarUnidadToolStripMenuItem.Click += new System.EventHandler(this.modificarUnidadToolStripMenuItem_Click);
             // 
+            // contratistasToolStripMenuItem
+            // 
+            this.contratistasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.altaContratistaToolStripMenuItem,
+            this.modificarContratistaToolStripMenuItem});
+            this.contratistasToolStripMenuItem.Name = "contratistasToolStripMenuItem";
+            this.contratistasToolStripMenuItem.Size = new System.Drawing.Size(82, 20);
+            this.contratistasToolStripMenuItem.Text = "Contratistas";
+            // 
+            // altaContratistaToolStripMenuItem
+            // 
+            this.altaContratistaToolStripMenuItem.Name = "altaContratistaToolStripMenuItem";
+            this.altaContratistaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.altaContratistaToolStripMenuItem.Text = "Nuevo Contratista";
+            this.altaContratistaToolStripMenuItem.Click += new System.EventHandler(this.altaContratistaToolStripMenuItem_Click_1);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -190,6 +210,13 @@
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
+            // 
+            // modificarContratistaToolStripMenuItem
+            // 
+            this.modificarContratistaToolStripMenuItem.Name = "modificarContratistaToolStripMenuItem";
+            this.modificarContratistaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.modificarContratistaToolStripMenuItem.Text = "Modificar Contratista";
+            this.modificarContratistaToolStripMenuItem.Click += new System.EventHandler(this.modificarContratistaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -233,5 +260,8 @@
         private System.Windows.Forms.ToolStripMenuItem unidadesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaUnidadToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarUnidadToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem contratistasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem altaContratistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarContratistaToolStripMenuItem;
     }
 }

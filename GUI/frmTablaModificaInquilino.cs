@@ -156,6 +156,13 @@ namespace GUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            /*Esto está buenísimo.
+             * Acá el gran Donoso pasa todo
+             * el contenido de los TextBox como
+             * un arrglo de strings. Seguro que anda más
+             * rápido que enviando un objeto.
+             * Gracias por tanta magia Nico. Yo me hubiera complicado
+             * muchísimo. Le doy a este código 4 Dijsktras.*/
             string[] datos = new string[10];
             datos[0] = txtNumInq.Text;
             datos[1] = txtNombre.Text;

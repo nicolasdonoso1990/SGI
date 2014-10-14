@@ -117,6 +117,19 @@ namespace GUI
         }
 
 
+        private void altaContratistaToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            frmAltaContratista altaContratista = new frmAltaContratista();
+            altaContratista.ShowDialog();
+        }
+
+        private void modificarContratistaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTablaModificacionContratista modificarContratista = new frmTablaModificacionContratista();
+            modificarContratista.ShowDialog();
+        }
+
+
 
     
 
