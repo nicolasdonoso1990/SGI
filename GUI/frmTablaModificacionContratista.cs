@@ -36,10 +36,10 @@ namespace GUI
 
                 DataGridViewRow fila = dgvContratista.CurrentRow; //devuelve la fila que esta siendo seleccionada
 
-                string apellido = fila.Cells[1].Value.ToString(); //el [1] indica la posicion del apellido
+                string codigo = fila.Cells[0].Value.ToString(); //el [1] indica la posicion del apellido
                 /*busco al contratista por apellido*/
                 ContratistaLogic contratistaLogic = new ContratistaLogic();
-                Contratista contratista = contratistaLogic.buscaContratista(apellido);
+                Contratista contratista = contratistaLogic.buscaContratista(codigo);
                 /*Una vez que lo encuentro, habilito la modificación*/
                 gpbContratista.Enabled = true;
                 /*relleno el formulario de modificación*/
@@ -49,7 +49,7 @@ namespace GUI
                 txtTelefono.Text = contratista.telefono;
                 txtDisponibilidad.Text = contratista.disponibilidad;
                 txtCodigo.Text = contratista.cod_contratista.ToString();
-                /*Esto no se por qué está. Debería probar que pasa si lo borro*/
+                /*Esto actualiza el dataGrid con la informacion despues del borrado o la modificacion*/    
                 var listaContratistas = contratistaLogic.getAll();
                 dgvContratista.DataSource = listaContratistas;
             }
@@ -109,5 +109,12 @@ namespace GUI
 
             }
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+     
     }
 }

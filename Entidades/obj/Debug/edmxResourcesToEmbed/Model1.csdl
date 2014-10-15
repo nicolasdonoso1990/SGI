@@ -442,7 +442,6 @@
       <End Role="Reparaciones" EntitySet="Reparaciones" />
     </AssociationSet>
     <EntitySet Name="NumeroUltimaFoto" EntityType="InmobiliariaModel.NumeroUltimaFoto" />
-    <EntitySet Name="sysdiagrams" EntityType="InmobiliariaModel.sysdiagrams" />
   </EntityContainer>
   <EntityType Name="NumeroUltimaFoto">
     <Key>
@@ -450,15 +449,5 @@
     </Key>
     <Property Name="NumeroFoto" Type="Int32" Nullable="false" />
     <Property Name="numero" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
 </Schema>

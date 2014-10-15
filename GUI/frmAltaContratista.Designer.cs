@@ -60,14 +60,14 @@
             this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(43, 27);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(277, 213);
+            this.groupBox1.Size = new System.Drawing.Size(277, 282);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Ingrese datos del contratista";
+            this.groupBox1.Text = "Datos del contratista";
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(100, 168);
+            this.btnRegistrar.Location = new System.Drawing.Point(100, 237);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 1;
@@ -77,7 +77,7 @@
             // 
             // txtDisponibilidad
             // 
-            this.txtDisponibilidad.Location = new System.Drawing.Point(100, 131);
+            this.txtDisponibilidad.Location = new System.Drawing.Point(100, 178);
             this.txtDisponibilidad.Name = "txtDisponibilidad";
             this.txtDisponibilidad.Size = new System.Drawing.Size(106, 20);
             this.txtDisponibilidad.TabIndex = 9;
@@ -85,7 +85,7 @@
             // lblDisponibilidad
             // 
             this.lblDisponibilidad.AutoSize = true;
-            this.lblDisponibilidad.Location = new System.Drawing.Point(19, 134);
+            this.lblDisponibilidad.Location = new System.Drawing.Point(19, 181);
             this.lblDisponibilidad.Name = "lblDisponibilidad";
             this.lblDisponibilidad.Size = new System.Drawing.Size(75, 13);
             this.lblDisponibilidad.TabIndex = 7;
@@ -94,7 +94,7 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(19, 108);
+            this.lblTelefono.Location = new System.Drawing.Point(42, 144);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(52, 13);
             this.lblTelefono.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             // txtTelefono
             // 
-            this.txtTelefono.Location = new System.Drawing.Point(100, 105);
+            this.txtTelefono.Location = new System.Drawing.Point(100, 141);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(106, 20);
             this.txtTelefono.TabIndex = 6;
@@ -110,7 +110,7 @@
             // lblDireccion
             // 
             this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Location = new System.Drawing.Point(19, 82);
+            this.lblDireccion.Location = new System.Drawing.Point(39, 102);
             this.lblDireccion.Name = "lblDireccion";
             this.lblDireccion.Size = new System.Drawing.Size(55, 13);
             this.lblDireccion.TabIndex = 4;
@@ -118,7 +118,7 @@
             // 
             // txtDireccion
             // 
-            this.txtDireccion.Location = new System.Drawing.Point(100, 79);
+            this.txtDireccion.Location = new System.Drawing.Point(100, 99);
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(106, 20);
             this.txtDireccion.TabIndex = 5;
@@ -126,7 +126,7 @@
             // lblApellido
             // 
             this.lblApellido.AutoSize = true;
-            this.lblApellido.Location = new System.Drawing.Point(19, 56);
+            this.lblApellido.Location = new System.Drawing.Point(42, 70);
             this.lblApellido.Name = "lblApellido";
             this.lblApellido.Size = new System.Drawing.Size(47, 13);
             this.lblApellido.TabIndex = 3;
@@ -134,7 +134,7 @@
             // 
             // txtApellido
             // 
-            this.txtApellido.Location = new System.Drawing.Point(100, 53);
+            this.txtApellido.Location = new System.Drawing.Point(100, 67);
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(106, 20);
             this.txtApellido.TabIndex = 4;
@@ -142,7 +142,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 30);
+            this.label1.Location = new System.Drawing.Point(42, 30);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 13);
             this.label1.TabIndex = 2;
@@ -157,21 +157,24 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(143, 246);
+            this.btnCancelar.Location = new System.Drawing.Point(143, 333);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 16;
             this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;            // 
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmAltaContratista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(363, 318);
+            this.BackgroundImage = global::GUI.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(370, 384);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmAltaContratista";
-            this.Text = "frmAltaContratista";
+            this.Text = "Alta Contratista";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);

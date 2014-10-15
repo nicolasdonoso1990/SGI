@@ -22,10 +22,10 @@ namespace Negocio
             datosContratista.altaContratista(contratista);
         }
 
-        public Contratista buscaContratista(string apellido)
+        public Contratista buscaContratista(string codigo)
         {
 
-            Contratista contratista = datosContratista.buscaContratista(apellido);
+            Contratista contratista = datosContratista.buscaContratista(codigo);
             return (contratista);
 
 

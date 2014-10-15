@@ -49,16 +49,16 @@
             this.lblInApellido = new System.Windows.Forms.Label();
             this.btnSeleccionar = new System.Windows.Forms.Button();
             this.dgvContratista = new System.Windows.Forms.DataGridView();
-            this.contratistasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.inmobiliariaDataSet = new GUI.InmobiliariaDataSet();
-            this.contratistasTableAdapter = new GUI.InmobiliariaDataSetTableAdapters.ContratistasTableAdapter();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.cod_contratista = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccionDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefonoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.disponibilidadDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.contratistasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.inmobiliariaDataSet = new GUI.InmobiliariaDataSet();
+            this.contratistasTableAdapter = new GUI.InmobiliariaDataSetTableAdapters.ContratistasTableAdapter();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbContratista.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvContratista)).BeginInit();
@@ -101,6 +101,7 @@
             // 
             // txtCodigo
             // 
+            this.txtCodigo.Enabled = false;
             this.txtCodigo.Location = new System.Drawing.Point(85, 43);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(106, 20);
@@ -204,9 +205,9 @@
             this.groupBox1.Controls.Add(this.lblInApellido);
             this.groupBox1.Controls.Add(this.btnSeleccionar);
             this.groupBox1.Controls.Add(this.dgvContratista);
-            this.groupBox1.Location = new System.Drawing.Point(45, 22);
+            this.groupBox1.Location = new System.Drawing.Point(24, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 362);
+            this.groupBox1.Size = new System.Drawing.Size(679, 362);
             this.groupBox1.TabIndex = 8;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione Contratista";
@@ -260,42 +261,18 @@
             this.telefonoDataGridViewTextBoxColumn,
             this.disponibilidadDataGridViewTextBoxColumn});
             this.dgvContratista.DataSource = this.contratistasBindingSource;
-            this.dgvContratista.Location = new System.Drawing.Point(6, 79);
+            this.dgvContratista.Location = new System.Drawing.Point(17, 70);
             this.dgvContratista.MultiSelect = false;
             this.dgvContratista.Name = "dgvContratista";
             this.dgvContratista.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvContratista.Size = new System.Drawing.Size(644, 195);
+            this.dgvContratista.Size = new System.Drawing.Size(647, 195);
             this.dgvContratista.TabIndex = 1;
-            // 
-            // contratistasBindingSource
-            // 
-            this.contratistasBindingSource.DataMember = "Contratistas";
-            this.contratistasBindingSource.DataSource = this.inmobiliariaDataSet;
-            // 
-            // inmobiliariaDataSet
-            // 
-            this.inmobiliariaDataSet.DataSetName = "InmobiliariaDataSet";
-            this.inmobiliariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // contratistasTableAdapter
-            // 
-            this.contratistasTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(51, 415);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
-            this.btnCancelar.TabIndex = 10;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
             // 
             // cod_contratista
             // 
             this.cod_contratista.DataPropertyName = "cod_contratista";
-            this.cod_contratista.HeaderText = "cod_contratista";
+            this.cod_contratista.HeaderText = "Codigo Contratista";
             this.cod_contratista.Name = "cod_contratista";
-            this.cod_contratista.Visible = false;
             // 
             // nombreDataGridViewTextBoxColumn
             // 
@@ -327,16 +304,41 @@
             this.disponibilidadDataGridViewTextBoxColumn.HeaderText = "Disponibilidad";
             this.disponibilidadDataGridViewTextBoxColumn.Name = "disponibilidadDataGridViewTextBoxColumn";
             // 
+            // contratistasBindingSource
+            // 
+            this.contratistasBindingSource.DataMember = "Contratistas";
+            this.contratistasBindingSource.DataSource = this.inmobiliariaDataSet;
+            // 
+            // inmobiliariaDataSet
+            // 
+            this.inmobiliariaDataSet.DataSetName = "InmobiliariaDataSet";
+            this.inmobiliariaDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // contratistasTableAdapter
+            // 
+            this.contratistasTableAdapter.ClearBeforeFill = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(51, 415);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
+            this.btnCancelar.TabIndex = 10;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
             // frmTablaModificacionContratista
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1073, 458);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gpbContratista);
             this.Controls.Add(this.groupBox1);
             this.Name = "frmTablaModificacionContratista";
-            this.Text = "frmTablaModificacionContratista";
+            this.Text = "Modificacion de contratista";
             this.Load += new System.EventHandler(this.frmTablaModificacionContratista_Load);
             this.gpbContratista.ResumeLayout(false);
             this.gpbContratista.PerformLayout();

@@ -19,12 +19,14 @@ namespace Datos
                 context.SaveChanges();
             }
         }
-        public Contratista buscaContratista(string apellido)
+        public Contratista buscaContratista(string codigo)
         {
             using (var context = new InmobiliariaEntities())
             {
 
-                Contratista contratista = context.Contratistas.FirstOrDefault(i => i.apellido == apellido);
+                Int32 cod = Convert.ToInt32(codigo);
+
+                Contratista contratista = context.Contratistas.First(i => i.cod_contratista == cod);
                 return contratista;
 
             }
@@ -56,7 +58,7 @@ namespace Datos
                 /*Busco el contratista que quiero modificar con el codigo que me traje*/
                 Contratista contratista = context.Contratistas.First(i => i.cod_contratista == cod_contratista);
                 /*lo modifico*/
-                contratista.cod_contratista = cod_contratista;
+               // contratista.cod_contratista = cod_contratista;
                 contratista.nombre = datos[1];
                 contratista.apellido = datos[2];
                 contratista.direccion = datos[3];

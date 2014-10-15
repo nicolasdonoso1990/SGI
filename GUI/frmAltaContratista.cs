@@ -27,12 +27,20 @@ namespace GUI
             contratista.direccion = txtDireccion.Text;
             contratista.disponibilidad = txtDireccion.Text;
             contratista.nombre = txtNombre.Text;
+            contratista.telefono = txtTelefono.Text;
 
             ContratistaLogic contratistaLogic = new ContratistaLogic();
 
             contratistaLogic.altaContratista(contratista);
             MessageBox.Show("El contratista fue dado de alta con exito", "Alta Contratista");
         }
+
+        private void btnCancelar_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+     
 
         
     }
