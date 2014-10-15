@@ -18,7 +18,7 @@
     </Key>
     <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
     <Property Name="cod_unidad" Type="Int32" Nullable="false" />
-    <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
+    <Property Name="nro_inquilino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="Inquilinos" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Alquileres" ToRole="Inquilinos" />
     <NavigationProperty Name="Unidades" Relationship="Self.FK_Alquileres_Unidades" FromRole="Alquileres" ToRole="Unidades" />
     <NavigationProperty Name="Contratos" Relationship="Self.FK_Contratos_Alquileres" FromRole="Alquileres" ToRole="Contratos" />
