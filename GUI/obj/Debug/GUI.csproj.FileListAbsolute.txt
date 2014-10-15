@@ -52,3 +52,6 @@ C:\SGI\GUI\obj\Debug\GUI.frmTablaModificaInquilino.resources
 C:\SGI\GUI\obj\Debug\GUI.frmTablaModificarPropiedad.resources
 C:\SGI\GUI\obj\Debug\GUI.Properties.Resources.resources
 C:\SGI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionUnidad.resources
+C:\SGI\GUI\obj\Debug\GUI.frmAltaContratista.resources
+C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionContratista.resources

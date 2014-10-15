@@ -53,6 +53,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmAltaContratista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaContratista.Designer.cs">
+      <DependentUpon>frmAltaContratista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,6 +101,12 @@
     <Compile Include="frmTablaModificacionAdministrador.Designer.cs">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTablaModificacionContratista.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTablaModificacionContratista.Designer.cs">
+      <DependentUpon>frmTablaModificacionContratista.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificacionUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,8 +125,16 @@
     <Compile Include="frmTablaModificarPropiedad.Designer.cs">
       <DependentUpon>frmTablaModificarPropiedad.cs</DependentUpon>
     </Compile>
+    <Compile Include="InmobiliariaDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmAltaContratista.resx">
+      <DependentUpon>frmAltaContratista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPropiedad.resx">
       <DependentUpon>frmAltaPropiedad.cs</DependentUpon>
     </EmbeddedResource>
@@ -136,6 +156,9 @@
     <EmbeddedResource Include="frmTablaModificacionAdministrador.resx">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmTablaModificacionContratista.resx">
+      <DependentUpon>frmTablaModificacionContratista.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionUnidad.resx">
       <DependentUpon>frmTablaModificacionUnidad.cs</DependentUpon>
     </EmbeddedResource>
@@ -155,6 +178,17 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="InmobiliariaDataSet.xsc">
+      <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InmobiliariaDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InmobiliariaDataSet.xss">
+      <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

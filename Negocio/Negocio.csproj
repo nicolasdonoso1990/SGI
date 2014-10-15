@@ -48,6 +48,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AdministradorLogic.cs" />
+    <Compile Include="ContratistaLogic.cs" />
     <Compile Include="FotoLogic.cs" />
     <Compile Include="InquilinoLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
