@@ -55,3 +55,8 @@ C:\SGI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
 C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionUnidad.resources
 C:\SGI\GUI\obj\Debug\GUI.frmAltaContratista.resources
 C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionContratista.resources
+<<<<<<< HEAD
+C:\SGI\GUI\obj\Debug\GUI.frmAltaReparacion.resources
+=======
+C:\SGI\GUI\obj\Debug\GUI.frmMiCuenta.resources
+>>>>>>> origin/master
