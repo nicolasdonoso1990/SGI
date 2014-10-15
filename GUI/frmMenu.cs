@@ -138,6 +138,12 @@ namespace GUI
             miCuenta.ShowDialog();
         }
 
+        private void altaAlquilerToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaAlquiler altaAlqui = new frmAltaAlquiler();
+            altaAlqui.ShowDialog();
+        }
+
       
 
 

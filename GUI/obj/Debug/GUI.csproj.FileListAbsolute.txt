@@ -56,3 +56,4 @@ C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionUnidad.resources
 C:\SGI\GUI\obj\Debug\GUI.frmAltaContratista.resources
 C:\SGI\GUI\obj\Debug\GUI.frmTablaModificacionContratista.resources
 C:\SGI\GUI\obj\Debug\GUI.frmMiCuenta.resources
+C:\SGI\GUI\obj\Debug\GUI.frmAltaAlquiler.resources

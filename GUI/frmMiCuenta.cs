@@ -85,11 +85,6 @@ namespace GUI
             AdministradorLogic adLog = new AdministradorLogic();
             adLog.ModificaAdministrador(datos);
 
-          //  Int32 numero = Convert.ToInt32(datos[0]);
-           // Administrador admin = context.Administradores.First(i => i.IDadmin == numero);
-            //admin.tipo = datos[1];
-            //admin.contrasena = datos[2];
-            //admin.usuario = datos[3];
         }
 
      
