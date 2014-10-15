@@ -31,6 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.miCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.CerrarStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.inquilinosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -47,8 +48,8 @@
             this.modificarUnidadToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contratistasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.altaContratistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.modificarContratistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,23 +71,31 @@
             // archivoToolStripMenuItem
             // 
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.miCuentaToolStripMenuItem,
             this.CerrarStripMenuItem1,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
             this.archivoToolStripMenuItem.Text = "Archivo";
             // 
+            // miCuentaToolStripMenuItem
+            // 
+            this.miCuentaToolStripMenuItem.Name = "miCuentaToolStripMenuItem";
+            this.miCuentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.miCuentaToolStripMenuItem.Text = "Mi cuenta";
+            this.miCuentaToolStripMenuItem.Click += new System.EventHandler(this.miCuentaToolStripMenuItem_Click);
+            // 
             // CerrarStripMenuItem1
             // 
             this.CerrarStripMenuItem1.Name = "CerrarStripMenuItem1";
-            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.CerrarStripMenuItem1.Text = "Cerrar Sesion";
             this.CerrarStripMenuItem1.Click += new System.EventHandler(this.CerrarStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -201,6 +210,13 @@
             this.altaContratistaToolStripMenuItem.Text = "Nuevo Contratista";
             this.altaContratistaToolStripMenuItem.Click += new System.EventHandler(this.altaContratistaToolStripMenuItem_Click_1);
             // 
+            // modificarContratistaToolStripMenuItem
+            // 
+            this.modificarContratistaToolStripMenuItem.Name = "modificarContratistaToolStripMenuItem";
+            this.modificarContratistaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
+            this.modificarContratistaToolStripMenuItem.Text = "Modificar Contratista";
+            this.modificarContratistaToolStripMenuItem.Click += new System.EventHandler(this.modificarContratistaToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -210,13 +226,6 @@
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
-            // 
-            // modificarContratistaToolStripMenuItem
-            // 
-            this.modificarContratistaToolStripMenuItem.Name = "modificarContratistaToolStripMenuItem";
-            this.modificarContratistaToolStripMenuItem.Size = new System.Drawing.Size(186, 22);
-            this.modificarContratistaToolStripMenuItem.Text = "Modificar Contratista";
-            this.modificarContratistaToolStripMenuItem.Click += new System.EventHandler(this.modificarContratistaToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -263,5 +272,6 @@
         private System.Windows.Forms.ToolStripMenuItem contratistasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem altaContratistaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarContratistaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem miCuentaToolStripMenuItem;
     }
 }

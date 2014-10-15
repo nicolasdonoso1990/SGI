@@ -20,7 +20,10 @@ namespace GUI
         public frmMenu(Administrador adm)
         {
             InitializeComponent();
-            
+
+            //lblNombreUsuario.Text = adm.usuario;
+           
+
 
             admin = adm;
 
@@ -128,6 +131,14 @@ namespace GUI
             frmTablaModificacionContratista modificarContratista = new frmTablaModificacionContratista();
             modificarContratista.ShowDialog();
         }
+
+        private void miCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMiCuenta miCuenta = new frmMiCuenta(admin);
+            miCuenta.ShowDialog();
+        }
+
+      
 
 
 

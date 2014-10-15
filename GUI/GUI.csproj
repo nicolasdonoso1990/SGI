@@ -95,6 +95,12 @@
     <Compile Include="frmMenu.Designer.cs">
       <DependentUpon>frmMenu.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMiCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMiCuenta.Designer.cs">
+      <DependentUpon>frmMiCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificacionAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMenu.resx">
       <DependentUpon>frmMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMiCuenta.resx">
+      <DependentUpon>frmMiCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionAdministrador.resx">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
