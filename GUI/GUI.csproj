@@ -107,6 +107,12 @@
     <Compile Include="frmMiCuenta.Designer.cs">
       <DependentUpon>frmMiCuenta.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmPrueba.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmPrueba.Designer.cs">
+      <DependentUpon>frmPrueba.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificacionAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
