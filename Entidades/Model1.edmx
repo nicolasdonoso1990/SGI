@@ -157,8 +157,8 @@
     <Key>
       <PropertyRef Name="nro_mejora" />
     </Key>
-    <Property Name="cod_contratista" Type="int" Nullable="false" />
-    <Property Name="nro_mejora" Type="int" Nullable="false" />
+    <Property Name="cod_contratista" Type="int" Nullable="false" StoreGeneratedPattern="None" />
+    <Property Name="nro_mejora" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
     <Property Name="fecha" Type="datetime" Nullable="true" />
     <Property Name="valor" Type="int" Nullable="true" />
     <Property Name="cod_unidad" Type="int" Nullable="false" />
@@ -522,8 +522,8 @@
           <Key>
             <PropertyRef Name="nro_mejora" />
           </Key>
-          <Property Name="cod_contratista" Type="Int32" Nullable="false" />
-          <Property Name="nro_mejora" Type="Int32" Nullable="false" />
+          <Property Name="cod_contratista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
+          <Property Name="nro_mejora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="fecha" Type="DateTime" Precision="0" />
           <Property Name="valor" Type="Int32" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />

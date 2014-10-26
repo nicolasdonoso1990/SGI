@@ -144,6 +144,18 @@ namespace GUI
             altaAlqui.ShowDialog();
         }
 
+        private void nuevaMejoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaMejora altaMejora = new frmAltaMejora();
+            altaMejora.ShowDialog();
+        }
+
+        private void modificarMejorasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTablaModificacionMejora modificarMejora = new frmTablaModificacionMejora();
+            modificarMejora.ShowDialog();
+        }
+
       
 
 

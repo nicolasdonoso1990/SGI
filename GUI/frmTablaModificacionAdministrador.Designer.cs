@@ -49,9 +49,11 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblUsuario = new System.Windows.Forms.Label();
+            this.inmobiliariaDataSet1 = new GUI.InmobiliariaDataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -249,6 +251,11 @@
             this.lblUsuario.TabIndex = 2;
             this.lblUsuario.Text = "Usuario:";
             // 
+            // inmobiliariaDataSet1
+            // 
+            this.inmobiliariaDataSet1.DataSetName = "InmobiliariaDataSet";
+            this.inmobiliariaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // frmTablaModificacionAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,6 +277,7 @@
             this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSet1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -297,5 +305,6 @@
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblUsuario;
+        private InmobiliariaDataSet inmobiliariaDataSet1;
     }
 }

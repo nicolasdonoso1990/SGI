@@ -52,6 +52,7 @@
     <Compile Include="ContratistaLogic.cs" />
     <Compile Include="FotoLogic.cs" />
     <Compile Include="InquilinoLogic.cs" />
+    <Compile Include="MejoraLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadLogic.cs" />
     <Compile Include="UltimoNumeroLogic.cs" />

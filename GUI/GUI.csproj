@@ -65,6 +65,12 @@
     <Compile Include="frmAltaContratista.Designer.cs">
       <DependentUpon>frmAltaContratista.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaMejoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaMejoras.Designer.cs">
+      <DependentUpon>frmAltaMejoras.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -119,6 +125,12 @@
     <Compile Include="frmTablaModificacionContratista.Designer.cs">
       <DependentUpon>frmTablaModificacionContratista.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmTablaModificacionMejora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTablaModificacionMejora.Designer.cs">
+      <DependentUpon>frmTablaModificacionMejora.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificacionUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -142,6 +154,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="InmobiliariaDataSetContratistas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InmobiliariaDataSetContratistas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InmobiliariaDataSetMejoras.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InmobiliariaDataSetMejoras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="InmobiliariaDataSetUnidades.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>InmobiliariaDataSetUnidades.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAltaAlquiler.resx">
@@ -149,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaContratista.resx">
       <DependentUpon>frmAltaContratista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaMejoras.resx">
+      <DependentUpon>frmAltaMejoras.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaPropiedad.resx">
       <DependentUpon>frmAltaPropiedad.cs</DependentUpon>
@@ -176,6 +206,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionContratista.resx">
       <DependentUpon>frmTablaModificacionContratista.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTablaModificacionMejora.resx">
+      <DependentUpon>frmTablaModificacionMejora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionUnidad.resx">
       <DependentUpon>frmTablaModificacionUnidad.cs</DependentUpon>
@@ -206,6 +239,39 @@
     </None>
     <None Include="InmobiliariaDataSet.xss">
       <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetContratistas.xsc">
+      <DependentUpon>InmobiliariaDataSetContratistas.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetContratistas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InmobiliariaDataSetContratistas.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InmobiliariaDataSetContratistas.xss">
+      <DependentUpon>InmobiliariaDataSetContratistas.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetMejoras.xsc">
+      <DependentUpon>InmobiliariaDataSetMejoras.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetMejoras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InmobiliariaDataSetMejoras.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InmobiliariaDataSetMejoras.xss">
+      <DependentUpon>InmobiliariaDataSetMejoras.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetUnidades.xsc">
+      <DependentUpon>InmobiliariaDataSetUnidades.xsd</DependentUpon>
+    </None>
+    <None Include="InmobiliariaDataSetUnidades.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>InmobiliariaDataSetUnidades.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="InmobiliariaDataSetUnidades.xss">
+      <DependentUpon>InmobiliariaDataSetUnidades.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

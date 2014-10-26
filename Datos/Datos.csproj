@@ -52,7 +52,9 @@
     <Compile Include="DatosAdministrador.cs" />
     <Compile Include="DatosFoto.cs" />
     <Compile Include="DatosInquilino.cs" />
+    <Compile Include="DatosMejora.cs" />
     <Compile Include="DatosPropiedad.cs" />
+    <Compile Include="DatosReparacion.cs" />
     <Compile Include="DatosUltimoNumeroFoto.cs" />
     <Compile Include="DatosUnidad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
