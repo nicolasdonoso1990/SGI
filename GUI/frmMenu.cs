@@ -156,6 +156,18 @@ namespace GUI
             modificarMejora.ShowDialog();
         }
 
+        private void nuevaReparacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmAltaReparacion altaReparacion = new frmAltaReparacion();
+            altaReparacion.ShowDialog();
+        }
+
+        private void modificarReparacionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmTablaModificacionReparacion modificarRep = new frmTablaModificacionReparacion();
+            modificarRep.ShowDialog();
+        }
+
       
 
 

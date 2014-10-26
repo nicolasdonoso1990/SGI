@@ -53,8 +53,11 @@
             this.modificarContratistaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.mejorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaMejoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.modificarMejorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+            this.reparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.modificarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -68,7 +71,8 @@
             this.propiedadesToolStripMenuItem,
             this.unidadesToolStripMenuItem,
             this.contratistasToolStripMenuItem,
-            this.mejorasToolStripMenuItem});
+            this.mejorasToolStripMenuItem,
+            this.reparacionesToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(848, 24);
@@ -255,6 +259,13 @@
             this.nuevaMejoraToolStripMenuItem.Text = "Nueva Mejora";
             this.nuevaMejoraToolStripMenuItem.Click += new System.EventHandler(this.nuevaMejoraToolStripMenuItem_Click);
             // 
+            // modificarMejorasToolStripMenuItem
+            // 
+            this.modificarMejorasToolStripMenuItem.Name = "modificarMejorasToolStripMenuItem";
+            this.modificarMejorasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.modificarMejorasToolStripMenuItem.Text = "Modificar Mejoras";
+            this.modificarMejorasToolStripMenuItem.Click += new System.EventHandler(this.modificarMejorasToolStripMenuItem_Click);
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -265,12 +276,28 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
             // 
-            // modificarMejorasToolStripMenuItem
+            // reparacionesToolStripMenuItem
             // 
-            this.modificarMejorasToolStripMenuItem.Name = "modificarMejorasToolStripMenuItem";
-            this.modificarMejorasToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
-            this.modificarMejorasToolStripMenuItem.Text = "Modificar Mejoras";
-            this.modificarMejorasToolStripMenuItem.Click += new System.EventHandler(this.modificarMejorasToolStripMenuItem_Click);
+            this.reparacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaReparacionToolStripMenuItem,
+            this.modificarReparacionToolStripMenuItem});
+            this.reparacionesToolStripMenuItem.Name = "reparacionesToolStripMenuItem";
+            this.reparacionesToolStripMenuItem.Size = new System.Drawing.Size(89, 20);
+            this.reparacionesToolStripMenuItem.Text = "Reparaciones";
+            // 
+            // nuevaReparacionToolStripMenuItem
+            // 
+            this.nuevaReparacionToolStripMenuItem.Name = "nuevaReparacionToolStripMenuItem";
+            this.nuevaReparacionToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.nuevaReparacionToolStripMenuItem.Text = "Nueva Reparacion";
+            this.nuevaReparacionToolStripMenuItem.Click += new System.EventHandler(this.nuevaReparacionToolStripMenuItem_Click);
+            // 
+            // modificarReparacionToolStripMenuItem
+            // 
+            this.modificarReparacionToolStripMenuItem.Name = "modificarReparacionToolStripMenuItem";
+            this.modificarReparacionToolStripMenuItem.Size = new System.Drawing.Size(187, 22);
+            this.modificarReparacionToolStripMenuItem.Text = "Modificar Reparacion";
+            this.modificarReparacionToolStripMenuItem.Click += new System.EventHandler(this.modificarReparacionToolStripMenuItem_Click);
             // 
             // frmMenu
             // 
@@ -323,5 +350,8 @@
         private System.Windows.Forms.ToolStripMenuItem mejorasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaMejoraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarMejorasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem reparacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem nuevaReparacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem modificarReparacionToolStripMenuItem;
     }
 }

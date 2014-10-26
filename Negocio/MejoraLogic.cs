@@ -36,20 +36,25 @@ namespace Negocio
         }
 
 
-       /* public void modificarMejora(string[] datos)
+        
+        public void modificarMejora(Mejora mejora)
         {
-            datosMejora.modificarMejora(datos);
+            datosMejora.modificarMejora(mejora);
+
+        }
 
 
-
-        }*/
-
-
-        public void bajaMejora(string numeroMejora)
+        public void bajaMejora(int nro)
         {
-            Int32 nro = Convert.ToInt32(numeroMejora);
+            
             datosMejora.bajaMejora(nro);
 
+        }
+        public Mejora buscaMejora(string numero)
+        {
+            //var num = Int32.Parse(numero);
+            var buscado = datosMejora.buscaMejora(numero);
+            return buscado;
         }
     }
 }

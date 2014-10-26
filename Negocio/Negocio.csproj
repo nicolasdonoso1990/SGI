@@ -55,6 +55,7 @@
     <Compile Include="MejoraLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadLogic.cs" />
+    <Compile Include="ReparacionLogic.cs" />
     <Compile Include="UltimoNumeroLogic.cs" />
     <Compile Include="UnidadLogic.cs" />
   </ItemGroup>

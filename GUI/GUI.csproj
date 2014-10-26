@@ -71,6 +71,12 @@
     <Compile Include="frmAltaMejoras.Designer.cs">
       <DependentUpon>frmAltaMejoras.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaReparacion.Designer.cs">
+      <DependentUpon>frmAltaReparacion.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaUnidad.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -130,6 +136,12 @@
     </Compile>
     <Compile Include="frmTablaModificacionMejora.Designer.cs">
       <DependentUpon>frmTablaModificacionMejora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmTablaModificacionReparacion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmTablaModificacionReparacion.Designer.cs">
+      <DependentUpon>frmTablaModificacionReparacion.cs</DependentUpon>
     </Compile>
     <Compile Include="frmTablaModificacionUnidad.cs">
       <SubType>Form</SubType>
@@ -209,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionMejora.resx">
       <DependentUpon>frmTablaModificacionMejora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmTablaModificacionReparacion.resx">
+      <DependentUpon>frmTablaModificacionReparacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionUnidad.resx">
       <DependentUpon>frmTablaModificacionUnidad.cs</DependentUpon>

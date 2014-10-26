@@ -35,6 +35,11 @@
             this.mejorasTableAdapter = new GUI.InmobiliariaDataSetMejorasTableAdapters.MejorasTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbMejora = new System.Windows.Forms.GroupBox();
+            this.lblUnidad = new System.Windows.Forms.Label();
+            this.txtUnidad = new System.Windows.Forms.TextBox();
+            this.lblContratista = new System.Windows.Forms.Label();
+            this.txtContratista = new System.Windows.Forms.TextBox();
+            this.lblFecha = new System.Windows.Forms.Label();
             this.lblNumeroMejora = new System.Windows.Forms.Label();
             this.txtNumero = new System.Windows.Forms.TextBox();
             this.lblValor = new System.Windows.Forms.Label();
@@ -55,12 +60,7 @@
             this.detallesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.lblFecha = new System.Windows.Forms.Label();
-            this.txtFecha = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.mejorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSetMejorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSetMejoras)).BeginInit();
@@ -96,15 +96,16 @@
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // gpbMejora
             // 
             this.gpbMejora.BackColor = System.Drawing.Color.Transparent;
-            this.gpbMejora.Controls.Add(this.label2);
-            this.gpbMejora.Controls.Add(this.textBox2);
-            this.gpbMejora.Controls.Add(this.label1);
-            this.gpbMejora.Controls.Add(this.textBox1);
-            this.gpbMejora.Controls.Add(this.txtFecha);
+            this.gpbMejora.Controls.Add(this.dtpFecha);
+            this.gpbMejora.Controls.Add(this.lblUnidad);
+            this.gpbMejora.Controls.Add(this.txtUnidad);
+            this.gpbMejora.Controls.Add(this.lblContratista);
+            this.gpbMejora.Controls.Add(this.txtContratista);
             this.gpbMejora.Controls.Add(this.lblFecha);
             this.gpbMejora.Controls.Add(this.lblNumeroMejora);
             this.gpbMejora.Controls.Add(this.txtNumero);
@@ -115,12 +116,57 @@
             this.gpbMejora.Controls.Add(this.lblDetalles);
             this.gpbMejora.Controls.Add(this.lblTelefono);
             this.gpbMejora.Controls.Add(this.txtObservaciones);
-            this.gpbMejora.Location = new System.Drawing.Point(732, 12);
+            this.gpbMejora.Location = new System.Drawing.Point(697, 12);
             this.gpbMejora.Name = "gpbMejora";
-            this.gpbMejora.Size = new System.Drawing.Size(277, 460);
+            this.gpbMejora.Size = new System.Drawing.Size(312, 460);
             this.gpbMejora.TabIndex = 12;
             this.gpbMejora.TabStop = false;
             this.gpbMejora.Text = "Modificar datos de mejora";
+            // 
+            // lblUnidad
+            // 
+            this.lblUnidad.AutoSize = true;
+            this.lblUnidad.Enabled = false;
+            this.lblUnidad.Location = new System.Drawing.Point(20, 386);
+            this.lblUnidad.Name = "lblUnidad";
+            this.lblUnidad.Size = new System.Drawing.Size(80, 13);
+            this.lblUnidad.TabIndex = 18;
+            this.lblUnidad.Text = "Codigo Unidad:";
+            // 
+            // txtUnidad
+            // 
+            this.txtUnidad.Enabled = false;
+            this.txtUnidad.Location = new System.Drawing.Point(105, 383);
+            this.txtUnidad.Name = "txtUnidad";
+            this.txtUnidad.Size = new System.Drawing.Size(106, 20);
+            this.txtUnidad.TabIndex = 19;
+            // 
+            // lblContratista
+            // 
+            this.lblContratista.AutoSize = true;
+            this.lblContratista.Enabled = false;
+            this.lblContratista.Location = new System.Drawing.Point(4, 356);
+            this.lblContratista.Name = "lblContratista";
+            this.lblContratista.Size = new System.Drawing.Size(95, 13);
+            this.lblContratista.TabIndex = 16;
+            this.lblContratista.Text = "Codigo contratista:";
+            // 
+            // txtContratista
+            // 
+            this.txtContratista.Enabled = false;
+            this.txtContratista.Location = new System.Drawing.Point(105, 353);
+            this.txtContratista.Name = "txtContratista";
+            this.txtContratista.Size = new System.Drawing.Size(106, 20);
+            this.txtContratista.TabIndex = 17;
+            // 
+            // lblFecha
+            // 
+            this.lblFecha.AutoSize = true;
+            this.lblFecha.Location = new System.Drawing.Point(58, 322);
+            this.lblFecha.Name = "lblFecha";
+            this.lblFecha.Size = new System.Drawing.Size(40, 13);
+            this.lblFecha.TabIndex = 14;
+            this.lblFecha.Text = "Fecha:";
             // 
             // lblNumeroMejora
             // 
@@ -291,6 +337,7 @@
             this.btnBaja.TabIndex = 5;
             this.btnBaja.Text = "Dar de Baja";
             this.btnBaja.UseVisualStyleBackColor = true;
+            this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnSeleccionar
             // 
@@ -302,57 +349,12 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // lblFecha
+            // dtpFecha
             // 
-            this.lblFecha.AutoSize = true;
-            this.lblFecha.Location = new System.Drawing.Point(55, 322);
-            this.lblFecha.Name = "lblFecha";
-            this.lblFecha.Size = new System.Drawing.Size(40, 13);
-            this.lblFecha.TabIndex = 14;
-            this.lblFecha.Text = "Fecha:";
-            // 
-            // txtFecha
-            // 
-            this.txtFecha.Location = new System.Drawing.Point(105, 319);
-            this.txtFecha.Name = "txtFecha";
-            this.txtFecha.Size = new System.Drawing.Size(106, 20);
-            this.txtFecha.TabIndex = 15;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Enabled = false;
-            this.label1.Location = new System.Drawing.Point(4, 356);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
-            this.label1.TabIndex = 16;
-            this.label1.Text = "Codigo contratista:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(105, 353);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 20);
-            this.textBox1.TabIndex = 17;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Enabled = false;
-            this.label2.Location = new System.Drawing.Point(20, 386);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(81, 13);
-            this.label2.TabIndex = 18;
-            this.label2.Text = "Numero mejora:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Enabled = false;
-            this.textBox2.Location = new System.Drawing.Point(105, 383);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(106, 20);
-            this.textBox2.TabIndex = 19;
+            this.dtpFecha.Location = new System.Drawing.Point(104, 322);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 20;
             // 
             // frmTablaModificacionMejora
             // 
@@ -404,11 +406,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codunidadDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacionesDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn detallesDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtFecha;
+        private System.Windows.Forms.Label lblUnidad;
+        private System.Windows.Forms.TextBox txtUnidad;
+        private System.Windows.Forms.Label lblContratista;
+        private System.Windows.Forms.TextBox txtContratista;
         private System.Windows.Forms.Label lblFecha;
+        private System.Windows.Forms.DateTimePicker dtpFecha;
     }
 }

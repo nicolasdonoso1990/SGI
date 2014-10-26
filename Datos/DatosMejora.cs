@@ -45,31 +45,25 @@ namespace Datos
 
         }
         
-        /*public void modificarContratista(string[] datos)
+        public void modificarMejora(Mejora mejoraArgumento)
         {
 
 
             using (var context = new InmobiliariaEntities())
             {
 
-                int cod_contratista = int.Parse(datos[0]);
+                
                 //Busco el contratista que quiero modificar con el codigo que me traje
-                Contratista contratista = context.Contratistas.First(i => i.cod_contratista == cod_contratista);
-                //lo modifico
-               // contratista.cod_contratista = cod_contratista;
-                contratista.nombre = datos[1];
-                contratista.apellido = datos[2];
-                contratista.direccion = datos[3];
-                contratista.telefono = datos[4];
-                contratista.disponibilidad = datos[5];
-                //lo guardo
+                Mejora mejora = context.Mejoras.First(i => i.nro_mejora == mejoraArgumento.nro_mejora);
+                context.Mejoras.Remove(mejora);
+                context.Mejoras.Add(mejoraArgumento);
                 context.SaveChanges();
 
             }
 
 
 
-        }*/
+        }
 
         public void bajaMejora(int nroMejora)
         {
