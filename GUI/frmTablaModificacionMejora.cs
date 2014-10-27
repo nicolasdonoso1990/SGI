@@ -23,13 +23,24 @@ namespace GUI
         private void frmTablaModificacionMejora_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'inmobiliariaDataSetMejoras.Mejoras' table. You can move, or remove it, as needed.
-            this.mejorasTableAdapter.Fill(this.inmobiliariaDataSetMejoras.Mejoras);
+            LlenarTabla();
 
+        }
+
+        protected virtual void LlenarTabla()
+        {
+
+            this.mejorasTableAdapter.Fill(this.inmobiliariaDataSetMejoras.Mejoras);
         }
 
         private void btnSeleccionar_Click(object sender, EventArgs e)
         {
             /*Selección de filas. Me va a devolver 1 porque no puedo seleccionar más de una (verificar con Ctrl y Shift)*/
+            Seleccionar();
+        }
+
+        protected virtual void Seleccionar()
+        {
             Int32 cantidadFilasSeleccionadas = dgvMejora.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (cantidadFilasSeleccionadas > 0)
@@ -60,6 +71,11 @@ namespace GUI
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
+            Registrar();
+        }
+
+        protected virtual void Registrar()
+        {
             mejora.nro_mejora = int.Parse(txtNumero.Text);
             mejora.valor = int.Parse(txtValor.Text);
             mejora.observaciones = txtObservaciones.Text;
@@ -81,6 +97,11 @@ namespace GUI
         private void btnBaja_Click(object sender, EventArgs e)
         {
 
+            Baja();
+        }
+
+        protected virtual void Baja()
+        {
             Int32 cantidadFilasSeleccionadas = dgvMejora.Rows.GetRowCount(DataGridViewElementStates.Selected);
             /*Selección de filas. Me va a devolver 1 porque no puedo seleccionar más de una (verificar con Ctrl y Shift)*/
             if (cantidadFilasSeleccionadas > 0)

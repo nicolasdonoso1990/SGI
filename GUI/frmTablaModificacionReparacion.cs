@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
+using Entidades;
 
 namespace GUI
 {
@@ -17,6 +19,10 @@ namespace GUI
             InitializeComponent();
         }
 
+        protected override void LlenarTabla()
+        {
+            //this.reparacionesTableAdapter.Fill(this.inmobiliariaDataSetReparaciones.Reparaciones);
+        }
         private void frmTablaModificacionReparacion_Load(object sender, EventArgs e)
         {
 
