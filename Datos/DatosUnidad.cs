@@ -98,18 +98,26 @@ namespace Datos
         
         }
 
-        
 
 
 
+        public void CambiaEstadoUnidad(Unidad uni)
+        {
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Unidad u = context.Unidades.First(i => i.cod_unidad == uni.cod_unidad);
+                u.estado = "alquilado";
+            
+            }
 
 
+
+        }
 
 
 
         }
  
-
 
 
 

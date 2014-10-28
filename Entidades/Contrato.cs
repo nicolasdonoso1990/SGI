@@ -21,6 +21,7 @@ namespace Entidades
         public Nullable<System.DateTime> fecha_realizacion { get; set; }
         public Nullable<System.DateTime> fecha_caducidad { get; set; }
         public string descripcion_unidad { get; set; }
+        public string anexo { get; set; }
     
         public virtual Alquiler Alquileres { get; set; }
         public virtual Valor_mensual Valores_mensuales { get; set; }

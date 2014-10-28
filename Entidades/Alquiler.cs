@@ -23,6 +23,7 @@ namespace Entidades
         public int nro_alquiler { get; set; }
         public int cod_unidad { get; set; }
         public int nro_inquilino { get; set; }
+        public string estado { get; set; }
     
         public virtual Inquilino Inquilinos { get; set; }
         public virtual Unidad Unidades { get; set; }

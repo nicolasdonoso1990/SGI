@@ -59,6 +59,12 @@
     <Compile Include="frmAltaAlquiler.Designer.cs">
       <DependentUpon>frmAltaAlquiler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaAlquilerFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaAlquilerFinal.Designer.cs">
+      <DependentUpon>frmAltaAlquilerFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaContratista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -152,6 +158,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmAltaAlquiler.resx">
       <DependentUpon>frmAltaAlquiler.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaAlquilerFinal.resx">
+      <DependentUpon>frmAltaAlquilerFinal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAltaContratista.resx">
       <DependentUpon>frmAltaContratista.cs</DependentUpon>

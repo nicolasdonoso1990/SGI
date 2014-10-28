@@ -59,6 +59,12 @@ namespace Negocio
         
         }
 
+        public void CambiaEstadoAlquilado(Unidad uni) 
+        {
+            UnidadData.CambiaEstadoUnidad(uni);
+        }
+
+
 
     }
 }

@@ -6,29 +6,22 @@ using System.Threading.Tasks;
 using Entidades;
 
 
-
 namespace Datos
 {
-    public class DatosAlquiler
+    public class DatosContrato
     {
-
-        public Int32 AltaAlquiler(Alquiler alq) 
+        public void AltaContrato(Contrato cont) 
         {
-
             using (var context = new InmobiliariaEntities()) 
             {
-                context.Alquileres.Add(alq);
+                context.Contratos.Add(cont);
                 context.SaveChanges();
 
-                return (alq.nro_alquiler);
+            
             }
-
         
         
         }
-
-
-
 
 
 

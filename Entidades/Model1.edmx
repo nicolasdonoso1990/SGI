@@ -4,430 +4,379 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="InmobiliariaModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityContainer Name="InmobiliariaModelStoreContainer">
-    <EntitySet Name="Administradores" EntityType="InmobiliariaModel.Store.Administradores" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Alquileres" EntityType="InmobiliariaModel.Store.Alquileres" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Contratistas" EntityType="InmobiliariaModel.Store.Contratistas" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Contratos" EntityType="InmobiliariaModel.Store.Contratos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Cuentas_corrientes" EntityType="InmobiliariaModel.Store.Cuentas_corrientes" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Fotos" EntityType="InmobiliariaModel.Store.Fotos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Inquilinos" EntityType="InmobiliariaModel.Store.Inquilinos" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Mejoras" EntityType="InmobiliariaModel.Store.Mejoras" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Pagos_alquiler" EntityType="InmobiliariaModel.Store.Pagos_alquiler" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Pagos_seguro" EntityType="InmobiliariaModel.Store.Pagos_seguro" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Propiedades" EntityType="InmobiliariaModel.Store.Propiedades" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Reparaciones" EntityType="InmobiliariaModel.Store.Reparaciones" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Seguros" EntityType="InmobiliariaModel.Store.Seguros" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Unidades" EntityType="InmobiliariaModel.Store.Unidades" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="Valores_mensuales" EntityType="InmobiliariaModel.Store.Valores_mensuales" store:Type="Tables" Schema="dbo" />
-    <EntitySet Name="NumeroUltimaFoto" EntityType="InmobiliariaModel.Store.NumeroUltimaFoto" store:Type="Tables" Schema="dbo" />
-    <AssociationSet Name="FK_Alquileres_Inquilinos" Association="InmobiliariaModel.Store.FK_Alquileres_Inquilinos">
-      <End Role="Inquilinos" EntitySet="Inquilinos" />
-      <End Role="Alquileres" EntitySet="Alquileres" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Alquileres_Unidades" Association="InmobiliariaModel.Store.FK_Alquileres_Unidades">
-      <End Role="Unidades" EntitySet="Unidades" />
-      <End Role="Alquileres" EntitySet="Alquileres" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Contratos_Alquileres" Association="InmobiliariaModel.Store.FK_Contratos_Alquileres">
-      <End Role="Alquileres" EntitySet="Alquileres" />
-      <End Role="Contratos" EntitySet="Contratos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pagos_alquiler_Alquileres" Association="InmobiliariaModel.Store.FK_Pagos_alquiler_Alquileres">
-      <End Role="Alquileres" EntitySet="Alquileres" />
-      <End Role="Pagos_alquiler" EntitySet="Pagos_alquiler" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Seguros_Alquileres" Association="InmobiliariaModel.Store.FK_Seguros_Alquileres">
-      <End Role="Alquileres" EntitySet="Alquileres" />
-      <End Role="Seguros" EntitySet="Seguros" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mejoras_Contratistas" Association="InmobiliariaModel.Store.FK_Mejoras_Contratistas">
-      <End Role="Contratistas" EntitySet="Contratistas" />
-      <End Role="Mejoras" EntitySet="Mejoras" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reparaciones_Contratistas" Association="InmobiliariaModel.Store.FK_Reparaciones_Contratistas">
-      <End Role="Contratistas" EntitySet="Contratistas" />
-      <End Role="Reparaciones" EntitySet="Reparaciones" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Valores_mensuales_Contratos" Association="InmobiliariaModel.Store.FK_Valores_mensuales_Contratos">
-      <End Role="Contratos" EntitySet="Contratos" />
-      <End Role="Valores_mensuales" EntitySet="Valores_mensuales" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Cuenta_corriente_Inquilinos" Association="InmobiliariaModel.Store.FK_Cuenta_corriente_Inquilinos">
-      <End Role="Inquilinos" EntitySet="Inquilinos" />
-      <End Role="Cuenta_corriente" EntitySet="Cuentas_corrientes" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Fotos_Unidades" Association="InmobiliariaModel.Store.FK_Fotos_Unidades">
-      <End Role="Unidades" EntitySet="Unidades" />
-      <End Role="Fotos" EntitySet="Fotos" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Mejoras_Unidades" Association="InmobiliariaModel.Store.FK_Mejoras_Unidades">
-      <End Role="Unidades" EntitySet="Unidades" />
-      <End Role="Mejoras" EntitySet="Mejoras" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Pagos_seguro_Seguros" Association="InmobiliariaModel.Store.FK_Pagos_seguro_Seguros">
-      <End Role="Seguros" EntitySet="Seguros" />
-      <End Role="Pagos_seguro" EntitySet="Pagos_seguro" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Unidades_Propiedades" Association="InmobiliariaModel.Store.FK_Unidades_Propiedades">
-      <End Role="Propiedades" EntitySet="Propiedades" />
-      <End Role="Unidades" EntitySet="Unidades" />
-    </AssociationSet>
-    <AssociationSet Name="FK_Reparaciones_Unidades" Association="InmobiliariaModel.Store.FK_Reparaciones_Unidades">
-      <End Role="Unidades" EntitySet="Unidades" />
-      <End Role="Reparaciones" EntitySet="Reparaciones" />
-    </AssociationSet>
-  </EntityContainer>
-  <EntityType Name="Administradores">
-    <Key>
-      <PropertyRef Name="IDadmin" />
-    </Key>
-    <Property Name="IDadmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="usuario" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="contrasena" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="estado" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="tipo" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Alquileres">
-    <Key>
-      <PropertyRef Name="nro_alquiler" />
-      <PropertyRef Name="cod_unidad" />
-      <PropertyRef Name="nro_inquilino" />
-    </Key>
-    <Property Name="nro_alquiler" Type="int" Nullable="false" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="nro_inquilino" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Contratistas">
-    <Key>
-      <PropertyRef Name="cod_contratista" />
-    </Key>
-    <Property Name="cod_contratista" Type="int" Nullable="false" />
-    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="apellido" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="direccion" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="telefono" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="disponibilidad" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Contratos">
-    <Key>
-      <PropertyRef Name="cod_contrato" />
-    </Key>
-    <Property Name="cod_contrato" Type="int" Nullable="false" />
-    <Property Name="nro_alquiler" Type="int" Nullable="false" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="nro_inquilino" Type="int" Nullable="false" />
-    <Property Name="fecha_realizacion" Type="datetime" Nullable="true" />
-    <Property Name="fecha_caducidad" Type="datetime" Nullable="true" />
-    <Property Name="descripcion_unidad" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Cuentas_corrientes">
-    <Key>
-      <PropertyRef Name="nro_inquilino" />
-    </Key>
-    <Property Name="nro_inquilino" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-    <Property Name="saldo" Type="float" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Fotos">
-    <Key>
-      <PropertyRef Name="cod_foto" />
-    </Key>
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="ruta_foto" Type="varchar(max)" Nullable="false" />
-    <Property Name="cod_foto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-  </EntityType>
-  <EntityType Name="Inquilinos">
-    <Key>
-      <PropertyRef Name="nro_inquilino" />
-    </Key>
-    <Property Name="nro_inquilino" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="usuario" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="contrasena" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="nombre" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="apellido" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="direccion" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="telefono" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="e_mail" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="dni" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="estado" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Mejoras">
-    <Key>
-      <PropertyRef Name="nro_mejora" />
-    </Key>
-    <Property Name="cod_contratista" Type="int" Nullable="false" />
-    <Property Name="nro_mejora" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-    <Property Name="valor" Type="int" Nullable="true" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="observaciones" Type="varchar(max)" Nullable="true" />
-    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Pagos_alquiler">
-    <Key>
-      <PropertyRef Name="nro_alquiler" />
-      <PropertyRef Name="cod_unidad" />
-      <PropertyRef Name="nro_inquilino" />
-    </Key>
-    <Property Name="nro_alquiler" Type="int" Nullable="false" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="nro_inquilino" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-    <Property Name="monto" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Pagos_seguro">
-    <Key>
-      <PropertyRef Name="cod_seguro" />
-    </Key>
-    <Property Name="cod_seguro" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-    <Property Name="monto" Type="int" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Propiedades">
-    <Key>
-      <PropertyRef Name="cod_propiedad" />
-    </Key>
-    <Property Name="cod_propiedad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="ciudad" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="direccion" Type="varchar" Nullable="true" MaxLength="50" />
-    <Property Name="m2" Type="float" Nullable="true" />
-    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
-    <Property Name="estado" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Reparaciones">
-    <Key>
-      <PropertyRef Name="nro_reparacion" />
-    </Key>
-    <Property Name="nro_reparacion" Type="int" Nullable="false" />
-    <Property Name="cod_contratista" Type="int" Nullable="false" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-    <Property Name="valor" Type="int" Nullable="true" />
-    <Property Name="detalles" Type="varchar(max)" Nullable="true" />
-    <Property Name="observaciones" Type="varchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Seguros">
-    <Key>
-      <PropertyRef Name="cod_seguro" />
-    </Key>
-    <Property Name="cod_seguro" Type="int" Nullable="false" />
-    <Property Name="nro_alquiler" Type="int" Nullable="false" />
-    <Property Name="cod_unidad" Type="int" Nullable="false" />
-    <Property Name="nro_inquilino" Type="int" Nullable="false" />
-    <Property Name="fecha_desde" Type="datetime" Nullable="true" />
-    <Property Name="fecha_hasta" Type="datetime" Nullable="true" />
-    <Property Name="aseguradora" Type="varchar(max)" Nullable="true" />
-    <Property Name="tipo_seguro" Type="varchar(max)" Nullable="true" />
-    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
-  </EntityType>
-  <EntityType Name="Unidades">
-    <Key>
-      <PropertyRef Name="cod_unidad" />
-    </Key>
-    <Property Name="cod_unidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="cod_propiedad" Type="int" Nullable="false" />
-    <Property Name="m2" Type="float" Nullable="true" />
-    <Property Name="descripcion" Type="varchar(max)" Nullable="true" />
-    <Property Name="estado" Type="varchar" Nullable="true" MaxLength="50" />
-  </EntityType>
-  <EntityType Name="Valores_mensuales">
-    <Key>
-      <PropertyRef Name="cod_contrato" />
-    </Key>
-    <Property Name="cod_contrato" Type="int" Nullable="false" />
-    <Property Name="valor" Type="int" Nullable="true" />
-    <Property Name="fecha" Type="datetime" Nullable="true" />
-  </EntityType>
-  <EntityType Name="NumeroUltimaFoto">
-    <Key>
-      <PropertyRef Name="NumeroFoto" />
-    </Key>
-    <Property Name="NumeroFoto" Type="int" Nullable="false" />
-    <Property Name="numero" Type="int" Nullable="false" />
-  </EntityType>
-  <Association Name="FK_Alquileres_Inquilinos">
-    <End Role="Inquilinos" Type="InmobiliariaModel.Store.Inquilinos" Multiplicity="1" />
-    <End Role="Alquileres" Type="InmobiliariaModel.Store.Alquileres" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Inquilinos">
-        <PropertyRef Name="nro_inquilino" />
-      </Principal>
-      <Dependent Role="Alquileres">
-        <PropertyRef Name="nro_inquilino" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Alquileres_Unidades">
-    <End Role="Unidades" Type="InmobiliariaModel.Store.Unidades" Multiplicity="1" />
-    <End Role="Alquileres" Type="InmobiliariaModel.Store.Alquileres" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unidades">
-        <PropertyRef Name="cod_unidad" />
-      </Principal>
-      <Dependent Role="Alquileres">
-        <PropertyRef Name="cod_unidad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Contratos_Alquileres">
-    <End Role="Alquileres" Type="InmobiliariaModel.Store.Alquileres" Multiplicity="1" />
-    <End Role="Contratos" Type="InmobiliariaModel.Store.Contratos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Alquileres">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Principal>
-      <Dependent Role="Contratos">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pagos_alquiler_Alquileres">
-    <End Role="Alquileres" Type="InmobiliariaModel.Store.Alquileres" Multiplicity="1" />
-    <End Role="Pagos_alquiler" Type="InmobiliariaModel.Store.Pagos_alquiler" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Alquileres">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Principal>
-      <Dependent Role="Pagos_alquiler">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Seguros_Alquileres">
-    <End Role="Alquileres" Type="InmobiliariaModel.Store.Alquileres" Multiplicity="1" />
-    <End Role="Seguros" Type="InmobiliariaModel.Store.Seguros" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Alquileres">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Principal>
-      <Dependent Role="Seguros">
-        <PropertyRef Name="nro_alquiler" />
-        <PropertyRef Name="cod_unidad" />
-        <PropertyRef Name="nro_inquilino" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Mejoras_Contratistas">
-    <End Role="Contratistas" Type="InmobiliariaModel.Store.Contratistas" Multiplicity="1" />
-    <End Role="Mejoras" Type="InmobiliariaModel.Store.Mejoras" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contratistas">
-        <PropertyRef Name="cod_contratista" />
-      </Principal>
-      <Dependent Role="Mejoras">
-        <PropertyRef Name="cod_contratista" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reparaciones_Contratistas">
-    <End Role="Contratistas" Type="InmobiliariaModel.Store.Contratistas" Multiplicity="1" />
-    <End Role="Reparaciones" Type="InmobiliariaModel.Store.Reparaciones" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Contratistas">
-        <PropertyRef Name="cod_contratista" />
-      </Principal>
-      <Dependent Role="Reparaciones">
-        <PropertyRef Name="cod_contratista" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Valores_mensuales_Contratos">
-    <End Role="Contratos" Type="InmobiliariaModel.Store.Contratos" Multiplicity="1" />
-    <End Role="Valores_mensuales" Type="InmobiliariaModel.Store.Valores_mensuales" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Contratos">
-        <PropertyRef Name="cod_contrato" />
-      </Principal>
-      <Dependent Role="Valores_mensuales">
-        <PropertyRef Name="cod_contrato" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Cuenta_corriente_Inquilinos">
-    <End Role="Inquilinos" Type="InmobiliariaModel.Store.Inquilinos" Multiplicity="1" />
-    <End Role="Cuenta_corriente" Type="InmobiliariaModel.Store.Cuentas_corrientes" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Inquilinos">
-        <PropertyRef Name="nro_inquilino" />
-      </Principal>
-      <Dependent Role="Cuenta_corriente">
-        <PropertyRef Name="nro_inquilino" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Fotos_Unidades">
-    <End Role="Unidades" Type="InmobiliariaModel.Store.Unidades" Multiplicity="1" />
-    <End Role="Fotos" Type="InmobiliariaModel.Store.Fotos" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unidades">
-        <PropertyRef Name="cod_unidad" />
-      </Principal>
-      <Dependent Role="Fotos">
-        <PropertyRef Name="cod_unidad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Mejoras_Unidades">
-    <End Role="Unidades" Type="InmobiliariaModel.Store.Unidades" Multiplicity="1" />
-    <End Role="Mejoras" Type="InmobiliariaModel.Store.Mejoras" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unidades">
-        <PropertyRef Name="cod_unidad" />
-      </Principal>
-      <Dependent Role="Mejoras">
-        <PropertyRef Name="cod_unidad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Pagos_seguro_Seguros">
-    <End Role="Seguros" Type="InmobiliariaModel.Store.Seguros" Multiplicity="1" />
-    <End Role="Pagos_seguro" Type="InmobiliariaModel.Store.Pagos_seguro" Multiplicity="0..1" />
-    <ReferentialConstraint>
-      <Principal Role="Seguros">
-        <PropertyRef Name="cod_seguro" />
-      </Principal>
-      <Dependent Role="Pagos_seguro">
-        <PropertyRef Name="cod_seguro" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Unidades_Propiedades">
-    <End Role="Propiedades" Type="InmobiliariaModel.Store.Propiedades" Multiplicity="1" />
-    <End Role="Unidades" Type="InmobiliariaModel.Store.Unidades" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Propiedades">
-        <PropertyRef Name="cod_propiedad" />
-      </Principal>
-      <Dependent Role="Unidades">
-        <PropertyRef Name="cod_propiedad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_Reparaciones_Unidades">
-    <End Role="Unidades" Type="InmobiliariaModel.Store.Unidades" Multiplicity="1" />
-    <End Role="Reparaciones" Type="InmobiliariaModel.Store.Reparaciones" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Unidades">
-        <PropertyRef Name="cod_unidad" />
-      </Principal>
-      <Dependent Role="Reparaciones">
-        <PropertyRef Name="cod_unidad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-</Schema></edmx:StorageModels>
+    <Schema Namespace="InmobiliariaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Administradores">
+          <Key>
+            <PropertyRef Name="IDadmin" />
+          </Key>
+          <Property Name="IDadmin" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+          <Property Name="tipo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Alquileres">
+          <Key>
+            <PropertyRef Name="nro_alquiler" />
+            <PropertyRef Name="cod_unidad" />
+            <PropertyRef Name="nro_inquilino" />
+          </Key>
+          <Property Name="nro_alquiler" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="nro_inquilino" Type="int" Nullable="false" />
+          <Property Name="estado" Type="varchar" MaxLength="50" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Contratistas">
+          <Key>
+            <PropertyRef Name="cod_contratista" />
+          </Key>
+          <Property Name="cod_contratista" Type="int" Nullable="false" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="disponibilidad" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Contratos">
+          <Key>
+            <PropertyRef Name="cod_contrato" />
+          </Key>
+          <Property Name="cod_contrato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nro_alquiler" Type="int" Nullable="false" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="nro_inquilino" Type="int" Nullable="false" />
+          <Property Name="fecha_realizacion" Type="date" />
+          <Property Name="fecha_caducidad" Type="date" />
+          <Property Name="descripcion_unidad" Type="varchar(max)" />
+          <Property Name="anexo" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Cuenta_corriente">
+          <Key>
+            <PropertyRef Name="nro_inquilino" />
+          </Key>
+          <Property Name="nro_inquilino" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="saldo" Type="float" />
+        </EntityType>
+        <EntityType Name="Fotos">
+          <Key>
+            <PropertyRef Name="cod_foto" />
+          </Key>
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="ruta_foto" Type="varchar(max)" Nullable="false" />
+          <Property Name="cod_foto" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inquilinos">
+          <Key>
+            <PropertyRef Name="nro_inquilino" />
+          </Key>
+          <Property Name="nro_inquilino" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="usuario" Type="varchar" MaxLength="50" />
+          <Property Name="contrasena" Type="varchar" MaxLength="50" />
+          <Property Name="nombre" Type="varchar" MaxLength="50" />
+          <Property Name="apellido" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" />
+          <Property Name="telefono" Type="varchar" MaxLength="50" />
+          <Property Name="e_mail" Type="varchar" MaxLength="50" />
+          <Property Name="dni" Type="varchar" MaxLength="50" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Mejoras">
+          <Key>
+            <PropertyRef Name="nro_mejora" />
+          </Key>
+          <Property Name="cod_contratista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nro_mejora" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="valor" Type="int" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="observaciones" Type="varchar(max)" />
+          <Property Name="detalles" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="NumeroUltimaFoto">
+          <Key>
+            <PropertyRef Name="NumeroFoto" />
+          </Key>
+          <Property Name="NumeroFoto" Type="int" Nullable="false" />
+          <Property Name="numero" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Pagos_alquiler">
+          <Key>
+            <PropertyRef Name="nro_alquiler" />
+            <PropertyRef Name="cod_unidad" />
+            <PropertyRef Name="nro_inquilino" />
+          </Key>
+          <Property Name="nro_alquiler" Type="int" Nullable="false" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="nro_inquilino" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="monto" Type="int" />
+        </EntityType>
+        <EntityType Name="Pagos_seguro">
+          <Key>
+            <PropertyRef Name="cod_seguro" />
+          </Key>
+          <Property Name="cod_seguro" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="monto" Type="int" />
+        </EntityType>
+        <EntityType Name="Propiedades">
+          <Key>
+            <PropertyRef Name="cod_propiedad" />
+          </Key>
+          <Property Name="cod_propiedad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="ciudad" Type="varchar" MaxLength="50" />
+          <Property Name="direccion" Type="varchar" MaxLength="50" />
+          <Property Name="m2" Type="float" />
+          <Property Name="descripcion" Type="varchar(max)" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Reparaciones">
+          <Key>
+            <PropertyRef Name="nro_reparacion" />
+          </Key>
+          <Property Name="nro_reparacion" Type="int" Nullable="false" />
+          <Property Name="cod_contratista" Type="int" Nullable="false" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="fecha" Type="date" />
+          <Property Name="valor" Type="int" />
+          <Property Name="detalles" Type="varchar(max)" />
+          <Property Name="observaciones" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="Seguros">
+          <Key>
+            <PropertyRef Name="cod_seguro" />
+          </Key>
+          <Property Name="cod_seguro" Type="int" Nullable="false" />
+          <Property Name="nro_alquiler" Type="int" Nullable="false" />
+          <Property Name="cod_unidad" Type="int" Nullable="false" />
+          <Property Name="nro_inquilino" Type="int" Nullable="false" />
+          <Property Name="fecha_desde" Type="date" />
+          <Property Name="fecha_hasta" Type="date" />
+          <Property Name="aseguradora" Type="varchar(max)" />
+          <Property Name="tipo_seguro" Type="varchar(max)" />
+          <Property Name="descripcion" Type="varchar(max)" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <EntityType Name="Unidades">
+          <Key>
+            <PropertyRef Name="cod_unidad" />
+          </Key>
+          <Property Name="cod_unidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="cod_propiedad" Type="int" Nullable="false" />
+          <Property Name="m2" Type="float" />
+          <Property Name="descripcion" Type="varchar(max)" />
+          <Property Name="estado" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Valores_mensuales">
+          <Key>
+            <PropertyRef Name="cod_contrato" />
+          </Key>
+          <Property Name="cod_contrato" Type="int" Nullable="false" />
+          <Property Name="valor" Type="int" />
+          <Property Name="fecha" Type="date" />
+        </EntityType>
+        <Association Name="FK_Alquileres_Inquilinos">
+          <End Role="Inquilinos" Type="Self.Inquilinos" Multiplicity="1" />
+          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Inquilinos">
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Alquileres">
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Contratos_Alquileres">
+          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="1" />
+          <End Role="Contratos" Type="Self.Contratos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alquileres">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Contratos">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Cuenta_corriente_Inquilinos">
+          <End Role="Inquilinos" Type="Self.Inquilinos" Multiplicity="1" />
+          <End Role="Cuenta_corriente" Type="Self.Cuenta_corriente" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Inquilinos">
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Cuenta_corriente">
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Mejoras_Contratistas">
+          <End Role="Contratistas" Type="Self.Contratistas" Multiplicity="1" />
+          <End Role="Mejoras" Type="Self.Mejoras" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contratistas">
+              <PropertyRef Name="cod_contratista" />
+            </Principal>
+            <Dependent Role="Mejoras">
+              <PropertyRef Name="cod_contratista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_alquiler_Alquileres">
+          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="1" />
+          <End Role="Pagos_alquiler" Type="Self.Pagos_alquiler" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Alquileres">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Pagos_alquiler">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Pagos_seguro_Seguros">
+          <End Role="Seguros" Type="Self.Seguros" Multiplicity="1" />
+          <End Role="Pagos_seguro" Type="Self.Pagos_seguro" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Seguros">
+              <PropertyRef Name="cod_seguro" />
+            </Principal>
+            <Dependent Role="Pagos_seguro">
+              <PropertyRef Name="cod_seguro" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reparaciones_Contratistas">
+          <End Role="Contratistas" Type="Self.Contratistas" Multiplicity="1" />
+          <End Role="Reparaciones" Type="Self.Reparaciones" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Contratistas">
+              <PropertyRef Name="cod_contratista" />
+            </Principal>
+            <Dependent Role="Reparaciones">
+              <PropertyRef Name="cod_contratista" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Seguros_Alquileres">
+          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="1" />
+          <End Role="Seguros" Type="Self.Seguros" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Alquileres">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Seguros">
+              <PropertyRef Name="nro_alquiler" />
+              <PropertyRef Name="cod_unidad" />
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Unidades_Propiedades">
+          <End Role="Propiedades" Type="Self.Propiedades" Multiplicity="1" />
+          <End Role="Unidades" Type="Self.Unidades" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Propiedades">
+              <PropertyRef Name="cod_propiedad" />
+            </Principal>
+            <Dependent Role="Unidades">
+              <PropertyRef Name="cod_propiedad" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Valores_mensuales_Contratos">
+          <End Role="Contratos" Type="Self.Contratos" Multiplicity="1" />
+          <End Role="Valores_mensuales" Type="Self.Valores_mensuales" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Contratos">
+              <PropertyRef Name="cod_contrato" />
+            </Principal>
+            <Dependent Role="Valores_mensuales">
+              <PropertyRef Name="cod_contrato" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="InmobiliariaModelStoreContainer">
+          <EntitySet Name="Administradores" EntityType="Self.Administradores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Alquileres" EntityType="Self.Alquileres" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contratistas" EntityType="Self.Contratistas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Contratos" EntityType="Self.Contratos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Cuenta_corriente" EntityType="Self.Cuenta_corriente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Fotos" EntityType="Self.Fotos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inquilinos" EntityType="Self.Inquilinos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Mejoras" EntityType="Self.Mejoras" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="NumeroUltimaFoto" EntityType="Self.NumeroUltimaFoto" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos_alquiler" EntityType="Self.Pagos_alquiler" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Pagos_seguro" EntityType="Self.Pagos_seguro" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Propiedades" EntityType="Self.Propiedades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reparaciones" EntityType="Self.Reparaciones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Seguros" EntityType="Self.Seguros" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Valores_mensuales" EntityType="Self.Valores_mensuales" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Alquileres_Inquilinos" Association="Self.FK_Alquileres_Inquilinos">
+            <End Role="Inquilinos" EntitySet="Inquilinos" />
+            <End Role="Alquileres" EntitySet="Alquileres" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Contratos_Alquileres" Association="Self.FK_Contratos_Alquileres">
+            <End Role="Alquileres" EntitySet="Alquileres" />
+            <End Role="Contratos" EntitySet="Contratos" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos" Association="Self.FK_Cuenta_corriente_Inquilinos">
+            <End Role="Inquilinos" EntitySet="Inquilinos" />
+            <End Role="Cuenta_corriente" EntitySet="Cuenta_corriente" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Mejoras_Contratistas" Association="Self.FK_Mejoras_Contratistas">
+            <End Role="Contratistas" EntitySet="Contratistas" />
+            <End Role="Mejoras" EntitySet="Mejoras" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_alquiler_Alquileres" Association="Self.FK_Pagos_alquiler_Alquileres">
+            <End Role="Alquileres" EntitySet="Alquileres" />
+            <End Role="Pagos_alquiler" EntitySet="Pagos_alquiler" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Pagos_seguro_Seguros" Association="Self.FK_Pagos_seguro_Seguros">
+            <End Role="Seguros" EntitySet="Seguros" />
+            <End Role="Pagos_seguro" EntitySet="Pagos_seguro" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reparaciones_Contratistas" Association="Self.FK_Reparaciones_Contratistas">
+            <End Role="Contratistas" EntitySet="Contratistas" />
+            <End Role="Reparaciones" EntitySet="Reparaciones" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Seguros_Alquileres" Association="Self.FK_Seguros_Alquileres">
+            <End Role="Alquileres" EntitySet="Alquileres" />
+            <End Role="Seguros" EntitySet="Seguros" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Unidades_Propiedades" Association="Self.FK_Unidades_Propiedades">
+            <End Role="Propiedades" EntitySet="Propiedades" />
+            <End Role="Unidades" EntitySet="Unidades" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Valores_mensuales_Contratos" Association="Self.FK_Valores_mensuales_Contratos">
+            <End Role="Contratos" EntitySet="Contratos" />
+            <End Role="Valores_mensuales" EntitySet="Valores_mensuales" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="InmobiliariaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -447,7 +396,7 @@
             <PropertyRef Name="cod_unidad" />
             <PropertyRef Name="nro_inquilino" />
           </Key>
-          <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
+          <Property Name="nro_alquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
           <Property Name="nro_inquilino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Inquilinos" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Alquileres" ToRole="Inquilinos" />
@@ -455,6 +404,7 @@
           <NavigationProperty Name="Contratos" Relationship="Self.FK_Contratos_Alquileres" FromRole="Alquileres" ToRole="Contratos" />
           <NavigationProperty Name="Pagos_alquiler" Relationship="Self.FK_Pagos_alquiler_Alquileres" FromRole="Alquileres" ToRole="Pagos_alquiler" />
           <NavigationProperty Name="Seguros" Relationship="Self.FK_Seguros_Alquileres" FromRole="Alquileres" ToRole="Seguros" />
+          <Property Name="estado" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Contratista">
           <Key>
@@ -473,24 +423,16 @@
           <Key>
             <PropertyRef Name="cod_contrato" />
           </Key>
-          <Property Name="cod_contrato" Type="Int32" Nullable="false" />
+          <Property Name="cod_contrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
           <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
           <Property Name="fecha_realizacion" Type="DateTime" Precision="0" />
           <Property Name="fecha_caducidad" Type="DateTime" Precision="0" />
-          <Property Name="descripcion_unidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="descripcion_unidad" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK_Contratos_Alquileres" FromRole="Contratos" ToRole="Alquileres" />
           <NavigationProperty Name="Valores_mensuales" Relationship="Self.FK_Valores_mensuales_Contratos" FromRole="Contratos" ToRole="Valores_mensuales" />
-        </EntityType>
-        <EntityType Name="Cuenta_corriente">
-          <Key>
-            <PropertyRef Name="nro_inquilino" />
-          </Key>
-          <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
-          <Property Name="saldo" Type="Double" />
-          <NavigationProperty Name="Inquilinos" Relationship="Self.FK_Cuenta_corriente_Inquilinos" FromRole="Cuenta_corriente" ToRole="Inquilinos" />
+          <Property Name="anexo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Foto">
           <Key>
@@ -512,11 +454,11 @@
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Inquilinos" ToRole="Alquileres" />
-          <NavigationProperty Name="Cuenta_corriente" Relationship="Self.FK_Cuenta_corriente_Inquilinos" FromRole="Inquilinos" ToRole="Cuenta_corriente" />
+          <NavigationProperty Name="Cuenta_corriente1" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Inquilino" ToRole="Cuenta_corriente1" />
+          <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Mejora">
           <Key>
@@ -728,18 +670,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Cuenta_corriente_Inquilinos">
-          <End Role="Inquilinos" Type="InmobiliariaModel.Inquilino" Multiplicity="1" />
-          <End Role="Cuenta_corriente" Type="Self.Cuenta_corriente" Multiplicity="0..1" />
-          <ReferentialConstraint>
-            <Principal Role="Inquilinos">
-              <PropertyRef Name="nro_inquilino" />
-            </Principal>
-            <Dependent Role="Cuenta_corriente">
-              <PropertyRef Name="nro_inquilino" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Fotos_Unidades">
           <End Role="Unidades" Type="InmobiliariaModel.Unidad" Multiplicity="1" />
           <End Role="Fotos" Type="InmobiliariaModel.Foto" Multiplicity="*" />
@@ -805,7 +735,6 @@
           <EntitySet Name="Alquileres" EntityType="InmobiliariaModel.Alquiler" />
           <EntitySet Name="Contratistas" EntityType="InmobiliariaModel.Contratista" />
           <EntitySet Name="Contratos" EntityType="InmobiliariaModel.Contrato" />
-          <EntitySet Name="Cuentas_corrientes" EntityType="Self.Cuenta_corriente" />
           <EntitySet Name="Fotos" EntityType="InmobiliariaModel.Foto" />
           <EntitySet Name="Inquilinos" EntityType="InmobiliariaModel.Inquilino" />
           <EntitySet Name="Mejoras" EntityType="InmobiliariaModel.Mejora" />
@@ -848,10 +777,6 @@
             <End Role="Contratos" EntitySet="Contratos" />
             <End Role="Valores_mensuales" EntitySet="Valores_mensuales" />
           </AssociationSet>
-          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos" Association="Self.FK_Cuenta_corriente_Inquilinos">
-            <End Role="Inquilinos" EntitySet="Inquilinos" />
-            <End Role="Cuenta_corriente" EntitySet="Cuentas_corrientes" />
-          </AssociationSet>
           <AssociationSet Name="FK_Fotos_Unidades" Association="Self.FK_Fotos_Unidades">
             <End Role="Unidades" EntitySet="Unidades" />
             <End Role="Fotos" EntitySet="Fotos" />
@@ -873,7 +798,13 @@
             <End Role="Reparaciones" EntitySet="Reparaciones" />
           </AssociationSet>
           <EntitySet Name="NumeroUltimaFoto" EntityType="InmobiliariaModel.NumeroUltimaFoto" />
-        </EntityContainer>
+          <EntitySet Name="Cuentas_corrientes" EntityType="InmobiliariaModel.Cuenta_corriente" />
+          <EntitySet Name="sysdiagrams" EntityType="InmobiliariaModel.sysdiagrams" />
+          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos1" Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1">
+            <End Role="Inquilino" EntitySet="Inquilinos" />
+            <End Role="Cuenta_corriente1" EntitySet="Cuentas_corrientes" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="NumeroUltimaFoto">
           <Key>
             <PropertyRef Name="NumeroFoto" />
@@ -881,6 +812,37 @@
           <Property Name="NumeroFoto" Type="Int32" Nullable="false" />
           <Property Name="numero" Type="Int32" Nullable="false" />
         </EntityType>
+        <EntityType Name="Cuenta_corriente">
+          <Key>
+            <PropertyRef Name="nro_inquilino" />
+          </Key>
+          <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
+          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="saldo" Type="Double" />
+          <NavigationProperty Name="Inquilinos" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Cuenta_corriente1" ToRole="Inquilino" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Cuenta_corriente_Inquilinos1">
+          <End Type="InmobiliariaModel.Inquilino" Role="Inquilino" Multiplicity="1" />
+          <End Type="InmobiliariaModel.Cuenta_corriente" Role="Cuenta_corriente1" Multiplicity="0..1" />
+          <ReferentialConstraint>
+            <Principal Role="Inquilino">
+              <PropertyRef Name="nro_inquilino" />
+            </Principal>
+            <Dependent Role="Cuenta_corriente1">
+              <PropertyRef Name="nro_inquilino" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -901,7 +863,8 @@
     <EntitySetMapping Name="Alquileres">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Alquiler)">
         <MappingFragment StoreEntitySet="Alquileres">
-          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+                <ScalarProperty Name="estado" ColumnName="estado" />
+                <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
         </MappingFragment>
@@ -922,22 +885,14 @@
     <EntitySetMapping Name="Contratos">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Contrato)">
         <MappingFragment StoreEntitySet="Contratos">
-          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="anexo" ColumnName="anexo" />
+                <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
           <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="fecha_realizacion" ColumnName="fecha_realizacion" />
           <ScalarProperty Name="fecha_caducidad" ColumnName="fecha_caducidad" />
           <ScalarProperty Name="descripcion_unidad" ColumnName="descripcion_unidad" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Cuentas_corrientes">
-      <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Cuenta_corriente)">
-        <MappingFragment StoreEntitySet="Cuentas_corrientes">
-          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
-          <ScalarProperty Name="saldo" ColumnName="saldo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -953,14 +908,14 @@
     <EntitySetMapping Name="Inquilinos">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Inquilino)">
         <MappingFragment StoreEntitySet="Inquilinos">
-          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="contrasena" ColumnName="contrasena" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="apellido" ColumnName="apellido" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
@@ -1067,7 +1022,27 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-  </EntityContainerMapping>
+          <EntitySetMapping Name="Cuentas_corrientes">
+            <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Cuenta_corriente)">
+              <MappingFragment StoreEntitySet="Cuenta_corriente">
+                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="InmobiliariaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
