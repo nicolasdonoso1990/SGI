@@ -125,6 +125,12 @@
     <Compile Include="frmPrueba.Designer.cs">
       <DependentUpon>frmPrueba.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmRegistrarPago.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRegistrarPago.Designer.cs">
+      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmTablaModificacionAdministrador.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -218,6 +224,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMiCuenta.resx">
       <DependentUpon>frmMiCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRegistrarPago.resx">
+      <DependentUpon>frmRegistrarPago.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmTablaModificacionAdministrador.resx">
       <DependentUpon>frmTablaModificacionAdministrador.cs</DependentUpon>
