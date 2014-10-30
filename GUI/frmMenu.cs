@@ -168,6 +168,12 @@ namespace GUI
             modificarRep.ShowDialog();
         }
 
+        private void registrarPagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarPago regisPago = new frmRegistrarPago();
+            regisPago.ShowDialog();
+        }
+
       
 
 
