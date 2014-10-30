@@ -49,6 +49,7 @@ namespace GUI
             UnidadLogic unLog = new UnidadLogic();
             unLog.CambiaEstadoAlquilado(uni);
 
+
             Alquiler alq=new Alquiler();
             alq.cod_unidad = uni.cod_unidad;
             alq.nro_inquilino = inq.nro_inquilino;
@@ -61,6 +62,9 @@ namespace GUI
             Contrato cont = new Contrato();
             cont.cod_unidad = uni.cod_unidad;
             cont.nro_alquiler = alq.nro_alquiler;
+
+            MessageBox.Show(alq.nro_alquiler.ToString());
+
             cont.nro_alquiler = alq.nro_alquiler;
             cont.descripcion_unidad = uni.descripcion;
             cont.fecha_realizacion = fechaFin;
@@ -68,14 +72,15 @@ namespace GUI
             cont.anexo = txtContrato.Text;
 
 
+            ContratoLogic contLog = new ContratoLogic();
+            contLog.AltaContrato(cont);
 
             AlquilerLogic alqLog = new AlquilerLogic();
             alqLog.AltaAlquiler(alq);
 
 
 
-            ContratoLogic contLog = new ContratoLogic();
-            contLog.AltaContrato(cont);
+           
 
             MessageBox.Show("El Alquiler fue dado de alta con exito", "Alta Alquiler");
             this.Dispose();

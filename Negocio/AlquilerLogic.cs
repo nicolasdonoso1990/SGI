@@ -22,6 +22,7 @@ namespace Negocio
         {
 
          alquilerData.AltaAlquiler(alq);
+         
           
 
         }

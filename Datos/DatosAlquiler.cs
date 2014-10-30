@@ -20,6 +20,9 @@ namespace Datos
                 
                 context.Alquileres.Add(alq);
              
+              
+
+
                 context.SaveChanges();
                 
 
