@@ -19,16 +19,25 @@ namespace GUI
         public frmRegistrarPago()
         {
             InitializeComponent();
-            this.RellenarGrillaInquilinos();
+            this.rellenarGrillaInquilinos();
+            this.trabadoInicial();
+
         }
 
-        public void RellenarGrillaInquilinos()
+        public void rellenarGrillaInquilinos()
         {
             dgvInquilinos.AutoGenerateColumns = false;
             InquilinoLogic inLog = new InquilinoLogic();
             ListaInquilinos =inLog.TodosInquilinos();
             dgvInquilinos.DataSource = ListaInquilinos;
             
+
+        }
+
+        public void trabadoInicial()
+        {
+            grpboxUnidad.Enabled = false;
+            grpboxPago.Enabled = false;
 
         }
     }
