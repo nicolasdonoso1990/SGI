@@ -21,21 +21,15 @@ namespace GUI
         private DateTime fechaIni;
         private DateTime fechaFin;
 
-        public frmAltaAlquilerFinal()
+        public frmAltaAlquilerFinal(Entidades.Propiedad prop, Entidades.Unidad uni, Entidades.Inquilino inq, DateTime fecInicio, DateTime fecFin)
         {
             InitializeComponent();
-            this.LlenarCampos();
-
-        }
-
-        public frmAltaAlquilerFinal(Entidades.Propiedad prop, Entidades.Unidad uni, Entidades.Inquilino inq,DateTime fecInicio,DateTime fecFin)
-        {
-          
             this.prop = prop;
             this.uni = uni;
             this.inq = inq;
             this.fechaIni = fecInicio;
             this.fechaFin = fecFin;
+            this.LlenarCampos();
 
         }
 
@@ -58,23 +52,38 @@ namespace GUI
             Alquiler alq=new Alquiler();
             alq.cod_unidad = uni.cod_unidad;
             alq.nro_inquilino = inq.nro_inquilino;
+            alq.estado = "habilitado";
 
-            AlquilerLogic alqLog = new AlquilerLogic();
-            Int32 numero= alqLog.AltaAlquiler(alq);
+          
 
+            
+            
             Contrato cont = new Contrato();
             cont.cod_unidad = uni.cod_unidad;
-            cont.nro_alquiler = numero;
+            cont.nro_alquiler = alq.nro_alquiler;
+            cont.nro_alquiler = alq.nro_alquiler;
             cont.descripcion_unidad = uni.descripcion;
             cont.fecha_realizacion = fechaFin;
             cont.fecha_caducidad = fechaFin;
             cont.anexo = txtContrato.Text;
+
+
+
+            AlquilerLogic alqLog = new AlquilerLogic();
+            alqLog.AltaAlquiler(alq);
+
+
 
             ContratoLogic contLog = new ContratoLogic();
             contLog.AltaContrato(cont);
 
             MessageBox.Show("El Alquiler fue dado de alta con exito", "Alta Alquiler");
             this.Dispose();
+
+        }
+
+        private void grpDatosAlquiler_Enter(object sender, EventArgs e)
+        {
 
         }
     }

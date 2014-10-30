@@ -64,17 +64,17 @@
             this.txtPropiedad.Enabled = false;
             this.txtPropiedad.Location = new System.Drawing.Point(183, 63);
             this.txtPropiedad.Name = "txtPropiedad";
-            this.txtPropiedad.Size = new System.Drawing.Size(34, 20);
+            this.txtPropiedad.Size = new System.Drawing.Size(219, 20);
             this.txtPropiedad.TabIndex = 24;
             // 
             // lblPropiedad
             // 
             this.lblPropiedad.AutoSize = true;
-            this.lblPropiedad.Location = new System.Drawing.Point(79, 66);
+            this.lblPropiedad.Location = new System.Drawing.Point(93, 66);
             this.lblPropiedad.Name = "lblPropiedad";
-            this.lblPropiedad.Size = new System.Drawing.Size(98, 13);
+            this.lblPropiedad.Size = new System.Drawing.Size(83, 13);
             this.lblPropiedad.TabIndex = 23;
-            this.lblPropiedad.Text = "Propiedad Numero:";
+            this.lblPropiedad.Text = "Calle propiedad:";
             // 
             // txtInquilino
             // 
@@ -128,6 +128,7 @@
             this.grpDatosAlquiler.TabIndex = 27;
             this.grpDatosAlquiler.TabStop = false;
             this.grpDatosAlquiler.Text = "Datos Alquiler";
+            this.grpDatosAlquiler.Enter += new System.EventHandler(this.grpDatosAlquiler_Enter);
             // 
             // btnRegistrar
             // 

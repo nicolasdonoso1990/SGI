@@ -59,6 +59,9 @@ namespace GUI
 
                  inq = InLog.BuscaInquilino(dni);
 
+                 frmAltaAlquilerFinal formFinal = new frmAltaAlquilerFinal(prop,uni,inq,fechaInicioAlq,fechaFinAlq);
+                 formFinal.ShowDialog();
+
              }
         }
 
@@ -129,7 +132,7 @@ namespace GUI
         {
             frmAltaAlquilerFinal altaFinal =new frmAltaAlquilerFinal(prop,uni,inq,fechaInicioAlq,fechaFinAlq);
             altaFinal.ShowDialog();
-            this.Dispose();
+            
 
 
         }

@@ -55,7 +55,6 @@
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             this.lblFechaInicio = new System.Windows.Forms.Label();
             this.lblFechaFin = new System.Windows.Forms.Label();
             this.fecha1 = new System.Windows.Forms.DateTimePicker();
@@ -233,7 +232,7 @@
             // 
             // btnInquilino
             // 
-            this.btnInquilino.Location = new System.Drawing.Point(241, 296);
+            this.btnInquilino.Location = new System.Drawing.Point(257, 296);
             this.btnInquilino.Name = "btnInquilino";
             this.btnInquilino.Size = new System.Drawing.Size(88, 29);
             this.btnInquilino.TabIndex = 9;
@@ -311,22 +310,12 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(31, 709);
+            this.btnSalir.Location = new System.Drawing.Point(552, 698);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(88, 29);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(1176, 709);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(88, 29);
-            this.btnRegistrar.TabIndex = 11;
-            this.btnRegistrar.Text = "Continuar";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // lblFechaInicio
             // 
@@ -391,7 +380,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1322, 750);
-            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grpAlquiler);
             this.Controls.Add(this.grpInquilino);
@@ -442,7 +430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Label lblFechaInicio;
         private System.Windows.Forms.Label lblFechaFin;
         private System.Windows.Forms.DateTimePicker fecha1;

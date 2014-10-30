@@ -18,11 +18,11 @@ namespace Negocio
         
         }
 
-        public Int32 AltaAlquiler(Alquiler alq) 
+        public void AltaAlquiler(Alquiler alq) 
         {
 
-           Int32 numero=alquilerData.AltaAlquiler(alq);
-           return numero;
+         alquilerData.AltaAlquiler(alq);
+          
 
         }
 
