@@ -102,15 +102,14 @@
         </EntityType>
         <EntityType Name="Pagos_alquiler">
           <Key>
-            <PropertyRef Name="nro_alquiler" />
-            <PropertyRef Name="cod_unidad" />
-            <PropertyRef Name="nro_inquilino" />
+            <PropertyRef Name="id_pago" />
           </Key>
           <Property Name="nro_alquiler" Type="int" Nullable="false" />
           <Property Name="cod_unidad" Type="int" Nullable="false" />
           <Property Name="nro_inquilino" Type="int" Nullable="false" />
           <Property Name="fecha" Type="date" />
           <Property Name="monto" Type="int" />
+          <Property Name="id_pago" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <EntityType Name="Pagos_seguro">
           <Key>
@@ -179,11 +178,13 @@
         </EntityType>
         <EntityType Name="Valores_mensuales">
           <Key>
-            <PropertyRef Name="cod_contrato" />
+            <PropertyRef Name="cod_ValorMensual" />
           </Key>
           <Property Name="cod_contrato" Type="int" Nullable="false" />
-          <Property Name="valor" Type="int" />
-          <Property Name="fecha" Type="date" />
+          <Property Name="valor" Type="float" />
+          <Property Name="fechaDesde" Type="date" />
+          <Property Name="fechaHasta" Type="date" />
+          <Property Name="cod_ValorMensual" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
         </EntityType>
         <Association Name="FK_Alquileres_Inquilinos">
           <End Role="Inquilinos" Type="Self.Inquilinos" Multiplicity="1" />
@@ -193,22 +194,6 @@
               <PropertyRef Name="nro_inquilino" />
             </Principal>
             <Dependent Role="Alquileres">
-              <PropertyRef Name="nro_inquilino" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_Contratos_Alquileres">
-          <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="1" />
-          <End Role="Contratos" Type="Self.Contratos" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Alquileres">
-              <PropertyRef Name="nro_alquiler" />
-              <PropertyRef Name="cod_unidad" />
-              <PropertyRef Name="nro_inquilino" />
-            </Principal>
-            <Dependent Role="Contratos">
-              <PropertyRef Name="nro_alquiler" />
-              <PropertyRef Name="cod_unidad" />
               <PropertyRef Name="nro_inquilino" />
             </Dependent>
           </ReferentialConstraint>
@@ -239,7 +224,7 @@
         </Association>
         <Association Name="FK_Pagos_alquiler_Alquileres">
           <End Role="Alquileres" Type="Self.Alquileres" Multiplicity="1" />
-          <End Role="Pagos_alquiler" Type="Self.Pagos_alquiler" Multiplicity="0..1" />
+          <End Role="Pagos_alquiler" Type="Self.Pagos_alquiler" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Alquileres">
               <PropertyRef Name="nro_alquiler" />
@@ -307,7 +292,7 @@
         </Association>
         <Association Name="FK_Valores_mensuales_Contratos">
           <End Role="Contratos" Type="Self.Contratos" Multiplicity="1" />
-          <End Role="Valores_mensuales" Type="Self.Valores_mensuales" Multiplicity="0..1" />
+          <End Role="Valores_mensuales" Type="Self.Valores_mensuales" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Contratos">
               <PropertyRef Name="cod_contrato" />
@@ -338,10 +323,6 @@
           <AssociationSet Name="FK_Alquileres_Inquilinos" Association="Self.FK_Alquileres_Inquilinos">
             <End Role="Inquilinos" EntitySet="Inquilinos" />
             <End Role="Alquileres" EntitySet="Alquileres" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Contratos_Alquileres" Association="Self.FK_Contratos_Alquileres">
-            <End Role="Alquileres" EntitySet="Alquileres" />
-            <End Role="Contratos" EntitySet="Contratos" />
           </AssociationSet>
           <AssociationSet Name="FK_Cuenta_corriente_Inquilinos" Association="Self.FK_Cuenta_corriente_Inquilinos">
             <End Role="Inquilinos" EntitySet="Inquilinos" />
@@ -476,9 +457,7 @@
         </EntityType>
         <EntityType Name="Pago_alquiler">
           <Key>
-            <PropertyRef Name="nro_alquiler" />
-            <PropertyRef Name="cod_unidad" />
-            <PropertyRef Name="nro_inquilino" />
+            <PropertyRef Name="id_pago" />
           </Key>
           <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
@@ -486,6 +465,7 @@
           <Property Name="fecha" Type="DateTime" Precision="0" />
           <Property Name="monto" Type="Int32" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK_Pagos_alquiler_Alquileres" FromRole="Pagos_alquiler" ToRole="Alquileres" />
+          <Property Name="id_pago" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <EntityType Name="Pago_seguro">
           <Key>
@@ -555,12 +535,14 @@
         </EntityType>
         <EntityType Name="Valor_mensual">
           <Key>
-            <PropertyRef Name="cod_contrato" />
+            <PropertyRef Name="cod_ValorMensual" />
           </Key>
           <Property Name="cod_contrato" Type="Int32" Nullable="false" />
-          <Property Name="valor" Type="Int32" />
-          <Property Name="fecha" Type="DateTime" Precision="0" />
+          <Property Name="valor" Type="Double" />
           <NavigationProperty Name="Contratos" Relationship="Self.FK_Valores_mensuales_Contratos" FromRole="Valores_mensuales" ToRole="Contratos" />
+          <Property Name="fechaDesde" Type="DateTime" Precision="0" />
+          <Property Name="fechaHasta" Type="DateTime" Precision="0" />
+          <Property Name="cod_ValorMensual" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
         </EntityType>
         <Association Name="FK_Alquileres_Inquilinos">
           <End Role="Inquilinos" Type="InmobiliariaModel.Inquilino" Multiplicity="1" />
@@ -604,7 +586,7 @@
         </Association>
         <Association Name="FK_Pagos_alquiler_Alquileres">
           <End Role="Alquileres" Type="InmobiliariaModel.Alquiler" Multiplicity="1" />
-          <End Role="Pagos_alquiler" Type="InmobiliariaModel.Pago_alquiler" Multiplicity="0..1" />
+          <End Role="Pagos_alquiler" Type="InmobiliariaModel.Pago_alquiler" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Alquileres">
               <PropertyRef Name="nro_alquiler" />
@@ -660,7 +642,7 @@
         </Association>
         <Association Name="FK_Valores_mensuales_Contratos">
           <End Role="Contratos" Type="InmobiliariaModel.Contrato" Multiplicity="1" />
-          <End Role="Valores_mensuales" Type="InmobiliariaModel.Valor_mensual" Multiplicity="0..1" />
+          <End Role="Valores_mensuales" Type="InmobiliariaModel.Valor_mensual" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Contratos">
               <PropertyRef Name="cod_contrato" />
@@ -937,7 +919,8 @@
     <EntitySetMapping Name="Pagos_alquiler">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Pago_alquiler)">
         <MappingFragment StoreEntitySet="Pagos_alquiler">
-          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="id_pago" ColumnName="id_pago" />
+                <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -1008,9 +991,11 @@
     <EntitySetMapping Name="Valores_mensuales">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Valor_mensual)">
         <MappingFragment StoreEntitySet="Valores_mensuales">
-          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="cod_ValorMensual" ColumnName="cod_ValorMensual" />
+                <ScalarProperty Name="fechaHasta" ColumnName="fechaHasta" />
+                <ScalarProperty Name="fechaDesde" ColumnName="fechaDesde" />
+                <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
           <ScalarProperty Name="valor" ColumnName="valor" />
-          <ScalarProperty Name="fecha" ColumnName="fecha" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1057,7 +1042,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

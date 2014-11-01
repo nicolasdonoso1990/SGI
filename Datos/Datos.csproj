@@ -58,6 +58,7 @@
     <Compile Include="DatosReparacion.cs" />
     <Compile Include="DatosUltimoNumeroFoto.cs" />
     <Compile Include="DatosUnidad.cs" />
+    <Compile Include="DatosValorMensual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

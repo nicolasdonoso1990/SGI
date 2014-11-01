@@ -27,7 +27,12 @@ namespace Negocio
 
         }
 
-
+        public Int32 UltimoNumeroAlquiler(Alquiler alq) 
+        {
+            Int32 num = alquilerData.BuscaNumeroAlquiler(alq);
+            return num;
+        
+        }
 
 
     }

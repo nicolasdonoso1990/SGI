@@ -86,9 +86,9 @@ namespace GUI
                 grpUnidades.Enabled = true;
 
                 UnidadLogic unLog=new UnidadLogic();
-
-                ListaUnidades = unLog.BuscaUnidades(prop); 
-
+                ListaUnidades = unLog.BuscaUnidadesNoAlquiladas(prop);
+                
+               
                 dataUnidad.AutoGenerateColumns = false;
                 dataUnidad.DataSource = ListaUnidades;
             }       

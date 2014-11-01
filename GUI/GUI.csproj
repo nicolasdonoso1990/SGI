@@ -342,6 +342,16 @@
   <ItemGroup>
     <Folder Include="Resources\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\cancelar.png" />
+    <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\eliminar.png" />
+    <Content Include="Imagenes\limpiar.png" />
+    <Content Include="Imagenes\log_in.png" />
+    <Content Include="Imagenes\ok.png" />
+    <Content Include="Imagenes\salir.png" />
+    <Content Include="Imagenes\usuario.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

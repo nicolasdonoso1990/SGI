@@ -20,6 +20,9 @@ namespace GUI
         private Entidades.Inquilino inq;
         private DateTime fechaIni;
         private DateTime fechaFin;
+        private Contrato cont;
+        public Int32 numero  { get; set; }
+
 
         public frmAltaAlquilerFinal(Entidades.Propiedad prop, Entidades.Unidad uni, Entidades.Inquilino inq, DateTime fecInicio, DateTime fecFin)
         {
@@ -39,32 +42,44 @@ namespace GUI
         txtInquilino.Text=inq.dni;
         txtPropiedad.Text=prop.direccion;
         txtUnidad.Text=uni.cod_unidad.ToString();
-        
+      
         
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
+        }
+
+   
+   
+
+        private void btnAceptar_Click(object sender, EventArgs e)
+        {
+            grpValores.Enabled = true;
+
             UnidadLogic unLog = new UnidadLogic();
             unLog.CambiaEstadoAlquilado(uni);
 
 
-            Alquiler alq=new Alquiler();
+            Alquiler alq = new Alquiler();
             alq.cod_unidad = uni.cod_unidad;
             alq.nro_inquilino = inq.nro_inquilino;
             alq.estado = "habilitado";
 
-          
+            AlquilerLogic alqLog = new AlquilerLogic();
+            alqLog.AltaAlquiler(alq);
 
-            
-            
-            Contrato cont = new Contrato();
+
+            Int32 numeroAlq = alqLog.UltimoNumeroAlquiler(alq);
+
+
+
+            cont = new Contrato();
             cont.cod_unidad = uni.cod_unidad;
-            cont.nro_alquiler = alq.nro_alquiler;
+            cont.nro_alquiler = numeroAlq;
 
-            MessageBox.Show(alq.nro_alquiler.ToString());
-
+            
             cont.nro_alquiler = alq.nro_alquiler;
             cont.descripcion_unidad = uni.descripcion;
             cont.fecha_realizacion = fechaFin;
@@ -72,23 +87,58 @@ namespace GUI
             cont.anexo = txtContrato.Text;
 
 
+
+            
+
             ContratoLogic contLog = new ContratoLogic();
             contLog.AltaContrato(cont);
 
-            AlquilerLogic alqLog = new AlquilerLogic();
-            alqLog.AltaAlquiler(alq);
 
-
-
-           
-
-            MessageBox.Show("El Alquiler fue dado de alta con exito", "Alta Alquiler");
-            this.Dispose();
-
+            //MessageBox.Show("El Alquiler fue dado de alta con exito", "Alta Alquiler");
         }
 
-        private void grpDatosAlquiler_Enter(object sender, EventArgs e)
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
+
+            if (fechaDesde.Value.Date >= fechaIni && fechaHasta.Value.Date <= fechaFin)
+            {
+
+
+                Valor_mensual valor = new Valor_mensual();
+                valor.cod_contrato = cont.cod_contrato;
+                valor.fechaDesde = fechaDesde.Value.Date;
+                valor.fechaHasta = fechaHasta.Value.Date;
+                valor.valor = Convert.ToDouble(txtValor.Text);
+
+                ValorMensualLogic valLog = new ValorMensualLogic();
+                valLog.altaValoresMensuales(valor);
+
+                MessageBox.Show("Valor mensual dado de alta con exito.", "Alta Alquiler");
+
+
+
+            }
+
+            else 
+            {
+                MessageBox.Show("Las fechas exceden el tiempo establecido en el contrato", "Error Alta");
+            
+            }
+
+
+            if (MessageBox.Show("¿Desea agregar otro valor mensual?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                txtValor.Clear();
+
+
+
+            }
+            else
+            {
+                this.Dispose();    
+            }
+
+
 
         }
     }

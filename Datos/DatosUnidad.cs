@@ -47,6 +47,26 @@ namespace Datos
         
         }
 
+
+        public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)
+        {
+
+            using (var context = new InmobiliariaEntities())
+            {
+
+                var query = from c in context.Unidades where c.cod_propiedad == pro.cod_propiedad && c.estado == "habilitado"  select c;
+                return query.ToList();
+
+
+
+            }
+
+
+
+
+        }
+
+
         public void BajaUnidad(string codigo) 
         {
             using (var context = new InmobiliariaEntities())

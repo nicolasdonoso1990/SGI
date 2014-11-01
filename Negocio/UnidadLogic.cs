@@ -64,6 +64,16 @@ namespace Negocio
             UnidadData.CambiaEstadoUnidad(uni);
         }
 
+        public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)
+        {
+
+            List<Unidad> unidades = UnidadData.BuscaUnidadesNoAlquiladas(pro);
+            return unidades;
+        
+        
+        }
+
+
 
 
     }

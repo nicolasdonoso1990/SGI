@@ -23,6 +23,7 @@ namespace Datos
 
 
                 Administrador adm = new Administrador();
+              
 
                 if (tipo == "SuperUsuario") 
                 {

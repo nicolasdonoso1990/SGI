@@ -60,6 +60,7 @@
     <Compile Include="ReparacionLogic.cs" />
     <Compile Include="UltimoNumeroLogic.cs" />
     <Compile Include="UnidadLogic.cs" />
+    <Compile Include="ValorMensualLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

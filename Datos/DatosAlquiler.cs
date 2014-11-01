@@ -34,6 +34,19 @@ namespace Datos
         }
 
 
+        public Int32 BuscaNumeroAlquiler(Alquiler alq) 
+        {
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Alquiler a = context.Alquileres.First(i => i.cod_unidad == alq.cod_unidad && i.nro_inquilino == alq.nro_inquilino && i.estado=="habilitado");
+                return (a.nro_alquiler);            
+            
+            }
+        
+        
+        
+        }
+
 
 
 
