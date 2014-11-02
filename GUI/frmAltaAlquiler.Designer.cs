@@ -28,78 +28,72 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.groupPropiedades = new System.Windows.Forms.GroupBox();
-            this.btnSeleccionarPropiedad = new System.Windows.Forms.Button();
+            this.grpPropiedades = new System.Windows.Forms.GroupBox();
+            this.btnPropiedad = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataPropiedad = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupUnidades = new System.Windows.Forms.GroupBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.grpUnidades = new System.Windows.Forms.GroupBox();
+            this.btnUnidades = new System.Windows.Forms.Button();
+            this.dataUnidad = new System.Windows.Forms.DataGridView();
             this.codigoUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.met = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.grpInquilino = new System.Windows.Forms.GroupBox();
+            this.btnInquilino = new System.Windows.Forms.Button();
             this.txtBusca = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.dataInquilino = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblFechaInicio = new System.Windows.Forms.Label();
+            this.lblFechaFin = new System.Windows.Forms.Label();
+            this.fecha1 = new System.Windows.Forms.DateTimePicker();
+            this.fecha2 = new System.Windows.Forms.DateTimePicker();
+            this.btnFecha = new System.Windows.Forms.Button();
             this.grpAlquiler = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.groupPropiedades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.groupUnidades.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.grpPropiedades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPropiedad)).BeginInit();
+            this.grpUnidades.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataUnidad)).BeginInit();
+            this.grpInquilino.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataInquilino)).BeginInit();
             this.grpAlquiler.SuspendLayout();
             this.SuspendLayout();
             // 
-            // groupPropiedades
+            // grpPropiedades
             // 
-            this.groupPropiedades.BackColor = System.Drawing.Color.Transparent;
-            this.groupPropiedades.Controls.Add(this.btnSeleccionarPropiedad);
-            this.groupPropiedades.Controls.Add(this.txtDireccion);
-            this.groupPropiedades.Controls.Add(this.lblDireccion);
-            this.groupPropiedades.Controls.Add(this.dataGridView1);
-            this.groupPropiedades.Location = new System.Drawing.Point(12, 12);
-            this.groupPropiedades.Name = "groupPropiedades";
-            this.groupPropiedades.Size = new System.Drawing.Size(584, 308);
-            this.groupPropiedades.TabIndex = 6;
-            this.groupPropiedades.TabStop = false;
-            this.groupPropiedades.Text = "Propiedades";
+            this.grpPropiedades.BackColor = System.Drawing.Color.Transparent;
+            this.grpPropiedades.Controls.Add(this.btnPropiedad);
+            this.grpPropiedades.Controls.Add(this.txtDireccion);
+            this.grpPropiedades.Controls.Add(this.lblDireccion);
+            this.grpPropiedades.Controls.Add(this.dataPropiedad);
+            this.grpPropiedades.Enabled = false;
+            this.grpPropiedades.Location = new System.Drawing.Point(444, 12);
+            this.grpPropiedades.Name = "grpPropiedades";
+            this.grpPropiedades.Size = new System.Drawing.Size(584, 308);
+            this.grpPropiedades.TabIndex = 6;
+            this.grpPropiedades.TabStop = false;
+            this.grpPropiedades.Text = "Propiedades";
             // 
-            // btnSeleccionarPropiedad
+            // btnPropiedad
             // 
-            this.btnSeleccionarPropiedad.Location = new System.Drawing.Point(241, 257);
-            this.btnSeleccionarPropiedad.Name = "btnSeleccionarPropiedad";
-            this.btnSeleccionarPropiedad.Size = new System.Drawing.Size(88, 29);
-            this.btnSeleccionarPropiedad.TabIndex = 8;
-            this.btnSeleccionarPropiedad.Text = "Seleccionar";
-            this.btnSeleccionarPropiedad.UseVisualStyleBackColor = true;
+            this.btnPropiedad.Location = new System.Drawing.Point(241, 257);
+            this.btnPropiedad.Name = "btnPropiedad";
+            this.btnPropiedad.Size = new System.Drawing.Size(88, 29);
+            this.btnPropiedad.TabIndex = 8;
+            this.btnPropiedad.Text = "Seleccionar";
+            this.btnPropiedad.UseVisualStyleBackColor = true;
+            this.btnPropiedad.Click += new System.EventHandler(this.btnPropiedad_Click);
             // 
             // txtDireccion
             // 
@@ -117,20 +111,20 @@
             this.lblDireccion.TabIndex = 6;
             this.lblDireccion.Text = "Direccion:";
             // 
-            // dataGridView1
+            // dataPropiedad
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataPropiedad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataPropiedad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Codigo,
             this.ciudad,
             this.direccion,
             this.metros,
             this.descripcion});
-            this.dataGridView1.Location = new System.Drawing.Point(19, 73);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(546, 152);
-            this.dataGridView1.TabIndex = 1;
+            this.dataPropiedad.Location = new System.Drawing.Point(19, 73);
+            this.dataPropiedad.Name = "dataPropiedad";
+            this.dataPropiedad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataPropiedad.Size = new System.Drawing.Size(546, 152);
+            this.dataPropiedad.TabIndex = 1;
             // 
             // Codigo
             // 
@@ -166,40 +160,41 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
-            // groupUnidades
+            // grpUnidades
             // 
-            this.groupUnidades.BackColor = System.Drawing.Color.Transparent;
-            this.groupUnidades.Controls.Add(this.button1);
-            this.groupUnidades.Controls.Add(this.dataGridView2);
-            this.groupUnidades.Enabled = false;
-            this.groupUnidades.Location = new System.Drawing.Point(649, 21);
-            this.groupUnidades.Name = "groupUnidades";
-            this.groupUnidades.Size = new System.Drawing.Size(581, 299);
-            this.groupUnidades.TabIndex = 7;
-            this.groupUnidades.TabStop = false;
-            this.groupUnidades.Text = "Unidades";
+            this.grpUnidades.BackColor = System.Drawing.Color.Transparent;
+            this.grpUnidades.Controls.Add(this.btnUnidades);
+            this.grpUnidades.Controls.Add(this.dataUnidad);
+            this.grpUnidades.Enabled = false;
+            this.grpUnidades.Location = new System.Drawing.Point(3, 344);
+            this.grpUnidades.Name = "grpUnidades";
+            this.grpUnidades.Size = new System.Drawing.Size(581, 299);
+            this.grpUnidades.TabIndex = 7;
+            this.grpUnidades.TabStop = false;
+            this.grpUnidades.Text = "Unidades";
             // 
-            // button1
+            // btnUnidades
             // 
-            this.button1.Location = new System.Drawing.Point(261, 248);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(88, 29);
-            this.button1.TabIndex = 9;
-            this.button1.Text = "Seleccionar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnUnidades.Location = new System.Drawing.Point(261, 248);
+            this.btnUnidades.Name = "btnUnidades";
+            this.btnUnidades.Size = new System.Drawing.Size(88, 29);
+            this.btnUnidades.TabIndex = 9;
+            this.btnUnidades.Text = "Seleccionar";
+            this.btnUnidades.UseVisualStyleBackColor = true;
+            this.btnUnidades.Click += new System.EventHandler(this.btnUnidades_Click);
             // 
-            // dataGridView2
+            // dataUnidad
             // 
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataUnidad.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataUnidad.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.codigoUnidad,
             this.descrip,
             this.met});
-            this.dataGridView2.Location = new System.Drawing.Point(18, 33);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(543, 194);
-            this.dataGridView2.TabIndex = 0;
+            this.dataUnidad.Location = new System.Drawing.Point(18, 33);
+            this.dataUnidad.Name = "dataUnidad";
+            this.dataUnidad.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataUnidad.Size = new System.Drawing.Size(543, 194);
+            this.dataUnidad.TabIndex = 0;
             // 
             // codigoUnidad
             // 
@@ -220,28 +215,30 @@
             this.met.HeaderText = "Metros Cuadrados";
             this.met.Name = "met";
             // 
-            // groupBox1
+            // grpInquilino
             // 
-            this.groupBox1.BackColor = System.Drawing.Color.Transparent;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.txtBusca);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.dataGridView3);
-            this.groupBox1.Location = new System.Drawing.Point(12, 341);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(584, 331);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Seleccione Inquilino";
+            this.grpInquilino.BackColor = System.Drawing.Color.Transparent;
+            this.grpInquilino.Controls.Add(this.btnInquilino);
+            this.grpInquilino.Controls.Add(this.txtBusca);
+            this.grpInquilino.Controls.Add(this.label1);
+            this.grpInquilino.Controls.Add(this.dataInquilino);
+            this.grpInquilino.Enabled = false;
+            this.grpInquilino.Location = new System.Drawing.Point(653, 344);
+            this.grpInquilino.Name = "grpInquilino";
+            this.grpInquilino.Size = new System.Drawing.Size(584, 331);
+            this.grpInquilino.TabIndex = 8;
+            this.grpInquilino.TabStop = false;
+            this.grpInquilino.Text = "Seleccione Inquilino";
             // 
-            // button2
+            // btnInquilino
             // 
-            this.button2.Location = new System.Drawing.Point(241, 296);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 29);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Seleccionar";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnInquilino.Location = new System.Drawing.Point(257, 296);
+            this.btnInquilino.Name = "btnInquilino";
+            this.btnInquilino.Size = new System.Drawing.Size(88, 29);
+            this.btnInquilino.TabIndex = 9;
+            this.btnInquilino.Text = "Seleccionar";
+            this.btnInquilino.UseVisualStyleBackColor = true;
+            this.btnInquilino.Click += new System.EventHandler(this.btnInquilino_Click);
             // 
             // txtBusca
             // 
@@ -259,22 +256,22 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Ingrese DNI:";
             // 
-            // dataGridView3
+            // dataInquilino
             // 
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataInquilino.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataInquilino.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nombre,
             this.apellido,
             this.dni,
             this.dataGridViewTextBoxColumn1,
             this.telefono});
-            this.dataGridView3.Location = new System.Drawing.Point(13, 80);
-            this.dataGridView3.MultiSelect = false;
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(552, 195);
-            this.dataGridView3.TabIndex = 1;
+            this.dataInquilino.Location = new System.Drawing.Point(13, 80);
+            this.dataInquilino.MultiSelect = false;
+            this.dataInquilino.Name = "dataInquilino";
+            this.dataInquilino.ReadOnly = true;
+            this.dataInquilino.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataInquilino.Size = new System.Drawing.Size(552, 195);
+            this.dataInquilino.TabIndex = 1;
             // 
             // nombre
             // 
@@ -311,142 +308,71 @@
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Location = new System.Drawing.Point(552, 698);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(88, 29);
+            this.btnSalir.TabIndex = 10;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            // 
+            // lblFechaInicio
+            // 
+            this.lblFechaInicio.AutoSize = true;
+            this.lblFechaInicio.Location = new System.Drawing.Point(13, 33);
+            this.lblFechaInicio.Name = "lblFechaInicio";
+            this.lblFechaInicio.Size = new System.Drawing.Size(67, 13);
+            this.lblFechaInicio.TabIndex = 7;
+            this.lblFechaInicio.Text = "Fecha inicio:";
+            // 
+            // lblFechaFin
+            // 
+            this.lblFechaFin.AutoSize = true;
+            this.lblFechaFin.Location = new System.Drawing.Point(26, 72);
+            this.lblFechaFin.Name = "lblFechaFin";
+            this.lblFechaFin.Size = new System.Drawing.Size(54, 13);
+            this.lblFechaFin.TabIndex = 8;
+            this.lblFechaFin.Text = "Fecha fin:";
+            // 
+            // fecha1
+            // 
+            this.fecha1.Location = new System.Drawing.Point(86, 30);
+            this.fecha1.Name = "fecha1";
+            this.fecha1.Size = new System.Drawing.Size(200, 20);
+            this.fecha1.TabIndex = 9;
+            // 
+            // fecha2
+            // 
+            this.fecha2.Location = new System.Drawing.Point(86, 65);
+            this.fecha2.Name = "fecha2";
+            this.fecha2.Size = new System.Drawing.Size(200, 20);
+            this.fecha2.TabIndex = 10;
+            // 
+            // btnFecha
+            // 
+            this.btnFecha.Location = new System.Drawing.Point(138, 119);
+            this.btnFecha.Name = "btnFecha";
+            this.btnFecha.Size = new System.Drawing.Size(88, 29);
+            this.btnFecha.TabIndex = 9;
+            this.btnFecha.Text = "Seleccionar";
+            this.btnFecha.UseVisualStyleBackColor = true;
+            this.btnFecha.Click += new System.EventHandler(this.btnFecha_Click);
+            // 
             // grpAlquiler
             // 
             this.grpAlquiler.BackColor = System.Drawing.Color.Transparent;
-            this.grpAlquiler.Controls.Add(this.textBox4);
-            this.grpAlquiler.Controls.Add(this.label7);
-            this.grpAlquiler.Controls.Add(this.textBox3);
-            this.grpAlquiler.Controls.Add(this.label6);
-            this.grpAlquiler.Controls.Add(this.textBox2);
-            this.grpAlquiler.Controls.Add(this.label5);
-            this.grpAlquiler.Controls.Add(this.textBox1);
-            this.grpAlquiler.Controls.Add(this.label4);
-            this.grpAlquiler.Controls.Add(this.dateTimePicker2);
-            this.grpAlquiler.Controls.Add(this.dateTimePicker1);
-            this.grpAlquiler.Controls.Add(this.label3);
-            this.grpAlquiler.Controls.Add(this.label2);
-            this.grpAlquiler.Location = new System.Drawing.Point(649, 341);
+            this.grpAlquiler.Controls.Add(this.btnFecha);
+            this.grpAlquiler.Controls.Add(this.fecha2);
+            this.grpAlquiler.Controls.Add(this.fecha1);
+            this.grpAlquiler.Controls.Add(this.lblFechaFin);
+            this.grpAlquiler.Controls.Add(this.lblFechaInicio);
+            this.grpAlquiler.Location = new System.Drawing.Point(21, 12);
             this.grpAlquiler.Name = "grpAlquiler";
-            this.grpAlquiler.Size = new System.Drawing.Size(581, 239);
+            this.grpAlquiler.Size = new System.Drawing.Size(357, 177);
             this.grpAlquiler.TabIndex = 9;
             this.grpAlquiler.TabStop = false;
-            this.grpAlquiler.Text = "Datos Alquiler y Contrato";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(365, 103);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 107);
-            this.textBox1.TabIndex = 12;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(258, 103);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(99, 26);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Cuestiones anexas \r\n            al contrato:";
-            // 
-            // dateTimePicker2
-            // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(361, 62);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 10;
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(361, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 9;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(301, 68);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 13);
-            this.label3.TabIndex = 8;
-            this.label3.Text = "Fecha fin:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(288, 29);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 13);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Fecha inicio:";
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(31, 709);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(88, 29);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Salir";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(1176, 709);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(88, 29);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Registrar";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(64, 30);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(49, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Inquilino:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(119, 29);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(113, 20);
-            this.textBox2.TabIndex = 14;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(15, 80);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(98, 13);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Propiedad Numero:";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(119, 77);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 20);
-            this.textBox3.TabIndex = 16;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(29, 119);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(84, 13);
-            this.label7.TabIndex = 17;
-            this.label7.Text = "Unidad Numero:";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(119, 116);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(34, 20);
-            this.textBox4.TabIndex = 18;
+            this.grpAlquiler.Text = "Datos fecha Alquiler";
             // 
             // frmAltaAlquiler
             // 
@@ -454,22 +380,21 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1322, 750);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grpAlquiler);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupUnidades);
-            this.Controls.Add(this.groupPropiedades);
+            this.Controls.Add(this.grpInquilino);
+            this.Controls.Add(this.grpUnidades);
+            this.Controls.Add(this.grpPropiedades);
             this.Name = "frmAltaAlquiler";
             this.Text = "Alta Alquiler";
-            this.groupPropiedades.ResumeLayout(false);
-            this.groupPropiedades.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.groupUnidades.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.grpPropiedades.ResumeLayout(false);
+            this.grpPropiedades.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataPropiedad)).EndInit();
+            this.grpUnidades.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataUnidad)).EndInit();
+            this.grpInquilino.ResumeLayout(false);
+            this.grpInquilino.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataInquilino)).EndInit();
             this.grpAlquiler.ResumeLayout(false);
             this.grpAlquiler.PerformLayout();
             this.ResumeLayout(false);
@@ -478,46 +403,38 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox groupPropiedades;
-        private System.Windows.Forms.Button btnSeleccionarPropiedad;
+        private System.Windows.Forms.GroupBox grpPropiedades;
+        private System.Windows.Forms.Button btnPropiedad;
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataPropiedad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ciudad;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn metros;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.GroupBox groupUnidades;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.GroupBox grpUnidades;
+        private System.Windows.Forms.Button btnUnidades;
+        private System.Windows.Forms.DataGridView dataUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn met;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox grpInquilino;
+        private System.Windows.Forms.Button btnInquilino;
         private System.Windows.Forms.TextBox txtBusca;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView3;
+        private System.Windows.Forms.DataGridView dataInquilino;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellido;
         private System.Windows.Forms.DataGridViewTextBoxColumn dni;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Label lblFechaInicio;
+        private System.Windows.Forms.Label lblFechaFin;
+        private System.Windows.Forms.DateTimePicker fecha1;
+        private System.Windows.Forms.DateTimePicker fecha2;
+        private System.Windows.Forms.Button btnFecha;
         private System.Windows.Forms.GroupBox grpAlquiler;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label5;
     }
 }

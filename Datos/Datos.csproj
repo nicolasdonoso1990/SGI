@@ -50,6 +50,7 @@
     <Compile Include="DatosAlquiler.cs" />
     <Compile Include="DatosContratista.cs" />
     <Compile Include="DatosAdministrador.cs" />
+    <Compile Include="DatosContrato.cs" />
     <Compile Include="DatosFoto.cs" />
     <Compile Include="DatosInquilino.cs" />
     <Compile Include="DatosMejora.cs" />
@@ -57,6 +58,7 @@
     <Compile Include="DatosReparacion.cs" />
     <Compile Include="DatosUltimoNumeroFoto.cs" />
     <Compile Include="DatosUnidad.cs" />
+    <Compile Include="DatosValorMensual.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

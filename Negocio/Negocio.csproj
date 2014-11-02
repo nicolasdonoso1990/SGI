@@ -50,14 +50,17 @@
     <Compile Include="AdministradorLogic.cs" />
     <Compile Include="AlquilerLogic.cs" />
     <Compile Include="ContratistaLogic.cs" />
+    <Compile Include="ContratoLogic.cs" />
     <Compile Include="FotoLogic.cs" />
     <Compile Include="InquilinoLogic.cs" />
+    <Compile Include="PagoAlquilerLogic.cs" />
     <Compile Include="MejoraLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadLogic.cs" />
     <Compile Include="ReparacionLogic.cs" />
     <Compile Include="UltimoNumeroLogic.cs" />
     <Compile Include="UnidadLogic.cs" />
+    <Compile Include="ValorMensualLogic.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

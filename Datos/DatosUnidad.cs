@@ -35,7 +35,7 @@ namespace Datos
             using (var context = new InmobiliariaEntities()) 
             {
 
-                var query=from c in context.Unidades where c.cod_propiedad==pro.cod_propiedad && c.estado=="habilitado" select c;
+                var query=from c in context.Unidades where c.cod_propiedad==pro.cod_propiedad && c.estado=="habilitado" || c.estado=="alquilado" select c;
                 return query.ToList();
 
 
@@ -46,6 +46,26 @@ namespace Datos
         
         
         }
+
+
+        public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)
+        {
+
+            using (var context = new InmobiliariaEntities())
+            {
+
+                var query = from c in context.Unidades where c.cod_propiedad == pro.cod_propiedad && c.estado == "habilitado"  select c;
+                return query.ToList();
+
+
+
+            }
+
+
+
+
+        }
+
 
         public void BajaUnidad(string codigo) 
         {
@@ -98,18 +118,27 @@ namespace Datos
         
         }
 
-        
 
 
 
+        public void CambiaEstadoUnidad(Unidad uni)
+        {
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Unidad u = context.Unidades.First(i => i.cod_unidad == uni.cod_unidad);
+                u.estado = "alquilado";
+                context.SaveChanges();
+            
+            }
 
 
+
+        }
 
 
 
         }
  
-
 
 
 

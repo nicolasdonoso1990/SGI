@@ -12,15 +12,12 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Pago_alquiler
+    public partial class sysdiagrams
     {
-        public int nro_alquiler { get; set; }
-        public int cod_unidad { get; set; }
-        public int nro_inquilino { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
-        public Nullable<int> monto { get; set; }
-        public int id_pago { get; set; }
-    
-        public virtual Alquiler Alquileres { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
