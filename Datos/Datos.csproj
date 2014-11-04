@@ -53,6 +53,7 @@
     <Compile Include="DatosFoto.cs" />
     <Compile Include="DatosInquilino.cs" />
     <Compile Include="DatosMejora.cs" />
+    <Compile Include="DatosPagos_Alquiler.cs" />
     <Compile Include="DatosPropiedad.cs" />
     <Compile Include="DatosReparacion.cs" />
     <Compile Include="DatosUltimoNumeroFoto.cs" />
