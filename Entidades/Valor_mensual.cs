@@ -16,7 +16,9 @@ namespace Entidades
     {
         public int cod_contrato { get; set; }
         public Nullable<int> valor { get; set; }
-        public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<System.DateTime> fechaDesde { get; set; }
+        public Nullable<System.DateTime> fechaHasta { get; set; }
+        public int cod_ValorMensual { get; set; }
     
         public virtual Contrato Contratos { get; set; }
     }

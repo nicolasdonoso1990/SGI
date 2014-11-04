@@ -17,17 +17,19 @@ namespace Entidades
         public Alquiler()
         {
             this.Contratos = new HashSet<Contrato>();
+            this.Pagos_alquiler = new HashSet<Pago_alquiler>();
             this.Seguros = new HashSet<Seguro>();
         }
     
         public int nro_alquiler { get; set; }
         public int cod_unidad { get; set; }
         public int nro_inquilino { get; set; }
+        public string estado { get; set; }
     
         public virtual Inquilino Inquilinos { get; set; }
         public virtual Unidad Unidades { get; set; }
         public virtual ICollection<Contrato> Contratos { get; set; }
-        public virtual Pago_alquiler Pagos_alquiler { get; set; }
+        public virtual ICollection<Pago_alquiler> Pagos_alquiler { get; set; }
         public virtual ICollection<Seguro> Seguros { get; set; }
     }
 }

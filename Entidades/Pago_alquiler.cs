@@ -19,6 +19,7 @@ namespace Entidades
         public int nro_inquilino { get; set; }
         public Nullable<System.DateTime> fecha { get; set; }
         public Nullable<int> monto { get; set; }
+        public int id_pago { get; set; }
     
         public virtual Alquiler Alquileres { get; set; }
     }

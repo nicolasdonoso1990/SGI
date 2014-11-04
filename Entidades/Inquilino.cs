@@ -31,6 +31,6 @@ namespace Entidades
         public string estado { get; set; }
     
         public virtual ICollection<Alquiler> Alquileres { get; set; }
-        public virtual Cuenta_corriente Cuenta_corriente { get; set; }
+        public virtual Cuenta_corriente Cuenta_corriente1 { get; set; }
     }
 }

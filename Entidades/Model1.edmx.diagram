@@ -9,7 +9,6 @@
         <EntityTypeShape EntityType="InmobiliariaModel.Alquiler" Width="1.5" PointX="5.25" PointY="10" IsExpanded="true" />
         <EntityTypeShape EntityType="InmobiliariaModel.Contratista" Width="1.5" PointX="3" PointY="6" IsExpanded="true" />
         <EntityTypeShape EntityType="InmobiliariaModel.Contrato" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="InmobiliariaModel.Cuenta_corriente" Width="1.5" PointX="5.25" PointY="14.375" IsExpanded="true" />
         <EntityTypeShape EntityType="InmobiliariaModel.Foto" Width="1.5" PointX="5.25" PointY="20.75" IsExpanded="true" />
         <EntityTypeShape EntityType="InmobiliariaModel.Inquilino" Width="1.5" PointX="3" PointY="13.625" IsExpanded="true" />
         <EntityTypeShape EntityType="InmobiliariaModel.Mejora" Width="1.5" PointX="8.375" PointY="10" IsExpanded="true" />
@@ -28,13 +27,14 @@
         <AssociationConnector Association="InmobiliariaModel.FK_Mejoras_Contratistas" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Reparaciones_Contratistas" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Valores_mensuales_Contratos" ManuallyRouted="false" />
-        <AssociationConnector Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Fotos_Unidades" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Mejoras_Unidades" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Pagos_seguro_Seguros" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Unidades_Propiedades" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Reparaciones_Unidades" ManuallyRouted="false" />
         <EntityTypeShape EntityType="InmobiliariaModel.NumeroUltimaFoto" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="InmobiliariaModel.Cuenta_corriente" Width="2.5" PointX="4.5" PointY="17.5" IsExpanded="true" />
+        <AssociationConnector Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

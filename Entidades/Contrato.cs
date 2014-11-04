@@ -14,6 +14,11 @@ namespace Entidades
     
     public partial class Contrato
     {
+        public Contrato()
+        {
+            this.Valores_mensuales = new HashSet<Valor_mensual>();
+        }
+    
         public int cod_contrato { get; set; }
         public int nro_alquiler { get; set; }
         public int cod_unidad { get; set; }
@@ -21,8 +26,9 @@ namespace Entidades
         public Nullable<System.DateTime> fecha_realizacion { get; set; }
         public Nullable<System.DateTime> fecha_caducidad { get; set; }
         public string descripcion_unidad { get; set; }
+        public string anexo { get; set; }
     
         public virtual Alquiler Alquileres { get; set; }
-        public virtual Valor_mensual Valores_mensuales { get; set; }
+        public virtual ICollection<Valor_mensual> Valores_mensuales { get; set; }
     }
 }
