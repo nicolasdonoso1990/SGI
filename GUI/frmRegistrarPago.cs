@@ -52,7 +52,7 @@ namespace GUI
                 DataGridViewRow fila = dgvInquilinos.CurrentRow; //devuelve la fila que esta siendo seleccionada
                 
                 //El número de inquilino está como no visible en las columnas de Inquilino
-                Int32 numero = Convert.ToInt32(fila.Cells[0].ToString());
+                Int32 numero = Convert.ToInt32(fila.Cells[0].Value);
 
                 string nom = fila.Cells[1].Value.ToString();
 
@@ -63,10 +63,10 @@ namespace GUI
 
                 grpboxUnidad.Enabled = true;
 
-                if (dgvUnidades.DataSource == null)
-                {
+               
+                
                     llenarGrillaUnidades(numero);
-                }
+                
          
 
             }
@@ -75,7 +75,20 @@ namespace GUI
         private void llenarGrillaUnidades(Int32 numero)
         {
             AlquilerLogic al = new AlquilerLogic(); //Creo objeto de negocio
-            al.UnidadesAlquiladasActualesDeUnInquilino(numero);  //Mando el número para buscar todas las unidades de un Inquilino
+            
+
+            var lista=al.UnidadesAlquiladasActualesDeUnInquilino(numero);  //Mando el número para buscar todas las unidades de un Inquilino
+
+
+
+
+            dgvUnidades.AutoGenerateColumns = false;
+
+            var lis=lista.Cast<object>().ToList();
+            dgvUnidades.DataSource = null;
+            dgvUnidades.DataSource = lis;
+
+            dgvUnidades.Refresh();
 
 
             

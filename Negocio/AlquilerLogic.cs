@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Entidades;
 using Datos;
+using System.Collections;
 
 
 
@@ -12,9 +13,15 @@ namespace Negocio
 {
     public class AlquilerLogic
     {
+   
         public DatosAlquiler AlquilerData { get; set; }
 
-        public void UnidadesAlquiladasActualesDeUnInquilino(Int32 numero)
+        public AlquilerLogic()
+        {
+            this.AlquilerData = new DatosAlquiler();
+        }
+
+        public IEnumerable  UnidadesAlquiladasActualesDeUnInquilino(Int32 numero)
         {
           List<Alquiler> AlcAct = this.AlquilerData.buscarAlquileresActuales(); //Busco todos los alquileres actuales
             
@@ -36,15 +43,15 @@ namespace Negocio
          * De esta manera tenemos: Todas las unidades actuales alquiladas por nuestroinquilino seleccionado.
          */
 
-            var query = from alq in AlcAct
-                        join uni in UnHab on alq.cod_unidad equals uni.cod_unidad
-                        join pro in TodasLasprop on uni.cod_propiedad equals pro.cod_propiedad
+          IEnumerable query = from alq in AlcAct
+                              join uni in UnHab on alq.cod_unidad equals uni.cod_unidad
+                              join pro in TodasLasprop on uni.cod_propiedad equals pro.cod_propiedad  
                         where alq.nro_inquilino == numero
-                        select new { cod = uni.cod_unidad, des = uni.descripcion, dom = pro.direccion };
-
-             
+                        select new { cod = uni.cod_unidad, des = uni.descripcion, dom = pro.direccion, mcuadrados=uni.m2.ToString() };
 
 
+
+          return query;
 
        
             }

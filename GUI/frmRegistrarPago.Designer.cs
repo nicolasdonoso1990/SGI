@@ -30,10 +30,19 @@
         {
             this.grboxInquilino = new System.Windows.Forms.GroupBox();
             this.dgvInquilinos = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionarInquilino = new System.Windows.Forms.Button();
             this.lblFiltroDni = new System.Windows.Forms.Label();
             this.txtboxFiltroDni = new System.Windows.Forms.TextBox();
             this.grpboxUnidad = new System.Windows.Forms.GroupBox();
+            this.txtboxNroInquilino = new System.Windows.Forms.TextBox();
+            this.lblNombreInquilino = new System.Windows.Forms.Label();
             this.btnSeleccionarUnidad = new System.Windows.Forms.Button();
             this.lblFiltrarDescripcion = new System.Windows.Forms.Label();
             this.txtboxFiltroDescripcion = new System.Windows.Forms.TextBox();
@@ -51,15 +60,10 @@
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.lblNombreInquilino = new System.Windows.Forms.Label();
-            this.txtboxNroInquilino = new System.Windows.Forms.TextBox();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.m2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grboxInquilino.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInquilinos)).BeginInit();
             this.grpboxUnidad.SuspendLayout();
@@ -98,6 +102,56 @@
             this.dgvInquilinos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvInquilinos.Size = new System.Drawing.Size(525, 195);
             this.dgvInquilinos.TabIndex = 4;
+            // 
+            // Código
+            // 
+            this.Código.DataPropertyName = "nro_inquilino";
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "apellido";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "direccion";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
             // 
             // btnSeleccionarInquilino
             // 
@@ -140,6 +194,22 @@
             this.grpboxUnidad.TabStop = false;
             this.grpboxUnidad.Text = "Seleccione Unidad";
             // 
+            // txtboxNroInquilino
+            // 
+            this.txtboxNroInquilino.Location = new System.Drawing.Point(112, 31);
+            this.txtboxNroInquilino.Name = "txtboxNroInquilino";
+            this.txtboxNroInquilino.Size = new System.Drawing.Size(176, 20);
+            this.txtboxNroInquilino.TabIndex = 5;
+            // 
+            // lblNombreInquilino
+            // 
+            this.lblNombreInquilino.AutoSize = true;
+            this.lblNombreInquilino.Location = new System.Drawing.Point(6, 34);
+            this.lblNombreInquilino.Name = "lblNombreInquilino";
+            this.lblNombreInquilino.Size = new System.Drawing.Size(49, 13);
+            this.lblNombreInquilino.TabIndex = 4;
+            this.lblNombreInquilino.Text = "Inquilino:";
+            // 
             // btnSeleccionarUnidad
             // 
             this.btnSeleccionarUnidad.Location = new System.Drawing.Point(76, 277);
@@ -168,6 +238,11 @@
             // dgvUnidades
             // 
             this.dgvUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Codigo,
+            this.Domicilio,
+            this.Descripcion,
+            this.m2});
             this.dgvUnidades.Location = new System.Drawing.Point(22, 88);
             this.dgvUnidades.Name = "dgvUnidades";
             this.dgvUnidades.Size = new System.Drawing.Size(270, 183);
@@ -292,71 +367,31 @@
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             // 
-            // lblNombreInquilino
+            // Codigo
             // 
-            this.lblNombreInquilino.AutoSize = true;
-            this.lblNombreInquilino.Location = new System.Drawing.Point(6, 34);
-            this.lblNombreInquilino.Name = "lblNombreInquilino";
-            this.lblNombreInquilino.Size = new System.Drawing.Size(49, 13);
-            this.lblNombreInquilino.TabIndex = 4;
-            this.lblNombreInquilino.Text = "Inquilino:";
+            this.Codigo.DataPropertyName = "cod";
+            this.Codigo.HeaderText = "Codigo";
+            this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
             // 
-            // txtboxNroInquilino
+            // Domicilio
             // 
-            this.txtboxNroInquilino.Location = new System.Drawing.Point(112, 31);
-            this.txtboxNroInquilino.Name = "txtboxNroInquilino";
-            this.txtboxNroInquilino.Size = new System.Drawing.Size(176, 20);
-            this.txtboxNroInquilino.TabIndex = 5;
+            this.Domicilio.DataPropertyName = "dom";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.Name = "Domicilio";
             // 
-            // Código
+            // Descripcion
             // 
-            this.Código.DataPropertyName = "nro_inquilino";
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Visible = false;
+            this.Descripcion.DataPropertyName = "des";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
             // 
-            // nombre
+            // m2
             // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.DataPropertyName = "apellido";
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "direccion";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
+            this.m2.DataPropertyName = "mcuadrados";
+            this.m2.HeaderText = "m2";
+            this.m2.Name = "m2";
             // 
             // frmRegistrarPago
             // 
@@ -415,6 +450,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn m2;
 
     }
 }

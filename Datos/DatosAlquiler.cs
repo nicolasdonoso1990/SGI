@@ -16,7 +16,7 @@ namespace Datos
             using (var context = new InmobiliariaEntities())
             {
 
-                var query = from c in context.Alquileres where c.estado == "Alquilando" select c;
+                var query = from c in context.Alquileres select c; //where c.estado == "Alquilando"
                 return query.ToList();
 
             }   
