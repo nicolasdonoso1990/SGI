@@ -60,6 +60,10 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblFotos = new System.Windows.Forms.Label();
+            this.chkFotos = new System.Windows.Forms.CheckBox();
+            this.lblErrorCampos = new System.Windows.Forms.Label();
+            this.lblErrorNumero = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -175,6 +179,10 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.lblErrorNumero);
+            this.groupBox2.Controls.Add(this.lblErrorCampos);
+            this.groupBox2.Controls.Add(this.chkFotos);
+            this.groupBox2.Controls.Add(this.lblFotos);
             this.groupBox2.Controls.Add(this.txtCodigo);
             this.groupBox2.Controls.Add(this.lblCodigo);
             this.groupBox2.Controls.Add(this.btnRegistra);
@@ -183,9 +191,9 @@
             this.groupBox2.Controls.Add(this.lblDescripcion);
             this.groupBox2.Controls.Add(this.lblMetro);
             this.groupBox2.Enabled = false;
-            this.groupBox2.Location = new System.Drawing.Point(672, 1);
+            this.groupBox2.Location = new System.Drawing.Point(660, 1);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(423, 319);
+            this.groupBox2.Size = new System.Drawing.Size(435, 376);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Unidad";
@@ -209,7 +217,7 @@
             // 
             // btnRegistra
             // 
-            this.btnRegistra.Location = new System.Drawing.Point(175, 261);
+            this.btnRegistra.Location = new System.Drawing.Point(210, 330);
             this.btnRegistra.Name = "btnRegistra";
             this.btnRegistra.Size = new System.Drawing.Size(87, 31);
             this.btnRegistra.TabIndex = 8;
@@ -224,6 +232,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 110);
             this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtMetro
             // 
@@ -231,6 +240,7 @@
             this.txtMetro.Name = "txtMetro";
             this.txtMetro.Size = new System.Drawing.Size(75, 20);
             this.txtMetro.TabIndex = 6;
+            this.txtMetro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMetro_KeyPress);
             // 
             // lblDescripcion
             // 
@@ -262,7 +272,7 @@
             this.groupBox3.Controls.Add(this.foto1);
             this.groupBox3.Controls.Add(this.btnFoto1);
             this.groupBox3.Enabled = false;
-            this.groupBox3.Location = new System.Drawing.Point(31, 338);
+            this.groupBox3.Location = new System.Drawing.Point(31, 398);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(1064, 149);
             this.groupBox3.TabIndex = 3;
@@ -347,21 +357,27 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(824, 555);
+            this.btnRegistrar.Image = global::GUI.Properties.Resources.ok;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(839, 597);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(87, 31);
+            this.btnRegistrar.Size = new System.Drawing.Size(95, 42);
             this.btnRegistrar.TabIndex = 17;
             this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(41, 555);
+            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(72, 597);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(87, 31);
+            this.btnSalir.Size = new System.Drawing.Size(95, 42);
             this.btnSalir.TabIndex = 18;
-            this.btnSalir.Text = "Salir";
+            this.btnSalir.Text = "C ancelar";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
@@ -369,18 +385,63 @@
             // 
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(1051, 605);
+            this.label1.Location = new System.Drawing.Point(1052, 651);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 19;
             this.label1.Text = "SGI V1.0";
+            // 
+            // lblFotos
+            // 
+            this.lblFotos.AutoSize = true;
+            this.lblFotos.Location = new System.Drawing.Point(6, 261);
+            this.lblFotos.Name = "lblFotos";
+            this.lblFotos.Size = new System.Drawing.Size(115, 13);
+            this.lblFotos.TabIndex = 11;
+            this.lblFotos.Text = "¿Desea agregar fotos?";
+            // 
+            // chkFotos
+            // 
+            this.chkFotos.AutoSize = true;
+            this.chkFotos.Location = new System.Drawing.Point(127, 260);
+            this.chkFotos.Name = "chkFotos";
+            this.chkFotos.Size = new System.Drawing.Size(52, 17);
+            this.chkFotos.TabIndex = 12;
+            this.chkFotos.Text = "Fotos";
+            this.chkFotos.UseVisualStyleBackColor = true;
+            // 
+            // lblErrorCampos
+            // 
+            this.lblErrorCampos.AutoSize = true;
+            this.lblErrorCampos.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampos.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCampos.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampos.Location = new System.Drawing.Point(101, 294);
+            this.lblErrorCampos.Name = "lblErrorCampos";
+            this.lblErrorCampos.Size = new System.Drawing.Size(260, 13);
+            this.lblErrorCampos.TabIndex = 14;
+            this.lblErrorCampos.Text = "Error. Por favor, complete los datos faltantes";
+            this.lblErrorCampos.Visible = false;
+            // 
+            // lblErrorNumero
+            // 
+            this.lblErrorNumero.AutoSize = true;
+            this.lblErrorNumero.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorNumero.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNumero.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorNumero.Location = new System.Drawing.Point(207, 77);
+            this.lblErrorNumero.Name = "lblErrorNumero";
+            this.lblErrorNumero.Size = new System.Drawing.Size(164, 13);
+            this.lblErrorNumero.TabIndex = 15;
+            this.lblErrorNumero.Text = "Error. Ingrese solo numeros";
+            this.lblErrorNumero.Visible = false;
             // 
             // frmAltaUnidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.fondo;
-            this.ClientSize = new System.Drawing.Size(1113, 627);
+            this.ClientSize = new System.Drawing.Size(1114, 673);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnRegistrar);
@@ -441,5 +502,9 @@
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.CheckBox chkFotos;
+        private System.Windows.Forms.Label lblFotos;
+        private System.Windows.Forms.Label lblErrorCampos;
+        private System.Windows.Forms.Label lblErrorNumero;
     }
 }

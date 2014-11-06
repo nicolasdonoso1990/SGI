@@ -168,6 +168,11 @@ namespace GUI
             modificarRep.ShowDialog();
         }
 
+        private void alquileresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
       
 
 

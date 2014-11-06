@@ -32,7 +32,11 @@ namespace GUI
 
             fechaFinAlq = fecha2.Value.Date;
 
-            grpPropiedades.Enabled = true;
+            dataPropiedad.Visible = true;
+            txtDireccionPropiedad.Visible = true;
+            lblDireccionPropiedad.Visible = true;
+            btnPropiedad.Visible = true;
+            btnSalir.Visible = true;
 
             PropiedadLogic propLog = new PropiedadLogic();
             List<Propiedad> propiedades = new List<Propiedad>();
@@ -83,7 +87,10 @@ namespace GUI
                 PropiedadLogic proLog = new PropiedadLogic();
                 prop = proLog.buscaPropiedad(codigo);
 
-                grpUnidades.Enabled = true;
+                dataUnidad.Visible = true;
+                lblDireccionUnidad.Visible = true;
+                txtDireccionUnidad.Visible = true;
+                btnUnidad.Visible = true;
 
                 UnidadLogic unLog=new UnidadLogic();
                 ListaUnidades = unLog.BuscaUnidadesNoAlquiladas(prop);
@@ -111,7 +118,10 @@ namespace GUI
 
                 uni = unLog.BuscaUnidad(codUni);
 
-                grpInquilino.Enabled = true;
+                lblDNI.Visible=true;
+                txtDNI.Visible = true;
+                dataInquilino.Visible = true;
+                btnAlquiler.Visible = true;
 
                 InquilinoLogic InLog = new InquilinoLogic();
 
@@ -135,6 +145,37 @@ namespace GUI
             
 
 
+        }
+
+        private void grpInquilino_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 cantidadFilasSeleccionadas = dataInquilino.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (cantidadFilasSeleccionadas > 0)
+            {
+
+                DataGridViewRow fila = dataInquilino.CurrentRow; //devuelve la fila que esta siendo seleccionada
+
+                string dni = fila.Cells[2].Value.ToString(); //el [2] indica la posicion del dni
+
+                InquilinoLogic InLog = new InquilinoLogic();
+
+                inq = InLog.BuscaInquilino(dni);
+
+                frmAltaAlquilerFinal formFinal = new frmAltaAlquilerFinal(prop, uni, inq, fechaInicioAlq, fechaFinAlq);
+                formFinal.ShowDialog();
+
+            }
         }
      
 

@@ -18,6 +18,9 @@ namespace GUI
     {
 
         public Administrador ad { get; set; }
+        string usu;
+        string contra;
+      
         public frmAltaAdministrador(Administrador adm)
         {
 
@@ -29,10 +32,23 @@ namespace GUI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+
+            if (txtContraAdmin.Text == "") 
+            {
+                txtContraAdmin.BackColor = Color.Red;
+                lblErrorContra.Visible = true;
+
+            
+            }
+            
+            
             if (txtContraAdmin.Text == ad.contrasena) 
             {
-                groupBox1.Enabled = true;
-
+                grpDatosAdmin.Enabled = true;
+                lblErrorContra.Visible = false;
+                txtContraAdmin.Visible = false;
+                lblAclaracion.Visible = false;
+                btnAceptar.Visible = false;
             
             
             }
@@ -48,29 +64,79 @@ namespace GUI
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
 
+            int usuBandera = 0;
+            int contra1Bandera = 0;
+            int contra2Bandera = 0;
+            int tipoBandera = 0;
+
+            if (cmbTipo.SelectedItem.ToString() == "Seleccione un tipo")
+            {
+                cmbTipo.BackColor = Color.Red;
+
+            }
+            else 
+            {
+                tipoBandera = 1;
+            }
+
+
+
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.BackColor = Color.Red;
+
+            }
+            else 
+            {
+                usuBandera = 1;
+            }
+
+            if (txtContraseña1.Text == "")
+            {
+                txtContraseña1.BackColor = Color.Red;
+
+            }
+
+            else 
+            {
+                contra1Bandera = 1;
+            }
+
+            if (txtContraseña2.Text == "")
+            {
+                txtContraseña2.BackColor = Color.Red;
+
+            }
+
+            else 
+            {
+                contra2Bandera = 1;
             
-            if (txtContraseña1.Text == txtContraseña2.Text) 
+            }
+
+            if (txtContraseña1.Text == txtContraseña2.Text && usuBandera == 1 && tipoBandera == 1 && contra1Bandera == 1 && contra2Bandera == 1)
             {
 
 
-                string usu = txtUsuario.Text;
 
-                string contra = txtContraseña1.Text;
+                usu = txtUsuario.Text;
+
+                contra = txtContraseña1.Text;
 
                 Administrador admin = new Administrador();
-                admin.usuario=usu;
-                admin.contrasena=contra;
+                admin.usuario = usu;
+                admin.contrasena = contra;
                 admin.estado = "habilitado";
-                if (comboBox1.Text == "SuperUsuario") 
+                if (cmbTipo.Text == "SuperUsuario")
                 {
                     admin.tipo = "super";
-                
+
                 }
 
-                if (ad.tipo=="normal") 
+                if (ad.tipo == "normal")
                 {
                     admin.tipo = "normal";
-                
+
                 }
 
                 AdministradorLogic adLog = new AdministradorLogic();
@@ -84,11 +150,15 @@ namespace GUI
                     txtContraseña1.Clear();
                     txtContraseña2.Clear();
                     txtUsuario.Clear();
-
+                    lblErrorCampos.Visible = false;
                 }
 
 
 
+            }
+            else 
+            {
+                lblErrorCampos.Visible = true;
             }
 
 
@@ -105,7 +175,7 @@ namespace GUI
         {
             if (ad.tipo == "super") 
             {
-                comboBox1.Enabled = true;
+                cmbTipo.Enabled = true;
             
             
             }
@@ -117,6 +187,26 @@ namespace GUI
            // }
         
         
+        }
+
+        private void txtContraAdmin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraAdmin.BackColor = Color.White;
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUsuario.BackColor = Color.White;
+        }
+
+        private void txtContraseña1_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña1.BackColor = Color.White;
+        }
+
+        private void txtContraseña2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña2.BackColor = Color.White;
         }
 
 

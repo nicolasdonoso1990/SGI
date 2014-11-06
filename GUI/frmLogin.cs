@@ -60,8 +60,8 @@ namespace GUI
 
             if (cmbOpcion.SelectedItem.ToString() == "Seleccione una opción")
             {
-                cmbOpcion.BackColor = Color.Red;
-
+               cmbOpcion.BackColor = Color.Red;
+               
             }
             else 
             {

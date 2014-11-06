@@ -63,6 +63,7 @@ namespace GUI
             if (txtContraseña2.Text == "") 
             {
                 txtContraseña2.BackColor = Color.Red;
+                lblError.Visible = true;
             
             }
 
@@ -71,13 +72,24 @@ namespace GUI
             {
                 txtUsuario.Enabled = true;
                 txtContraseña.Enabled = true;
-              
+                lblError.Visible = false;
          
                 btnAceptar.Enabled = false;
                 btnRegistrar.Visible = true;
 
                 txtContraseña2.Enabled = false;
-            
+
+                
+                txtNum.Visible = false;
+                txtTipo.Visible = false;
+                txtContraseña2.Visible = false;
+                lblContra2.Visible = false;
+                lblNumero.Visible = false;
+                lblTipoUsuario.Visible = false;
+
+
+
+
             }
         }
 
@@ -147,6 +159,11 @@ namespace GUI
         private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtContraseña.BackColor = Color.White;
+        }
+
+        private void txtContraseña2_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña2.BackColor = Color.White;
         }
 
      
