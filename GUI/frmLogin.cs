@@ -95,6 +95,7 @@ namespace GUI
 
             if (TipoControl == 1 && passControl == 1 && usuarioControl == 1)
             {
+                lblErrorCompletar.Visible = false;
 
                 AdministradorLogic admLog = new AdministradorLogic();
 

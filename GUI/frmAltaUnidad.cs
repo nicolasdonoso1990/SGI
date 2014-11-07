@@ -106,7 +106,7 @@ namespace GUI
                 double number1;
 
                 bool canConvert = Double.TryParse(txtMetro.Text, out number1);
-                //bool canConvert =          long.TryParse(numString, out number1);
+
                 if (canConvert == true)
                 {
 
