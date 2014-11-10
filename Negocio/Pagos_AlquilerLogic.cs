@@ -19,7 +19,7 @@ namespace Negocio
         }
         public void AltaPagos_Alquiler(Pago_alquiler pa)
         {
-
+            this.Pagos_AlquilerData.AltaPagosAlquiler(pa);
 
         }
 

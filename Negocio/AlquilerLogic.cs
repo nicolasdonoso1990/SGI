@@ -47,7 +47,7 @@ namespace Negocio
                               join uni in UnHab on alq.cod_unidad equals uni.cod_unidad
                               join pro in TodasLasprop on uni.cod_propiedad equals pro.cod_propiedad  
                         where alq.nro_inquilino == numero
-                        select new { cod = uni.cod_unidad, des = uni.descripcion, dom = pro.direccion, mcuadrados=uni.m2.ToString() };
+                        select new { coduni = uni.cod_unidad, des = uni.descripcion, dom = pro.direccion, mcuadrados=uni.m2.ToString(),numalq=alq.nro_alquiler,numinq=alq.nro_inquilino };
 
 
 
@@ -55,6 +55,22 @@ namespace Negocio
 
        
             }
+
+        public Int32 BuscarNumeroAlquiler(int nroInquilino,int codUnidad )
+        {
+            List<Alquiler> AlcAct = this.AlquilerData.buscarAlquileresActuales(); //Busco todos los alquileres actuales
+
+          /*  Int32 nroAlq = from alq in AlcAct
+                           where alq.cod_unidad == codUnidad || alq.nro_inquilino == nroInquilino
+                           select new { nroAlq = alq.nro_alquiler };
+
+*/
+            Alquiler alq =  AlcAct.First(i => i.nro_inquilino == nroInquilino && i.cod_unidad == codUnidad);
+
+            Int32 nroAlquiler = alq.nro_alquiler;
+
+            return nroAlquiler;
+        }
        
     }
 }

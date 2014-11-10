@@ -13,7 +13,11 @@ namespace Datos
     {
       public void AltaPagosAlquiler (Pago_alquiler pa)
       {
-      
+      using (var context = new InmobiliariaEntities())
+      {
+          context.Pagos_alquiler.Add(pa);
+          context.SaveChanges();
+      }
 
       }
     }

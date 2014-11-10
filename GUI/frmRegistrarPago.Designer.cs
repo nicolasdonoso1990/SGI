@@ -41,29 +41,33 @@
             this.lblFiltroDni = new System.Windows.Forms.Label();
             this.txtboxFiltroDni = new System.Windows.Forms.TextBox();
             this.grpboxUnidad = new System.Windows.Forms.GroupBox();
-            this.txtboxNroInquilino = new System.Windows.Forms.TextBox();
+            this.txtboxNombreInquilino = new System.Windows.Forms.TextBox();
             this.lblNombreInquilino = new System.Windows.Forms.Label();
             this.btnSeleccionarUnidad = new System.Windows.Forms.Button();
             this.lblFiltrarDescripcion = new System.Windows.Forms.Label();
             this.txtboxFiltroDescripcion = new System.Windows.Forms.TextBox();
             this.dgvUnidades = new System.Windows.Forms.DataGridView();
+            this.CodigoDeUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroAlquiler = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numeroInquilino = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.m2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpboxPago = new System.Windows.Forms.GroupBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtboxMontoMensual = new System.Windows.Forms.TextBox();
+            this.lblMontoMensual = new System.Windows.Forms.Label();
+            this.txtboxDescripcion = new System.Windows.Forms.TextBox();
+            this.txtboxDireccion = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnRegistarPago = new System.Windows.Forms.Button();
-            this.txtboxMonto = new System.Windows.Forms.TextBox();
+            this.txtboxMontoaPagar = new System.Windows.Forms.TextBox();
             this.txtboxSaldoActual = new System.Windows.Forms.TextBox();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.m2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grboxInquilino.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInquilinos)).BeginInit();
             this.grpboxUnidad.SuspendLayout();
@@ -181,7 +185,7 @@
             // 
             // grpboxUnidad
             // 
-            this.grpboxUnidad.Controls.Add(this.txtboxNroInquilino);
+            this.grpboxUnidad.Controls.Add(this.txtboxNombreInquilino);
             this.grpboxUnidad.Controls.Add(this.lblNombreInquilino);
             this.grpboxUnidad.Controls.Add(this.btnSeleccionarUnidad);
             this.grpboxUnidad.Controls.Add(this.lblFiltrarDescripcion);
@@ -194,12 +198,13 @@
             this.grpboxUnidad.TabStop = false;
             this.grpboxUnidad.Text = "Seleccione Unidad";
             // 
-            // txtboxNroInquilino
+            // txtboxNombreInquilino
             // 
-            this.txtboxNroInquilino.Location = new System.Drawing.Point(112, 31);
-            this.txtboxNroInquilino.Name = "txtboxNroInquilino";
-            this.txtboxNroInquilino.Size = new System.Drawing.Size(176, 20);
-            this.txtboxNroInquilino.TabIndex = 5;
+            this.txtboxNombreInquilino.Location = new System.Drawing.Point(112, 31);
+            this.txtboxNombreInquilino.Name = "txtboxNombreInquilino";
+            this.txtboxNombreInquilino.ReadOnly = true;
+            this.txtboxNombreInquilino.Size = new System.Drawing.Size(176, 20);
+            this.txtboxNombreInquilino.TabIndex = 5;
             // 
             // lblNombreInquilino
             // 
@@ -218,6 +223,7 @@
             this.btnSeleccionarUnidad.TabIndex = 3;
             this.btnSeleccionarUnidad.Text = "Seleccionar Unidad";
             this.btnSeleccionarUnidad.UseVisualStyleBackColor = true;
+            this.btnSeleccionarUnidad.Click += new System.EventHandler(this.btnSeleccionarUnidad_Click);
             // 
             // lblFiltrarDescripcion
             // 
@@ -239,24 +245,76 @@
             // 
             this.dgvUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Codigo,
+            this.CodigoDeUnidad,
+            this.numeroAlquiler,
+            this.numeroInquilino,
             this.Domicilio,
             this.Descripcion,
             this.m2});
             this.dgvUnidades.Location = new System.Drawing.Point(22, 88);
+            this.dgvUnidades.MultiSelect = false;
             this.dgvUnidades.Name = "dgvUnidades";
+            this.dgvUnidades.ReadOnly = true;
+            this.dgvUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvUnidades.Size = new System.Drawing.Size(270, 183);
             this.dgvUnidades.TabIndex = 0;
             // 
+            // CodigoDeUnidad
+            // 
+            this.CodigoDeUnidad.DataPropertyName = "coduni";
+            this.CodigoDeUnidad.HeaderText = "Codigo de Unidad";
+            this.CodigoDeUnidad.Name = "CodigoDeUnidad";
+            this.CodigoDeUnidad.ReadOnly = true;
+            this.CodigoDeUnidad.Visible = false;
+            // 
+            // numeroAlquiler
+            // 
+            this.numeroAlquiler.DataPropertyName = "numalq";
+            this.numeroAlquiler.HeaderText = "Número de Alquiler";
+            this.numeroAlquiler.Name = "numeroAlquiler";
+            this.numeroAlquiler.ReadOnly = true;
+            this.numeroAlquiler.Visible = false;
+            // 
+            // numeroInquilino
+            // 
+            this.numeroInquilino.DataPropertyName = "numinq";
+            this.numeroInquilino.HeaderText = "Número de Inquilino";
+            this.numeroInquilino.Name = "numeroInquilino";
+            this.numeroInquilino.ReadOnly = true;
+            this.numeroInquilino.Visible = false;
+            // 
+            // Domicilio
+            // 
+            this.Domicilio.DataPropertyName = "dom";
+            this.Domicilio.HeaderText = "Domicilio";
+            this.Domicilio.Name = "Domicilio";
+            this.Domicilio.ReadOnly = true;
+            // 
+            // Descripcion
+            // 
+            this.Descripcion.DataPropertyName = "des";
+            this.Descripcion.HeaderText = "Descripción";
+            this.Descripcion.Name = "Descripcion";
+            this.Descripcion.ReadOnly = true;
+            // 
+            // m2
+            // 
+            this.m2.DataPropertyName = "mcuadrados";
+            this.m2.HeaderText = "m2";
+            this.m2.Name = "m2";
+            this.m2.ReadOnly = true;
+            // 
             // grpboxPago
             // 
-            this.grpboxPago.Controls.Add(this.textBox2);
-            this.grpboxPago.Controls.Add(this.textBox1);
+            this.grpboxPago.Controls.Add(this.txtboxMontoMensual);
+            this.grpboxPago.Controls.Add(this.lblMontoMensual);
+            this.grpboxPago.Controls.Add(this.txtboxDescripcion);
+            this.grpboxPago.Controls.Add(this.txtboxDireccion);
             this.grpboxPago.Controls.Add(this.lblDescripcion);
             this.grpboxPago.Controls.Add(this.lblDireccion);
             this.grpboxPago.Controls.Add(this.dtpFecha);
             this.grpboxPago.Controls.Add(this.btnRegistarPago);
-            this.grpboxPago.Controls.Add(this.txtboxMonto);
+            this.grpboxPago.Controls.Add(this.txtboxMontoaPagar);
             this.grpboxPago.Controls.Add(this.txtboxSaldoActual);
             this.grpboxPago.Controls.Add(this.lblSaldo);
             this.grpboxPago.Controls.Add(this.lblMonto);
@@ -268,20 +326,39 @@
             this.grpboxPago.TabStop = false;
             this.grpboxPago.Text = "Ingrese Pago";
             // 
-            // textBox2
+            // txtboxMontoMensual
             // 
-            this.textBox2.Location = new System.Drawing.Point(67, 62);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(280, 73);
-            this.textBox2.TabIndex = 12;
+            this.txtboxMontoMensual.Location = new System.Drawing.Point(434, 88);
+            this.txtboxMontoMensual.Name = "txtboxMontoMensual";
+            this.txtboxMontoMensual.ReadOnly = true;
+            this.txtboxMontoMensual.Size = new System.Drawing.Size(200, 20);
+            this.txtboxMontoMensual.TabIndex = 14;
             // 
-            // textBox1
+            // lblMontoMensual
             // 
-            this.textBox1.Location = new System.Drawing.Point(67, 32);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(280, 20);
-            this.textBox1.TabIndex = 11;
+            this.lblMontoMensual.AutoSize = true;
+            this.lblMontoMensual.Location = new System.Drawing.Point(353, 91);
+            this.lblMontoMensual.Name = "lblMontoMensual";
+            this.lblMontoMensual.Size = new System.Drawing.Size(82, 13);
+            this.lblMontoMensual.TabIndex = 13;
+            this.lblMontoMensual.Text = "Monto mensual:";
+            // 
+            // txtboxDescripcion
+            // 
+            this.txtboxDescripcion.Location = new System.Drawing.Point(67, 62);
+            this.txtboxDescripcion.Multiline = true;
+            this.txtboxDescripcion.Name = "txtboxDescripcion";
+            this.txtboxDescripcion.ReadOnly = true;
+            this.txtboxDescripcion.Size = new System.Drawing.Size(280, 73);
+            this.txtboxDescripcion.TabIndex = 12;
+            // 
+            // txtboxDireccion
+            // 
+            this.txtboxDireccion.Location = new System.Drawing.Point(67, 32);
+            this.txtboxDireccion.Name = "txtboxDireccion";
+            this.txtboxDireccion.ReadOnly = true;
+            this.txtboxDireccion.Size = new System.Drawing.Size(280, 20);
+            this.txtboxDireccion.TabIndex = 11;
             // 
             // lblDescripcion
             // 
@@ -307,6 +384,7 @@
             this.dtpFecha.Name = "dtpFecha";
             this.dtpFecha.Size = new System.Drawing.Size(200, 20);
             this.dtpFecha.TabIndex = 8;
+            this.dtpFecha.ValueChanged += new System.EventHandler(this.dtpFecha_ValueChanged);
             // 
             // btnRegistarPago
             // 
@@ -316,18 +394,20 @@
             this.btnRegistarPago.TabIndex = 6;
             this.btnRegistarPago.Text = "Registar Pago";
             this.btnRegistarPago.UseVisualStyleBackColor = true;
+            this.btnRegistarPago.Click += new System.EventHandler(this.btnRegistarPago_Click);
             // 
-            // txtboxMonto
+            // txtboxMontoaPagar
             // 
-            this.txtboxMonto.Location = new System.Drawing.Point(434, 86);
-            this.txtboxMonto.Name = "txtboxMonto";
-            this.txtboxMonto.Size = new System.Drawing.Size(200, 20);
-            this.txtboxMonto.TabIndex = 5;
+            this.txtboxMontoaPagar.Location = new System.Drawing.Point(434, 115);
+            this.txtboxMontoaPagar.Name = "txtboxMontoaPagar";
+            this.txtboxMontoaPagar.Size = new System.Drawing.Size(200, 20);
+            this.txtboxMontoaPagar.TabIndex = 5;
             // 
             // txtboxSaldoActual
             // 
             this.txtboxSaldoActual.Location = new System.Drawing.Point(434, 36);
             this.txtboxSaldoActual.Name = "txtboxSaldoActual";
+            this.txtboxSaldoActual.ReadOnly = true;
             this.txtboxSaldoActual.Size = new System.Drawing.Size(200, 20);
             this.txtboxSaldoActual.TabIndex = 3;
             // 
@@ -343,11 +423,11 @@
             // lblMonto
             // 
             this.lblMonto.AutoSize = true;
-            this.lblMonto.Location = new System.Drawing.Point(353, 89);
+            this.lblMonto.Location = new System.Drawing.Point(353, 115);
             this.lblMonto.Name = "lblMonto";
-            this.lblMonto.Size = new System.Drawing.Size(40, 13);
+            this.lblMonto.Size = new System.Drawing.Size(79, 13);
             this.lblMonto.TabIndex = 1;
-            this.lblMonto.Text = "Monto:";
+            this.lblMonto.Text = "Monto a pagar:";
             // 
             // lblFecha
             // 
@@ -366,32 +446,6 @@
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // Codigo
-            // 
-            this.Codigo.DataPropertyName = "cod";
-            this.Codigo.HeaderText = "Codigo";
-            this.Codigo.Name = "Codigo";
-            this.Codigo.ReadOnly = true;
-            this.Codigo.Visible = false;
-            // 
-            // Domicilio
-            // 
-            this.Domicilio.DataPropertyName = "dom";
-            this.Domicilio.HeaderText = "Domicilio";
-            this.Domicilio.Name = "Domicilio";
-            // 
-            // Descripcion
-            // 
-            this.Descripcion.DataPropertyName = "des";
-            this.Descripcion.HeaderText = "Descripción";
-            this.Descripcion.Name = "Descripcion";
-            // 
-            // m2
-            // 
-            this.m2.DataPropertyName = "mcuadrados";
-            this.m2.HeaderText = "m2";
-            this.m2.Name = "m2";
             // 
             // frmRegistrarPago
             // 
@@ -431,7 +485,7 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblSaldo;
-        private System.Windows.Forms.TextBox txtboxMonto;
+        private System.Windows.Forms.TextBox txtboxMontoaPagar;
         private System.Windows.Forms.TextBox txtboxSaldoActual;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnRegistarPago;
@@ -439,9 +493,9 @@
         private System.Windows.Forms.DataGridView dgvInquilinos;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox txtboxNroInquilino;
+        private System.Windows.Forms.TextBox txtboxDescripcion;
+        private System.Windows.Forms.TextBox txtboxDireccion;
+        private System.Windows.Forms.TextBox txtboxNombreInquilino;
         private System.Windows.Forms.Label lblNombreInquilino;
         private System.Windows.Forms.DataGridViewTextBoxColumn Código;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -450,7 +504,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.TextBox txtboxMontoMensual;
+        private System.Windows.Forms.Label lblMontoMensual;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CodigoDeUnidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroAlquiler;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numeroInquilino;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
         private System.Windows.Forms.DataGridViewTextBoxColumn m2;
