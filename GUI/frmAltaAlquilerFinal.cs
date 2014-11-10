@@ -108,7 +108,7 @@ namespace GUI
                 valor.cod_contrato = cont.cod_contrato;
                 valor.fechaDesde = fechaDesde.Value.Date;
                 valor.fechaHasta = fechaHasta.Value.Date;
-                valor.valor = Convert.ToDouble(txtValor.Text);
+                valor.valor = Convert.ToInt32(txtValor.Text);
 
                 ValorMensualLogic valLog = new ValorMensualLogic();
                 valLog.altaValoresMensuales(valor);
