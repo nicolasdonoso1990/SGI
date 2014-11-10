@@ -59,6 +59,12 @@
     <Compile Include="frmAltaAlquiler.Designer.cs">
       <DependentUpon>frmAltaAlquiler.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmAltaAlquilerFinal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAltaAlquilerFinal.Designer.cs">
+      <DependentUpon>frmAltaAlquilerFinal.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmAltaContratista.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,6 +204,9 @@
     <EmbeddedResource Include="frmAltaAlquiler.resx">
       <DependentUpon>frmAltaAlquiler.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaAlquilerFinal.resx">
+      <DependentUpon>frmAltaAlquilerFinal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAltaContratista.resx">
       <DependentUpon>frmAltaContratista.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,6 +341,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Imagenes\cancelar.png" />
+    <Content Include="Imagenes\editar.png" />
+    <Content Include="Imagenes\eliminar.png" />
+    <Content Include="Imagenes\limpiar.png" />
+    <Content Include="Imagenes\log_in.png" />
+    <Content Include="Imagenes\ok.png" />
+    <Content Include="Imagenes\salir.png" />
+    <Content Include="Imagenes\usuario.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

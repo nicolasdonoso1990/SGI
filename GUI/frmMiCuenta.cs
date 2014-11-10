@@ -60,6 +60,13 @@ namespace GUI
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
+            if (txtContraseña2.Text == "") 
+            {
+                txtContraseña2.BackColor = Color.Red;
+            
+            }
+
+
             if (txtContraseña2.Text == txtContraseña.Text) 
             {
                 txtUsuario.Enabled = true;
@@ -76,20 +83,70 @@ namespace GUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            string[] datos=new string[4];
-            datos[0] = txtNum.Text;
-            datos[1] = txtTipo.Text;
-            datos[2] = txtContraseña.Text;
-            datos[3] = txtUsuario.Text;
+            int usuarioControl = 0;
+            int contraseñaControl = 0;
+            string[] datos = new string[4];
 
-            AdministradorLogic adLog = new AdministradorLogic();
-            adLog.ModificaAdministrador(datos);
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.BackColor = Color.Red;
+            }
+            else 
+            {
+                datos[3] = txtUsuario.Text;
+                usuarioControl=1;
 
-          //  Int32 numero = Convert.ToInt32(datos[0]);
-           // Administrador admin = context.Administradores.First(i => i.IDadmin == numero);
-            //admin.tipo = datos[1];
-            //admin.contrasena = datos[2];
-            //admin.usuario = datos[3];
+            }
+
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.BackColor = Color.Red;
+
+            }
+
+            else 
+            {
+                datos[2] = txtContraseña.Text;
+                contraseñaControl = 1;  
+            
+            }
+
+            if (usuarioControl == 1 && contraseñaControl == 1)
+            {
+
+                datos[1] = txtTipo.Text;
+                datos[0] = txtNum.Text;
+
+
+                AdministradorLogic adLog = new AdministradorLogic();
+                adLog.ModificaAdministrador(datos);
+                lblError.Visible = false;
+                lblExito.Visible = true;
+
+
+            }
+            else 
+            {
+                lblError.Visible = true;
+            }
+            
+         
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose(); 
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUsuario.BackColor = Color.White;
+           
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña.BackColor = Color.White;
         }
 
      

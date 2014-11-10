@@ -8,10 +8,12 @@ using Entidades;
 
 
 
+
 namespace Datos
 {
     public class DatosContrato
     {
+
         public Int32 buscarNroContrato(Int32 codAlq)
         {
             using (var context = new InmobiliariaEntities())
@@ -28,5 +30,22 @@ namespace Datos
             }
 
         }
+
+        public void AltaContrato(Contrato cont) 
+        {
+            using (var context = new InmobiliariaEntities()) 
+            {
+                context.Contratos.Add(cont);
+                context.SaveChanges();
+
+            
+            }
+        
+        
+        }
+
+
+
+
     }
 }

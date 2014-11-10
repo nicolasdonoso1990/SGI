@@ -11,6 +11,7 @@ namespace Datos
 {
     public class DatosAlquiler
     {
+
         public List<Alquiler> buscarAlquileresActuales()
         {
             using (var context = new InmobiliariaEntities())
@@ -22,5 +23,47 @@ namespace Datos
             }   
 
     }
+
+
+        public void AltaAlquiler(Alquiler alq) 
+        {
+
+            using (var context = new InmobiliariaEntities())
+            {
+                
+                context.Alquileres.Add(alq);
+             
+              
+
+
+                context.SaveChanges();
+                
+
+              
+
+            }
+        
+        
+        }
+
+
+        public Int32 BuscaNumeroAlquiler(Alquiler alq) 
+        {
+            using (var context = new InmobiliariaEntities()) 
+            {
+                Alquiler a = context.Alquileres.First(i => i.cod_unidad == alq.cod_unidad && i.nro_inquilino == alq.nro_inquilino && i.estado=="habilitado");
+                return (a.nro_alquiler);            
+            
+            }
+        
+        
+        
+        }
+
+
+
+
+
+
     }
 }

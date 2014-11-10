@@ -9,10 +9,12 @@ using System.Collections;
 
 
 
+
 namespace Negocio
 {
     public class AlquilerLogic
     {
+
    
         public DatosAlquiler AlquilerData { get; set; }
 
@@ -72,5 +74,26 @@ namespace Negocio
             return nroAlquiler;
         }
        
+
+
+
+        public void AltaAlquiler(Alquiler alq) 
+        {
+
+         AlquilerData.AltaAlquiler(alq);
+         
+          
+
+        }
+
+        public Int32 UltimoNumeroAlquiler(Alquiler alq) 
+        {
+            Int32 num = AlquilerData.BuscaNumeroAlquiler(alq);
+            return num;
+        
+        }
+
+
+
     }
 }

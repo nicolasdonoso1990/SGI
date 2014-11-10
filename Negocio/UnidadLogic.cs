@@ -62,8 +62,27 @@ namespace Negocio
         {
             List<Unidad> todos = this.UnidadData.buscarUnidadesHabilitadas();
 
+
             return todos;
         }
+
+        public void CambiaEstadoAlquilado(Unidad uni) 
+        {
+            UnidadData.CambiaEstadoUnidad(uni);
+        }
+
+        public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)
+        {
+
+            List<Unidad> unidades = UnidadData.BuscaUnidadesNoAlquiladas(pro);
+            return unidades;
+        
+        
+        }
+
+
+
+
 
     }
 }

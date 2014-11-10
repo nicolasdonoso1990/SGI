@@ -7,6 +7,7 @@ using Entidades;
 using Datos;
 
 
+
 namespace Negocio
 {
      public class ContratoLogic
@@ -24,5 +25,15 @@ namespace Negocio
             return nroCon;
 
          }
-    }
+
+          public void AltaContrato(Contrato cont) 
+        {
+            ContratoData.AltaContrato(cont);
+
+        
+        }
+
+     }
 }
+
+

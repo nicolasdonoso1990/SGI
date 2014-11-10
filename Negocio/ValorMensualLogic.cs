@@ -24,5 +24,20 @@ namespace Negocio
 
             return valorMensual;
         }
+
+        public void altaValoresMensuales(Valor_mensual valor) 
+       {
+
+           ValorMensualData.AltaValores(valor);
+       
+       }
+
+
+       
+      
+
+
+
+
     }
 }

@@ -86,7 +86,11 @@
             <PropertyRef Name="nro_mejora" />
           </Key>
           <Property Name="cod_contratista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="nro_mejora" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+=======
+          <Property Name="nro_mejora" Type="int" Nullable="false" />
+>>>>>>> origin/master
           <Property Name="fecha" Type="date" />
           <Property Name="valor" Type="int" />
           <Property Name="cod_unidad" Type="int" Nullable="false" />
@@ -156,6 +160,19 @@
           <Property Name="tipo_seguro" Type="varchar(max)" />
           <Property Name="descripcion" Type="varchar(max)" />
         </EntityType>
+<<<<<<< HEAD
+=======
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+>>>>>>> origin/master
         <EntityType Name="Unidades">
           <Key>
             <PropertyRef Name="cod_unidad" />
@@ -307,6 +324,10 @@
           <EntitySet Name="Propiedades" EntityType="Self.Propiedades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reparaciones" EntityType="Self.Reparaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seguros" EntityType="Self.Seguros" Schema="dbo" store:Type="Tables" />
+<<<<<<< HEAD
+=======
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+>>>>>>> origin/master
           <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valores_mensuales" EntityType="Self.Valores_mensuales" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Alquileres_Inquilinos" Association="Self.FK_Alquileres_Inquilinos">
@@ -366,7 +387,7 @@
             <PropertyRef Name="cod_unidad" />
             <PropertyRef Name="nro_inquilino" />
           </Key>
-          <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
+          <Property Name="nro_alquiler" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
           <Property Name="nro_inquilino" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Inquilinos" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Alquileres" ToRole="Inquilinos" />
@@ -393,7 +414,7 @@
           <Key>
             <PropertyRef Name="cod_contrato" />
           </Key>
-          <Property Name="cod_contrato" Type="Int32" Nullable="false" />
+          <Property Name="cod_contrato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nro_alquiler" Type="Int32" Nullable="false" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
           <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
@@ -424,18 +445,21 @@
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="telefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="dni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Inquilinos" ToRole="Alquileres" />
           <NavigationProperty Name="Cuenta_corriente1" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Inquilino" ToRole="Cuenta_corriente1" />
+<<<<<<< HEAD
+=======
+          <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+>>>>>>> origin/master
         </EntityType>
         <EntityType Name="Mejora">
           <Key>
             <PropertyRef Name="nro_mejora" />
           </Key>
-          <Property Name="cod_contratista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="None" />
-          <Property Name="nro_mejora" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="cod_contratista" Type="Int32" Nullable="false" />
+          <Property Name="nro_mejora" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Precision="0" />
           <Property Name="valor" Type="Int32" />
           <Property Name="cod_unidad" Type="Int32" Nullable="false" />
@@ -527,7 +551,11 @@
             <PropertyRef Name="cod_ValorMensual" />
           </Key>
           <Property Name="cod_contrato" Type="Int32" Nullable="false" />
+<<<<<<< HEAD
           <Property Name="valor" Type="Int32" />
+=======
+          <Property Name="valor" Type="Double" />
+>>>>>>> origin/master
           <NavigationProperty Name="Contratos" Relationship="Self.FK_Valores_mensuales_Contratos" FromRole="Valores_mensuales" ToRole="Contratos" />
           <Property Name="fechaDesde" Type="DateTime" Precision="0" />
           <Property Name="fechaHasta" Type="DateTime" Precision="0" />
@@ -769,12 +797,22 @@
             <End Role="Reparaciones" EntitySet="Reparaciones" />
           </AssociationSet>
           <EntitySet Name="NumeroUltimaFoto" EntityType="InmobiliariaModel.NumeroUltimaFoto" />
+<<<<<<< HEAD
           <EntitySet Name="Cuenta_corriente" EntityType="InmobiliariaModel.Cuenta_corriente" />
           <AssociationSet Name="FK_Cuenta_corriente_Inquilinos1" Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1">
             <End Role="Inquilino" EntitySet="Inquilinos" />
             <End Role="Cuenta_corriente1" EntitySet="Cuenta_corriente" />
           </AssociationSet>
         </EntityContainer>
+=======
+          <EntitySet Name="Cuentas_corrientes" EntityType="InmobiliariaModel.Cuenta_corriente" />
+          <EntitySet Name="sysdiagrams" EntityType="InmobiliariaModel.sysdiagrams" />
+          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos1" Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1">
+            <End Role="Inquilino" EntitySet="Inquilinos" />
+            <End Role="Cuenta_corriente1" EntitySet="Cuentas_corrientes" />
+          </AssociationSet>
+          </EntityContainer>
+>>>>>>> origin/master
         <EntityType Name="NumeroUltimaFoto">
           <Key>
             <PropertyRef Name="NumeroFoto" />
@@ -791,6 +829,19 @@
           <Property Name="saldo" Type="Double" />
           <NavigationProperty Name="Inquilinos" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Cuenta_corriente1" ToRole="Inquilino" />
         </EntityType>
+<<<<<<< HEAD
+=======
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+>>>>>>> origin/master
         <Association Name="FK_Cuenta_corriente_Inquilinos1">
           <End Type="InmobiliariaModel.Inquilino" Role="Inquilino" Multiplicity="1" />
           <End Type="InmobiliariaModel.Cuenta_corriente" Role="Cuenta_corriente1" Multiplicity="0..1" />
@@ -823,7 +874,11 @@
     <EntitySetMapping Name="Alquileres">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Alquiler)">
         <MappingFragment StoreEntitySet="Alquileres">
+<<<<<<< HEAD
           <ScalarProperty Name="estado" ColumnName="estado" />
+=======
+                <ScalarProperty Name="estado" ColumnName="estado" />
+>>>>>>> origin/master
                 <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
@@ -868,14 +923,14 @@
     <EntitySetMapping Name="Inquilinos">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Inquilino)">
         <MappingFragment StoreEntitySet="Inquilinos">
-          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
+                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="contrasena" ColumnName="contrasena" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
           <ScalarProperty Name="apellido" ColumnName="apellido" />
           <ScalarProperty Name="direccion" ColumnName="direccion" />
           <ScalarProperty Name="telefono" ColumnName="telefono" />
-          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
@@ -985,6 +1040,7 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
           <EntitySetMapping Name="Cuenta_corriente">
             <EntityTypeMapping TypeName="InmobiliariaModel.Cuenta_corriente">
               <MappingFragment StoreEntitySet="Cuenta_corriente">
@@ -995,6 +1051,29 @@
             </EntityTypeMapping>
           </EntitySetMapping>
   </EntityContainerMapping>
+=======
+          <EntitySetMapping Name="Cuentas_corrientes">
+            <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Cuenta_corriente)">
+              <MappingFragment StoreEntitySet="Cuenta_corriente">
+                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+                <ScalarProperty Name="saldo" ColumnName="saldo" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="InmobiliariaModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          </EntityContainerMapping>
+>>>>>>> origin/master
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
@@ -1009,7 +1088,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="True" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

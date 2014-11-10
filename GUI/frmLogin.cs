@@ -16,9 +16,16 @@ namespace GUI
 {
     public partial class FrmLogin : Form
     {
+
+        string usu;
+        string tipo;
+        string pass;
+
+
         public FrmLogin()
         {
             InitializeComponent();
+            cmbOpcion.SelectedIndex = 0;
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -44,26 +51,108 @@ namespace GUI
         private void btnIngresar_Click(object sender, EventArgs e)
         {
             Administrador admin = new Administrador();
-            string usu = txtUsuario.Text;
-            string pass = txtContraseña.Text;
-            string tipo = comboBox1.SelectedItem.ToString();
+            admin = null;
+
+            int TipoControl = 0;
+            int usuarioControl = 0;
+            int passControl = 0;
 
 
-            AdministradorLogic admLog = new AdministradorLogic();
-
-            admin = admLog.BuscaAdministrador(usu, pass, tipo);
-
-            if (admin.contrasena == pass) 
+            if (cmbOpcion.SelectedItem.ToString() == "Seleccione una opción")
             {
+                cmbOpcion.BackColor = Color.Red;
 
-                frmMenu menu = new frmMenu(admin);
-                this.LimpiarPantalla();
-                menu.ShowDialog();
-                
+            }
+            else 
+            {
+                tipo = cmbOpcion.SelectedItem.ToString();
+                TipoControl = 1;
+
+            }
+
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.BackColor = Color.Red;
+            }
+            else 
+            {
+                usuarioControl = 1;           
+                usu = txtUsuario.Text.Trim();
             
             }
 
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.BackColor = Color.Red;
 
+            }
+            else 
+            {
+                passControl = 1;
+                pass = txtContraseña.Text.Trim();
+            }
+
+
+            if (TipoControl == 1 && passControl == 1 && usuarioControl == 1)
+            {
+
+                AdministradorLogic admLog = new AdministradorLogic();
+
+                admin = admLog.BuscaAdministrador(usu, pass, tipo);
+
+                if (admin == null)
+                {
+                    lblErrorInvalido.Visible = true;
+
+                }
+
+                else
+                {
+
+                    if (admin.contrasena == pass)
+                    {
+
+                        frmMenu menu = new frmMenu(admin);
+                        this.LimpiarPantalla();
+                        menu.ShowDialog();
+
+
+                    }
+                    else 
+                    {
+                        lblErrorInvalido.Visible = true;
+                    
+                    }
+
+                }
+
+
+
+            }
+            else 
+            {
+                lblErrorCompletar.Visible = true;
+            
+            }
+
+            
+
+
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUsuario.BackColor = Color.White;
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña.BackColor = Color.White;
+        }
+
+        private void cmbOpcion_MouseClick(object sender, MouseEventArgs e)
+        {
+            cmbOpcion.BackColor = Color.White;
         }
     }
 }

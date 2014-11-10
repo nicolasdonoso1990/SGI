@@ -26,9 +26,9 @@ namespace Entidades
         public string apellido { get; set; }
         public string direccion { get; set; }
         public string telefono { get; set; }
-        public string e_mail { get; set; }
         public string dni { get; set; }
         public string estado { get; set; }
+        public string e_mail { get; set; }
     
         public virtual ICollection<Alquiler> Alquileres { get; set; }
         public virtual Cuenta_corriente Cuenta_corriente1 { get; set; }

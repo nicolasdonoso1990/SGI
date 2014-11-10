@@ -12,18 +12,12 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Valor_mensual
+    public partial class sysdiagrams
     {
-        public int cod_contrato { get; set; }
-<<<<<<< HEAD
-        public Nullable<int> valor { get; set; }
-=======
-        public Nullable<double> valor { get; set; }
->>>>>>> origin/master
-        public Nullable<System.DateTime> fechaDesde { get; set; }
-        public Nullable<System.DateTime> fechaHasta { get; set; }
-        public int cod_ValorMensual { get; set; }
-    
-        public virtual Contrato Contratos { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }
