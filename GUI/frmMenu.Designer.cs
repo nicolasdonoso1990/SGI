@@ -58,6 +58,11 @@
             this.nuevaReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+<<<<<<< HEAD
+=======
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+>>>>>>> origin/master
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +77,8 @@
             this.unidadesToolStripMenuItem,
             this.contratistasToolStripMenuItem,
             this.mejorasToolStripMenuItem,
-            this.reparacionesToolStripMenuItem});
+            this.reparacionesToolStripMenuItem,
+            this.pagosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(848, 24);
@@ -300,6 +306,24 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
             // 
+<<<<<<< HEAD
+=======
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarPagoToolStripMenuItem});
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            // 
+            // registrarPagoToolStripMenuItem
+            // 
+            this.registrarPagoToolStripMenuItem.Name = "registrarPagoToolStripMenuItem";
+            this.registrarPagoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registrarPagoToolStripMenuItem.Text = "Registrar pago";
+            this.registrarPagoToolStripMenuItem.Click += new System.EventHandler(this.registrarPagoToolStripMenuItem_Click);
+            // 
+>>>>>>> origin/master
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -354,5 +378,7 @@
         private System.Windows.Forms.ToolStripMenuItem reparacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReparacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarReparacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarPagoToolStripMenuItem;
     }
 }

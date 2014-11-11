@@ -51,10 +51,12 @@
     <Compile Include="AlquilerLogic.cs" />
     <Compile Include="ContratistaLogic.cs" />
     <Compile Include="ContratoLogic.cs" />
+    <Compile Include="CuentaCorrienteLogic.cs" />
     <Compile Include="FotoLogic.cs" />
     <Compile Include="InquilinoLogic.cs" />
     <Compile Include="PagoAlquilerLogic.cs" />
     <Compile Include="MejoraLogic.cs" />
+    <Compile Include="Pagos_AlquilerLogic.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="PropiedadLogic.cs" />
     <Compile Include="ReparacionLogic.cs" />

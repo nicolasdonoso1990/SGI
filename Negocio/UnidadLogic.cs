@@ -58,6 +58,13 @@ namespace Negocio
         
         
         }
+        public List<Unidad> buscarUnidadesHabilitadas()
+        {
+            List<Unidad> todos = this.UnidadData.buscarUnidadesHabilitadas();
+
+
+            return todos;
+        }
 
         public void CambiaEstadoAlquilado(Unidad uni) 
         {
@@ -72,6 +79,7 @@ namespace Negocio
         
         
         }
+
 
 
 

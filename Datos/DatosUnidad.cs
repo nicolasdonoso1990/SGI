@@ -41,11 +41,23 @@ namespace Datos
 
             
             }
-        
-        
-        
-        
         }
+        
+        public List<Unidad> buscarUnidadesHabilitadas()
+        {
+              using (var context = new InmobiliariaEntities()) 
+            {
+
+                var query=from c in context.Unidades where c.estado=="habilitado" select c;
+                return query.ToList();
+
+
+            
+            }
+     
+        }
+        
+        
 
 
         public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)

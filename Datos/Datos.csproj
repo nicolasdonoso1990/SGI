@@ -51,14 +51,17 @@
     <Compile Include="DatosContratista.cs" />
     <Compile Include="DatosAdministrador.cs" />
     <Compile Include="DatosContrato.cs" />
+    <Compile Include="DatosCuentaCorriente.cs" />
     <Compile Include="DatosFoto.cs" />
     <Compile Include="DatosInquilino.cs" />
     <Compile Include="DatosMejora.cs" />
+    <Compile Include="DatosPagos_Alquiler.cs" />
     <Compile Include="DatosPropiedad.cs" />
     <Compile Include="DatosReparacion.cs" />
     <Compile Include="DatosUltimoNumeroFoto.cs" />
     <Compile Include="DatosUnidad.cs" />
     <Compile Include="DatosValorMensual.cs" />
+    <Compile Include="InquilinoDBContext.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

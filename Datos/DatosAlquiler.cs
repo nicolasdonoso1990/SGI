@@ -12,6 +12,19 @@ namespace Datos
     public class DatosAlquiler
     {
 
+        public List<Alquiler> buscarAlquileresActuales()
+        {
+            using (var context = new InmobiliariaEntities())
+            {
+
+                var query = from c in context.Alquileres where c.estado == "Alquilando" select c; 
+                return query.ToList();
+
+            }   
+
+    }
+
+
         public void AltaAlquiler(Alquiler alq) 
         {
 
@@ -46,6 +59,7 @@ namespace Datos
         
         
         }
+
 
 
 

@@ -168,9 +168,16 @@ namespace GUI
             modificarRep.ShowDialog();
         }
 
+<<<<<<< HEAD
         private void alquileresToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+=======
+        private void registrarPagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmRegistrarPago regisPago = new frmRegistrarPago();
+            regisPago.ShowDialog();
+>>>>>>> origin/master
         }
 
       

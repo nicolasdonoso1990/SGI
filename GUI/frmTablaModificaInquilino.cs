@@ -44,11 +44,11 @@ namespace GUI
         {
 
 
-            dataGridView1.AutoGenerateColumns = false;
+            dgvInquilinos.AutoGenerateColumns = false;
             InquilinoLogic InLog = new InquilinoLogic();
 
             ListaInquilinos = InLog.TodosInquilinos();
-            dataGridView1.DataSource = ListaInquilinos;
+            dgvInquilinos.DataSource = ListaInquilinos;
         
         }
 
@@ -60,12 +60,12 @@ namespace GUI
         private void button1_Click(object sender, EventArgs e)
         {
 
-            Int32 cantidadFilasSeleccionadas = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 cantidadFilasSeleccionadas = dgvInquilinos.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (cantidadFilasSeleccionadas > 0) 
             {
 
-                DataGridViewRow fila = dataGridView1.CurrentRow; //devuelve la fila que esta siendo seleccionada
+                DataGridViewRow fila = dgvInquilinos.CurrentRow; //devuelve la fila que esta siendo seleccionada
 
                 string dni =  fila.Cells[2].Value.ToString(); //el [2] indica la posicion del dni
 
@@ -90,7 +90,7 @@ namespace GUI
               
 
                 ListaInquilinos = InLog.TodosInquilinos();
-                dataGridView1.DataSource = ListaInquilinos;
+                dgvInquilinos.DataSource = ListaInquilinos;
 
                
 
@@ -123,7 +123,7 @@ namespace GUI
 
         private void button3_Click(object sender, EventArgs e)
         {
-            Int32 cantidadFilasSeleccionadas = dataGridView1.Rows.GetRowCount(DataGridViewElementStates.Selected);
+            Int32 cantidadFilasSeleccionadas = dgvInquilinos.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (cantidadFilasSeleccionadas > 0)
             {
@@ -132,7 +132,7 @@ namespace GUI
                 if (MessageBox.Show("¿Dar de baja inquilino?. Confirme", "Dar de baja inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
 
-                    DataGridViewRow fila = dataGridView1.CurrentRow; //devuelve la fila que esta siendo seleccionada
+                    DataGridViewRow fila = dgvInquilinos.CurrentRow; //devuelve la fila que esta siendo seleccionada
 
                     string dni = fila.Cells[2].Value.ToString(); 
                     InquilinoLogic InLog = new InquilinoLogic();
@@ -142,7 +142,7 @@ namespace GUI
 
                     List<Inquilino> ListaInquilinos = new List<Inquilino>();
                     ListaInquilinos = InLog.TodosInquilinos();
-                    dataGridView1.DataSource = ListaInquilinos;
+                    dgvInquilinos.DataSource = ListaInquilinos;
 
 
                 }
@@ -183,7 +183,7 @@ namespace GUI
 
             List<Inquilino> ListaInquilinos = new List<Inquilino>();
             ListaInquilinos = InLog.TodosInquilinos();
-            dataGridView1.DataSource = ListaInquilinos;
+            dgvInquilinos.DataSource = ListaInquilinos;
 
         }
 
