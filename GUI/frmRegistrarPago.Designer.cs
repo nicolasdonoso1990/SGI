@@ -53,7 +53,6 @@
             this.lblDireccion = new System.Windows.Forms.Label();
             this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.btnRegistarPago = new System.Windows.Forms.Button();
-            this.txtboxMontoaPagar = new System.Windows.Forms.TextBox();
             this.txtboxSaldoActual = new System.Windows.Forms.TextBox();
             this.lblSaldo = new System.Windows.Forms.Label();
             this.lblMonto = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtboxMontoaPagar = new System.Windows.Forms.MaskedTextBox();
             this.grboxInquilino.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInquilinos)).BeginInit();
             this.grpboxUnidad.SuspendLayout();
@@ -245,6 +245,7 @@
             // 
             // grpboxPago
             // 
+            this.grpboxPago.Controls.Add(this.txtboxMontoaPagar);
             this.grpboxPago.Controls.Add(this.txtboxMontoMensual);
             this.grpboxPago.Controls.Add(this.lblMontoMensual);
             this.grpboxPago.Controls.Add(this.txtboxDescripcion);
@@ -253,7 +254,6 @@
             this.grpboxPago.Controls.Add(this.lblDireccion);
             this.grpboxPago.Controls.Add(this.dtpFecha);
             this.grpboxPago.Controls.Add(this.btnRegistarPago);
-            this.grpboxPago.Controls.Add(this.txtboxMontoaPagar);
             this.grpboxPago.Controls.Add(this.txtboxSaldoActual);
             this.grpboxPago.Controls.Add(this.lblSaldo);
             this.grpboxPago.Controls.Add(this.lblMonto);
@@ -334,13 +334,6 @@
             this.btnRegistarPago.Text = "Registar Pago";
             this.btnRegistarPago.UseVisualStyleBackColor = true;
             this.btnRegistarPago.Click += new System.EventHandler(this.btnRegistarPago_Click);
-            // 
-            // txtboxMontoaPagar
-            // 
-            this.txtboxMontoaPagar.Location = new System.Drawing.Point(434, 115);
-            this.txtboxMontoaPagar.Name = "txtboxMontoaPagar";
-            this.txtboxMontoaPagar.Size = new System.Drawing.Size(200, 20);
-            this.txtboxMontoaPagar.TabIndex = 5;
             // 
             // txtboxSaldoActual
             // 
@@ -470,6 +463,15 @@
             this.telefono.Name = "telefono";
             this.telefono.ReadOnly = true;
             // 
+            // txtboxMontoaPagar
+            // 
+            this.txtboxMontoaPagar.Location = new System.Drawing.Point(431, 112);
+            this.txtboxMontoaPagar.Mask = "99999";
+            this.txtboxMontoaPagar.Name = "txtboxMontoaPagar";
+            this.txtboxMontoaPagar.Size = new System.Drawing.Size(203, 20);
+            this.txtboxMontoaPagar.TabIndex = 6;
+            this.txtboxMontoaPagar.ValidatingType = typeof(int);
+            // 
             // frmRegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -506,7 +508,6 @@
         private System.Windows.Forms.Label lblMonto;
         private System.Windows.Forms.Label lblFecha;
         private System.Windows.Forms.Label lblSaldo;
-        private System.Windows.Forms.TextBox txtboxMontoaPagar;
         private System.Windows.Forms.TextBox txtboxSaldoActual;
         private System.Windows.Forms.DateTimePicker dtpFecha;
         private System.Windows.Forms.Button btnRegistarPago;
@@ -537,6 +538,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
+        private System.Windows.Forms.MaskedTextBox txtboxMontoaPagar;
 
     }
 }

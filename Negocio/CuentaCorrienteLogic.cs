@@ -25,6 +25,10 @@ namespace Negocio
            return saldo;
        }
 
+       public void ActualizarSaldo(Int32 saldoActual,Int32 nroInq) 
+       {
+           this.CuentaCorrienteData.ActualizarSaldo(saldoActual, nroInq);
+       }
 
     }
 }

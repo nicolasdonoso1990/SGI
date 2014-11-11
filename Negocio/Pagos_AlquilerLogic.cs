@@ -21,6 +21,7 @@ namespace Negocio
         {
             this.Pagos_AlquilerData.AltaPagosAlquiler(pa);
 
+            
         }
 
     }

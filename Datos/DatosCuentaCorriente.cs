@@ -26,6 +26,20 @@ namespace Datos
       
        }
 
+       public void ActualizarSaldo (Int32 saldoActual,Int32 nroInq)
+       {
+           DateTime hoy = DateTime.Today;
+           using ( var context = new InmobiliariaEntities())
+           {
+               Cuenta_corriente cc = context.Cuenta_corriente.First(i => i.nro_inquilino == nroInq);
+               cc.saldo = saldoActual;
+               cc.fecha = hoy;
+
+               context.SaveChanges();
+
+           }
+       }
+
 
     }
 }

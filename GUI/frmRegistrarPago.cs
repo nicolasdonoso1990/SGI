@@ -184,6 +184,7 @@ namespace GUI
 
         private void btnRegistarPago_Click(object sender, EventArgs e)
         {
+
             string monto= txtboxMontoaPagar.Text;
 
           DialogResult dialogResult = MessageBox.Show("Usted va a registrar un pago de $" + monto + "¿Desea continuar?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -221,6 +222,16 @@ namespace GUI
             pal.AltaPagos_Alquiler(pa);
 
 
+
+            CuentaCorrienteLogic ccl = new CuentaCorrienteLogic();
+
+            Int32 saldoActual = Convert.ToInt32(txtboxSaldoActual.Text); //Busco SAldo Actual del txtbox
+
+            Int32 montoapagar = Convert.ToInt32(txtboxMontoaPagar.Text); // Busco monto que vamos a pagar
+
+            Int32 nuevoSaldo = saldoActual + montoapagar;  //calculo el nuevo saldo
+
+            ccl.ActualizarSaldo(nuevoSaldo, numeroInq);
 
 
 
