@@ -49,10 +49,15 @@ namespace GUI
             Int32 cantFilasSelec = dgvInquilinos.Rows.GetRowCount(DataGridViewElementStates.Selected);
             if (cantFilasSelec > 0)
             {
+
+                
+
                 DataGridViewRow fila = dgvInquilinos.CurrentRow; //devuelve la fila que esta siendo seleccionada
                 
                 //El número de inquilino está como no visible en las columnas de Inquilino
                 Int32 numero = Convert.ToInt32(fila.Cells[0].Value);
+
+
 
                 string nom = fila.Cells[1].Value.ToString();
 
@@ -64,6 +69,8 @@ namespace GUI
                 grpboxUnidad.Enabled = true;
 
                 txtboxNombreInquilino.Text = nombrecompleto;
+
+                txtboxNroInquilino.Text = numero.ToString();
 
                     llenarGrillaUnidades(numero);
                 
@@ -216,6 +223,86 @@ namespace GUI
 
 
 
+
+        }
+
+        private void txtboxFiltroDni_TextChanged(object sender, EventArgs e)
+        {
+            int     a; //Variable a, a la cual asignada la comparación
+
+          int cero = 0;
+            string filtro = txtboxFiltroDni.Text;
+
+            if ( cero!=(a=String.Compare(txtboxFiltroDni.Text,""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                InquilinoLogic inLog = new InquilinoLogic();
+                ListaInquilinos = inLog.TodosInquilinos();
+
+                List<Inquilino> listaFiltrada = (from inqui in ListaInquilinos
+                                                     where inqui.dni.ToString().Contains(filtro)
+                                                      select inqui).ToList();
+                dgvInquilinos.DataSource = listaFiltrada;
+
+           
+                
+            }
+            else
+            {
+                this.rellenarGrillaInquilinos();
+            }
+
+
+
+
+        }
+
+        private void txtboxFiltroDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0; 
+            string filtro = txtboxFiltroDescripcion.Text;
+
+            if (cero != (a = String.Compare(txtboxFiltroDescripcion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+
+                Int32 numero = Convert.ToInt32(txtboxNroInquilino.Text);
+                
+                this.llenarGrillaUnidadesFiltrada(numero,filtro);
+
+
+            }
+            else
+            {
+                Int32 numero = Convert.ToInt32(txtboxNroInquilino.Text);
+                this.llenarGrillaUnidades(numero);
+            }
+
+
+        }
+
+        public void llenarGrillaUnidadesFiltrada(Int32 numero, string filtro)
+        {
+            AlquilerLogic al = new AlquilerLogic(); //Creo objeto de negocio
+
+
+            var lista = al.UnidadesAlquiladasActualesDeUnInquilinoFiltrado(numero,filtro);  //Mando el número para buscar todas las unidades de un Inquilino
+
+
+            dgvUnidades.AutoGenerateColumns = false;
+
+
+            var lis = lista.Cast<object>().ToList(); //Paso el IEnumerable a Lista así puede usarse como DATASOURCE
+
+
+            dgvUnidades.DataSource = null; /*Una buena práctica en el VisualFoxPro era poner
+                                            * el datasource en null 
+                                            */
+
+
+            dgvUnidades.DataSource = lis; //cargo el datasource con el IEnumerable transformado a List
+
+            dgvUnidades.Refresh(); //Mando un refresh por las dudas
 
         }
     }
