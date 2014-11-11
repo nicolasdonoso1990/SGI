@@ -185,12 +185,21 @@ namespace GUI
         private void btnRegistarPago_Click(object sender, EventArgs e)
         {
 
-            string monto= txtboxMontoaPagar.Text;
+            string monto = txtboxMontoaPagar.Text;
 
-          DialogResult dialogResult = MessageBox.Show("Usted va a registrar un pago de $" + monto + "¿Desea continuar?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (0 == string.Compare("", monto))
+            {
+                MessageBox.Show("Error, no ingresó un monto", "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
 
-           if (dialogResult==DialogResult.Yes) { this.RegistrarPago(); }
+            else
+            {
 
+                DialogResult dialogResult = MessageBox.Show("Usted va a registrar un pago de $" + monto + "¿Desea continuar?", "¡Atención!", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+
+                if (dialogResult == DialogResult.Yes) { this.RegistrarPago(); }
+
+            }
         }
 
         public void RegistrarPago()
@@ -233,8 +242,29 @@ namespace GUI
 
             ccl.ActualizarSaldo(nuevoSaldo, numeroInq);
 
+            MessageBox.Show("El pago ha sido registrado con exito", "Registrar pago");
+
+            if (MessageBox.Show("¿Desea registrar otro pago? Confirme", "Otro pago", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                txtboxDescripcion.Clear();
+                txtboxDireccion.Clear();
+                txtboxFiltroDescripcion.Clear();
+                txtboxFiltroDni.Clear();
+                txtboxMontoaPagar.Clear();
+                txtboxMontoMensual.Clear();
+                txtboxNombreInquilino.Clear();
+                txtboxNroInquilino.Clear();
+                txtboxSaldoActual.Clear();
+
+                this.trabadoInicial();
 
 
+            }
+            else
+            {
+                this.Dispose();
+            }
+            
         }
 
         private void txtboxFiltroDni_TextChanged(object sender, EventArgs e)
@@ -315,6 +345,11 @@ namespace GUI
 
             dgvUnidades.Refresh(); //Mando un refresh por las dudas
 
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
         }
     }
 }

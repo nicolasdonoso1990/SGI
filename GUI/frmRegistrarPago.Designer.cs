@@ -30,13 +30,24 @@
         {
             this.grboxInquilino = new System.Windows.Forms.GroupBox();
             this.dgvInquilinos = new System.Windows.Forms.DataGridView();
+            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnSeleccionarInquilino = new System.Windows.Forms.Button();
             this.lblFiltroDni = new System.Windows.Forms.Label();
             this.txtboxFiltroDni = new System.Windows.Forms.TextBox();
             this.grpboxUnidad = new System.Windows.Forms.GroupBox();
+            this.txtboxNroInquilino = new System.Windows.Forms.TextBox();
+            this.lblNroInquilino = new System.Windows.Forms.Label();
             this.txtboxNombreInquilino = new System.Windows.Forms.TextBox();
             this.lblNombreInquilino = new System.Windows.Forms.Label();
             this.btnSeleccionarUnidad = new System.Windows.Forms.Button();
+            this.lblFiltrarDomicilio = new System.Windows.Forms.Label();
+            this.txtboxFiltroDescripcion = new System.Windows.Forms.TextBox();
             this.dgvUnidades = new System.Windows.Forms.DataGridView();
             this.CodigoDeUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.numeroAlquiler = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,6 +56,7 @@
             this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.m2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grpboxPago = new System.Windows.Forms.GroupBox();
+            this.txtboxMontoaPagar = new System.Windows.Forms.MaskedTextBox();
             this.txtboxMontoMensual = new System.Windows.Forms.TextBox();
             this.lblMontoMensual = new System.Windows.Forms.Label();
             this.txtboxDescripcion = new System.Windows.Forms.TextBox();
@@ -58,18 +70,6 @@
             this.lblMonto = new System.Windows.Forms.Label();
             this.lblFecha = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
-            this.lblFiltrarDomicilio = new System.Windows.Forms.Label();
-            this.txtboxFiltroDescripcion = new System.Windows.Forms.TextBox();
-            this.lblNroInquilino = new System.Windows.Forms.Label();
-            this.txtboxNroInquilino = new System.Windows.Forms.TextBox();
-            this.Código = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dni = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtboxMontoaPagar = new System.Windows.Forms.MaskedTextBox();
             this.grboxInquilino.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInquilinos)).BeginInit();
             this.grpboxUnidad.SuspendLayout();
@@ -79,6 +79,7 @@
             // 
             // grboxInquilino
             // 
+            this.grboxInquilino.BackColor = System.Drawing.Color.Transparent;
             this.grboxInquilino.Controls.Add(this.dgvInquilinos);
             this.grboxInquilino.Controls.Add(this.btnSeleccionarInquilino);
             this.grboxInquilino.Controls.Add(this.lblFiltroDni);
@@ -109,6 +110,56 @@
             this.dgvInquilinos.Size = new System.Drawing.Size(525, 195);
             this.dgvInquilinos.TabIndex = 4;
             // 
+            // Código
+            // 
+            this.Código.DataPropertyName = "nro_inquilino";
+            this.Código.HeaderText = "Código";
+            this.Código.Name = "Código";
+            this.Código.ReadOnly = true;
+            this.Código.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            // 
+            // apellido
+            // 
+            this.apellido.DataPropertyName = "apellido";
+            this.apellido.HeaderText = "Apellido";
+            this.apellido.Name = "apellido";
+            this.apellido.ReadOnly = true;
+            // 
+            // dni
+            // 
+            this.dni.DataPropertyName = "dni";
+            this.dni.HeaderText = "DNI";
+            this.dni.Name = "dni";
+            this.dni.ReadOnly = true;
+            // 
+            // usuario
+            // 
+            this.usuario.DataPropertyName = "usuario";
+            this.usuario.HeaderText = "Usuario";
+            this.usuario.Name = "usuario";
+            this.usuario.ReadOnly = true;
+            // 
+            // direccion
+            // 
+            this.direccion.DataPropertyName = "dom";
+            this.direccion.HeaderText = "Direccion";
+            this.direccion.Name = "direccion";
+            this.direccion.ReadOnly = true;
+            // 
+            // telefono
+            // 
+            this.telefono.DataPropertyName = "telefono";
+            this.telefono.HeaderText = "Telefono";
+            this.telefono.Name = "telefono";
+            this.telefono.ReadOnly = true;
+            // 
             // btnSeleccionarInquilino
             // 
             this.btnSeleccionarInquilino.Location = new System.Drawing.Point(183, 262);
@@ -138,6 +189,7 @@
             // 
             // grpboxUnidad
             // 
+            this.grpboxUnidad.BackColor = System.Drawing.Color.Transparent;
             this.grpboxUnidad.Controls.Add(this.txtboxNroInquilino);
             this.grpboxUnidad.Controls.Add(this.lblNroInquilino);
             this.grpboxUnidad.Controls.Add(this.txtboxNombreInquilino);
@@ -152,6 +204,23 @@
             this.grpboxUnidad.TabIndex = 4;
             this.grpboxUnidad.TabStop = false;
             this.grpboxUnidad.Text = "Seleccione Unidad";
+            // 
+            // txtboxNroInquilino
+            // 
+            this.txtboxNroInquilino.Location = new System.Drawing.Point(116, 13);
+            this.txtboxNroInquilino.Name = "txtboxNroInquilino";
+            this.txtboxNroInquilino.ReadOnly = true;
+            this.txtboxNroInquilino.Size = new System.Drawing.Size(176, 20);
+            this.txtboxNroInquilino.TabIndex = 7;
+            // 
+            // lblNroInquilino
+            // 
+            this.lblNroInquilino.AutoSize = true;
+            this.lblNroInquilino.Location = new System.Drawing.Point(6, 16);
+            this.lblNroInquilino.Name = "lblNroInquilino";
+            this.lblNroInquilino.Size = new System.Drawing.Size(104, 13);
+            this.lblNroInquilino.TabIndex = 6;
+            this.lblNroInquilino.Text = "Número de Inquilino:";
             // 
             // txtboxNombreInquilino
             // 
@@ -179,6 +248,23 @@
             this.btnSeleccionarUnidad.Text = "Seleccionar Unidad";
             this.btnSeleccionarUnidad.UseVisualStyleBackColor = true;
             this.btnSeleccionarUnidad.Click += new System.EventHandler(this.btnSeleccionarUnidad_Click);
+            // 
+            // lblFiltrarDomicilio
+            // 
+            this.lblFiltrarDomicilio.AutoSize = true;
+            this.lblFiltrarDomicilio.Location = new System.Drawing.Point(6, 68);
+            this.lblFiltrarDomicilio.Name = "lblFiltrarDomicilio";
+            this.lblFiltrarDomicilio.Size = new System.Drawing.Size(98, 13);
+            this.lblFiltrarDomicilio.TabIndex = 2;
+            this.lblFiltrarDomicilio.Text = "Filtrar por Domicilio:";
+            // 
+            // txtboxFiltroDescripcion
+            // 
+            this.txtboxFiltroDescripcion.Location = new System.Drawing.Point(116, 65);
+            this.txtboxFiltroDescripcion.Name = "txtboxFiltroDescripcion";
+            this.txtboxFiltroDescripcion.Size = new System.Drawing.Size(176, 20);
+            this.txtboxFiltroDescripcion.TabIndex = 1;
+            this.txtboxFiltroDescripcion.TextChanged += new System.EventHandler(this.txtboxFiltroDescripcion_TextChanged);
             // 
             // dgvUnidades
             // 
@@ -245,6 +331,7 @@
             // 
             // grpboxPago
             // 
+            this.grpboxPago.BackColor = System.Drawing.Color.Transparent;
             this.grpboxPago.Controls.Add(this.txtboxMontoaPagar);
             this.grpboxPago.Controls.Add(this.txtboxMontoMensual);
             this.grpboxPago.Controls.Add(this.lblMontoMensual);
@@ -264,6 +351,15 @@
             this.grpboxPago.TabIndex = 4;
             this.grpboxPago.TabStop = false;
             this.grpboxPago.Text = "Ingrese Pago";
+            // 
+            // txtboxMontoaPagar
+            // 
+            this.txtboxMontoaPagar.Location = new System.Drawing.Point(431, 112);
+            this.txtboxMontoaPagar.Mask = "99999";
+            this.txtboxMontoaPagar.Name = "txtboxMontoaPagar";
+            this.txtboxMontoaPagar.Size = new System.Drawing.Size(203, 20);
+            this.txtboxMontoaPagar.TabIndex = 6;
+            this.txtboxMontoaPagar.ValidatingType = typeof(int);
             // 
             // txtboxMontoMensual
             // 
@@ -378,104 +474,13 @@
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            // 
-            // lblFiltrarDomicilio
-            // 
-            this.lblFiltrarDomicilio.AutoSize = true;
-            this.lblFiltrarDomicilio.Location = new System.Drawing.Point(6, 68);
-            this.lblFiltrarDomicilio.Name = "lblFiltrarDomicilio";
-            this.lblFiltrarDomicilio.Size = new System.Drawing.Size(98, 13);
-            this.lblFiltrarDomicilio.TabIndex = 2;
-            this.lblFiltrarDomicilio.Text = "Filtrar por Domicilio:";
-            // 
-            // txtboxFiltroDescripcion
-            // 
-            this.txtboxFiltroDescripcion.Location = new System.Drawing.Point(116, 65);
-            this.txtboxFiltroDescripcion.Name = "txtboxFiltroDescripcion";
-            this.txtboxFiltroDescripcion.Size = new System.Drawing.Size(176, 20);
-            this.txtboxFiltroDescripcion.TabIndex = 1;
-            this.txtboxFiltroDescripcion.TextChanged += new System.EventHandler(this.txtboxFiltroDescripcion_TextChanged);
-            // 
-            // lblNroInquilino
-            // 
-            this.lblNroInquilino.AutoSize = true;
-            this.lblNroInquilino.Location = new System.Drawing.Point(6, 16);
-            this.lblNroInquilino.Name = "lblNroInquilino";
-            this.lblNroInquilino.Size = new System.Drawing.Size(104, 13);
-            this.lblNroInquilino.TabIndex = 6;
-            this.lblNroInquilino.Text = "Número de Inquilino:";
-            // 
-            // txtboxNroInquilino
-            // 
-            this.txtboxNroInquilino.Location = new System.Drawing.Point(116, 13);
-            this.txtboxNroInquilino.Name = "txtboxNroInquilino";
-            this.txtboxNroInquilino.ReadOnly = true;
-            this.txtboxNroInquilino.Size = new System.Drawing.Size(176, 20);
-            this.txtboxNroInquilino.TabIndex = 7;
-            // 
-            // Código
-            // 
-            this.Código.DataPropertyName = "nro_inquilino";
-            this.Código.HeaderText = "Código";
-            this.Código.Name = "Código";
-            this.Código.ReadOnly = true;
-            this.Código.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // apellido
-            // 
-            this.apellido.DataPropertyName = "apellido";
-            this.apellido.HeaderText = "Apellido";
-            this.apellido.Name = "apellido";
-            this.apellido.ReadOnly = true;
-            // 
-            // dni
-            // 
-            this.dni.DataPropertyName = "dni";
-            this.dni.HeaderText = "DNI";
-            this.dni.Name = "dni";
-            this.dni.ReadOnly = true;
-            // 
-            // usuario
-            // 
-            this.usuario.DataPropertyName = "usuario";
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // direccion
-            // 
-            this.direccion.DataPropertyName = "dom";
-            this.direccion.HeaderText = "Direccion";
-            this.direccion.Name = "direccion";
-            this.direccion.ReadOnly = true;
-            // 
-            // telefono
-            // 
-            this.telefono.DataPropertyName = "telefono";
-            this.telefono.HeaderText = "Telefono";
-            this.telefono.Name = "telefono";
-            this.telefono.ReadOnly = true;
-            // 
-            // txtboxMontoaPagar
-            // 
-            this.txtboxMontoaPagar.Location = new System.Drawing.Point(431, 112);
-            this.txtboxMontoaPagar.Mask = "99999";
-            this.txtboxMontoaPagar.Name = "txtboxMontoaPagar";
-            this.txtboxMontoaPagar.Size = new System.Drawing.Size(203, 20);
-            this.txtboxMontoaPagar.TabIndex = 6;
-            this.txtboxMontoaPagar.ValidatingType = typeof(int);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // frmRegistrarPago
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(972, 492);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.grpboxPago);
