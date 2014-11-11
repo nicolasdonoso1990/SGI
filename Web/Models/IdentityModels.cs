@@ -13,5 +13,7 @@ namespace Web.Models
             : base("DefaultConnection")
         {
         }
+
+        public System.Data.Entity.DbSet<Entidades.Administrador> Administradors { get; set; }
     }
 }
