@@ -42,7 +42,7 @@
             this.codigoUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.met = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtDNI = new System.Windows.Forms.TextBox();
+            this.txtboxFiltroDni = new System.Windows.Forms.TextBox();
             this.lblDNI = new System.Windows.Forms.Label();
             this.dataInquilino = new System.Windows.Forms.DataGridView();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,9 @@
             this.fecha2 = new System.Windows.Forms.DateTimePicker();
             this.btnFecha = new System.Windows.Forms.Button();
             this.grpAlquiler = new System.Windows.Forms.GroupBox();
-            this.btnAlquiler = new System.Windows.Forms.Button();
-            this.txtDireccionUnidad = new System.Windows.Forms.TextBox();
+            this.txtDescripcionUnidad = new System.Windows.Forms.TextBox();
             this.lblDireccionUnidad = new System.Windows.Forms.Label();
+            this.btnAlquiler = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPropiedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUnidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataInquilino)).BeginInit();
@@ -84,6 +84,7 @@
             this.txtDireccionPropiedad.Size = new System.Drawing.Size(222, 20);
             this.txtDireccionPropiedad.TabIndex = 7;
             this.txtDireccionPropiedad.Visible = false;
+            this.txtDireccionPropiedad.TextChanged += new System.EventHandler(this.txtDireccionPropiedad_TextChanged);
             // 
             // lblDireccionPropiedad
             // 
@@ -189,13 +190,14 @@
             this.met.HeaderText = "Metros Cuadrados";
             this.met.Name = "met";
             // 
-            // txtDNI
+            // txtboxFiltroDni
             // 
-            this.txtDNI.Location = new System.Drawing.Point(626, 370);
-            this.txtDNI.Name = "txtDNI";
-            this.txtDNI.Size = new System.Drawing.Size(100, 20);
-            this.txtDNI.TabIndex = 4;
-            this.txtDNI.Visible = false;
+            this.txtboxFiltroDni.Location = new System.Drawing.Point(626, 370);
+            this.txtboxFiltroDni.Name = "txtboxFiltroDni";
+            this.txtboxFiltroDni.Size = new System.Drawing.Size(100, 20);
+            this.txtboxFiltroDni.TabIndex = 4;
+            this.txtboxFiltroDni.Visible = false;
+            this.txtboxFiltroDni.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             // 
             // lblDNI
             // 
@@ -316,12 +318,12 @@
             // grpAlquiler
             // 
             this.grpAlquiler.BackColor = System.Drawing.Color.Transparent;
-            this.grpAlquiler.Controls.Add(this.txtDireccionUnidad);
+            this.grpAlquiler.Controls.Add(this.txtDescripcionUnidad);
             this.grpAlquiler.Controls.Add(this.lblDireccionUnidad);
             this.grpAlquiler.Controls.Add(this.btnAlquiler);
             this.grpAlquiler.Controls.Add(this.btnSalir);
             this.grpAlquiler.Controls.Add(this.btnUnidad);
-            this.grpAlquiler.Controls.Add(this.txtDNI);
+            this.grpAlquiler.Controls.Add(this.txtboxFiltroDni);
             this.grpAlquiler.Controls.Add(this.btnPropiedad);
             this.grpAlquiler.Controls.Add(this.lblDNI);
             this.grpAlquiler.Controls.Add(this.dataInquilino);
@@ -341,6 +343,25 @@
             this.grpAlquiler.TabStop = false;
             this.grpAlquiler.Text = "Datos Alquiler";
             // 
+            // txtDescripcionUnidad
+            // 
+            this.txtDescripcionUnidad.Location = new System.Drawing.Point(797, 97);
+            this.txtDescripcionUnidad.Name = "txtDescripcionUnidad";
+            this.txtDescripcionUnidad.Size = new System.Drawing.Size(222, 20);
+            this.txtDescripcionUnidad.TabIndex = 13;
+            this.txtDescripcionUnidad.Visible = false;
+            this.txtDescripcionUnidad.TextChanged += new System.EventHandler(this.txtDescripcionUnidad_TextChanged);
+            // 
+            // lblDireccionUnidad
+            // 
+            this.lblDireccionUnidad.AutoSize = true;
+            this.lblDireccionUnidad.Location = new System.Drawing.Point(688, 98);
+            this.lblDireccionUnidad.Name = "lblDireccionUnidad";
+            this.lblDireccionUnidad.Size = new System.Drawing.Size(103, 13);
+            this.lblDireccionUnidad.TabIndex = 12;
+            this.lblDireccionUnidad.Text = "Descripción Unidad:";
+            this.lblDireccionUnidad.Visible = false;
+            // 
             // btnAlquiler
             // 
             this.btnAlquiler.Location = new System.Drawing.Point(697, 627);
@@ -351,24 +372,6 @@
             this.btnAlquiler.UseVisualStyleBackColor = true;
             this.btnAlquiler.Visible = false;
             this.btnAlquiler.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtDireccionUnidad
-            // 
-            this.txtDireccionUnidad.Location = new System.Drawing.Point(754, 96);
-            this.txtDireccionUnidad.Name = "txtDireccionUnidad";
-            this.txtDireccionUnidad.Size = new System.Drawing.Size(222, 20);
-            this.txtDireccionUnidad.TabIndex = 13;
-            this.txtDireccionUnidad.Visible = false;
-            // 
-            // lblDireccionUnidad
-            // 
-            this.lblDireccionUnidad.AutoSize = true;
-            this.lblDireccionUnidad.Location = new System.Drawing.Point(688, 98);
-            this.lblDireccionUnidad.Name = "lblDireccionUnidad";
-            this.lblDireccionUnidad.Size = new System.Drawing.Size(55, 13);
-            this.lblDireccionUnidad.TabIndex = 12;
-            this.lblDireccionUnidad.Text = "Direccion:";
-            this.lblDireccionUnidad.Visible = false;
             // 
             // frmAltaAlquiler
             // 
@@ -404,7 +407,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn met;
-        private System.Windows.Forms.TextBox txtDNI;
+        private System.Windows.Forms.TextBox txtboxFiltroDni;
         private System.Windows.Forms.Label lblDNI;
         private System.Windows.Forms.DataGridView dataInquilino;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
@@ -420,7 +423,7 @@
         private System.Windows.Forms.Button btnFecha;
         private System.Windows.Forms.GroupBox grpAlquiler;
         private System.Windows.Forms.Button btnAlquiler;
-        private System.Windows.Forms.TextBox txtDireccionUnidad;
+        private System.Windows.Forms.TextBox txtDescripcionUnidad;
         private System.Windows.Forms.Label lblDireccionUnidad;
     }
 }

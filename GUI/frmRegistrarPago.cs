@@ -271,7 +271,7 @@ namespace GUI
         {
             int     a; //Variable a, a la cual asignada la comparación
 
-          int cero = 0;
+            int cero = 0;
             string filtro = txtboxFiltroDni.Text;
 
             if ( cero!=(a=String.Compare(txtboxFiltroDni.Text,""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
