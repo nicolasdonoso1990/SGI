@@ -105,19 +105,29 @@ namespace GUI
         private void txtBusca_TextChanged(object sender, EventArgs e)
         {
 
+            int a; //Variable a, a la cual asignada la comparación
 
- 
-            
-           
+            int cero = 0;
+            string filtro = txtBusca.Text;
+
+            if (cero != (a = String.Compare(txtBusca.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                InquilinoLogic inLog = new InquilinoLogic();
+                ListaInquilinos = inLog.TodosInquilinos();
+
+                List<Inquilino> listaFiltrada = (from inqui in ListaInquilinos
+                                                 where inqui.dni.ToString().Contains(filtro)
+                                                 select inqui).ToList();
+                dgvInquilinos.DataSource = listaFiltrada;
 
 
-           //var resultadoFiltro = ListaInquilinos.Select(i => i.dni.Contains(txtBusca.Text));
-           
-          // dataGridView1.DataSource = resultadoFiltro;
-          
-            
-              
-       
+
+            }
+
+            else
+            {
+                this.CompletarGrilla();
+            }
 
         }
 
