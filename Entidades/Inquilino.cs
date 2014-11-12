@@ -31,8 +31,6 @@ namespace Entidades
         public string e_mail { get; set; }
     
         public virtual ICollection<Alquiler> Alquileres { get; set; }
-        public virtual Cuenta_corriente1 Cuenta_corriente { get; set; }
+        public virtual Cuenta_corriente Cuenta_corriente1 { get; set; }
     }
-
-    
 }

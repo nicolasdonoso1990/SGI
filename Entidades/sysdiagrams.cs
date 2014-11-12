@@ -12,12 +12,12 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Administrador
+    public partial class sysdiagrams
     {
-        public int IDadmin { get; set; }
-        public string usuario { get; set; }
-        public string contrasena { get; set; }
-        public string estado { get; set; }
-        public string tipo { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

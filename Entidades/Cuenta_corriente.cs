@@ -12,12 +12,12 @@ namespace Entidades
     using System;
     using System.Collections.Generic;
     
-    public partial class Administrador
+    public partial class Cuenta_corriente
     {
-        public int IDadmin { get; set; }
-        public string usuario { get; set; }
-        public string contrasena { get; set; }
-        public string estado { get; set; }
-        public string tipo { get; set; }
+        public int nro_inquilino { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<double> saldo { get; set; }
+    
+        public virtual Inquilino Inquilinos { get; set; }
     }
 }
