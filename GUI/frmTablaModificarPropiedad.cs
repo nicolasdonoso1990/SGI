@@ -231,6 +231,38 @@ namespace GUI
             cmbCiudad.BackColor = Color.White;
         }
 
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual se le asigna la comparación
+
+            int cero = 0;
+            string filtro = txtDireccion.Text;
+
+            if (cero != (a = String.Compare(txtDireccion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+                dataGridView1.AutoGenerateColumns = false;
+
+                PropiedadLogic propLog = new PropiedadLogic();
+
+                ListaPropiedades = propLog.todasPropiedades();
+
+               
+
+                List<Propiedad> listaFiltrada = (from prop in ListaPropiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+                dataGridView1.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.llenarGrilla();
+            }
+        }
+
 
 
 

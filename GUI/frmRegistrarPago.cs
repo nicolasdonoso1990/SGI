@@ -269,7 +269,7 @@ namespace GUI
 
         private void txtboxFiltroDni_TextChanged(object sender, EventArgs e)
         {
-            int     a; //Variable a, a la cual asignada la comparación
+            int     a; //Variable a, a la cual se le asigna la comparación
 
             int cero = 0;
             string filtro = txtboxFiltroDni.Text;
