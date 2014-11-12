@@ -26,17 +26,11 @@ namespace GUI
             InitializeComponent();
 
             this.CompletarGrilla();
-
+            this.lblErrorCompletar.Visible = false;
                 
 
 
         }
-
-
-
-
-
-
 
 
 
@@ -168,38 +162,60 @@ namespace GUI
         {
             
             //Empiezan las validaciones
-             string mensaje = "";   // Si se llena el mensaje es porque hay algún campo imortante en blanco
+             
+             bool todolleno = true; // Si la variable se pone en False, falta llenar algo
 
             if (0 == string.Compare("",txtNombre.Text ))
             {
-                mensaje = mensaje + "Nombre\n";
+                txtNombre.BackColor = Color.Red;
+                todolleno = false;
             }
 
             if (0 == string.Compare("",txtApellido.Text ))
             {
-                mensaje = mensaje + "Apellido\n";
+                txtApellido.BackColor = Color.Red;
+                todolleno = false;
             }
 
             if (0 == string.Compare("",txtDireccion.Text ))
             {
-                mensaje = mensaje + "Dirección\n";
+                txtDireccion.BackColor = Color.Red;
+                todolleno = false;
             }
 
             if (0 == string.Compare("", txtDni.Text))
             {
-                mensaje = mensaje + "DNI\n";
+                txtDni.BackColor = Color.Red;
+                todolleno = false;
             }
 
-          
-
-            if (0 != string.Compare("", mensaje))
+            if (txtTelefono.Text == "")
             {
-                MessageBox.Show("Los siguientes campos faltan ser rellenados:\n" + mensaje, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtTelefono.BackColor = Color.Red;
+                todolleno = false;
+            }
+           
+            if (txtUsuario.Text != "" || txtContraseña.Text != "")
+            {
+                if (txtUsuario.Text == "")
+                {
+                    txtUsuario.BackColor = Color.Red;
+                    todolleno = false;
+                }
+
+                if (txtContraseña.Text == "")
+                {
+                    txtContraseña.BackColor = Color.Red;
+                    todolleno = false;
+                }
             }
 
-            else
-            {
 
+
+
+             if (todolleno==true)
+            {
+                lblErrorCompletar.Visible = false;
 
                 /*Esto está buenísimo.
                  * Acá el gran Donoso pasa todo
@@ -230,10 +246,64 @@ namespace GUI
                 ListaInquilinos = InLog.TodosInquilinos();
                 dgvInquilinos.DataSource = ListaInquilinos;
 
+                txtApellido.Clear();
+                txtContraseña.Clear();
+                txtDireccion.Clear();
+                txtDni.Clear();
+                txtMail.Clear();
+                txtNombre.Clear();
+                txtTelefono.Clear();
+                txtUsuario.Clear();
+                txtNumInq.Clear();
 
             }
 
+             else
+             {
+                 lblErrorCompletar.Visible = true;
+             }
 
+
+        }
+
+        private void txtNumInq_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtNombre.BackColor = Color.White;
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtApellido.BackColor = Color.White;
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDireccion.BackColor = Color.White;
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtTelefono.BackColor = Color.White;
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDni.BackColor = Color.White;
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUsuario.BackColor = Color.White;
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña.BackColor = Color.White;
         }
 
         

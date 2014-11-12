@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmTablaModificaInquilino));
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.txtBusca = new System.Windows.Forms.TextBox();
@@ -63,20 +63,21 @@
             this.txtApellido = new System.Windows.Forms.TextBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInquilinos)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
-            // button2
+            // btnCancelar
             // 
-            this.button2.Location = new System.Drawing.Point(47, 447);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 31);
-            this.button2.TabIndex = 5;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnCancelar.Location = new System.Drawing.Point(47, 447);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Salir";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
             // 
             // groupBox1
             // 
@@ -203,6 +204,7 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.lblErrorCompletar);
             this.groupBox2.Controls.Add(this.txtNumInq);
             this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Controls.Add(this.lblMail);
@@ -236,6 +238,7 @@
             this.txtNumInq.Name = "txtNumInq";
             this.txtNumInq.Size = new System.Drawing.Size(106, 20);
             this.txtNumInq.TabIndex = 17;
+            this.txtNumInq.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumInq_KeyPress);
             // 
             // label3
             // 
@@ -257,7 +260,7 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(95, 379);
+            this.btnRegistrar.Location = new System.Drawing.Point(95, 390);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
             this.btnRegistrar.TabIndex = 1;
@@ -267,23 +270,25 @@
             // 
             // txtContraseña
             // 
-            this.txtContraseña.Location = new System.Drawing.Point(95, 330);
+            this.txtContraseña.Location = new System.Drawing.Point(95, 316);
             this.txtContraseña.Name = "txtContraseña";
             this.txtContraseña.PasswordChar = '*';
             this.txtContraseña.Size = new System.Drawing.Size(106, 20);
             this.txtContraseña.TabIndex = 14;
+            this.txtContraseña.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña_KeyPress);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(95, 289);
+            this.txtUsuario.Location = new System.Drawing.Point(95, 282);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(106, 20);
             this.txtUsuario.TabIndex = 13;
+            this.txtUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtUsuario_KeyPress);
             // 
             // lblContraseña
             // 
             this.lblContraseña.AutoSize = true;
-            this.lblContraseña.Location = new System.Drawing.Point(21, 333);
+            this.lblContraseña.Location = new System.Drawing.Point(25, 319);
             this.lblContraseña.Name = "lblContraseña";
             this.lblContraseña.Size = new System.Drawing.Size(64, 13);
             this.lblContraseña.TabIndex = 12;
@@ -292,7 +297,7 @@
             // lblUsuario
             // 
             this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Location = new System.Drawing.Point(33, 289);
+            this.lblUsuario.Location = new System.Drawing.Point(36, 285);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(46, 13);
             this.lblUsuario.TabIndex = 9;
@@ -311,6 +316,7 @@
             this.txtDni.Name = "txtDni";
             this.txtDni.Size = new System.Drawing.Size(106, 20);
             this.txtDni.TabIndex = 9;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // lblDni
             // 
@@ -336,6 +342,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(106, 20);
             this.txtTelefono.TabIndex = 6;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblDireccion
             // 
@@ -352,6 +359,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(106, 20);
             this.txtDireccion.TabIndex = 5;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
             // lblApellido
             // 
@@ -368,6 +376,7 @@
             this.txtApellido.Name = "txtApellido";
             this.txtApellido.Size = new System.Drawing.Size(106, 20);
             this.txtApellido.TabIndex = 4;
+            this.txtApellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtApellido_KeyPress);
             // 
             // lblNombre
             // 
@@ -384,6 +393,19 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(106, 20);
             this.txtNombre.TabIndex = 3;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
+            // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(29, 350);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
+            this.lblErrorCompletar.TabIndex = 16;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
             // 
             // frmTablaModificaInquilino
             // 
@@ -393,7 +415,7 @@
             this.ClientSize = new System.Drawing.Size(1034, 514);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -413,7 +435,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.DataGridView dgvInquilinos;
@@ -447,6 +469,7 @@
         private System.Windows.Forms.TextBox txtApellido;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.Label lblErrorCompletar;
 
     }
 }
