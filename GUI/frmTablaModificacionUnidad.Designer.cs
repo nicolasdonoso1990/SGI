@@ -57,12 +57,13 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupDatosUni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto3)).BeginInit();
@@ -77,6 +78,7 @@
             // groupDatosUni
             // 
             this.groupDatosUni.BackColor = System.Drawing.Color.Transparent;
+            this.groupDatosUni.Controls.Add(this.lblErrorCompletar);
             this.groupDatosUni.Controls.Add(this.btnLimpiaCampos);
             this.groupDatosUni.Controls.Add(this.lblCodUnidad);
             this.groupDatosUni.Controls.Add(this.btnFoto4);
@@ -105,7 +107,7 @@
             // 
             this.btnLimpiaCampos.Image = global::GUI.Properties.Resources.limpiar;
             this.btnLimpiaCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLimpiaCampos.Location = new System.Drawing.Point(165, 251);
+            this.btnLimpiaCampos.Location = new System.Drawing.Point(25, 251);
             this.btnLimpiaCampos.Name = "btnLimpiaCampos";
             this.btnLimpiaCampos.Size = new System.Drawing.Size(87, 42);
             this.btnLimpiaCampos.TabIndex = 26;
@@ -215,6 +217,7 @@
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(110, 20);
             this.txtCodigo.TabIndex = 10;
+            this.txtCodigo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodigo_KeyPress);
             // 
             // txtDescripcion
             // 
@@ -223,6 +226,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 110);
             this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtMetro
             // 
@@ -230,6 +234,8 @@
             this.txtMetro.Name = "txtMetro";
             this.txtMetro.Size = new System.Drawing.Size(75, 20);
             this.txtMetro.TabIndex = 6;
+            this.txtMetro.TextChanged += new System.EventHandler(this.txtMetro_TextChanged);
+            this.txtMetro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMetro_KeyPress);
             // 
             // lblDescripcion
             // 
@@ -351,6 +357,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(222, 20);
             this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // lblDireccion
             // 
@@ -376,11 +383,26 @@
             this.dataGridView1.Size = new System.Drawing.Size(546, 152);
             this.dataGridView1.TabIndex = 1;
             // 
+            // btnSalir
+            // 
+            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(479, 688);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(87, 42);
+            this.btnSalir.TabIndex = 25;
+            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
+            // 
             // Codigo
             // 
             this.Codigo.DataPropertyName = "cod_propiedad";
             this.Codigo.HeaderText = "Codigo Propiedad";
             this.Codigo.Name = "Codigo";
+            this.Codigo.ReadOnly = true;
+            this.Codigo.Visible = false;
             // 
             // ciudad
             // 
@@ -405,23 +427,23 @@
             // 
             // descripcion
             // 
+            this.descripcion.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.descripcion.DataPropertyName = "descripcion";
             this.descripcion.HeaderText = "Descripción";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
-            // btnSalir
+            // lblErrorCompletar
             // 
-            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(479, 688);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(87, 42);
-            this.btnSalir.TabIndex = 25;
-            this.btnSalir.Text = "Cancelar";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(134, 266);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
+            this.lblErrorCompletar.TabIndex = 27;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
             // 
             // frmTablaModificacionUnidad
             // 
@@ -476,17 +498,18 @@
         private System.Windows.Forms.TextBox txtDireccion;
         private System.Windows.Forms.Label lblDireccion;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ciudad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn metros;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblCodUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn met;
         private System.Windows.Forms.Button btnLimpiaCampos;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ciudad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn metros;
+        private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.Label lblErrorCompletar;
 
     }
 }

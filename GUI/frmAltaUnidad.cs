@@ -38,6 +38,8 @@ namespace GUI
         {
             dataGridView1.AutoGenerateColumns = false;
 
+            
+
             PropiedadLogic propLog = new PropiedadLogic();
 
 
