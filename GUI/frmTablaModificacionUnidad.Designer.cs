@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.groupDatosUni = new System.Windows.Forms.GroupBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.btnLimpiaCampos = new System.Windows.Forms.Button();
             this.lblCodUnidad = new System.Windows.Forms.Label();
             this.btnFoto4 = new System.Windows.Forms.Button();
@@ -57,13 +58,12 @@
             this.txtDireccion = new System.Windows.Forms.TextBox();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnSalir = new System.Windows.Forms.Button();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciudad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblErrorCompletar = new System.Windows.Forms.Label();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupDatosUni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto3)).BeginInit();
@@ -103,6 +103,18 @@
             this.groupDatosUni.TabStop = false;
             this.groupDatosUni.Text = "Datos Unidad";
             // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(134, 266);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
+            this.lblErrorCompletar.TabIndex = 27;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
+            // 
             // btnLimpiaCampos
             // 
             this.btnLimpiaCampos.Image = global::GUI.Properties.Resources.limpiar;
@@ -133,6 +145,7 @@
             this.btnFoto4.TabIndex = 24;
             this.btnFoto4.Text = "Cargar";
             this.btnFoto4.UseVisualStyleBackColor = true;
+            this.btnFoto4.Click += new System.EventHandler(this.btnFoto4_Click);
             // 
             // btnFoto3
             // 
@@ -142,6 +155,7 @@
             this.btnFoto3.TabIndex = 23;
             this.btnFoto3.Text = "Cargar";
             this.btnFoto3.UseVisualStyleBackColor = true;
+            this.btnFoto3.Click += new System.EventHandler(this.btnFoto3_Click);
             // 
             // btnFoto2
             // 
@@ -151,6 +165,7 @@
             this.btnFoto2.TabIndex = 22;
             this.btnFoto2.Text = "Cargar";
             this.btnFoto2.UseVisualStyleBackColor = true;
+            this.btnFoto2.Click += new System.EventHandler(this.btnFoto2_Click);
             // 
             // btnRegistra
             // 
@@ -200,6 +215,7 @@
             this.foto1.Size = new System.Drawing.Size(156, 87);
             this.foto1.TabIndex = 18;
             this.foto1.TabStop = false;
+            this.foto1.Click += new System.EventHandler(this.foto1_Click);
             // 
             // btnFoto1
             // 
@@ -209,6 +225,7 @@
             this.btnFoto1.TabIndex = 17;
             this.btnFoto1.Text = "Cargar";
             this.btnFoto1.UseVisualStyleBackColor = true;
+            this.btnFoto1.Click += new System.EventHandler(this.btnFoto1_Click);
             // 
             // txtCodigo
             // 
@@ -383,19 +400,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(546, 152);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnSalir
-            // 
-            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
-            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSalir.Location = new System.Drawing.Point(479, 688);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(87, 42);
-            this.btnSalir.TabIndex = 25;
-            this.btnSalir.Text = "Cancelar";
-            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
-            // 
             // Codigo
             // 
             this.Codigo.DataPropertyName = "cod_propiedad";
@@ -433,17 +437,18 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
-            // lblErrorCompletar
+            // btnSalir
             // 
-            this.lblErrorCompletar.AutoSize = true;
-            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCompletar.Location = new System.Drawing.Point(134, 266);
-            this.lblErrorCompletar.Name = "lblErrorCompletar";
-            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
-            this.lblErrorCompletar.TabIndex = 27;
-            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
-            this.lblErrorCompletar.Visible = false;
+            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(479, 688);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(87, 42);
+            this.btnSalir.TabIndex = 25;
+            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // frmTablaModificacionUnidad
             // 

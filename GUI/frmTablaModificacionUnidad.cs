@@ -371,6 +371,83 @@ namespace GUI
             txtMetro.BackColor = Color.White;
         }
 
+        private void btnFoto1_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                foto1.Image = Image.FromFile(dialog.FileName);
+
+
+            }
+        }
+
+        private void foto1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFoto2_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto2.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void btnFoto3_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto3.Image = Image.FromFile(dialog.FileName);
+
+            }
+        }
+
+        private void btnFoto4_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto4.Image = Image.FromFile(dialog.FileName);
+
+            }
+        }
+
      
 
       
