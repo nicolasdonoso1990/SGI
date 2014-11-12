@@ -25,6 +25,7 @@ namespace GUI
             InitializeComponent();
             this.RellenarGrilla();
             this.CrearDirectorio();
+            this.btnRegistrar.Enabled = false;
 
         }
 
@@ -38,11 +39,11 @@ namespace GUI
         {
             dataGridView1.AutoGenerateColumns = false;
 
-            
+           
 
             PropiedadLogic propLog = new PropiedadLogic();
 
-
+            dataGridView1.Columns[4].Width = 225;
 
             ListaPropiedades = propLog.todasPropiedades();
 
@@ -84,169 +85,48 @@ namespace GUI
 
         private void btnRegistra_Click(object sender, EventArgs e)
         {
-            int descripcionBandera = 0;
-            int metroBandera = 0;
-
+            bool todolleno = true;
+            lblErrorCampos.Visible = false;
 
             if (txtDescripcion.Text == "")
             {
                 txtDescripcion.BackColor = Color.Red;
+                todolleno=false;
 
             }
-            else 
-            {
-                descripcionBandera = 1;
-            }
+           
 
             if (txtMetro.Text == "")
             {
                 txtMetro.BackColor = Color.Red;
+                todolleno = false;
             }
 
-            else 
-            {
-                double number1;
+            
 
-                bool canConvert = Double.TryParse(txtMetro.Text, out number1);
-
-                if (canConvert == true)
-                {
-
-                    metroBandera = 1;
-                }
-                else
-                {
-                    lblErrorNumero.Visible = true;
-
-                }    
-
-
-                
-            }
-
-
-            //probando con bandera, y chequeando directamente los campos.
-
-            if (txtDescripcion.Text != "" && metroBandera==1 && chkFotos.Enabled==true) 
+            if (todolleno==true) 
             {
                 groupBox3.Enabled = true;
+
                 lblErrorCampos.Visible = false;
-                lblErrorNumero.Visible = false;
-          
-            }
-            if (txtDescripcion.Text != "" && metroBandera==1)
-            {
-                lblErrorCampos.Visible = false;
-                lblErrorNumero.Visible = false;
 
+                btnRegistrar.Enabled = true;
 
-                Unidad uni = new Unidad();
-
-                Int32 num = Convert.ToInt32(txtCodigo.Text);
-
-                double metros = Convert.ToDouble(txtMetro.Text);
-
-                uni.cod_propiedad = num;
-                uni.m2 = metros;
-                uni.estado = "habilitado";
-                uni.descripcion = txtDescripcion.Text;
-
-                UnidadLogic unLog = new UnidadLogic();
-                unLog.AltaUnidad(uni);
+                if (chkFotos.Checked == false)
+                {
+                    groupBox3.Enabled = false;
+                }
 
             }
-            else 
+            else
             {
                 lblErrorCampos.Visible = true;
-            
             }
-
-
-
-        }
-
-        private void btnFoto1_Click(object sender, EventArgs e)
-        {
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                foto1.Image= Image.FromFile(dialog.FileName);
-      
-
-            }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnFoto2_Click(object sender, EventArgs e)
-        {
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto2.Image = Image.FromFile(dialog.FileName);
-
-            }
+    
 
         }
 
-        private void btnFoto3_Click(object sender, EventArgs e)
-        {
-
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto3.Image = Image.FromFile(dialog.FileName);
-                
-            }
-
-
-
-
-        }
-
-        private void btnFoto4_Click(object sender, EventArgs e)
-        {
-            
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto4.Image = Image.FromFile(dialog.FileName);
-
-            }
-
-        }
+     
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -396,6 +276,7 @@ namespace GUI
                 foto4.InitialImage=null;
                 groupBox2.Enabled = false;
                 groupBox3.Enabled = false;
+                btnRegistrar.Enabled = false;
 
             }
             else
@@ -475,6 +356,93 @@ namespace GUI
         private void frmAltaUnidad_Load(object sender, EventArgs e)
         {
 
+        }
+        private void btnFoto1_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                foto1.Image = Image.FromFile(dialog.FileName);
+
+
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnFoto2_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto2.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void btnFoto3_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto3.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+
+
+
+        }
+
+        private void btnFoto4_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto4.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void txtMetro_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
         }
 
     }
