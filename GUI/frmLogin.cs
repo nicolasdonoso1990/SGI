@@ -109,6 +109,7 @@ namespace GUI
 
                 else
                 {
+                    lblErrorInvalido.Visible = false;
 
                     if (admin.contrasena == pass)
                     {
