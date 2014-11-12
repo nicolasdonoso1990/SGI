@@ -14,7 +14,7 @@ namespace GUI
 {
     public partial class frmMenu : Form
     {
-       
+
 
         public Administrador admin { get; set; }
         public frmMenu(Administrador adm)
@@ -22,7 +22,7 @@ namespace GUI
             InitializeComponent();
 
             //lblNombreUsuario.Text = adm.usuario;
-           
+
 
 
             admin = adm;
@@ -30,7 +30,7 @@ namespace GUI
 
             if (adm.tipo == "super")
             {
-               
+
                 this.modificarAdministradorToolStripMenuItem.Enabled = true;
 
 
@@ -60,13 +60,13 @@ namespace GUI
 
         }
 
-      
+
 
         private void modificarInquilinoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmTablaModificaInquilino modifica = new frmTablaModificaInquilino();
             modifica.ShowDialog();
-            
+
         }
 
         private void modificarAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -75,7 +75,7 @@ namespace GUI
             tablamodifica.ShowDialog();
         }
 
- 
+
 
         private void administradoresToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -97,9 +97,9 @@ namespace GUI
 
         private void CerrarStripMenuItem1_Click(object sender, EventArgs e)
         {
-            
+
             this.Dispose();
-            
+
         }
 
         private void nuevaUnidadToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,32 +168,33 @@ namespace GUI
             modificarRep.ShowDialog();
         }
 
-<<<<<<< HEAD
+
         private void alquileresToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-=======
+        }
         private void registrarPagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegistrarPago regisPago = new frmRegistrarPago();
             regisPago.ShowDialog();
->>>>>>> origin/master
+
         }
 
-      
 
 
 
-    
-
-     
-     
 
 
 
-        
 
 
-     
+
+
+
+
+
+
+
     }
+
 }

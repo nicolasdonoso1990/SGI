@@ -58,11 +58,10 @@
             this.nuevaReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
-<<<<<<< HEAD
-=======
+
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
->>>>>>> origin/master
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -306,8 +305,7 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
             // 
-<<<<<<< HEAD
-=======
+
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -323,7 +321,7 @@
             this.registrarPagoToolStripMenuItem.Text = "Registrar pago";
             this.registrarPagoToolStripMenuItem.Click += new System.EventHandler(this.registrarPagoToolStripMenuItem_Click);
             // 
->>>>>>> origin/master
+
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
