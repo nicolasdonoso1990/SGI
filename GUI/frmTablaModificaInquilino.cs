@@ -166,34 +166,73 @@ namespace GUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            /*Esto está buenísimo.
-             * Acá el gran Donoso pasa todo
-             * el contenido de los TextBox como
-             * un arrglo de strings. Seguro que anda más
-             * rápido que enviando un objeto.
-             * Gracias por tanta magia Nico. Yo me hubiera complicado
-             * muchísimo. Le doy a este código 4 Dijsktras.*/
-            string[] datos = new string[10];
-            datos[0] = txtNumInq.Text;
-            datos[1] = txtNombre.Text;
-            datos[2] = txtApellido.Text;
-            datos[3] = txtContraseña.Text;
-            datos[4] = txtDireccion.Text;
-            datos[5] = txtDni.Text;
-            datos[6] = txtMail.Text;
-            datos[7] = txtTelefono.Text;
-            datos[8] = txtUsuario.Text;
+            
+            //Empiezan las validaciones
+             string mensaje = "";   // Si se llena el mensaje es porque hay algún campo imortante en blanco
 
-            InquilinoLogic InLog = new InquilinoLogic();
+            if (0 == string.Compare("",txtNombre.Text ))
+            {
+                mensaje = mensaje + "Nombre\n";
+            }
 
-            InLog.ModificaInquilino(datos);
+            if (0 == string.Compare("",txtApellido.Text ))
+            {
+                mensaje = mensaje + "Apellido\n";
+            }
 
-            MessageBox.Show("Los cambios fueron realizados con exito", "Modificacion de inquilino");
+            if (0 == string.Compare("",txtDireccion.Text ))
+            {
+                mensaje = mensaje + "Dirección\n";
+            }
+
+            if (0 == string.Compare("", txtDni.Text))
+            {
+                mensaje = mensaje + "DNI\n";
+            }
+
+          
+
+            if (0 != string.Compare("", mensaje))
+            {
+                MessageBox.Show("Los siguientes campos faltan ser rellenados:\n" + mensaje, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+            else
+            {
 
 
-            List<Inquilino> ListaInquilinos = new List<Inquilino>();
-            ListaInquilinos = InLog.TodosInquilinos();
-            dgvInquilinos.DataSource = ListaInquilinos;
+                /*Esto está buenísimo.
+                 * Acá el gran Donoso pasa todo
+                 * el contenido de los TextBox como
+                 * un arrglo de strings. Seguro que anda más
+                 * rápido que enviando un objeto.
+                 * Gracias por tanta magia Nico. Yo me hubiera complicado
+                 * muchísimo. Le doy a este código 4 Dijsktras.*/
+                string[] datos = new string[10];
+                datos[0] = txtNumInq.Text;
+                datos[1] = txtNombre.Text;
+                datos[2] = txtApellido.Text;
+                datos[3] = txtContraseña.Text;
+                datos[4] = txtDireccion.Text;
+                datos[5] = txtDni.Text;
+                datos[6] = txtMail.Text;
+                datos[7] = txtTelefono.Text;
+                datos[8] = txtUsuario.Text;
+
+                InquilinoLogic InLog = new InquilinoLogic();
+
+                InLog.ModificaInquilino(datos);
+
+                MessageBox.Show("Los cambios fueron realizados con exito", "Modificacion de inquilino");
+
+
+                List<Inquilino> ListaInquilinos = new List<Inquilino>();
+                ListaInquilinos = InLog.TodosInquilinos();
+                dgvInquilinos.DataSource = ListaInquilinos;
+
+
+            }
+
 
         }
 
