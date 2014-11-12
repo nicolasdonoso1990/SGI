@@ -1,0 +1,63 @@
+﻿@{
+    Layout = "";
+}
+@model Entidades.Administrador
+@{
+    ViewBag.Title = "Login";
+}
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+
+
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Administrador", FormMethod.Post))
+{
+    //this  is for create form tag
+    @Html.AntiForgeryToken()          // this is for prevent CSRF attack
+                                    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.usuario)</td>
+            <td>@Html.TextBoxFor(a => a.usuario)</td>
+            <td>@Html.ValidationMessageFor(a => a.usuario)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.contrasena)
+            </td>
+            <td>
+                @Html.PasswordFor(a => a.contrasena)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.contrasena)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" class="btn-success"/>
+            </td>
+            <td></td>
+        </tr>
+    </table>
+}
+
+@* This below line is for create javascript section *@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+}

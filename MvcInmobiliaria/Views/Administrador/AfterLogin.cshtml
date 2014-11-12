@@ -1,0 +1,17 @@
+﻿
+@{
+    ViewBag.Title = "Logueo Exitoso";
+}
+
+<h2>Bienvenido!</h2>
+
+
+<h2>Usted se ha logueado exitosamente</h2>
+@if (Session["LogedUserFullname"] != null)
+{
+    <text>
+        Hola @Session["LogedUserFullname"].ToString()
+    </text>
+    
+}
+<p><a class="btn btn-success" href="/Home/Index">Comienza a trabajar &raquo;</a></p>
