@@ -11,16 +11,13 @@ namespace Entidades
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     
-    public partial class Administrador
+    public partial class Cuenta_corriente1
     {
-        public int IDadmin { get; set; }
-        [Required(ErrorMessage = "Por favor ingrese su nombre de usuario", AllowEmptyStrings = false)]
-        public string usuario { get; set; }
-        [Required(ErrorMessage = "Por favor ingrese su contraseña", AllowEmptyStrings = false)]
-        public string contrasena { get; set; }
-        public string estado { get; set; }
-        public string tipo { get; set; }
+        public int nro_inquilino { get; set; }
+        public Nullable<System.DateTime> fecha { get; set; }
+        public Nullable<double> saldo { get; set; }
+    
+        public virtual Inquilino Inquilinos { get; set; }
     }
 }

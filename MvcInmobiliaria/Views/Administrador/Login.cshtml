@@ -1,0 +1,61 @@
+﻿@model Entidades.Administrador
+@{
+    Layout = "";
+}
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@Styles.Render("~/Content/css")
+@Scripts.Render("~/bundles/modernizr")
+@{
+    ViewBag.Title = "Login";
+}
+
+<h2>Login</h2>
+
+@using (Html.BeginForm("Login", "Administrador", FormMethod.Post))
+{
+    
+    @Html.AntiForgeryToken()          // esto es para prevenir CSRF
+                                    @Html.ValidationSummary(true)
+    if (@ViewBag.Message != null)
+    {
+        <div style="border:1px solid red">
+            @ViewBag.Message
+        </div>
+    }
+    <div class="container body-content">
+       
+    <table>
+        <tr>
+            <td>@Html.LabelFor(a => a.usuario, "Usuario")</td>
+            <td>@Html.TextBoxFor(a => a.usuario)</td>
+            <td>@Html.ValidationMessageFor(a => a.usuario)</td>
+        </tr>
+        <tr>
+            <td>
+                @Html.LabelFor(a => a.contrasena, "Contraseña")
+            </td>
+            <td>
+                @Html.PasswordFor(a => a.contrasena)
+            </td>
+            <td>
+                @Html.ValidationMessageFor(a => a.contrasena)
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Login" class="btn btn-success" />
+            </td>
+            <td></td>
+        </tr>
+    </table>
+        </div>
+}
+
+@* esta la linea de los scripts *@
+
+@section Scripts{
+    @Scripts.Render("~/bundles/jqueryval")
+
+}

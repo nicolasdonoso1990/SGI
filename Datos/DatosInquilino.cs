@@ -10,6 +10,7 @@ using System.Data.Entity;
 
 namespace Datos
 {
+
     public class DatosInquilino  //recordar pasar la clase a public
     {
 
@@ -18,12 +19,12 @@ namespace Datos
 
             using (var context = new InmobiliariaEntities()) 
             {
-                Cuenta_corriente cuenta = new Cuenta_corriente();
+                Cuenta_corriente1 cuenta = new Cuenta_corriente1();
                 cuenta.nro_inquilino = inq.nro_inquilino;
                 cuenta.saldo = 0;
                 cuenta.fecha = DateTime.Today;
 
-                context.Cuentas_corrientes.Add(cuenta);
+                context.Cuenta_corriente1Set.Add(cuenta);
 
                 context.Inquilinos.Add(inq);
                 context.SaveChanges();
@@ -128,4 +129,9 @@ namespace Datos
 
 
     }
+    public class InquilinoDBContext : DbContext
+    {
+        public DbSet<Inquilino> Inquilinos { get; set; }
+    }
+  
 }

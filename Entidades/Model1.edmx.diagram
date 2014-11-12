@@ -33,9 +33,8 @@
         <AssociationConnector Association="InmobiliariaModel.FK_Unidades_Propiedades" ManuallyRouted="false" />
         <AssociationConnector Association="InmobiliariaModel.FK_Reparaciones_Unidades" ManuallyRouted="false" />
         <EntityTypeShape EntityType="InmobiliariaModel.NumeroUltimaFoto" Width="1.5" PointX="2.625" PointY="3.875" />
-        <EntityTypeShape EntityType="InmobiliariaModel.Cuenta_corriente" Width="1.5" PointX="5.25" PointY="17.625" />
-        <EntityTypeShape EntityType="InmobiliariaModel.sysdiagrams" Width="1.5" PointX="0.625" PointY="1.375" />
-        <AssociationConnector Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" />
+        <EntityTypeShape EntityType="InmobiliariaModel.Cuenta_corriente1" Width="1.5" PointX="0.625" PointY="13.875" />
+        <AssociationConnector Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -1,0 +1,58 @@
+﻿@model Entidades.Contrato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Contrato</h4>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_realizacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_realizacion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.fecha_caducidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.fecha_caducidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion_unidad)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion_unidad)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.anexo)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.anexo)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Alquileres.estado)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Alquileres.estado)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.cod_contrato }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

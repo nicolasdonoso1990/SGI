@@ -156,16 +156,6 @@
           <Property Name="tipo_seguro" Type="varchar(max)" />
           <Property Name="descripcion" Type="varchar(max)" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
-        </EntityType>
         <EntityType Name="Unidades">
           <Key>
             <PropertyRef Name="cod_unidad" />
@@ -317,7 +307,6 @@
           <EntitySet Name="Propiedades" EntityType="Self.Propiedades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Reparaciones" EntityType="Self.Reparaciones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Seguros" EntityType="Self.Seguros" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Unidades" EntityType="Self.Unidades" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Valores_mensuales" EntityType="Self.Valores_mensuales" Schema="dbo" store:Type="Tables" />
           <AssociationSet Name="FK_Alquileres_Inquilinos" Association="Self.FK_Alquileres_Inquilinos">
@@ -438,8 +427,8 @@
           <Property Name="dni" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="estado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="Alquileres" Relationship="Self.FK_Alquileres_Inquilinos" FromRole="Inquilinos" ToRole="Alquileres" />
-          <NavigationProperty Name="Cuenta_corriente1" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Inquilino" ToRole="Cuenta_corriente1" />
           <Property Name="e_mail" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="Cuenta_corriente" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos" FromRole="Inquilino" ToRole="Cuenta_corriente1" />
         </EntityType>
         <EntityType Name="Mejora">
           <Key>
@@ -780,11 +769,10 @@
             <End Role="Reparaciones" EntitySet="Reparaciones" />
           </AssociationSet>
           <EntitySet Name="NumeroUltimaFoto" EntityType="InmobiliariaModel.NumeroUltimaFoto" />
-          <EntitySet Name="Cuentas_corrientes" EntityType="InmobiliariaModel.Cuenta_corriente" />
-          <EntitySet Name="sysdiagrams" EntityType="InmobiliariaModel.sysdiagrams" />
-          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos1" Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1">
+          <EntitySet Name="Cuenta_corriente1Set" EntityType="InmobiliariaModel.Cuenta_corriente1" />
+          <AssociationSet Name="FK_Cuenta_corriente_Inquilinos" Association="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos">
             <End Role="Inquilino" EntitySet="Inquilinos" />
-            <End Role="Cuenta_corriente1" EntitySet="Cuentas_corrientes" />
+            <End Role="Cuenta_corriente1" EntitySet="Cuenta_corriente1Set" />
           </AssociationSet>
           </EntityContainer>
         <EntityType Name="NumeroUltimaFoto">
@@ -794,28 +782,18 @@
           <Property Name="NumeroFoto" Type="Int32" Nullable="false" />
           <Property Name="numero" Type="Int32" Nullable="false" />
         </EntityType>
-        <EntityType Name="Cuenta_corriente">
+        <EntityType Name="Cuenta_corriente1">
           <Key>
             <PropertyRef Name="nro_inquilino" />
           </Key>
           <Property Name="nro_inquilino" Type="Int32" Nullable="false" />
           <Property Name="fecha" Type="DateTime" Precision="0" />
           <Property Name="saldo" Type="Double" />
-          <NavigationProperty Name="Inquilinos" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos1" FromRole="Cuenta_corriente1" ToRole="Inquilino" />
+          <NavigationProperty Name="Inquilinos" Relationship="InmobiliariaModel.FK_Cuenta_corriente_Inquilinos" FromRole="Cuenta_corriente1" ToRole="Inquilino" />
         </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
-        </EntityType>
-        <Association Name="FK_Cuenta_corriente_Inquilinos1">
+        <Association Name="FK_Cuenta_corriente_Inquilinos">
           <End Type="InmobiliariaModel.Inquilino" Role="Inquilino" Multiplicity="1" />
-          <End Type="InmobiliariaModel.Cuenta_corriente" Role="Cuenta_corriente1" Multiplicity="0..1" />
+          <End Type="InmobiliariaModel.Cuenta_corriente1" Role="Cuenta_corriente1" Multiplicity="0..1" />
           <ReferentialConstraint>
             <Principal Role="Inquilino">
               <PropertyRef Name="nro_inquilino" />
@@ -845,10 +823,10 @@
     <EntitySetMapping Name="Alquileres">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Alquiler)">
         <MappingFragment StoreEntitySet="Alquileres">
-                <ScalarProperty Name="estado" ColumnName="estado" />
-                <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="estado" ColumnName="estado" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -867,14 +845,14 @@
     <EntitySetMapping Name="Contratos">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Contrato)">
         <MappingFragment StoreEntitySet="Contratos">
-          <ScalarProperty Name="anexo" ColumnName="anexo" />
-                <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
           <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="fecha_realizacion" ColumnName="fecha_realizacion" />
           <ScalarProperty Name="fecha_caducidad" ColumnName="fecha_caducidad" />
           <ScalarProperty Name="descripcion_unidad" ColumnName="descripcion_unidad" />
+          <ScalarProperty Name="anexo" ColumnName="anexo" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -890,8 +868,7 @@
     <EntitySetMapping Name="Inquilinos">
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Inquilino)">
         <MappingFragment StoreEntitySet="Inquilinos">
-                <ScalarProperty Name="e_mail" ColumnName="e_mail" />
-                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
+          <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="usuario" ColumnName="usuario" />
           <ScalarProperty Name="contrasena" ColumnName="contrasena" />
           <ScalarProperty Name="nombre" ColumnName="nombre" />
@@ -900,6 +877,7 @@
           <ScalarProperty Name="telefono" ColumnName="telefono" />
           <ScalarProperty Name="dni" ColumnName="dni" />
           <ScalarProperty Name="estado" ColumnName="estado" />
+          <ScalarProperty Name="e_mail" ColumnName="e_mail" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -920,7 +898,7 @@
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Pago_alquiler)">
         <MappingFragment StoreEntitySet="Pagos_alquiler">
           <ScalarProperty Name="id_pago" ColumnName="id_pago" />
-                <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
+          <ScalarProperty Name="nro_alquiler" ColumnName="nro_alquiler" />
           <ScalarProperty Name="cod_unidad" ColumnName="cod_unidad" />
           <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
           <ScalarProperty Name="fecha" ColumnName="fecha" />
@@ -992,10 +970,10 @@
       <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Valor_mensual)">
         <MappingFragment StoreEntitySet="Valores_mensuales">
           <ScalarProperty Name="cod_ValorMensual" ColumnName="cod_ValorMensual" />
-                <ScalarProperty Name="fechaHasta" ColumnName="fechaHasta" />
-                <ScalarProperty Name="fechaDesde" ColumnName="fechaDesde" />
-                <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
+          <ScalarProperty Name="cod_contrato" ColumnName="cod_contrato" />
           <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="fechaDesde" ColumnName="fechaDesde" />
+          <ScalarProperty Name="fechaHasta" ColumnName="fechaHasta" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -1007,27 +985,16 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-          <EntitySetMapping Name="Cuentas_corrientes">
-            <EntityTypeMapping TypeName="IsTypeOf(InmobiliariaModel.Cuenta_corriente)">
+          <EntitySetMapping Name="Cuenta_corriente1Set">
+            <EntityTypeMapping TypeName="InmobiliariaModel.Cuenta_corriente1">
               <MappingFragment StoreEntitySet="Cuenta_corriente">
-                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
                 <ScalarProperty Name="saldo" ColumnName="saldo" />
                 <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="nro_inquilino" ColumnName="nro_inquilino" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="InmobiliariaModel.sysdiagrams">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="definition" ColumnName="definition" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="name" ColumnName="name" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          </EntityContainerMapping>
+  </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
