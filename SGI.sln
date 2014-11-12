@@ -13,9 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Entidades", "Entidades\Enti
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Reportes", "Reportes\Reportes.csproj", "{2221143E-2E08-4904-9B0E-F3100ECA3DE9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Web", "Web\Web.csproj", "{101952C2-C252-4F2F-9040-B20963568B34}"
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcApplication1", "MvcApplication1\MvcApplication1.csproj", "{5AECC0F3-B2B3-4E99-A67A-2EE5A3E94CD8}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,14 +39,6 @@ Global
 		{2221143E-2E08-4904-9B0E-F3100ECA3DE9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2221143E-2E08-4904-9B0E-F3100ECA3DE9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2221143E-2E08-4904-9B0E-F3100ECA3DE9}.Release|Any CPU.Build.0 = Release|Any CPU
-		{101952C2-C252-4F2F-9040-B20963568B34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{101952C2-C252-4F2F-9040-B20963568B34}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{101952C2-C252-4F2F-9040-B20963568B34}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{101952C2-C252-4F2F-9040-B20963568B34}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5AECC0F3-B2B3-4E99-A67A-2EE5A3E94CD8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5AECC0F3-B2B3-4E99-A67A-2EE5A3E94CD8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5AECC0F3-B2B3-4E99-A67A-2EE5A3E94CD8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5AECC0F3-B2B3-4E99-A67A-2EE5A3E94CD8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
