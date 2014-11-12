@@ -30,11 +30,12 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaInquilino));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.txtContraseña = new System.Windows.Forms.TextBox();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblContraseña = new System.Windows.Forms.Label();
-            this.check1 = new System.Windows.Forms.CheckBox();
+            this.chckEmail = new System.Windows.Forms.CheckBox();
             this.chkUsuario = new System.Windows.Forms.CheckBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.txtMail = new System.Windows.Forms.TextBox();
@@ -52,7 +53,6 @@
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
-            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -64,7 +64,7 @@
             this.groupBox1.Controls.Add(this.txtContraseña);
             this.groupBox1.Controls.Add(this.txtUsuario);
             this.groupBox1.Controls.Add(this.lblContraseña);
-            this.groupBox1.Controls.Add(this.check1);
+            this.groupBox1.Controls.Add(this.chckEmail);
             this.groupBox1.Controls.Add(this.chkUsuario);
             this.groupBox1.Controls.Add(this.lblUsuario);
             this.groupBox1.Controls.Add(this.txtMail);
@@ -86,6 +86,18 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Ingrese datos inquiliino";
+            // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(29, 350);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
+            this.lblErrorCompletar.TabIndex = 15;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
             // 
             // button1
             // 
@@ -128,15 +140,15 @@
             this.lblContraseña.TabIndex = 12;
             this.lblContraseña.Text = "Contraseña:";
             // 
-            // check1
+            // chckEmail
             // 
-            this.check1.AutoSize = true;
-            this.check1.Location = new System.Drawing.Point(95, 173);
-            this.check1.Name = "check1";
-            this.check1.Size = new System.Drawing.Size(15, 14);
-            this.check1.TabIndex = 11;
-            this.check1.UseVisualStyleBackColor = true;
-            this.check1.CheckedChanged += new System.EventHandler(this.check1_CheckedChanged);
+            this.chckEmail.AutoSize = true;
+            this.chckEmail.Location = new System.Drawing.Point(95, 173);
+            this.chckEmail.Name = "chckEmail";
+            this.chckEmail.Size = new System.Drawing.Size(15, 14);
+            this.chckEmail.TabIndex = 11;
+            this.chckEmail.UseVisualStyleBackColor = true;
+            this.chckEmail.CheckedChanged += new System.EventHandler(this.check1_CheckedChanged);
             // 
             // chkUsuario
             // 
@@ -292,18 +304,6 @@
             this.label2.TabIndex = 16;
             this.label2.Text = "SGI V1.0";
             // 
-            // lblErrorCompletar
-            // 
-            this.lblErrorCompletar.AutoSize = true;
-            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCompletar.Location = new System.Drawing.Point(29, 350);
-            this.lblErrorCompletar.Name = "lblErrorCompletar";
-            this.lblErrorCompletar.Size = new System.Drawing.Size(220, 26);
-            this.lblErrorCompletar.TabIndex = 15;
-            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos,\r\n               por favor, completelos.";
-            this.lblErrorCompletar.Visible = false;
-            // 
             // frmAltaInquilino
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -333,7 +333,7 @@
         private System.Windows.Forms.TextBox txtContraseña;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblContraseña;
-        private System.Windows.Forms.CheckBox check1;
+        private System.Windows.Forms.CheckBox chckEmail;
         private System.Windows.Forms.CheckBox chkUsuario;
         private System.Windows.Forms.Label lblUsuario;
         private System.Windows.Forms.TextBox txtMail;

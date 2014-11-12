@@ -23,14 +23,30 @@ namespace GUI
 
         private void check1_CheckedChanged(object sender, EventArgs e)
         {
-            this.txtMail.Enabled = true;
+            if (this.chckEmail.Checked == true)
+            {
+                this.txtMail.Enabled = true;
+            }
+            else
+            {
+                this.txtMail.Enabled = false;
+            }
+            
         }
 
         private void check2_CheckedChanged(object sender, EventArgs e)
         {
-            this.txtUsuario.Enabled = true;
-            this.txtContraseña.Enabled = true;
+            if (this.chkUsuario.Checked == true)
+            {
+                this.txtUsuario.Enabled = true;
+                this.txtContraseña.Enabled = true;
+            }
+            else
+            {
+                this.txtUsuario.Enabled = false;
+                this.txtContraseña.Enabled = false;
 
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -40,52 +56,63 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
+            bool todolleno = true;
             if (txtNombre.Text == "") 
             {
                 txtNombre.BackColor = Color.Red;
+                todolleno = false;
             }
             
             
             if (txtApellido.Text == "")
             {
                 txtApellido.BackColor = Color.Red;
+                todolleno = false;
             }
 
             if (txtDireccion.Text == "")
             {
                 txtDireccion.BackColor = Color.Red;
+                todolleno = false;
             }
             if (txtDni.Text == "")
             {
                 txtDni.BackColor = Color.Red;
+                todolleno = false;
             }
-            if (txtMail.Text == "")
+            if (txtMail.Enabled == true)
             {
-                txtMail.BackColor = Color.Red;
+                if (txtMail.Text == "")
+                {
+                    txtMail.BackColor = Color.Red;
+                    todolleno = false;
+                }
             }
             if (txtTelefono.Text == "")
             {
                 txtTelefono.BackColor = Color.Red;
+                todolleno = false;
             }
-            if (chkUsuario.Enabled == true)
+            if (txtUsuario.Enabled == true)
             {
 
                 if (txtUsuario.Text == "")
                 {
                     txtUsuario.BackColor = Color.Red;
+                    todolleno = false;
                 }
 
                 if (txtContraseña.Text == "")
                 {
                     txtContraseña.BackColor = Color.Red;
+                    todolleno = false;
                 }
 
             }
 
-            if (chkUsuario.Enabled == true)
-            {
+        
 
-                if (txtApellido.Text != "" && txtDireccion.Text != "" && txtDni.Text != "" && txtMail.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "" && txtUsuario.Text != "" && txtContraseña.Text != "")
+                if (todolleno==true)
                 {
                     Inquilino inq = new Inquilino();
                     inq.apellido = txtApellido.Text;
@@ -93,28 +120,24 @@ namespace GUI
                     inq.dni = txtDni.Text;
                     inq.nombre = txtNombre.Text;
                     inq.telefono = txtTelefono.Text;
-                    inq.contrasena = "";
-                    inq.e_mail = "";
-                    inq.usuario = "";
                     inq.estado = "habilitado";
+                    if (txtUsuario.Enabled == true)
+                    {
+                        inq.contrasena = txtContraseña.Text;
+                        inq.usuario = txtUsuario.Text;
+                    }
+                   
                     if (txtMail.Enabled == true)
                     {
                         inq.e_mail = txtMail.Text;
                     }
 
-                    if (txtUsuario.Enabled == true)
-                    {
-                        inq.usuario = txtUsuario.Text;
-                        inq.contrasena = txtContraseña.Text;
-
-                    }
-
                     InquilinoLogic InLog = new InquilinoLogic();
 
                     InLog.AltaInquilino(inq);
-                    MessageBox.Show("El Administrador fue dado de alta con exito", "Alta Administrador");
+                    MessageBox.Show("El Inquilino fue dado de alta con exito", "Alta Inquilino");
 
-
+                    lblErrorCompletar.Visible = false;
 
                     if (MessageBox.Show("¿Desea agregar otro inquilino?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
                     {
@@ -127,11 +150,12 @@ namespace GUI
                         txtTelefono.Clear();
                         txtUsuario.Clear();
 
-                        check1.CheckState = 0;
+                        chckEmail.CheckState = 0;
                         chkUsuario.CheckState = 0;
                         txtMail.Enabled = false;
                         txtUsuario.Enabled = false;
                         txtContraseña.Enabled = false;
+                        lblErrorCompletar.Visible = false;
 
 
                     }
@@ -147,78 +171,8 @@ namespace GUI
                     lblErrorCompletar.Visible = true;
                 }
 
-
-
-
-
-
-
-
-
-            }
-            else 
-            {
             
-                 if (txtApellido.Text != "" && txtDireccion.Text != "" && txtDni.Text != "" && txtMail.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "")
-                    {
-                        Inquilino inq = new Inquilino();
-                        inq.apellido = txtApellido.Text;
-                        inq.direccion = txtDireccion.Text;
-                        inq.dni = txtDni.Text;
-                        inq.nombre = txtNombre.Text;
-                        inq.telefono = txtTelefono.Text;
-                        inq.contrasena = "";
-                        inq.e_mail = "";
-                        inq.usuario = "";
-                        inq.estado = "habilitado";
-                        if (txtMail.Enabled == true)
-                        {
-                            inq.e_mail = txtMail.Text;
-                        }
-
-                        if (txtUsuario.Enabled == true)
-                        {
-                            inq.usuario = txtUsuario.Text;
-                            inq.contrasena = txtContraseña.Text;
-
-                        }
-
-                        InquilinoLogic InLog = new InquilinoLogic();
-
-                        InLog.AltaInquilino(inq);
-                        MessageBox.Show("El Administrador fue dado de alta con exito", "Alta Administrador");
-
-
-
-                        if (MessageBox.Show("¿Desea agregar otro inquilino?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                        {
-                            txtApellido.Clear();
-                            txtContraseña.Clear();
-                            txtDireccion.Clear();
-                            txtDni.Clear();
-                            txtMail.Clear();
-                            txtNombre.Clear();
-                            txtTelefono.Clear();
-                            txtUsuario.Clear();
-
-                            check1.CheckState = 0;
-                            chkUsuario.CheckState = 0;
-                            txtMail.Enabled = false;
-                            txtUsuario.Enabled = false;
-                            txtContraseña.Enabled = false;
-
-
-                        }
-                        else
-                        {
-                            this.Dispose();
-                        }
-
-                    }
-
-
-
-                }
+            
 
             
             
