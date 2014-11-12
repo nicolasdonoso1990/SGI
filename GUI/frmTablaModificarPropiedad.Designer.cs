@@ -43,6 +43,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnRegistra = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMetro = new System.Windows.Forms.TextBox();
@@ -52,8 +54,6 @@
             this.lblMetro = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblCiudad = new System.Windows.Forms.Label();
-            this.button4 = new System.Windows.Forms.Button();
-            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -207,6 +207,31 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Modificar Propiedad";
             // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(40, 285);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
+            this.lblErrorCompletar.TabIndex = 10;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::GUI.Properties.Resources.limpiar;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(96, 334);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 45);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Limpiar ";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // btnRegistra
             // 
             this.btnRegistra.Image = global::GUI.Properties.Resources.editar;
@@ -272,7 +297,7 @@
             "Garay"});
             this.cmbCiudad.Location = new System.Drawing.Point(122, 31);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCiudad.Size = new System.Drawing.Size(222, 21);
             this.cmbCiudad.TabIndex = 4;
             this.cmbCiudad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbCiudad_MouseClick);
             // 
@@ -311,31 +336,6 @@
             this.lblCiudad.Size = new System.Drawing.Size(43, 13);
             this.lblCiudad.TabIndex = 0;
             this.lblCiudad.Text = "Ciudad:";
-            // 
-            // button4
-            // 
-            this.button4.Image = global::GUI.Properties.Resources.limpiar;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(96, 334);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(90, 45);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "Limpiar ";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // lblErrorCompletar
-            // 
-            this.lblErrorCompletar.AutoSize = true;
-            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCompletar.Location = new System.Drawing.Point(40, 285);
-            this.lblErrorCompletar.Name = "lblErrorCompletar";
-            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
-            this.lblErrorCompletar.TabIndex = 10;
-            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
-            this.lblErrorCompletar.Visible = false;
             // 
             // frmTablaModificarPropiedad
             // 

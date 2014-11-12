@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.btnPropiedad = new System.Windows.Forms.Button();
-            this.txtDireccionPropiedad = new System.Windows.Forms.TextBox();
+            this.txtFiltroPropiedad = new System.Windows.Forms.TextBox();
             this.lblDireccionPropiedad = new System.Windows.Forms.Label();
             this.dataPropiedad = new System.Windows.Forms.DataGridView();
             this.Codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -57,9 +57,9 @@
             this.fecha2 = new System.Windows.Forms.DateTimePicker();
             this.btnFecha = new System.Windows.Forms.Button();
             this.grpAlquiler = new System.Windows.Forms.GroupBox();
-            this.btnAlquiler = new System.Windows.Forms.Button();
-            this.txtDireccionUnidad = new System.Windows.Forms.TextBox();
+            this.txtFiltroUnidad = new System.Windows.Forms.TextBox();
             this.lblDireccionUnidad = new System.Windows.Forms.Label();
+            this.btnAlquiler = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataPropiedad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataUnidad)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataInquilino)).BeginInit();
@@ -77,13 +77,14 @@
             this.btnPropiedad.Visible = false;
             this.btnPropiedad.Click += new System.EventHandler(this.btnPropiedad_Click);
             // 
-            // txtDireccionPropiedad
+            // txtFiltroPropiedad
             // 
-            this.txtDireccionPropiedad.Location = new System.Drawing.Point(87, 98);
-            this.txtDireccionPropiedad.Name = "txtDireccionPropiedad";
-            this.txtDireccionPropiedad.Size = new System.Drawing.Size(222, 20);
-            this.txtDireccionPropiedad.TabIndex = 7;
-            this.txtDireccionPropiedad.Visible = false;
+            this.txtFiltroPropiedad.Location = new System.Drawing.Point(87, 98);
+            this.txtFiltroPropiedad.Name = "txtFiltroPropiedad";
+            this.txtFiltroPropiedad.Size = new System.Drawing.Size(222, 20);
+            this.txtFiltroPropiedad.TabIndex = 7;
+            this.txtFiltroPropiedad.Visible = false;
+            this.txtFiltroPropiedad.TextChanged += new System.EventHandler(this.txtFiltroPropiedad_TextChanged);
             // 
             // lblDireccionPropiedad
             // 
@@ -196,6 +197,7 @@
             this.txtDNI.Size = new System.Drawing.Size(100, 20);
             this.txtDNI.TabIndex = 4;
             this.txtDNI.Visible = false;
+            this.txtDNI.TextChanged += new System.EventHandler(this.txtDNI_TextChanged);
             // 
             // lblDNI
             // 
@@ -262,11 +264,14 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(453, 627);
+            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(656, 672);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(88, 29);
+            this.btnSalir.Size = new System.Drawing.Size(79, 40);
             this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Visible = false;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -316,7 +321,7 @@
             // grpAlquiler
             // 
             this.grpAlquiler.BackColor = System.Drawing.Color.Transparent;
-            this.grpAlquiler.Controls.Add(this.txtDireccionUnidad);
+            this.grpAlquiler.Controls.Add(this.txtFiltroUnidad);
             this.grpAlquiler.Controls.Add(this.lblDireccionUnidad);
             this.grpAlquiler.Controls.Add(this.btnAlquiler);
             this.grpAlquiler.Controls.Add(this.btnSalir);
@@ -327,7 +332,7 @@
             this.grpAlquiler.Controls.Add(this.dataInquilino);
             this.grpAlquiler.Controls.Add(this.dataUnidad);
             this.grpAlquiler.Controls.Add(this.btnFecha);
-            this.grpAlquiler.Controls.Add(this.txtDireccionPropiedad);
+            this.grpAlquiler.Controls.Add(this.txtFiltroPropiedad);
             this.grpAlquiler.Controls.Add(this.fecha2);
             this.grpAlquiler.Controls.Add(this.lblDireccionPropiedad);
             this.grpAlquiler.Controls.Add(this.dataPropiedad);
@@ -341,9 +346,28 @@
             this.grpAlquiler.TabStop = false;
             this.grpAlquiler.Text = "Datos Alquiler";
             // 
+            // txtFiltroUnidad
+            // 
+            this.txtFiltroUnidad.Location = new System.Drawing.Point(754, 96);
+            this.txtFiltroUnidad.Name = "txtFiltroUnidad";
+            this.txtFiltroUnidad.Size = new System.Drawing.Size(222, 20);
+            this.txtFiltroUnidad.TabIndex = 13;
+            this.txtFiltroUnidad.Visible = false;
+            this.txtFiltroUnidad.TextChanged += new System.EventHandler(this.txtDireccionUnidad_TextChanged);
+            // 
+            // lblDireccionUnidad
+            // 
+            this.lblDireccionUnidad.AutoSize = true;
+            this.lblDireccionUnidad.Location = new System.Drawing.Point(682, 99);
+            this.lblDireccionUnidad.Name = "lblDireccionUnidad";
+            this.lblDireccionUnidad.Size = new System.Drawing.Size(66, 13);
+            this.lblDireccionUnidad.TabIndex = 12;
+            this.lblDireccionUnidad.Text = "Descripcion:";
+            this.lblDireccionUnidad.Visible = false;
+            // 
             // btnAlquiler
             // 
-            this.btnAlquiler.Location = new System.Drawing.Point(697, 627);
+            this.btnAlquiler.Location = new System.Drawing.Point(647, 617);
             this.btnAlquiler.Name = "btnAlquiler";
             this.btnAlquiler.Size = new System.Drawing.Size(88, 29);
             this.btnAlquiler.TabIndex = 11;
@@ -351,24 +375,6 @@
             this.btnAlquiler.UseVisualStyleBackColor = true;
             this.btnAlquiler.Visible = false;
             this.btnAlquiler.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // txtDireccionUnidad
-            // 
-            this.txtDireccionUnidad.Location = new System.Drawing.Point(754, 96);
-            this.txtDireccionUnidad.Name = "txtDireccionUnidad";
-            this.txtDireccionUnidad.Size = new System.Drawing.Size(222, 20);
-            this.txtDireccionUnidad.TabIndex = 13;
-            this.txtDireccionUnidad.Visible = false;
-            // 
-            // lblDireccionUnidad
-            // 
-            this.lblDireccionUnidad.AutoSize = true;
-            this.lblDireccionUnidad.Location = new System.Drawing.Point(688, 98);
-            this.lblDireccionUnidad.Name = "lblDireccionUnidad";
-            this.lblDireccionUnidad.Size = new System.Drawing.Size(55, 13);
-            this.lblDireccionUnidad.TabIndex = 12;
-            this.lblDireccionUnidad.Text = "Direccion:";
-            this.lblDireccionUnidad.Visible = false;
             // 
             // frmAltaAlquiler
             // 
@@ -391,7 +397,7 @@
         #endregion
 
         private System.Windows.Forms.Button btnPropiedad;
-        private System.Windows.Forms.TextBox txtDireccionPropiedad;
+        private System.Windows.Forms.TextBox txtFiltroPropiedad;
         private System.Windows.Forms.Label lblDireccionPropiedad;
         private System.Windows.Forms.DataGridView dataPropiedad;
         private System.Windows.Forms.DataGridViewTextBoxColumn Codigo;
@@ -420,7 +426,7 @@
         private System.Windows.Forms.Button btnFecha;
         private System.Windows.Forms.GroupBox grpAlquiler;
         private System.Windows.Forms.Button btnAlquiler;
-        private System.Windows.Forms.TextBox txtDireccionUnidad;
+        private System.Windows.Forms.TextBox txtFiltroUnidad;
         private System.Windows.Forms.Label lblDireccionUnidad;
     }
 }

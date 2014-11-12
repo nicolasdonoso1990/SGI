@@ -35,6 +35,7 @@
             this.mejorasTableAdapter = new GUI.InmobiliariaDataSetMejorasTableAdapters.MejorasTableAdapter();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.gpbMejora = new System.Windows.Forms.GroupBox();
+            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             this.lblUnidad = new System.Windows.Forms.Label();
             this.txtUnidad = new System.Windows.Forms.TextBox();
             this.lblContratista = new System.Windows.Forms.Label();
@@ -60,7 +61,6 @@
             this.detallesDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnBaja = new System.Windows.Forms.Button();
             this.btnSeleccionar = new System.Windows.Forms.Button();
-            this.dtpFecha = new System.Windows.Forms.DateTimePicker();
             ((System.ComponentModel.ISupportInitialize)(this.mejorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSetMejorasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSetMejoras)).BeginInit();
@@ -90,11 +90,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(39, 441);
+            this.btnCancelar.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(54, 463);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(86, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 48);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -116,12 +119,19 @@
             this.gpbMejora.Controls.Add(this.lblDetalles);
             this.gpbMejora.Controls.Add(this.lblTelefono);
             this.gpbMejora.Controls.Add(this.txtObservaciones);
-            this.gpbMejora.Location = new System.Drawing.Point(697, 12);
+            this.gpbMejora.Location = new System.Drawing.Point(811, 12);
             this.gpbMejora.Name = "gpbMejora";
-            this.gpbMejora.Size = new System.Drawing.Size(312, 460);
+            this.gpbMejora.Size = new System.Drawing.Size(312, 470);
             this.gpbMejora.TabIndex = 12;
             this.gpbMejora.TabStop = false;
             this.gpbMejora.Text = "Modificar datos de mejora";
+            // 
+            // dtpFecha
+            // 
+            this.dtpFecha.Location = new System.Drawing.Point(104, 322);
+            this.dtpFecha.Name = "dtpFecha";
+            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
+            this.dtpFecha.TabIndex = 20;
             // 
             // lblUnidad
             // 
@@ -204,11 +214,14 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(105, 433);
+            this.btnRegistrar.Image = global::GUI.Properties.Resources.ok1;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(125, 419);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(95, 45);
             this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Modificar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
@@ -254,7 +267,7 @@
             this.gpbSeleccionMejora.Controls.Add(this.btnSeleccionar);
             this.gpbSeleccionMejora.Location = new System.Drawing.Point(12, 12);
             this.gpbSeleccionMejora.Name = "gpbSeleccionMejora";
-            this.gpbSeleccionMejora.Size = new System.Drawing.Size(679, 387);
+            this.gpbSeleccionMejora.Size = new System.Drawing.Size(773, 387);
             this.gpbSeleccionMejora.TabIndex = 11;
             this.gpbSeleccionMejora.TabStop = false;
             this.gpbSeleccionMejora.Text = "Seleccione Mejora";
@@ -274,10 +287,10 @@
             this.observacionesDataGridViewTextBoxColumn,
             this.detallesDataGridViewTextBoxColumn});
             this.dgvMejora.DataSource = this.mejorasBindingSource;
-            this.dgvMejora.Location = new System.Drawing.Point(27, 43);
+            this.dgvMejora.Location = new System.Drawing.Point(6, 21);
             this.dgvMejora.Name = "dgvMejora";
             this.dgvMejora.ReadOnly = true;
-            this.dgvMejora.Size = new System.Drawing.Size(627, 292);
+            this.dgvMejora.Size = new System.Drawing.Size(750, 292);
             this.dgvMejora.TabIndex = 6;
             // 
             // codcontratistaDataGridViewTextBoxColumn
@@ -331,17 +344,20 @@
             // 
             // btnBaja
             // 
-            this.btnBaja.Location = new System.Drawing.Point(477, 350);
+            this.btnBaja.Image = global::GUI.Properties.Resources.eliminar;
+            this.btnBaja.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBaja.Location = new System.Drawing.Point(208, 338);
             this.btnBaja.Name = "btnBaja";
             this.btnBaja.Size = new System.Drawing.Size(86, 31);
             this.btnBaja.TabIndex = 5;
-            this.btnBaja.Text = "Dar de Baja";
+            this.btnBaja.Text = "Eliminar";
+            this.btnBaja.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBaja.UseVisualStyleBackColor = true;
             this.btnBaja.Click += new System.EventHandler(this.btnBaja_Click);
             // 
             // btnSeleccionar
             // 
-            this.btnSeleccionar.Location = new System.Drawing.Point(105, 350);
+            this.btnSeleccionar.Location = new System.Drawing.Point(557, 338);
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.Size = new System.Drawing.Size(86, 31);
             this.btnSeleccionar.TabIndex = 2;
@@ -349,18 +365,12 @@
             this.btnSeleccionar.UseVisualStyleBackColor = true;
             this.btnSeleccionar.Click += new System.EventHandler(this.btnSeleccionar_Click);
             // 
-            // dtpFecha
-            // 
-            this.dtpFecha.Location = new System.Drawing.Point(104, 322);
-            this.dtpFecha.Name = "dtpFecha";
-            this.dtpFecha.Size = new System.Drawing.Size(200, 20);
-            this.dtpFecha.TabIndex = 20;
-            // 
             // frmTablaModificacionMejora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1024, 484);
+            this.BackgroundImage = global::GUI.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(1161, 535);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.gpbMejora);
             this.Controls.Add(this.gpbSeleccionMejora);

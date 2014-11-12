@@ -43,7 +43,20 @@ namespace GUI
 
         private void salirToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+
+            if (MessageBox.Show("¿Desea salir de la aplicacion?. Confirme", "Salir", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+
+                Application.Exit();   
+
+
+            }
+            else
+            {
+          
+            }
+
+          
         }
 
         private void nuevoAdministradorToolStripMenuItem_Click(object sender, EventArgs e)
@@ -168,16 +181,18 @@ namespace GUI
             modificarRep.ShowDialog();
         }
 
-<<<<<<< HEAD
+
         private void alquileresToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
-=======
+        }
+
+
         private void registrarPagoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmRegistrarPago regisPago = new frmRegistrarPago();
             regisPago.ShowDialog();
->>>>>>> origin/master
+
         }
 
       

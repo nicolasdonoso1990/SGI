@@ -46,6 +46,7 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.lblErrorContra = new System.Windows.Forms.Label();
+            this.lblContraIncorrecta = new System.Windows.Forms.Label();
             this.grpDatosAdmin.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -230,12 +231,25 @@
             this.lblErrorContra.BackColor = System.Drawing.Color.Transparent;
             this.lblErrorContra.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblErrorContra.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorContra.Location = new System.Drawing.Point(164, 75);
+            this.lblErrorContra.Location = new System.Drawing.Point(221, 76);
             this.lblErrorContra.Name = "lblErrorContra";
             this.lblErrorContra.Size = new System.Drawing.Size(258, 13);
             this.lblErrorContra.TabIndex = 12;
             this.lblErrorContra.Text = "Error. Por favor, complete con su contraseña";
             this.lblErrorContra.Visible = false;
+            // 
+            // lblContraIncorrecta
+            // 
+            this.lblContraIncorrecta.AutoSize = true;
+            this.lblContraIncorrecta.BackColor = System.Drawing.Color.Transparent;
+            this.lblContraIncorrecta.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblContraIncorrecta.ForeColor = System.Drawing.Color.Red;
+            this.lblContraIncorrecta.Location = new System.Drawing.Point(280, 63);
+            this.lblContraIncorrecta.Name = "lblContraIncorrecta";
+            this.lblContraIncorrecta.Size = new System.Drawing.Size(167, 13);
+            this.lblContraIncorrecta.TabIndex = 13;
+            this.lblContraIncorrecta.Text = "Error. Contraseña incorrecta";
+            this.lblContraIncorrecta.Visible = false;
             // 
             // frmAltaAdministrador
             // 
@@ -243,6 +257,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(586, 521);
+            this.Controls.Add(this.lblContraIncorrecta);
             this.Controls.Add(this.lblErrorContra);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancelar);
@@ -255,7 +270,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmAltaAdministrador";
-            this.Text = "frmAltaAdministrador";
+            this.Text = "Alta Administrador";
             this.grpDatosAdmin.ResumeLayout(false);
             this.grpDatosAdmin.PerformLayout();
             this.ResumeLayout(false);
@@ -282,5 +297,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblErrorContra;
         private System.Windows.Forms.Label lblErrorCampos;
+        private System.Windows.Forms.Label lblContraIncorrecta;
     }
 }

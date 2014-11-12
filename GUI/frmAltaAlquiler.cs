@@ -33,7 +33,7 @@ namespace GUI
             fechaFinAlq = fecha2.Value.Date;
 
             dataPropiedad.Visible = true;
-            txtDireccionPropiedad.Visible = true;
+            txtFiltroPropiedad.Visible = true;
             lblDireccionPropiedad.Visible = true;
             btnPropiedad.Visible = true;
             btnSalir.Visible = true;
@@ -89,7 +89,7 @@ namespace GUI
 
                 dataUnidad.Visible = true;
                 lblDireccionUnidad.Visible = true;
-                txtDireccionUnidad.Visible = true;
+                txtFiltroUnidad.Visible = true;
                 btnUnidad.Visible = true;
 
                 UnidadLogic unLog=new UnidadLogic();
@@ -177,8 +177,130 @@ namespace GUI
 
             }
         }
-     
 
-   
+        private void txtFiltroPropiedad_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtFiltroPropiedad.Text;
+
+            if (cero != (a = String.Compare(txtFiltroPropiedad.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                PropiedadLogic proLog = new PropiedadLogic();
+                List<Propiedad> propiedades1 = proLog.todasPropiedades();
+
+                List<Propiedad> listaFiltrada = (from prop in propiedades1
+                                                 where prop.direccion.Contains(filtro)
+                                                 //where inqui.dni.ToString().Contains(filtro)
+                                                 select prop).ToList();
+                dataPropiedad.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.rellenarGrillaPropiedades();
+            }
+
+        }
+
+
+
+        public void rellenarGrillaPropiedades() 
+        {
+            dataPropiedad.AutoGenerateColumns = false;
+            PropiedadLogic proLog = new PropiedadLogic();
+            List<Propiedad>ListaPropiedades1 = proLog.todasPropiedades();
+            dataPropiedad.DataSource =ListaPropiedades1 ;
+        }
+
+        public void rellenarGrillaUnidades() 
+        {
+            dataUnidad.AutoGenerateColumns = false;
+            UnidadLogic unLog = new UnidadLogic();
+
+            dataPropiedad.DataSource = ListaUnidades;
+        
+        }
+
+        public void rellenarGrillaInquilinos()
+        {
+            dataInquilino.AutoGenerateColumns = false;
+            InquilinoLogic inLog = new InquilinoLogic(); 
+            List<Inquilino> ListaInquilinos1 = inLog.TodosInquilinos();
+            dataInquilino.DataSource = ListaInquilinos1;
+        
+        }
+
+
+
+        private void txtDireccionUnidad_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtFiltroPropiedad.Text;
+
+            if (cero != (a = String.Compare(txtFiltroPropiedad.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                UnidadLogic unLog = new UnidadLogic();
+                
+
+                //List<Propiedad> propiedades1 = proLog.todasPropiedades();
+
+                List<Unidad> listaFiltrada = (from uni in ListaUnidades
+                                                 where uni.descripcion.Contains(filtro)
+                                                 //where inqui.dni.ToString().Contains(filtro)
+                                                 select uni).ToList();
+                dataPropiedad.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.rellenarGrillaUnidades();
+            }
+
+
+
+
+
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtFiltroPropiedad.Text;
+
+            if (cero != (a = String.Compare(txtFiltroPropiedad.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                InquilinoLogic inLog = new InquilinoLogic();
+                List<Inquilino> inquilino1 = inLog.TodosInquilinos();
+
+                List<Inquilino> listaFiltrada = (from inqui in inquilino1
+                                                 where inqui.dni.Contains(filtro)
+                                                 //where inqui.dni.ToString().Contains(filtro)
+                                                 select inqui).ToList();
+                dataPropiedad.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.rellenarGrillaInquilinos();
+            }
+
+        }
+
+
     }
+
+    
+
 }

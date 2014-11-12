@@ -70,11 +70,14 @@
             // 
             // button2
             // 
+            this.button2.Image = global::GUI.Properties.Resources.cancelar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button2.Location = new System.Drawing.Point(47, 447);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(86, 31);
+            this.button2.Size = new System.Drawing.Size(94, 40);
             this.button2.TabIndex = 5;
             this.button2.Text = "Cancelar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -88,18 +91,21 @@
             this.groupBox1.Controls.Add(this.dgvInquilinos);
             this.groupBox1.Location = new System.Drawing.Point(12, 22);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(658, 362);
+            this.groupBox1.Size = new System.Drawing.Size(680, 362);
             this.groupBox1.TabIndex = 4;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Seleccione Inquilino";
             // 
             // button3
             // 
+            this.button3.Image = global::GUI.Properties.Resources.eliminar;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(472, 310);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(86, 31);
             this.button3.TabIndex = 5;
-            this.button3.Text = "Dar de Baja";
+            this.button3.Text = "Eliminar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -140,12 +146,12 @@
             this.usuario,
             this.direccion,
             this.telefono});
-            this.dgvInquilinos.Location = new System.Drawing.Point(6, 79);
+            this.dgvInquilinos.Location = new System.Drawing.Point(6, 70);
             this.dgvInquilinos.MultiSelect = false;
             this.dgvInquilinos.Name = "dgvInquilinos";
             this.dgvInquilinos.ReadOnly = true;
             this.dgvInquilinos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvInquilinos.Size = new System.Drawing.Size(629, 195);
+            this.dgvInquilinos.Size = new System.Drawing.Size(652, 195);
             this.dgvInquilinos.TabIndex = 1;
             // 
             // nombre
@@ -222,7 +228,7 @@
             this.groupBox2.Controls.Add(this.txtApellido);
             this.groupBox2.Controls.Add(this.lblNombre);
             this.groupBox2.Controls.Add(this.txtNombre);
-            this.groupBox2.Location = new System.Drawing.Point(711, 22);
+            this.groupBox2.Location = new System.Drawing.Point(729, 22);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(277, 419);
             this.groupBox2.TabIndex = 7;
@@ -257,11 +263,14 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(95, 379);
+            this.btnRegistrar.Image = global::GUI.Properties.Resources.ok;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(111, 365);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(90, 39);
             this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Modificar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 

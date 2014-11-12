@@ -18,6 +18,7 @@ namespace GUI
         public frmAltaPropiedad()
         {
             InitializeComponent();
+            cmbCiudad.SelectedIndex = 0;
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)

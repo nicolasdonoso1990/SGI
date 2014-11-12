@@ -74,11 +74,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(1061, 437);
+            this.btnCancelar.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(25, 437);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(79, 40);
             this.btnCancelar.TabIndex = 18;
             this.btnCancelar.Text = "Cerrar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -169,16 +172,20 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(589, 437);
+            this.btnRegistrar.Image = global::GUI.Properties.Resources.ok;
+            this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistrar.Location = new System.Drawing.Point(1040, 437);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(75, 23);
+            this.btnRegistrar.Size = new System.Drawing.Size(87, 40);
             this.btnRegistrar.TabIndex = 1;
             this.btnRegistrar.Text = "Registrar";
+            this.btnRegistrar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // gpbUnidad
             // 
+            this.gpbUnidad.BackColor = System.Drawing.Color.Transparent;
             this.gpbUnidad.Controls.Add(this.dgvUnidad);
             this.gpbUnidad.Location = new System.Drawing.Point(12, 12);
             this.gpbUnidad.Name = "gpbUnidad";
@@ -203,7 +210,7 @@
             this.dgvUnidad.Location = new System.Drawing.Point(13, 19);
             this.dgvUnidad.Name = "dgvUnidad";
             this.dgvUnidad.ReadOnly = true;
-            this.dgvUnidad.Size = new System.Drawing.Size(534, 147);
+            this.dgvUnidad.Size = new System.Drawing.Size(546, 147);
             this.dgvUnidad.TabIndex = 0;
             // 
             // codpropiedadDataGridViewTextBoxColumn
@@ -253,10 +260,11 @@
             // 
             // gpbContratista
             // 
+            this.gpbContratista.BackColor = System.Drawing.Color.Transparent;
             this.gpbContratista.Controls.Add(this.dgvContratista);
             this.gpbContratista.Location = new System.Drawing.Point(583, 12);
             this.gpbContratista.Name = "gpbContratista";
-            this.gpbContratista.Size = new System.Drawing.Size(553, 178);
+            this.gpbContratista.Size = new System.Drawing.Size(566, 178);
             this.gpbContratista.TabIndex = 20;
             this.gpbContratista.TabStop = false;
             this.gpbContratista.Text = "Seleccione Contratista:";
@@ -278,7 +286,7 @@
             this.dgvContratista.Location = new System.Drawing.Point(6, 19);
             this.dgvContratista.Name = "dgvContratista";
             this.dgvContratista.ReadOnly = true;
-            this.dgvContratista.Size = new System.Drawing.Size(534, 147);
+            this.dgvContratista.Size = new System.Drawing.Size(547, 147);
             this.dgvContratista.TabIndex = 1;
             // 
             // cod_contratista
@@ -346,7 +354,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1148, 472);
+            this.BackgroundImage = global::GUI.Properties.Resources.fondo;
+            this.ClientSize = new System.Drawing.Size(1190, 480);
             this.Controls.Add(this.gpbContratista);
             this.Controls.Add(this.gpbUnidad);
             this.Controls.Add(this.btnCancelar);

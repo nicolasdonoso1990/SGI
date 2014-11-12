@@ -120,7 +120,7 @@ namespace GUI
 
             dataGridView1.DataSource = ListaPropiedades;
 
-            
+            cmbCiudad.SelectedIndex = 0;
 
         }
 

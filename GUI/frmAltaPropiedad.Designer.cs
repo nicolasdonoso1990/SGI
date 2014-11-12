@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmAltaPropiedad));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.btnRegistra = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMetro = new System.Windows.Forms.TextBox();
@@ -41,7 +42,6 @@
             this.lblCiudad = new System.Windows.Forms.Label();
             this.btnCancela = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -65,6 +65,18 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Propiedad";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(34, 295);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
+            this.lblErrorCompletar.TabIndex = 9;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
             // 
             // btnRegistra
             // 
@@ -128,7 +140,7 @@
             "Garay"});
             this.cmbCiudad.Location = new System.Drawing.Point(122, 31);
             this.cmbCiudad.Name = "cmbCiudad";
-            this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCiudad.Size = new System.Drawing.Size(222, 21);
             this.cmbCiudad.TabIndex = 4;
             this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             this.cmbCiudad.Click += new System.EventHandler(this.cmbCiudad_Click);
@@ -189,18 +201,6 @@
             this.label1.Size = new System.Drawing.Size(50, 13);
             this.label1.TabIndex = 10;
             this.label1.Text = "SGI V1.0";
-            // 
-            // lblErrorCompletar
-            // 
-            this.lblErrorCompletar.AutoSize = true;
-            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCompletar.Location = new System.Drawing.Point(34, 295);
-            this.lblErrorCompletar.Name = "lblErrorCompletar";
-            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
-            this.lblErrorCompletar.TabIndex = 9;
-            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
-            this.lblErrorCompletar.Visible = false;
             // 
             // frmAltaPropiedad
             // 

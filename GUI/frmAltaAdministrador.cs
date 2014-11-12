@@ -40,20 +40,23 @@ namespace GUI
 
             
             }
-            
-            
-            if (txtContraAdmin.Text == ad.contrasena) 
+
+
+            if (txtContraAdmin.Text == ad.contrasena)
             {
                 grpDatosAdmin.Enabled = true;
                 lblErrorContra.Visible = false;
                 txtContraAdmin.Visible = false;
                 lblAclaracion.Visible = false;
                 btnAceptar.Visible = false;
-            
-            
+
+
             }
-            
-           
+
+            else 
+            {
+                lblContraIncorrecta.Visible = true;
+            }
 
           
             
@@ -179,12 +182,8 @@ namespace GUI
             
             
             }
-         //   if (ad.tipo == "normal") 
-           // {
 
-             //   comboBox1.SelectedItem = 1;
-            
-           // }
+            cmbTipo.SelectedIndex = 0;
         
         
         }

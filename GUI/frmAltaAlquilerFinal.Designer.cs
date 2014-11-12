@@ -150,11 +150,14 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(297, 583);
+            this.btnCancelar.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(286, 596);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.btnCancelar.Size = new System.Drawing.Size(91, 44);
             this.btnCancelar.TabIndex = 28;
             this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = true;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
@@ -180,18 +183,21 @@
             this.grpValores.Enabled = false;
             this.grpValores.Location = new System.Drawing.Point(114, 378);
             this.grpValores.Name = "grpValores";
-            this.grpValores.Size = new System.Drawing.Size(418, 170);
+            this.grpValores.Size = new System.Drawing.Size(418, 195);
             this.grpValores.TabIndex = 29;
             this.grpValores.TabStop = false;
             this.grpValores.Text = "Valores Mensuales";
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(172, 123);
+            this.btnGuardar.Image = global::GUI.Properties.Resources.ok;
+            this.btnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGuardar.Location = new System.Drawing.Point(172, 129);
             this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(92, 23);
+            this.btnGuardar.Size = new System.Drawing.Size(91, 44);
             this.btnGuardar.TabIndex = 30;
             this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
