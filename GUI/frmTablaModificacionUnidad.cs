@@ -251,6 +251,19 @@ namespace GUI
 
         }
 
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnLimpiaCampos_Click(object sender, EventArgs e)
+        {
+          
+            txtMetro.Text = "";
+            txtDescripcion.Text = "";
+
+        }
+
      
 
       

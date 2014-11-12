@@ -35,7 +35,7 @@ namespace GUI
 
             if (cantidadFilasSeleccionadas > 0)
             {
-
+                lblErrorTabla.Visible = false;
                 DataGridViewRow fila = dataGridView1.CurrentRow; //devuelve la fila que esta siendo seleccionada
 
                 string numero = fila.Cells[0].Value.ToString(); //el [2] indica la posicion del dni
@@ -49,7 +49,7 @@ namespace GUI
                 txtContraseña.Text = admin.contrasena;
                 txtNum.Text = admin.IDadmin.ToString();
                 txtUsuario.Text = admin.usuario;
-                comboBox1.SelectedIndex = comboBox1.FindString(admin.tipo);
+                cmbTipo.SelectedIndex = cmbTipo.FindString(admin.tipo);
 
 
 
@@ -65,6 +65,12 @@ namespace GUI
 
 
 
+            }
+            else 
+            {
+                lblErrorTabla.Visible = true;
+            
+            
             }
 
         }
@@ -121,26 +127,97 @@ namespace GUI
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
+            
+            
             string[] datos = new string[4];
-            datos[0] = txtNum.Text;
-            datos[1] = comboBox1.SelectedItem.ToString();
-            datos[2] = txtContraseña.Text;
-            datos[3] = txtUsuario.Text;
+            int usuBandera = 0;
+            int contraBandera = 0;
+            int tipoBandera = 0;
 
 
-            AdministradorLogic adLog = new AdministradorLogic();
 
-            adLog.ModificaAdministrador(datos);
-            MessageBox.Show("La modificacion fue realizada con exito", "Modificacion Inquilino");
+            if (txtUsuario.Text == "")
+            {
+                txtUsuario.BackColor = Color.Red;
 
-            txtNum.Clear();
-            txtContraseña.Clear();
-            txtUsuario.Clear();
+            }
+            else 
+            {
+                datos[3] = txtUsuario.Text;
+                usuBandera = 1;
+            }
 
-            ListaAdministradores = adLog.TodosAdministradores();
-            dataGridView1.DataSource = ListaAdministradores;
 
 
+            if (txtContraseña.Text == "")
+            {
+                txtContraseña.BackColor = Color.White;
+                
+            }
+            else 
+            {
+                datos[2] = txtContraseña.Text;
+                contraBandera = 1;
+            }
+
+
+
+            if (cmbTipo.SelectedItem.ToString() == "Seleccione un tipo")
+            {
+                cmbTipo.BackColor = Color.Red;
+
+            }
+            else 
+            {
+                datos[1] = cmbTipo.SelectedItem.ToString();
+                tipoBandera = 1;
+            }
+
+
+            if (usuBandera == 1 && contraBandera == 1 && tipoBandera == 1)
+            {
+                datos[0] = txtNum.Text;
+
+
+                AdministradorLogic adLog = new AdministradorLogic();
+
+                adLog.ModificaAdministrador(datos);
+                MessageBox.Show("La modificacion fue realizada con exito", "Modificacion Inquilino");
+
+                txtNum.Clear();
+                txtContraseña.Clear();
+                txtUsuario.Clear();
+
+                ListaAdministradores = adLog.TodosAdministradores();
+                dataGridView1.DataSource = ListaAdministradores;
+
+
+
+            }
+            else 
+            {
+                lblErrorCampos.Visible = true;
+            
+            }
+       
+           
+            
+
+
+            
+            
+            
+            
+            
+
+        }
+
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtNum.Text = "";
+            txtContraseña.Text = "";
+            txtUsuario.Text = "";
+            cmbTipo.SelectedIndex = 0;
         }
 
       

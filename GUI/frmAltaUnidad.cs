@@ -82,14 +82,85 @@ namespace GUI
 
         private void btnRegistra_Click(object sender, EventArgs e)
         {
-            if (txtDescripcion.Text != "" && txtMetro.Text != "") 
+            int descripcionBandera = 0;
+            int metroBandera = 0;
+
+
+            if (txtDescripcion.Text == "")
+            {
+                txtDescripcion.BackColor = Color.Red;
+
+            }
+            else 
+            {
+                descripcionBandera = 1;
+            }
+
+            if (txtMetro.Text == "")
+            {
+                txtMetro.BackColor = Color.Red;
+            }
+
+            else 
+            {
+                double number1;
+
+                bool canConvert = Double.TryParse(txtMetro.Text, out number1);
+
+                if (canConvert == true)
+                {
+
+                    metroBandera = 1;
+                }
+                else
+                {
+                    lblErrorNumero.Visible = true;
+
+                }    
+
+
+                
+            }
+
+
+            //probando con bandera, y chequeando directamente los campos.
+
+            if (txtDescripcion.Text != "" && metroBandera==1 && chkFotos.Enabled==true) 
             {
                 groupBox3.Enabled = true;
-            
-           
-            
+                lblErrorCampos.Visible = false;
+                lblErrorNumero.Visible = false;
+          
+            }
+            if (txtDescripcion.Text != "" && metroBandera==1)
+            {
+                lblErrorCampos.Visible = false;
+                lblErrorNumero.Visible = false;
+
+
+                Unidad uni = new Unidad();
+
+                Int32 num = Convert.ToInt32(txtCodigo.Text);
+
+                double metros = Convert.ToDouble(txtMetro.Text);
+
+                uni.cod_propiedad = num;
+                uni.m2 = metros;
+                uni.estado = "habilitado";
+                uni.descripcion = txtDescripcion.Text;
+
+                UnidadLogic unLog = new UnidadLogic();
+                unLog.AltaUnidad(uni);
+
+            }
+            else 
+            {
+                lblErrorCampos.Visible = true;
             
             }
+
+
+
         }
 
         private void btnFoto1_Click(object sender, EventArgs e)
@@ -378,6 +449,16 @@ namespace GUI
             }
         
         
+        }
+
+        private void txtMetro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDescripcion.BackColor = Color.White;
         }
 
     }

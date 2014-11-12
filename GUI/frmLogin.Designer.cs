@@ -33,6 +33,8 @@
             this.btnIngresar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.grpIngreso = new System.Windows.Forms.GroupBox();
+            this.lblErrorInvalido = new System.Windows.Forms.Label();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbOpcion = new System.Windows.Forms.ComboBox();
             this.txtContraseña = new System.Windows.Forms.TextBox();
@@ -40,8 +42,6 @@
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.lblErrorCompletar = new System.Windows.Forms.Label();
-            this.lblErrorInvalido = new System.Windows.Forms.Label();
             this.grpIngreso.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +50,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(12, 9);
+            this.label1.Location = new System.Drawing.Point(43, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(612, 33);
             this.label1.TabIndex = 0;
@@ -62,7 +62,7 @@
             this.btnIngresar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnIngresar.Image = global::GUI.Properties.Resources.log_in;
             this.btnIngresar.ImageAlign = System.Drawing.ContentAlignment.TopRight;
-            this.btnIngresar.Location = new System.Drawing.Point(144, 152);
+            this.btnIngresar.Location = new System.Drawing.Point(164, 153);
             this.btnIngresar.Name = "btnIngresar";
             this.btnIngresar.Size = new System.Drawing.Size(98, 40);
             this.btnIngresar.TabIndex = 4;
@@ -75,9 +75,9 @@
             // 
             this.btnSalir.Image = global::GUI.Properties.Resources.salir;
             this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnSalir.Location = new System.Drawing.Point(307, 358);
+            this.btnSalir.Location = new System.Drawing.Point(330, 352);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(64, 38);
+            this.btnSalir.Size = new System.Drawing.Size(55, 38);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -98,10 +98,34 @@
             this.grpIngreso.Controls.Add(this.lblUsuario);
             this.grpIngreso.Location = new System.Drawing.Point(143, 67);
             this.grpIngreso.Name = "grpIngreso";
-            this.grpIngreso.Size = new System.Drawing.Size(361, 270);
+            this.grpIngreso.Size = new System.Drawing.Size(397, 270);
             this.grpIngreso.TabIndex = 3;
             this.grpIngreso.TabStop = false;
             this.grpIngreso.Text = "Ingrese sus datos";
+            // 
+            // lblErrorInvalido
+            // 
+            this.lblErrorInvalido.AutoSize = true;
+            this.lblErrorInvalido.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorInvalido.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorInvalido.Location = new System.Drawing.Point(92, 226);
+            this.lblErrorInvalido.Name = "lblErrorInvalido";
+            this.lblErrorInvalido.Size = new System.Drawing.Size(214, 13);
+            this.lblErrorInvalido.TabIndex = 10;
+            this.lblErrorInvalido.Text = "Error. Usuario o contraseña invalidos";
+            this.lblErrorInvalido.Visible = false;
+            // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(27, 213);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
+            this.lblErrorCompletar.TabIndex = 7;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
             // 
             // label2
             // 
@@ -170,30 +194,6 @@
             this.label3.Size = new System.Drawing.Size(50, 13);
             this.label3.TabIndex = 6;
             this.label3.Text = "SGI V1.0";
-            // 
-            // lblErrorCompletar
-            // 
-            this.lblErrorCompletar.AutoSize = true;
-            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCompletar.Location = new System.Drawing.Point(6, 213);
-            this.lblErrorCompletar.Name = "lblErrorCompletar";
-            this.lblErrorCompletar.Size = new System.Drawing.Size(341, 13);
-            this.lblErrorCompletar.TabIndex = 7;
-            this.lblErrorCompletar.Text = "Error. Por favor complete los campos que aparecen  en rojo";
-            this.lblErrorCompletar.Visible = false;
-            // 
-            // lblErrorInvalido
-            // 
-            this.lblErrorInvalido.AutoSize = true;
-            this.lblErrorInvalido.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorInvalido.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorInvalido.Location = new System.Drawing.Point(92, 226);
-            this.lblErrorInvalido.Name = "lblErrorInvalido";
-            this.lblErrorInvalido.Size = new System.Drawing.Size(214, 13);
-            this.lblErrorInvalido.TabIndex = 10;
-            this.lblErrorInvalido.Text = "Error. Usuario o contraseña invalidos";
-            this.lblErrorInvalido.Visible = false;
             // 
             // FrmLogin
             // 

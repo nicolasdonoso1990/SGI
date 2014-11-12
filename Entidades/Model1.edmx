@@ -30,7 +30,7 @@
           <Key>
             <PropertyRef Name="cod_contratista" />
           </Key>
-          <Property Name="cod_contratista" Type="int" Nullable="false" />
+          <Property Name="cod_contratista" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombre" Type="varchar" MaxLength="50" />
           <Property Name="apellido" Type="varchar" MaxLength="50" />
           <Property Name="direccion" Type="varchar" MaxLength="50" />
@@ -384,7 +384,7 @@
           <Key>
             <PropertyRef Name="cod_contratista" />
           </Key>
-          <Property Name="cod_contratista" Type="Int32" Nullable="false" />
+          <Property Name="cod_contratista" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="apellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="direccion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />

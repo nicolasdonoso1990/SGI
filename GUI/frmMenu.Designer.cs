@@ -58,8 +58,10 @@
             this.nuevaReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label1 = new System.Windows.Forms.Label();
+
             this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.registrarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,21 +97,21 @@
             // miCuentaToolStripMenuItem
             // 
             this.miCuentaToolStripMenuItem.Name = "miCuentaToolStripMenuItem";
-            this.miCuentaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.miCuentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.miCuentaToolStripMenuItem.Text = "Mi cuenta";
             this.miCuentaToolStripMenuItem.Click += new System.EventHandler(this.miCuentaToolStripMenuItem_Click);
             // 
             // CerrarStripMenuItem1
             // 
             this.CerrarStripMenuItem1.Name = "CerrarStripMenuItem1";
-            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.CerrarStripMenuItem1.Text = "Cerrar Sesion";
             this.CerrarStripMenuItem1.Click += new System.EventHandler(this.CerrarStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -145,11 +147,12 @@
             this.alquileresToolStripMenuItem.Name = "alquileresToolStripMenuItem";
             this.alquileresToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.alquileresToolStripMenuItem.Text = "Alquileres";
+            this.alquileresToolStripMenuItem.Click += new System.EventHandler(this.alquileresToolStripMenuItem_Click);
             // 
             // altaAlquilerToolStripMenuItem
             // 
             this.altaAlquilerToolStripMenuItem.Name = "altaAlquilerToolStripMenuItem";
-            this.altaAlquilerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.altaAlquilerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.altaAlquilerToolStripMenuItem.Text = "Alta Alquiler";
             this.altaAlquilerToolStripMenuItem.Click += new System.EventHandler(this.altaAlquilerToolStripMenuItem_Click);
             // 
@@ -302,6 +305,7 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "SGI V1.0";
             // 
+
             // pagosToolStripMenuItem
             // 
             this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -317,6 +321,7 @@
             this.registrarPagoToolStripMenuItem.Text = "Registrar pago";
             this.registrarPagoToolStripMenuItem.Click += new System.EventHandler(this.registrarPagoToolStripMenuItem_Click);
             // 
+
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

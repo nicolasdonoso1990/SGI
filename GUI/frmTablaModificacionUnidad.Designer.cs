@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.groupDatosUni = new System.Windows.Forms.GroupBox();
+            this.btnLimpiaCampos = new System.Windows.Forms.Button();
             this.lblCodUnidad = new System.Windows.Forms.Label();
             this.btnFoto4 = new System.Windows.Forms.Button();
             this.btnFoto3 = new System.Windows.Forms.Button();
             this.btnFoto2 = new System.Windows.Forms.Button();
+            this.btnRegistra = new System.Windows.Forms.Button();
             this.foto4 = new System.Windows.Forms.PictureBox();
             this.foto3 = new System.Windows.Forms.PictureBox();
             this.foto2 = new System.Windows.Forms.PictureBox();
             this.foto1 = new System.Windows.Forms.PictureBox();
             this.btnFoto1 = new System.Windows.Forms.Button();
             this.txtCodigo = new System.Windows.Forms.TextBox();
-            this.btnRegistra = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMetro = new System.Windows.Forms.TextBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
@@ -48,6 +49,9 @@
             this.btnBajaUni = new System.Windows.Forms.Button();
             this.btnModificarUni = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.codigoUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.met = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupPropiedades = new System.Windows.Forms.GroupBox();
             this.btnSeleccionarPropiedad = new System.Windows.Forms.Button();
             this.txtDireccion = new System.Windows.Forms.TextBox();
@@ -58,10 +62,7 @@
             this.direccion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Salir = new System.Windows.Forms.Button();
-            this.codigoUnidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descrip = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.met = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSalir = new System.Windows.Forms.Button();
             this.groupDatosUni.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.foto4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.foto3)).BeginInit();
@@ -76,17 +77,18 @@
             // groupDatosUni
             // 
             this.groupDatosUni.BackColor = System.Drawing.Color.Transparent;
+            this.groupDatosUni.Controls.Add(this.btnLimpiaCampos);
             this.groupDatosUni.Controls.Add(this.lblCodUnidad);
             this.groupDatosUni.Controls.Add(this.btnFoto4);
             this.groupDatosUni.Controls.Add(this.btnFoto3);
             this.groupDatosUni.Controls.Add(this.btnFoto2);
+            this.groupDatosUni.Controls.Add(this.btnRegistra);
             this.groupDatosUni.Controls.Add(this.foto4);
             this.groupDatosUni.Controls.Add(this.foto3);
             this.groupDatosUni.Controls.Add(this.foto2);
             this.groupDatosUni.Controls.Add(this.foto1);
             this.groupDatosUni.Controls.Add(this.btnFoto1);
             this.groupDatosUni.Controls.Add(this.txtCodigo);
-            this.groupDatosUni.Controls.Add(this.btnRegistra);
             this.groupDatosUni.Controls.Add(this.txtDescripcion);
             this.groupDatosUni.Controls.Add(this.txtMetro);
             this.groupDatosUni.Controls.Add(this.lblDescripcion);
@@ -98,6 +100,19 @@
             this.groupDatosUni.TabIndex = 7;
             this.groupDatosUni.TabStop = false;
             this.groupDatosUni.Text = "Datos Unidad";
+            // 
+            // btnLimpiaCampos
+            // 
+            this.btnLimpiaCampos.Image = global::GUI.Properties.Resources.limpiar;
+            this.btnLimpiaCampos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLimpiaCampos.Location = new System.Drawing.Point(165, 251);
+            this.btnLimpiaCampos.Name = "btnLimpiaCampos";
+            this.btnLimpiaCampos.Size = new System.Drawing.Size(87, 42);
+            this.btnLimpiaCampos.TabIndex = 26;
+            this.btnLimpiaCampos.Text = "Limpiar Campos";
+            this.btnLimpiaCampos.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiaCampos.UseVisualStyleBackColor = true;
+            this.btnLimpiaCampos.Click += new System.EventHandler(this.btnLimpiaCampos_Click);
             // 
             // lblCodUnidad
             // 
@@ -134,6 +149,19 @@
             this.btnFoto2.TabIndex = 22;
             this.btnFoto2.Text = "Cargar";
             this.btnFoto2.UseVisualStyleBackColor = true;
+            // 
+            // btnRegistra
+            // 
+            this.btnRegistra.Image = global::GUI.Properties.Resources.ok;
+            this.btnRegistra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistra.Location = new System.Drawing.Point(440, 251);
+            this.btnRegistra.Name = "btnRegistra";
+            this.btnRegistra.Size = new System.Drawing.Size(87, 42);
+            this.btnRegistra.TabIndex = 8;
+            this.btnRegistra.Text = "Registrar";
+            this.btnRegistra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRegistra.UseVisualStyleBackColor = true;
+            this.btnRegistra.Click += new System.EventHandler(this.btnRegistra_Click);
             // 
             // foto4
             // 
@@ -188,16 +216,6 @@
             this.txtCodigo.Size = new System.Drawing.Size(110, 20);
             this.txtCodigo.TabIndex = 10;
             // 
-            // btnRegistra
-            // 
-            this.btnRegistra.Location = new System.Drawing.Point(399, 259);
-            this.btnRegistra.Name = "btnRegistra";
-            this.btnRegistra.Size = new System.Drawing.Size(87, 31);
-            this.btnRegistra.TabIndex = 8;
-            this.btnRegistra.Text = "Registrar";
-            this.btnRegistra.UseVisualStyleBackColor = true;
-            this.btnRegistra.Click += new System.EventHandler(this.btnRegistra_Click);
-            // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(108, 112);
@@ -247,21 +265,27 @@
             // 
             // btnBajaUni
             // 
-            this.btnBajaUni.Location = new System.Drawing.Point(389, 262);
+            this.btnBajaUni.Image = global::GUI.Properties.Resources.eliminar;
+            this.btnBajaUni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBajaUni.Location = new System.Drawing.Point(408, 251);
             this.btnBajaUni.Name = "btnBajaUni";
-            this.btnBajaUni.Size = new System.Drawing.Size(88, 29);
+            this.btnBajaUni.Size = new System.Drawing.Size(94, 40);
             this.btnBajaUni.TabIndex = 10;
-            this.btnBajaUni.Text = "Dar de Baja";
+            this.btnBajaUni.Text = "Elimimar";
+            this.btnBajaUni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBajaUni.UseVisualStyleBackColor = true;
             this.btnBajaUni.Click += new System.EventHandler(this.btnBajaUni_Click);
             // 
             // btnModificarUni
             // 
-            this.btnModificarUni.Location = new System.Drawing.Point(104, 262);
+            this.btnModificarUni.Image = global::GUI.Properties.Resources.editar;
+            this.btnModificarUni.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarUni.Location = new System.Drawing.Point(105, 251);
             this.btnModificarUni.Name = "btnModificarUni";
-            this.btnModificarUni.Size = new System.Drawing.Size(88, 29);
+            this.btnModificarUni.Size = new System.Drawing.Size(94, 40);
             this.btnModificarUni.TabIndex = 9;
             this.btnModificarUni.Text = "Modificar";
+            this.btnModificarUni.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnModificarUni.UseVisualStyleBackColor = true;
             this.btnModificarUni.Click += new System.EventHandler(this.btnModificarUni_Click);
             // 
@@ -277,6 +301,25 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(546, 194);
             this.dataGridView2.TabIndex = 0;
+            // 
+            // codigoUnidad
+            // 
+            this.codigoUnidad.DataPropertyName = "cod_unidad";
+            this.codigoUnidad.HeaderText = "Codigo Unidad";
+            this.codigoUnidad.Name = "codigoUnidad";
+            // 
+            // descrip
+            // 
+            this.descrip.DataPropertyName = "descripcion";
+            this.descrip.HeaderText = "Descripcion unidad";
+            this.descrip.Name = "descrip";
+            this.descrip.Width = 300;
+            // 
+            // met
+            // 
+            this.met.DataPropertyName = "m2";
+            this.met.HeaderText = "Metros Cuadrados";
+            this.met.Name = "met";
             // 
             // groupPropiedades
             // 
@@ -367,33 +410,18 @@
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
             // 
-            // Salir
+            // btnSalir
             // 
-            this.Salir.Location = new System.Drawing.Point(438, 712);
-            this.Salir.Name = "Salir";
-            this.Salir.Size = new System.Drawing.Size(87, 31);
-            this.Salir.TabIndex = 25;
-            this.Salir.Text = "Registrar";
-            this.Salir.UseVisualStyleBackColor = true;
-            // 
-            // codigoUnidad
-            // 
-            this.codigoUnidad.DataPropertyName = "cod_unidad";
-            this.codigoUnidad.HeaderText = "Codigo Unidad";
-            this.codigoUnidad.Name = "codigoUnidad";
-            // 
-            // descrip
-            // 
-            this.descrip.DataPropertyName = "descripcion";
-            this.descrip.HeaderText = "Descripcion unidad";
-            this.descrip.Name = "descrip";
-            this.descrip.Width = 300;
-            // 
-            // met
-            // 
-            this.met.DataPropertyName = "m2";
-            this.met.HeaderText = "Metros Cuadrados";
-            this.met.Name = "met";
+            this.btnSalir.Image = global::GUI.Properties.Resources.cancelar;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(479, 688);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Size = new System.Drawing.Size(87, 42);
+            this.btnSalir.TabIndex = 25;
+            this.btnSalir.Text = "Cancelar";
+            this.btnSalir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.Salir_Click);
             // 
             // frmTablaModificacionUnidad
             // 
@@ -401,7 +429,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::GUI.Properties.Resources.fondo;
             this.ClientSize = new System.Drawing.Size(1362, 742);
-            this.Controls.Add(this.Salir);
+            this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.groupDatosUni);
             this.Controls.Add(this.groupUnidades);
             this.Controls.Add(this.groupPropiedades);
@@ -453,11 +481,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn direccion;
         private System.Windows.Forms.DataGridViewTextBoxColumn metros;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.Button Salir;
+        private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Label lblCodUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoUnidad;
         private System.Windows.Forms.DataGridViewTextBoxColumn descrip;
         private System.Windows.Forms.DataGridViewTextBoxColumn met;
+        private System.Windows.Forms.Button btnLimpiaCampos;
 
     }
 }

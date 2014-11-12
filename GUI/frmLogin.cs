@@ -60,8 +60,8 @@ namespace GUI
 
             if (cmbOpcion.SelectedItem.ToString() == "Seleccione una opción")
             {
-                cmbOpcion.BackColor = Color.Red;
-
+               cmbOpcion.BackColor = Color.Red;
+               
             }
             else 
             {
@@ -95,6 +95,7 @@ namespace GUI
 
             if (TipoControl == 1 && passControl == 1 && usuarioControl == 1)
             {
+                lblErrorCompletar.Visible = false;
 
                 AdministradorLogic admLog = new AdministradorLogic();
 

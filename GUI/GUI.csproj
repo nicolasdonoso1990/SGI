@@ -216,6 +216,9 @@
     <EmbeddedResource Include="frmAltaPropiedad.resx">
       <DependentUpon>frmAltaPropiedad.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAltaReparacion.resx">
+      <DependentUpon>frmAltaReparacion.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAltaUnidad.resx">
       <DependentUpon>frmAltaUnidad.cs</DependentUpon>
     </EmbeddedResource>

@@ -40,104 +40,231 @@ namespace GUI
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Empiezan las Validaciones
-
-            string mensaje = "";   // Si se llena el mensaje es porque hay algún campo imortante en blanco
-
-            if (0 == string.Compare("",txtNombre.Text ))
+            if (txtNombre.Text == "") 
             {
-                mensaje = mensaje + "Nombre\n";
+                txtNombre.BackColor = Color.Red;
+            }
+            
+            
+            if (txtApellido.Text == "")
+            {
+                txtApellido.BackColor = Color.Red;
             }
 
-            if (0 == string.Compare("",txtApellido.Text ))
+            if (txtDireccion.Text == "")
             {
-                mensaje = mensaje + "Apellido\n";
+                txtDireccion.BackColor = Color.Red;
             }
-
-            if (0 == string.Compare("",txtDireccion.Text ))
+            if (txtDni.Text == "")
             {
-                mensaje = mensaje + "Dirección\n";
+                txtDni.BackColor = Color.Red;
             }
-
-            if (0 == string.Compare("", txtdni.Text))
+            if (txtMail.Text == "")
             {
-                mensaje = mensaje + "DNI\n";
+                txtMail.BackColor = Color.Red;
             }
-
-            if (txtUsuario.Enabled==true)
+            if (txtTelefono.Text == "")
             {
-                        if (0 == string.Compare("",txtUsuario.Text ))
-                 {
-                        mensaje=mensaje+"Usuario\n";
-                 }
-                     if (0 == string.Compare("", txtContraseña.Text))
-                 {
-                     mensaje=mensaje+"Contraseña\n";
-                   }
-
+                txtTelefono.BackColor = Color.Red;
             }
-
-            if (0 != string.Compare("", mensaje))
+            if (chkUsuario.Enabled == true)
             {
-                MessageBox.Show("Los siguientes campos faltan ser rellenados:\n" + mensaje, "¡Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
 
-            else
-            {
-                Inquilino inq = new Inquilino();
-                inq.apellido = txtApellido.Text;
-                inq.direccion = txtDireccion.Text;
-                inq.dni = txtdni.Text;
-                inq.nombre = txtNombre.Text;
-                inq.telefono = txtTelefono.Text;
-                inq.contrasena = "";
-                inq.e_mail = "";
-                inq.usuario = "";
-                inq.estado = "habilitado";
-                if (txtMail.Enabled == true)
+                if (txtUsuario.Text == "")
                 {
-                    inq.e_mail = txtMail.Text;
+                    txtUsuario.BackColor = Color.Red;
                 }
 
-                if (txtUsuario.Enabled == true)
+                if (txtContraseña.Text == "")
                 {
-                    inq.usuario = txtUsuario.Text;
-                    inq.contrasena = txtContraseña.Text;
-
+                    txtContraseña.BackColor = Color.Red;
                 }
 
-                InquilinoLogic InLog = new InquilinoLogic();
+            }
 
-                InLog.AltaInquilino(inq);
-                MessageBox.Show("El Administrador fue dado de alta con exito", "Alta Administrador");
+            if (chkUsuario.Enabled == true)
+            {
 
-
-
-                if (MessageBox.Show("¿Desea agregar otro inquilino?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (txtApellido.Text != "" && txtDireccion.Text != "" && txtDni.Text != "" && txtMail.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "" && txtUsuario.Text != "" && txtContraseña.Text != "")
                 {
-                    txtApellido.Clear();
-                    txtContraseña.Clear();
-                    txtDireccion.Clear();
-                    txtdni.Clear();
-                    txtMail.Clear();
-                    txtNombre.Clear();
-                    txtTelefono.Clear();
-                    txtUsuario.Clear();
+                    Inquilino inq = new Inquilino();
+                    inq.apellido = txtApellido.Text;
+                    inq.direccion = txtDireccion.Text;
+                    inq.dni = txtDni.Text;
+                    inq.nombre = txtNombre.Text;
+                    inq.telefono = txtTelefono.Text;
+                    inq.contrasena = "";
+                    inq.e_mail = "";
+                    inq.usuario = "";
+                    inq.estado = "habilitado";
+                    if (txtMail.Enabled == true)
+                    {
+                        inq.e_mail = txtMail.Text;
+                    }
 
-                    check1.CheckState = 0;
-                    check2.CheckState = 0;
-                    txtMail.Enabled = false;
-                    txtUsuario.Enabled = false;
-                    txtContraseña.Enabled = false;
+                    if (txtUsuario.Enabled == true)
+                    {
+                        inq.usuario = txtUsuario.Text;
+                        inq.contrasena = txtContraseña.Text;
+
+                    }
+
+                    InquilinoLogic InLog = new InquilinoLogic();
+
+                    InLog.AltaInquilino(inq);
+                    MessageBox.Show("El Administrador fue dado de alta con exito", "Alta Administrador");
+
+
+
+                    if (MessageBox.Show("¿Desea agregar otro inquilino?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                    {
+                        txtApellido.Clear();
+                        txtContraseña.Clear();
+                        txtDireccion.Clear();
+                        txtDni.Clear();
+                        txtMail.Clear();
+                        txtNombre.Clear();
+                        txtTelefono.Clear();
+                        txtUsuario.Clear();
+
+                        check1.CheckState = 0;
+                        chkUsuario.CheckState = 0;
+                        txtMail.Enabled = false;
+                        txtUsuario.Enabled = false;
+                        txtContraseña.Enabled = false;
+
+
+                    }
+                    else
+                    {
+                        this.Dispose();
+                    }
 
 
                 }
                 else
                 {
-                    this.Dispose();
+                    lblErrorCompletar.Visible = true;
                 }
-            }
 
+
+
+
+
+
+
+
+
+            }
+            else 
+            {
+            
+                 if (txtApellido.Text != "" && txtDireccion.Text != "" && txtDni.Text != "" && txtMail.Text != "" && txtNombre.Text != "" && txtTelefono.Text != "")
+                    {
+                        Inquilino inq = new Inquilino();
+                        inq.apellido = txtApellido.Text;
+                        inq.direccion = txtDireccion.Text;
+                        inq.dni = txtDni.Text;
+                        inq.nombre = txtNombre.Text;
+                        inq.telefono = txtTelefono.Text;
+                        inq.contrasena = "";
+                        inq.e_mail = "";
+                        inq.usuario = "";
+                        inq.estado = "habilitado";
+                        if (txtMail.Enabled == true)
+                        {
+                            inq.e_mail = txtMail.Text;
+                        }
+
+                        if (txtUsuario.Enabled == true)
+                        {
+                            inq.usuario = txtUsuario.Text;
+                            inq.contrasena = txtContraseña.Text;
+
+                        }
+
+                        InquilinoLogic InLog = new InquilinoLogic();
+
+                        InLog.AltaInquilino(inq);
+                        MessageBox.Show("El Administrador fue dado de alta con exito", "Alta Administrador");
+
+
+
+                        if (MessageBox.Show("¿Desea agregar otro inquilino?. Confirme", "Otro inquilino", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                        {
+                            txtApellido.Clear();
+                            txtContraseña.Clear();
+                            txtDireccion.Clear();
+                            txtDni.Clear();
+                            txtMail.Clear();
+                            txtNombre.Clear();
+                            txtTelefono.Clear();
+                            txtUsuario.Clear();
+
+                            check1.CheckState = 0;
+                            chkUsuario.CheckState = 0;
+                            txtMail.Enabled = false;
+                            txtUsuario.Enabled = false;
+                            txtContraseña.Enabled = false;
+
+
+                        }
+                        else
+                        {
+                            this.Dispose();
+                        }
+
+                    }
+
+
+
+                }
+
+            
+            
+            
+            
+            }
+        
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtNombre.BackColor = Color.White;
+        }
+
+        private void txtApellido_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtApellido.BackColor = Color.White;
+        }
+
+        private void txtDireccion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDireccion.BackColor = Color.White;
+        }
+
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtTelefono.BackColor = Color.White;
+        }
+
+        private void txtMail_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMail.BackColor = Color.White;
+        }
+
+        private void txtDni_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDni.BackColor = Color.White;
+        }
+
+        private void txtUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtUsuario.BackColor = Color.White;
+        }
+
+        private void txtContraseña_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtContraseña.BackColor = Color.White;
         }
     }
 }
