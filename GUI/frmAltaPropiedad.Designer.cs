@@ -34,31 +34,33 @@
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMetro = new System.Windows.Forms.TextBox();
             this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCiudad = new System.Windows.Forms.ComboBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblMetro = new System.Windows.Forms.Label();
             this.lblDireccion = new System.Windows.Forms.Label();
             this.lblCiudad = new System.Windows.Forms.Label();
             this.btnCancela = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lblErrorCompletar);
             this.groupBox1.Controls.Add(this.btnRegistra);
             this.groupBox1.Controls.Add(this.txtDescripcion);
             this.groupBox1.Controls.Add(this.txtMetro);
             this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbCiudad);
             this.groupBox1.Controls.Add(this.lblDescripcion);
             this.groupBox1.Controls.Add(this.lblMetro);
             this.groupBox1.Controls.Add(this.lblDireccion);
             this.groupBox1.Controls.Add(this.lblCiudad);
             this.groupBox1.Location = new System.Drawing.Point(86, 34);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(423, 368);
+            this.groupBox1.Size = new System.Drawing.Size(423, 389);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Propiedad";
@@ -66,7 +68,7 @@
             // 
             // btnRegistra
             // 
-            this.btnRegistra.Location = new System.Drawing.Point(172, 305);
+            this.btnRegistra.Location = new System.Drawing.Point(172, 333);
             this.btnRegistra.Name = "btnRegistra";
             this.btnRegistra.Size = new System.Drawing.Size(87, 31);
             this.btnRegistra.TabIndex = 8;
@@ -81,6 +83,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 110);
             this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtMetro
             // 
@@ -88,6 +91,7 @@
             this.txtMetro.Name = "txtMetro";
             this.txtMetro.Size = new System.Drawing.Size(75, 20);
             this.txtMetro.TabIndex = 6;
+            this.txtMetro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMetro_KeyPress);
             // 
             // txtDireccion
             // 
@@ -95,11 +99,14 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(222, 20);
             this.txtDireccion.TabIndex = 5;
+            this.txtDireccion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDireccion_KeyPress);
             // 
-            // comboBox1
+            // cmbCiudad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.Items.AddRange(new object[] {
+            "Seleccione una ciudad",
             "Rosario",
             "La Capital",
             "General Lopez",
@@ -119,11 +126,12 @@
             "San Javier",
             "9 de Julio",
             "Garay"});
-            this.comboBox1.Location = new System.Drawing.Point(122, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbCiudad.Location = new System.Drawing.Point(122, 31);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCiudad.TabIndex = 4;
+            this.cmbCiudad.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            this.cmbCiudad.Click += new System.EventHandler(this.cmbCiudad_Click);
             // 
             // lblDescripcion
             // 
@@ -182,6 +190,18 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "SGI V1.0";
             // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(34, 295);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
+            this.lblErrorCompletar.TabIndex = 9;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
+            // 
             // frmAltaPropiedad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -216,8 +236,9 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtMetro;
         private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCiudad;
         private System.Windows.Forms.Button btnCancela;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lblErrorCompletar;
     }
 }

@@ -7,29 +7,35 @@ using Entidades;
 using Datos;
 
 
-
 namespace Negocio
 {
-   public class ValorMensualLogic
+    public class ValorMensualLogic
     {
+        public DatosValorMensual ValorMensualData { get; set; }
 
-
-       public DatosValorMensual valorData {get;set;}
-           
-
-       public ValorMensualLogic()
+        public ValorMensualLogic()
         {
-            this.valorData = new DatosValorMensual();
-
+            this.ValorMensualData = new DatosValorMensual();
         }
 
-       public void altaValoresMensuales(Valor_mensual valor) 
+        public Int32 BuscarValorPago(int codigoContrato, DateTime fechaElegida)
+        {
+            Int32 valorMensual = this.ValorMensualData.buscarValorPago(codigoContrato,fechaElegida);
+
+            return valorMensual;
+        }
+
+        public void altaValoresMensuales(Valor_mensual valor) 
        {
 
-           valorData.AltaValores(valor);
+           ValorMensualData.AltaValores(valor);
        
        }
+
+
+       
       
+
 
 
 

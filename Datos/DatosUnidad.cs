@@ -35,17 +35,29 @@ namespace Datos
             using (var context = new InmobiliariaEntities()) 
             {
 
-                var query=from c in context.Unidades where c.cod_propiedad==pro.cod_propiedad && c.estado=="habilitado" || c.estado=="alquilado" select c;
+                var query=from c in context.Unidades where c.cod_propiedad==pro.cod_propiedad && c.estado=="habilitado"  select c;
                 return query.ToList();
 
 
             
             }
-        
-        
-        
-        
         }
+        
+        public List<Unidad> buscarUnidadesHabilitadas()
+        {
+              using (var context = new InmobiliariaEntities()) 
+            {
+
+                var query=from c in context.Unidades where c.estado=="habilitado" select c;
+                return query.ToList();
+
+
+            
+            }
+     
+        }
+        
+        
 
 
         public List<Unidad> BuscaUnidadesNoAlquiladas(Propiedad pro)

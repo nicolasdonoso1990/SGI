@@ -33,7 +33,7 @@ namespace Datos
 
                 if (tipo == "Administrador")
                 {
-                    adm = context.Administradores.First(i => i.estado == "habilitado" && i.usuario == usu && i.contrasena == pas && i.tipo == "normal");
+                    adm = context.Administradores.FirstOrDefault(i => i.estado == "habilitado" && i.usuario == usu && i.contrasena == pas && i.tipo == "normal");
                 }
 
                 return adm;

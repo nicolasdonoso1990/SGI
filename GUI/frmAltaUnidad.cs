@@ -25,6 +25,7 @@ namespace GUI
             InitializeComponent();
             this.RellenarGrilla();
             this.CrearDirectorio();
+            this.btnRegistrar.Enabled = false;
 
         }
 
@@ -38,9 +39,11 @@ namespace GUI
         {
             dataGridView1.AutoGenerateColumns = false;
 
+           
+
             PropiedadLogic propLog = new PropiedadLogic();
 
-
+            dataGridView1.Columns[4].Width = 225;
 
             ListaPropiedades = propLog.todasPropiedades();
 
@@ -82,98 +85,48 @@ namespace GUI
 
         private void btnRegistra_Click(object sender, EventArgs e)
         {
-            if (txtDescripcion.Text != "" && txtMetro.Text != "") 
+            bool todolleno = true;
+            lblErrorCampos.Visible = false;
+
+            if (txtDescripcion.Text == "")
+            {
+                txtDescripcion.BackColor = Color.Red;
+                todolleno=false;
+
+            }
+           
+
+            if (txtMetro.Text == "")
+            {
+                txtMetro.BackColor = Color.Red;
+                todolleno = false;
+            }
+
+            
+
+            if (todolleno==true) 
             {
                 groupBox3.Enabled = true;
-            
-           
-            
-            
+
+                lblErrorCampos.Visible = false;
+
+                btnRegistrar.Enabled = true;
+
+                if (chkFotos.Checked == false)
+                {
+                    groupBox3.Enabled = false;
+                }
+
             }
-        }
-
-        private void btnFoto1_Click(object sender, EventArgs e)
-        {
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
+            else
             {
-                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
-
-                foto1.Image= Image.FromFile(dialog.FileName);
-      
-
+                lblErrorCampos.Visible = true;
             }
-        }
-
-        private void btnSalir_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-        }
-
-        private void btnFoto2_Click(object sender, EventArgs e)
-        {
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto2.Image = Image.FromFile(dialog.FileName);
-
-            }
+    
 
         }
 
-        private void btnFoto3_Click(object sender, EventArgs e)
-        {
-
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto3.Image = Image.FromFile(dialog.FileName);
-                
-            }
-
-
-
-
-        }
-
-        private void btnFoto4_Click(object sender, EventArgs e)
-        {
-            
-            // Se crea el OpenFileDialog
-            OpenFileDialog dialog = new OpenFileDialog();
-            // Se muestra al usuario esperando una acción
-            DialogResult result = dialog.ShowDialog();
-
-            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
-            // la mostramos en el PictureBox de la inferfaz
-            if (result == DialogResult.OK)
-            {
-                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
-                foto4.Image = Image.FromFile(dialog.FileName);
-
-            }
-
-        }
+     
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
@@ -323,6 +276,7 @@ namespace GUI
                 foto4.InitialImage=null;
                 groupBox2.Enabled = false;
                 groupBox3.Enabled = false;
+                btnRegistrar.Enabled = false;
 
             }
             else
@@ -338,25 +292,34 @@ namespace GUI
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                //this code is used to search Name on the basis of TextBox1.text
+            int a; //Variable a, a la cual se le asigna la comparación
 
-                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("Column_Name like '%{0}%'", txtDireccion.Text.Trim().Replace("'", "''"));
+            int cero = 0;
+            string filtro = txtDireccion.Text;
+
+            if (cero != (a = String.Compare(txtDireccion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+                dataGridView1.AutoGenerateColumns = false;
+
+                PropiedadLogic propLog = new PropiedadLogic();
+
+                ListaPropiedades = propLog.todasPropiedades();
+
+
+
+                List<Propiedad> listaFiltrada = (from prop in ListaPropiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+                dataGridView1.DataSource = listaFiltrada;
+
+
 
             }
-            catch (Exception)
+            else
             {
-
+                this.RellenarGrilla();
             }
-            
-            
-            // private void txtNombreEstudiante_TextChanged(object sender, EventArgs e)
-       // {
-            
-          //  var filtro = from Estudiante estudiantes where Estudiante.Nombre.ToUpper().Contains(txtNombreEstudiante.Text.ToUpper()) select Estudiante;
-       //     this.tuDataGridView.DataSource = filtro.ToList<Estudiante>();
-//        }
 
 
 
@@ -378,6 +341,108 @@ namespace GUI
             }
         
         
+        }
+
+        private void txtMetro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDescripcion.BackColor = Color.White;
+        }
+
+        private void frmAltaUnidad_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void btnFoto1_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                foto1.Image = Image.FromFile(dialog.FileName);
+
+
+            }
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnFoto2_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto2.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void btnFoto3_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto3.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+
+
+
+        }
+
+        private void btnFoto4_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto4.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void txtMetro_KeyPress_1(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
         }
 
     }

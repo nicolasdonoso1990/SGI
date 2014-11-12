@@ -54,10 +54,14 @@
             this.mejorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaMejoraToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarMejorasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.label1 = new System.Windows.Forms.Label();
             this.reparacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.modificarReparacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.label1 = new System.Windows.Forms.Label();
+
+            this.pagosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.registrarPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +76,8 @@
             this.unidadesToolStripMenuItem,
             this.contratistasToolStripMenuItem,
             this.mejorasToolStripMenuItem,
-            this.reparacionesToolStripMenuItem});
+            this.reparacionesToolStripMenuItem,
+            this.pagosToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(848, 24);
@@ -92,21 +97,21 @@
             // miCuentaToolStripMenuItem
             // 
             this.miCuentaToolStripMenuItem.Name = "miCuentaToolStripMenuItem";
-            this.miCuentaToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.miCuentaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.miCuentaToolStripMenuItem.Text = "Mi cuenta";
             this.miCuentaToolStripMenuItem.Click += new System.EventHandler(this.miCuentaToolStripMenuItem_Click);
             // 
             // CerrarStripMenuItem1
             // 
             this.CerrarStripMenuItem1.Name = "CerrarStripMenuItem1";
-            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(143, 22);
+            this.CerrarStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.CerrarStripMenuItem1.Text = "Cerrar Sesion";
             this.CerrarStripMenuItem1.Click += new System.EventHandler(this.CerrarStripMenuItem1_Click);
             // 
             // salirToolStripMenuItem
             // 
             this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
             // 
@@ -142,11 +147,12 @@
             this.alquileresToolStripMenuItem.Name = "alquileresToolStripMenuItem";
             this.alquileresToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
             this.alquileresToolStripMenuItem.Text = "Alquileres";
+            this.alquileresToolStripMenuItem.Click += new System.EventHandler(this.alquileresToolStripMenuItem_Click);
             // 
             // altaAlquilerToolStripMenuItem
             // 
             this.altaAlquilerToolStripMenuItem.Name = "altaAlquilerToolStripMenuItem";
-            this.altaAlquilerToolStripMenuItem.Size = new System.Drawing.Size(139, 22);
+            this.altaAlquilerToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.altaAlquilerToolStripMenuItem.Text = "Alta Alquiler";
             this.altaAlquilerToolStripMenuItem.Click += new System.EventHandler(this.altaAlquilerToolStripMenuItem_Click);
             // 
@@ -266,16 +272,6 @@
             this.modificarMejorasToolStripMenuItem.Text = "Modificar Mejoras";
             this.modificarMejorasToolStripMenuItem.Click += new System.EventHandler(this.modificarMejorasToolStripMenuItem_Click);
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Location = new System.Drawing.Point(798, 290);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "SGI V1.0";
-            // 
             // reparacionesToolStripMenuItem
             // 
             this.reparacionesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -299,6 +295,33 @@
             this.modificarReparacionToolStripMenuItem.Text = "Modificar Reparacion";
             this.modificarReparacionToolStripMenuItem.Click += new System.EventHandler(this.modificarReparacionToolStripMenuItem_Click);
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Location = new System.Drawing.Point(798, 290);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 13);
+            this.label1.TabIndex = 5;
+            this.label1.Text = "SGI V1.0";
+            // 
+
+            // pagosToolStripMenuItem
+            // 
+            this.pagosToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registrarPagoToolStripMenuItem});
+            this.pagosToolStripMenuItem.Name = "pagosToolStripMenuItem";
+            this.pagosToolStripMenuItem.Size = new System.Drawing.Size(51, 20);
+            this.pagosToolStripMenuItem.Text = "Pagos";
+            // 
+            // registrarPagoToolStripMenuItem
+            // 
+            this.registrarPagoToolStripMenuItem.Name = "registrarPagoToolStripMenuItem";
+            this.registrarPagoToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.registrarPagoToolStripMenuItem.Text = "Registrar pago";
+            this.registrarPagoToolStripMenuItem.Click += new System.EventHandler(this.registrarPagoToolStripMenuItem_Click);
+            // 
+
             // frmMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -353,5 +376,7 @@
         private System.Windows.Forms.ToolStripMenuItem reparacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nuevaReparacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem modificarReparacionToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem pagosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem registrarPagoToolStripMenuItem;
     }
 }

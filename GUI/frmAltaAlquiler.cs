@@ -21,6 +21,7 @@ namespace GUI
         Inquilino inq;
         DateTime fechaInicioAlq;
         DateTime fechaFinAlq;
+        Int32 codigoPropiedad;
         public frmAltaAlquiler()
         {
             InitializeComponent();
@@ -32,7 +33,11 @@ namespace GUI
 
             fechaFinAlq = fecha2.Value.Date;
 
-            grpPropiedades.Enabled = true;
+            dataPropiedad.Visible = true;
+            txtDireccionPropiedad.Visible = true;
+            lblDireccionPropiedad.Visible = true;
+            btnPropiedad.Visible = true;
+            btnSalir.Visible = true;
 
             PropiedadLogic propLog = new PropiedadLogic();
             List<Propiedad> propiedades = new List<Propiedad>();
@@ -75,15 +80,20 @@ namespace GUI
                 DataGridViewRow fila = dataPropiedad.CurrentRow; //devuelve la fila que esta siendo seleccionada
 
 
+
                 string cod = fila.Cells[0].Value.ToString();
 
                 Int32 codigo = Convert.ToInt32(cod);
 
+                this.codigoPropiedad = codigo; //Guardo el código de la propiedad en una Propiedad del form para usarla luego en caso de filtrado
 
                 PropiedadLogic proLog = new PropiedadLogic();
                 prop = proLog.buscaPropiedad(codigo);
 
-                grpUnidades.Enabled = true;
+                dataUnidad.Visible = true;
+                lblDireccionUnidad.Visible = true;
+                txtDescripcionUnidad.Visible = true;
+                btnUnidad.Visible = true;
 
                 UnidadLogic unLog=new UnidadLogic();
                 ListaUnidades = unLog.BuscaUnidadesNoAlquiladas(prop);
@@ -96,7 +106,15 @@ namespace GUI
 
         private void btnUnidades_Click(object sender, EventArgs e)
         {
-            Int32 cantidadFilasSeleccionadas = dataUnidad.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            this.rellenarGrillaInquilinos();
+
+        }
+
+
+        public void rellenarGrillaInquilinos()
+        {
+             Int32 cantidadFilasSeleccionadas = dataUnidad.Rows.GetRowCount(DataGridViewElementStates.Selected);
 
             if (cantidadFilasSeleccionadas > 0)
             {
@@ -111,7 +129,10 @@ namespace GUI
 
                 uni = unLog.BuscaUnidad(codUni);
 
-                grpInquilino.Enabled = true;
+                lblDNI.Visible=true;
+                txtboxFiltroDni.Visible = true;
+                dataInquilino.Visible = true;
+                btnAlquiler.Visible = true;
 
                 InquilinoLogic InLog = new InquilinoLogic();
 
@@ -124,10 +145,7 @@ namespace GUI
 
             }
 
-
-
         }
-
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             frmAltaAlquilerFinal altaFinal =new frmAltaAlquilerFinal(prop,uni,inq,fechaInicioAlq,fechaFinAlq);
@@ -135,6 +153,138 @@ namespace GUI
             
 
 
+        }
+
+        private void grpInquilino_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Int32 cantidadFilasSeleccionadas = dataInquilino.Rows.GetRowCount(DataGridViewElementStates.Selected);
+
+            if (cantidadFilasSeleccionadas > 0)
+            {
+
+                DataGridViewRow fila = dataInquilino.CurrentRow; //devuelve la fila que esta siendo seleccionada
+
+                string dni = fila.Cells[2].Value.ToString(); //el [2] indica la posicion del dni
+
+                InquilinoLogic InLog = new InquilinoLogic();
+
+                inq = InLog.BuscaInquilino(dni);
+
+                frmAltaAlquilerFinal formFinal = new frmAltaAlquilerFinal(prop, uni, inq, fechaInicioAlq, fechaFinAlq);
+                formFinal.ShowDialog();
+
+            }
+        }
+
+        private void txtDireccionPropiedad_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtDireccionPropiedad.Text;
+
+            PropiedadLogic propLog = new PropiedadLogic();
+            List<Propiedad> propiedades = new List<Propiedad>();
+            propiedades = propLog.todasPropiedades();
+
+            dataPropiedad.AutoGenerateColumns = false;
+
+
+
+            if (cero != (a = String.Compare(txtDireccionPropiedad.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                
+                List<Propiedad> listaFiltrada = (from prop in propiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+
+                dataPropiedad.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                
+                dataPropiedad.DataSource = propiedades;
+            }
+        }
+
+        private void txtDescripcionUnidad_TextChanged(object sender, EventArgs e)
+        {
+
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtDescripcionUnidad.Text;
+
+
+
+            PropiedadLogic proLog = new PropiedadLogic();
+            prop = proLog.buscaPropiedad(this.codigoPropiedad);
+
+            UnidadLogic unLog = new UnidadLogic();
+            ListaUnidades = unLog.BuscaUnidadesNoAlquiladas(prop);
+
+            dataUnidad.AutoGenerateColumns = false;
+
+            if (cero != (a = String.Compare(txtDescripcionUnidad.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+
+                List<Unidad> listaFiltrada = (from uni in ListaUnidades
+                                                 where uni.descripcion.ToString().Contains(filtro)
+                                                 select uni).ToList();
+
+
+                dataUnidad.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+
+                dataUnidad.DataSource = ListaUnidades; 
+            }
+            
+
+        }
+
+        private void txtDNI_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual asignada la comparación
+
+            int cero = 0;
+            string filtro = txtboxFiltroDni.Text;
+
+            if (cero != (a = String.Compare(txtboxFiltroDni.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el extbox está en blanco
+            {
+                InquilinoLogic inLog = new InquilinoLogic();
+               List<Inquilino> ListaInquilinos = inLog.TodosInquilinos();
+
+                List<Inquilino> listaFiltrada = (from inqui in ListaInquilinos
+                                                 where inqui.dni.ToString().Contains(filtro)
+                                                 select inqui).ToList();
+                this.dataInquilino.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.rellenarGrillaInquilinos();
+            }
         }
      
 

@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblExito = new System.Windows.Forms.Label();
+            this.lblError = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.txtContraseña2 = new System.Windows.Forms.TextBox();
             this.lblContra2 = new System.Windows.Forms.Label();
@@ -43,8 +45,6 @@
             this.lblUsuario = new System.Windows.Forms.Label();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
-            this.lblError = new System.Windows.Forms.Label();
-            this.lblExito = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,6 +72,30 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos";
             // 
+            // lblExito
+            // 
+            this.lblExito.AutoSize = true;
+            this.lblExito.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblExito.ForeColor = System.Drawing.Color.Lime;
+            this.lblExito.Location = new System.Drawing.Point(53, 295);
+            this.lblExito.Name = "lblExito";
+            this.lblExito.Size = new System.Drawing.Size(173, 13);
+            this.lblExito.TabIndex = 14;
+            this.lblExito.Text = "Usuario modificado con exito!";
+            this.lblExito.Visible = false;
+            // 
+            // lblError
+            // 
+            this.lblError.AutoSize = true;
+            this.lblError.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblError.ForeColor = System.Drawing.Color.Red;
+            this.lblError.Location = new System.Drawing.Point(35, 308);
+            this.lblError.Name = "lblError";
+            this.lblError.Size = new System.Drawing.Size(237, 13);
+            this.lblError.TabIndex = 13;
+            this.lblError.Text = "Error. Faltan completar los datos en rojo!";
+            this.lblError.Visible = false;
+            // 
             // btnAceptar
             // 
             this.btnAceptar.Location = new System.Drawing.Point(205, 236);
@@ -92,6 +116,7 @@
             this.txtContraseña2.Size = new System.Drawing.Size(97, 20);
             this.txtContraseña2.TabIndex = 11;
             this.txtContraseña2.Visible = false;
+            this.txtContraseña2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtContraseña2_KeyPress);
             // 
             // lblContra2
             // 
@@ -213,30 +238,6 @@
             this.btnRegistrar.UseVisualStyleBackColor = true;
             this.btnRegistrar.Visible = false;
             this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
-            // lblError
-            // 
-            this.lblError.AutoSize = true;
-            this.lblError.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblError.ForeColor = System.Drawing.Color.Red;
-            this.lblError.Location = new System.Drawing.Point(35, 308);
-            this.lblError.Name = "lblError";
-            this.lblError.Size = new System.Drawing.Size(237, 13);
-            this.lblError.TabIndex = 13;
-            this.lblError.Text = "Error. Faltan completar los datos en rojo!";
-            this.lblError.Visible = false;
-            // 
-            // lblExito
-            // 
-            this.lblExito.AutoSize = true;
-            this.lblExito.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblExito.ForeColor = System.Drawing.Color.Lime;
-            this.lblExito.Location = new System.Drawing.Point(53, 295);
-            this.lblExito.Name = "lblExito";
-            this.lblExito.Size = new System.Drawing.Size(173, 13);
-            this.lblExito.TabIndex = 14;
-            this.lblExito.Text = "Usuario modificado con exito!";
-            this.lblExito.Visible = false;
             // 
             // frmMiCuenta
             // 

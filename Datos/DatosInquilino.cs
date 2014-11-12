@@ -24,7 +24,9 @@ namespace Datos
                 cuenta.saldo = 0;
                 cuenta.fecha = DateTime.Today;
 
-                context.Cuenta_corriente1Set.Add(cuenta);
+
+                context.Cuenta_corriente.Add(cuenta);
+
 
                 context.Inquilinos.Add(inq);
                 context.SaveChanges();

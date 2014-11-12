@@ -39,9 +39,9 @@ namespace GUI
 
             PropiedadLogic propLog = new PropiedadLogic();
 
+            dataGridView1.Columns[4].Width = 225;
 
-
-            ListaPropiedades = propLog.todasPropiedades();
+          ListaPropiedades = propLog.todasPropiedades();
 
             dataGridView1.DataSource = ListaPropiedades;
 
@@ -178,77 +178,274 @@ namespace GUI
 
         private void btnRegistra_Click(object sender, EventArgs e)
         {
+            bool todolleno = true;
+           
 
-            string[] datos = new string[3];
-
-            datos[0] = txtCodigo.Text;
-            datos[1] = txtDescripcion.Text;
-            datos[2] = txtMetro.Text;
-
-            UnidadLogic unLog = new UnidadLogic();
-            unLog.ModificaUnidad(datos);
-
-            if (fotos.Count() == 1)
+            if(txtMetro.Text=="")
             {
-                string dir = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
-
-                foto1.Image.Save(dir, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-            }
-            if (fotos.Count() == 2)
-            {
-                string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
-
-                foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
-
-                foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-
-
-
-
-            }
-            if (fotos.Count() == 3)
-            {
-                string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
-
-                foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
-
-                foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
-
-                string dir3 = "C:\\Fotos_inmobiliaria\\" + fotos[2].cod_foto.ToString();
-
-                foto3.Image.Save(dir3, System.Drawing.Imaging.ImageFormat.Jpeg);
-
+                txtMetro.BackColor = Color.Red;
+                todolleno = false;
             }
 
-            if (fotos.Count() == 4)
+            if (txtDescripcion.Text == "")
             {
-                string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
+                txtDescripcion.BackColor = Color.Red;
+                todolleno = false;
+            }
 
-                foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
+            if (todolleno == true)
+            {
 
-                string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
+                lblErrorCompletar.Visible = false;
 
-                foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
+                string[] datos = new string[3];
 
-                string dir3 = "C:\\Fotos_inmobiliaria\\" + fotos[2].cod_foto.ToString();
+                datos[0] = txtCodigo.Text;
+                datos[1] = txtDescripcion.Text;
+                datos[2] = txtMetro.Text;
 
-                foto3.Image.Save(dir3, System.Drawing.Imaging.ImageFormat.Jpeg);
+                UnidadLogic unLog = new UnidadLogic();
+                unLog.ModificaUnidad(datos);
 
-                string dir4 = "C:\\Fotos_inmobiliaria\\" + fotos[3].cod_foto.ToString();
+                if (fotos.Count() == 1)
+                {
+                    string dir = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
 
-                foto4.Image.Save(dir4, System.Drawing.Imaging.ImageFormat.Jpeg);
+                    foto1.Image.Save(dir, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                }
+                if (fotos.Count() == 2)
+                {
+                    string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
+
+                    foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
+
+                    foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
 
 
+
+
+
+                }
+                if (fotos.Count() == 3)
+                {
+                    string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
+
+                    foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
+
+                    foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir3 = "C:\\Fotos_inmobiliaria\\" + fotos[2].cod_foto.ToString();
+
+                    foto3.Image.Save(dir3, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                }
+
+                if (fotos.Count() == 4)
+                {
+                    string dir1 = "C:\\Fotos_inmobiliaria\\" + fotos[0].cod_foto.ToString();
+
+                    foto1.Image.Save(dir1, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir2 = "C:\\Fotos_inmobiliaria\\" + fotos[1].cod_foto.ToString();
+
+                    foto2.Image.Save(dir2, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir3 = "C:\\Fotos_inmobiliaria\\" + fotos[2].cod_foto.ToString();
+
+                    foto3.Image.Save(dir3, System.Drawing.Imaging.ImageFormat.Jpeg);
+
+                    string dir4 = "C:\\Fotos_inmobiliaria\\" + fotos[3].cod_foto.ToString();
+
+                    foto4.Image.Save(dir4, System.Drawing.Imaging.ImageFormat.Jpeg);
+                }
+
+
+                MessageBox.Show("Los cambios fueron realizados con exito", "Modificacion de Unidad");
+
+
+                if (MessageBox.Show("¿Desea modificar otra Unidad?. Confirme", "Otra Unidad", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    this.limpiarTodo();
+                }
+                else
+                {
+                    this.Dispose();
+                }
+            }
+
+            else
+            {
+                lblErrorCompletar.Visible = true;
             }
 
 
 
+
+
+
+           
+
+
+
+        }
+
+        private void limpiarTodo()  //Limpia todos los campos en caso de una modificación nueva
+        {
+            txtDescripcion.Clear();
+            txtCodigo.Clear();
+            txtDireccion.Clear();
+            txtMetro.Clear();
+            groupDatosUni.Enabled = false;
+            groupUnidades.Enabled = false;
+            dataGridView2.DataSource = "";
+            this.LLenarGrilla();
+        }
+
+        private void Salir_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+        }
+
+        private void btnLimpiaCampos_Click(object sender, EventArgs e)
+        {
+          
+            txtMetro.Text = "";
+            txtDescripcion.Text = "";
+
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual se le asigna la comparación
+
+            int cero = 0;
+            string filtro = txtDireccion.Text;
+
+            if (cero != (a = String.Compare(txtDireccion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+                dataGridView1.AutoGenerateColumns = false;
+
+                PropiedadLogic propLog = new PropiedadLogic();
+
+                ListaPropiedades = propLog.todasPropiedades();
+
+
+
+                List<Propiedad> listaFiltrada = (from prop in ListaPropiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+                dataGridView1.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.LLenarGrilla();
+            }
+        }
+
+        private void txtCodigo_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtMetro_TextChanged(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDescripcion.BackColor = Color.White;
+        }
+
+        private void txtMetro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
+        }
+
+        private void btnFoto1_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto1.SizeMode = PictureBoxSizeMode.StretchImage;
+
+                foto1.Image = Image.FromFile(dialog.FileName);
+
+
+            }
+        }
+
+        private void foto1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFoto2_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto2.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto2.Image = Image.FromFile(dialog.FileName);
+
+            }
+
+        }
+
+        private void btnFoto3_Click(object sender, EventArgs e)
+        {
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto3.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto3.Image = Image.FromFile(dialog.FileName);
+
+            }
+        }
+
+        private void btnFoto4_Click(object sender, EventArgs e)
+        {
+
+            // Se crea el OpenFileDialog
+            OpenFileDialog dialog = new OpenFileDialog();
+            // Se muestra al usuario esperando una acción
+            DialogResult result = dialog.ShowDialog();
+
+            // Si seleccionó un archivo (asumiendo que es una imagen lo que seleccionó)
+            // la mostramos en el PictureBox de la inferfaz
+            if (result == DialogResult.OK)
+            {
+                foto4.SizeMode = PictureBoxSizeMode.StretchImage;
+                foto4.Image = Image.FromFile(dialog.FileName);
+
+            }
         }
 
      

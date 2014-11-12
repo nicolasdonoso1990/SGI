@@ -43,11 +43,13 @@
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblErrorCompletar = new System.Windows.Forms.Label();
+            this.button4 = new System.Windows.Forms.Button();
             this.btnRegistra = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.txtMetro = new System.Windows.Forms.TextBox();
             this.txtDir = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbCiudad = new System.Windows.Forms.ComboBox();
             this.lblDescripcion = new System.Windows.Forms.Label();
             this.lblMetro = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -74,11 +76,14 @@
             // 
             // button3
             // 
+            this.button3.Image = global::GUI.Properties.Resources.eliminar;
+            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button3.Location = new System.Drawing.Point(451, 360);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(88, 29);
             this.button3.TabIndex = 8;
-            this.button3.Text = "Dar de baja";
+            this.button3.Text = "Eliminar";
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
@@ -88,6 +93,7 @@
             this.txtDireccion.Name = "txtDireccion";
             this.txtDireccion.Size = new System.Drawing.Size(222, 20);
             this.txtDireccion.TabIndex = 7;
+            this.txtDireccion.TextChanged += new System.EventHandler(this.txtDireccion_TextChanged);
             // 
             // lblDireccion
             // 
@@ -160,11 +166,14 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(286, 456);
+            this.button2.Image = global::GUI.Properties.Resources.cancelar;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(642, 459);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(88, 29);
+            this.button2.Size = new System.Drawing.Size(87, 45);
             this.button2.TabIndex = 1;
-            this.button2.Text = "Salir";
+            this.button2.Text = "Cancelar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -181,29 +190,59 @@
             // groupBox2
             // 
             this.groupBox2.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox2.Controls.Add(this.lblErrorCompletar);
+            this.groupBox2.Controls.Add(this.button4);
             this.groupBox2.Controls.Add(this.btnRegistra);
             this.groupBox2.Controls.Add(this.txtDescripcion);
             this.groupBox2.Controls.Add(this.txtMetro);
             this.groupBox2.Controls.Add(this.txtDir);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbCiudad);
             this.groupBox2.Controls.Add(this.lblDescripcion);
             this.groupBox2.Controls.Add(this.lblMetro);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblCiudad);
             this.groupBox2.Location = new System.Drawing.Point(672, 22);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(423, 368);
+            this.groupBox2.Size = new System.Drawing.Size(423, 389);
             this.groupBox2.TabIndex = 12;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Modificar Propiedad";
             // 
+            // lblErrorCompletar
+            // 
+            this.lblErrorCompletar.AutoSize = true;
+            this.lblErrorCompletar.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCompletar.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCompletar.Location = new System.Drawing.Point(40, 285);
+            this.lblErrorCompletar.Name = "lblErrorCompletar";
+            this.lblErrorCompletar.Size = new System.Drawing.Size(353, 13);
+            this.lblErrorCompletar.TabIndex = 10;
+            this.lblErrorCompletar.Text = "Error. Olvido rellenar algunos campos, por favor, completelos.";
+            this.lblErrorCompletar.Visible = false;
+            // 
+            // button4
+            // 
+            this.button4.Image = global::GUI.Properties.Resources.limpiar;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(96, 334);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(90, 45);
+            this.button4.TabIndex = 9;
+            this.button4.Text = "Limpiar ";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
             // btnRegistra
             // 
-            this.btnRegistra.Location = new System.Drawing.Point(172, 305);
+            this.btnRegistra.Image = global::GUI.Properties.Resources.editar;
+            this.btnRegistra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnRegistra.Location = new System.Drawing.Point(254, 334);
             this.btnRegistra.Name = "btnRegistra";
-            this.btnRegistra.Size = new System.Drawing.Size(87, 31);
+            this.btnRegistra.Size = new System.Drawing.Size(90, 45);
             this.btnRegistra.TabIndex = 8;
             this.btnRegistra.Text = "Modificar";
+            this.btnRegistra.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRegistra.UseVisualStyleBackColor = true;
             this.btnRegistra.Click += new System.EventHandler(this.btnRegistra_Click);
             // 
@@ -214,6 +253,7 @@
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(222, 110);
             this.txtDescripcion.TabIndex = 7;
+            this.txtDescripcion.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescripcion_KeyPress);
             // 
             // txtMetro
             // 
@@ -221,6 +261,7 @@
             this.txtMetro.Name = "txtMetro";
             this.txtMetro.Size = new System.Drawing.Size(75, 20);
             this.txtMetro.TabIndex = 6;
+            this.txtMetro.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMetro_KeyPress);
             // 
             // txtDir
             // 
@@ -228,11 +269,14 @@
             this.txtDir.Name = "txtDir";
             this.txtDir.Size = new System.Drawing.Size(222, 20);
             this.txtDir.TabIndex = 5;
+            this.txtDir.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDir_KeyPress);
             // 
-            // comboBox1
+            // cmbCiudad
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbCiudad.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cmbCiudad.FormattingEnabled = true;
+            this.cmbCiudad.Items.AddRange(new object[] {
+            "Seleccione una ciudad",
             "Rosario",
             "La Capital",
             "General Lopez",
@@ -252,10 +296,11 @@
             "San Javier",
             "9 de Julio",
             "Garay"});
-            this.comboBox1.Location = new System.Drawing.Point(122, 31);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 4;
+            this.cmbCiudad.Location = new System.Drawing.Point(122, 31);
+            this.cmbCiudad.Name = "cmbCiudad";
+            this.cmbCiudad.Size = new System.Drawing.Size(121, 21);
+            this.cmbCiudad.TabIndex = 4;
+            this.cmbCiudad.MouseClick += new System.Windows.Forms.MouseEventHandler(this.cmbCiudad_MouseClick);
             // 
             // lblDescripcion
             // 
@@ -339,10 +384,12 @@
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.TextBox txtMetro;
         private System.Windows.Forms.TextBox txtDir;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbCiudad;
         private System.Windows.Forms.Label lblDescripcion;
         private System.Windows.Forms.Label lblMetro;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblCiudad;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lblErrorCompletar;
     }
 }

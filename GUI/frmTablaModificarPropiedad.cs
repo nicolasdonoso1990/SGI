@@ -88,7 +88,7 @@ namespace GUI
 
                 groupBox2.Enabled = true;
 
-                comboBox1.SelectedIndex = comboBox1.FindString(pro.ciudad.ToString());
+                cmbCiudad.SelectedIndex = cmbCiudad.FindString(pro.ciudad.ToString());
 
                 txtDir.Text = pro.direccion;
                 txtDescripcion.Text = pro.descripcion;
@@ -128,29 +128,139 @@ namespace GUI
         {
             string[] datos = new string[5];
 
-            datos[0] = codigo.ToString();
-            datos[1] = comboBox1.SelectedItem.ToString();
-            datos[2] = txtDir.Text;
-            datos[3] = txtMetro.Text;
-            datos[4] = txtDescripcion.Text;
+
+            if (txtDir.Text == "")
+            {
+                txtDir.BackColor = Color.Red;
+            }
+            else 
+            {
+                datos[2] = txtDir.Text;
+            }
+
+            if (txtMetro.Text == "")
+            {
+                txtMetro.BackColor = Color.Red;
+            }
+            else 
+            {
+                datos[3] = txtMetro.Text;
+            }
+
+            if (cmbCiudad.SelectedItem.ToString() == "Seleccione una ciudad")
+            {
+                cmbCiudad.BackColor = Color.Red;
+            }
+
+            else 
+            {
+                datos[1] = cmbCiudad.SelectedItem.ToString();
+            }
+
+            if (txtDescripcion.Text == "")
+            {
+                txtDescripcion.BackColor = Color.Red;
+            }
+
+            else 
+            {
+                datos[4] = txtDescripcion.Text;
+            }
 
 
-            PropiedadLogic proLog = new PropiedadLogic();
+            if (txtDescripcion.Text != "" && txtDir.Text != "" && txtMetro.Text != "" && cmbCiudad.SelectedItem.ToString() != "Seleccione una ciudad")
+            {
 
-            proLog.ModificaPropiedad(datos);
-
-
-            MessageBox.Show("Los cambios fueron realizados con exito", "Modificacion de Propiedad");
-
-            txtDescripcion.Clear();
-            txtDir.Clear();
-            txtMetro.Clear();
-
-            ListaPropiedades = proLog.todasPropiedades();
-            dataGridView1.DataSource = ListaPropiedades;
+                lblErrorCompletar.Visible = false;
+                datos[0] = codigo.ToString();
 
 
+                PropiedadLogic proLog = new PropiedadLogic();
 
+                proLog.ModificaPropiedad(datos);
+
+
+                MessageBox.Show("Los cambios fueron realizados con exito", "Modificacion de Propiedad");
+
+                txtDescripcion.Clear();
+                txtDir.Clear();
+                txtMetro.Clear();
+
+                ListaPropiedades = proLog.todasPropiedades();
+                dataGridView1.DataSource = ListaPropiedades;
+
+
+
+
+
+            }
+
+            else 
+            {
+                lblErrorCompletar.Visible = true;
+            }
+
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            txtDescripcion.Text = "";
+            txtMetro.Text = "";
+            txtDir.Text = "";
+            cmbCiudad.SelectedIndex = 0;
+        }
+
+        private void txtDir_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDir.BackColor = Color.White;
+        }
+
+        private void txtMetro_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtMetro.BackColor = Color.White;
+        }
+
+        private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtDescripcion.BackColor = Color.White;
+        }
+
+        private void cmbCiudad_MouseClick(object sender, MouseEventArgs e)
+        {
+            cmbCiudad.BackColor = Color.White;
+        }
+
+        private void txtDireccion_TextChanged(object sender, EventArgs e)
+        {
+            int a; //Variable a, a la cual se le asigna la comparación
+
+            int cero = 0;
+            string filtro = txtDireccion.Text;
+
+            if (cero != (a = String.Compare(txtDireccion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+                dataGridView1.AutoGenerateColumns = false;
+
+                PropiedadLogic propLog = new PropiedadLogic();
+
+                ListaPropiedades = propLog.todasPropiedades();
+
+               
+
+                List<Propiedad> listaFiltrada = (from prop in ListaPropiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+                dataGridView1.DataSource = listaFiltrada;
+
+
+
+            }
+            else
+            {
+                this.llenarGrilla();
+            }
         }
 
 
