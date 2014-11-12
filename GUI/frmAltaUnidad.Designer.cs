@@ -41,6 +41,10 @@
             this.metros = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.lblErrorNumero = new System.Windows.Forms.Label();
+            this.lblErrorCampos = new System.Windows.Forms.Label();
+            this.chkFotos = new System.Windows.Forms.CheckBox();
+            this.lblFotos = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.btnRegistra = new System.Windows.Forms.Button();
@@ -60,10 +64,6 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.lblFotos = new System.Windows.Forms.Label();
-            this.chkFotos = new System.Windows.Forms.CheckBox();
-            this.lblErrorCampos = new System.Windows.Forms.Label();
-            this.lblErrorNumero = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -197,6 +197,51 @@
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos Unidad";
+            // 
+            // lblErrorNumero
+            // 
+            this.lblErrorNumero.AutoSize = true;
+            this.lblErrorNumero.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorNumero.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorNumero.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorNumero.Location = new System.Drawing.Point(207, 77);
+            this.lblErrorNumero.Name = "lblErrorNumero";
+            this.lblErrorNumero.Size = new System.Drawing.Size(164, 13);
+            this.lblErrorNumero.TabIndex = 15;
+            this.lblErrorNumero.Text = "Error. Ingrese solo numeros";
+            this.lblErrorNumero.Visible = false;
+            // 
+            // lblErrorCampos
+            // 
+            this.lblErrorCampos.AutoSize = true;
+            this.lblErrorCampos.BackColor = System.Drawing.Color.Transparent;
+            this.lblErrorCampos.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblErrorCampos.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorCampos.Location = new System.Drawing.Point(101, 294);
+            this.lblErrorCampos.Name = "lblErrorCampos";
+            this.lblErrorCampos.Size = new System.Drawing.Size(260, 13);
+            this.lblErrorCampos.TabIndex = 14;
+            this.lblErrorCampos.Text = "Error. Por favor, complete los datos faltantes";
+            this.lblErrorCampos.Visible = false;
+            // 
+            // chkFotos
+            // 
+            this.chkFotos.AutoSize = true;
+            this.chkFotos.Location = new System.Drawing.Point(127, 260);
+            this.chkFotos.Name = "chkFotos";
+            this.chkFotos.Size = new System.Drawing.Size(52, 17);
+            this.chkFotos.TabIndex = 12;
+            this.chkFotos.Text = "Fotos";
+            this.chkFotos.UseVisualStyleBackColor = true;
+            // 
+            // lblFotos
+            // 
+            this.lblFotos.AutoSize = true;
+            this.lblFotos.Location = new System.Drawing.Point(6, 261);
+            this.lblFotos.Name = "lblFotos";
+            this.lblFotos.Size = new System.Drawing.Size(115, 13);
+            this.lblFotos.TabIndex = 11;
+            this.lblFotos.Text = "¿Desea agregar fotos?";
             // 
             // txtCodigo
             // 
@@ -391,51 +436,6 @@
             this.label1.TabIndex = 19;
             this.label1.Text = "SGI V1.0";
             // 
-            // lblFotos
-            // 
-            this.lblFotos.AutoSize = true;
-            this.lblFotos.Location = new System.Drawing.Point(6, 261);
-            this.lblFotos.Name = "lblFotos";
-            this.lblFotos.Size = new System.Drawing.Size(115, 13);
-            this.lblFotos.TabIndex = 11;
-            this.lblFotos.Text = "¿Desea agregar fotos?";
-            // 
-            // chkFotos
-            // 
-            this.chkFotos.AutoSize = true;
-            this.chkFotos.Location = new System.Drawing.Point(127, 260);
-            this.chkFotos.Name = "chkFotos";
-            this.chkFotos.Size = new System.Drawing.Size(52, 17);
-            this.chkFotos.TabIndex = 12;
-            this.chkFotos.Text = "Fotos";
-            this.chkFotos.UseVisualStyleBackColor = true;
-            // 
-            // lblErrorCampos
-            // 
-            this.lblErrorCampos.AutoSize = true;
-            this.lblErrorCampos.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorCampos.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorCampos.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorCampos.Location = new System.Drawing.Point(101, 294);
-            this.lblErrorCampos.Name = "lblErrorCampos";
-            this.lblErrorCampos.Size = new System.Drawing.Size(260, 13);
-            this.lblErrorCampos.TabIndex = 14;
-            this.lblErrorCampos.Text = "Error. Por favor, complete los datos faltantes";
-            this.lblErrorCampos.Visible = false;
-            // 
-            // lblErrorNumero
-            // 
-            this.lblErrorNumero.AutoSize = true;
-            this.lblErrorNumero.BackColor = System.Drawing.Color.Transparent;
-            this.lblErrorNumero.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblErrorNumero.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorNumero.Location = new System.Drawing.Point(207, 77);
-            this.lblErrorNumero.Name = "lblErrorNumero";
-            this.lblErrorNumero.Size = new System.Drawing.Size(164, 13);
-            this.lblErrorNumero.TabIndex = 15;
-            this.lblErrorNumero.Text = "Error. Ingrese solo numeros";
-            this.lblErrorNumero.Visible = false;
-            // 
             // frmAltaUnidad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -454,6 +454,7 @@
             this.MinimizeBox = false;
             this.Name = "frmAltaUnidad";
             this.Text = "Alta Unidad";
+            this.Load += new System.EventHandler(this.frmAltaUnidad_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

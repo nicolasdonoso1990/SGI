@@ -409,25 +409,34 @@ namespace GUI
         private void txtDireccion_TextChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                //this code is used to search Name on the basis of TextBox1.text
+            int a; //Variable a, a la cual se le asigna la comparación
 
-                ((DataTable)dataGridView1.DataSource).DefaultView.RowFilter = string.Format("Column_Name like '%{0}%'", txtDireccion.Text.Trim().Replace("'", "''"));
+            int cero = 0;
+            string filtro = txtDireccion.Text;
+
+            if (cero != (a = String.Compare(txtDireccion.Text, ""))) //Si la comparación da 0 no hay diferncias, por lo tanto el textbox está en blanco
+            {
+                dataGridView1.AutoGenerateColumns = false;
+
+                PropiedadLogic propLog = new PropiedadLogic();
+
+                ListaPropiedades = propLog.todasPropiedades();
+
+
+
+                List<Propiedad> listaFiltrada = (from prop in ListaPropiedades
+                                                 where prop.direccion.ToString().Contains(filtro)
+                                                 select prop).ToList();
+
+                dataGridView1.DataSource = listaFiltrada;
+
+
 
             }
-            catch (Exception)
+            else
             {
-
+                this.RellenarGrilla();
             }
-            
-            
-            // private void txtNombreEstudiante_TextChanged(object sender, EventArgs e)
-       // {
-            
-          //  var filtro = from Estudiante estudiantes where Estudiante.Nombre.ToUpper().Contains(txtNombreEstudiante.Text.ToUpper()) select Estudiante;
-       //     this.tuDataGridView.DataSource = filtro.ToList<Estudiante>();
-//        }
 
 
 
@@ -459,6 +468,11 @@ namespace GUI
         private void txtDescripcion_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtDescripcion.BackColor = Color.White;
+        }
+
+        private void frmAltaUnidad_Load(object sender, EventArgs e)
+        {
+
         }
 
     }
