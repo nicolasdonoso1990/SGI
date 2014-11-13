@@ -62,6 +62,12 @@
     <Compile Include="frmReporte1.Designer.cs">
       <DependentUpon>frmReporte1.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmReportePagosRealizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportePagosRealizados.Designer.cs">
+      <DependentUpon>frmReportePagosRealizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="InmobiliariaDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -75,11 +81,20 @@
       <DependentUpon>ReporteCuentasCorrientes.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="ReportePagosRealizados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportePagosRealizados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmReporte1.resx">
       <DependentUpon>frmReporte1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReportePagosRealizados.resx">
+      <DependentUpon>frmReportePagosRealizados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Report1.rdlc" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -94,6 +109,10 @@
     <EmbeddedResource Include="ReporteCuentasCorrientes.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteCuentasCorrientes.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePagosRealizados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportePagosRealizados.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="InmobiliariaDataSet.xsc">
       <DependentUpon>InmobiliariaDataSet.xsd</DependentUpon>

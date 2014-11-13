@@ -16,7 +16,7 @@ namespace Reportes
 		{
 			Application.EnableVisualStyles();
 			Application.SetCompatibleTextRenderingDefault(false);
-			Application.Run(new frmReporte1());
+			Application.Run(new frmReportePagosRealizados());
 		}
 	}
 }
