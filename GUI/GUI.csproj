@@ -341,6 +341,10 @@
       <Project>{cb0fe32b-f507-4a53-b574-a1ee03659ea4}</Project>
       <Name>Negocio</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Reportes\Reportes.csproj">
+      <Project>{2221143e-2e08-4904-9b0e-f3100eca3de9}</Project>
+      <Name>Reportes</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />

@@ -33,8 +33,8 @@
             this.inquilinosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.inquilinosTableAdapter = new Reportes.InmobiliariaDataSetTableAdapters.InquilinosTableAdapter();
             this.tableAdapterManager = new Reportes.InmobiliariaDataSetTableAdapters.TableAdapterManager();
-            this.cuenta_corrienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cuenta_corrienteTableAdapter = new Reportes.InmobiliariaDataSetTableAdapters.Cuenta_corrienteTableAdapter();
+            this.cuenta_corrienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.crystalReportViewer1 = new CrystalDecisions.Windows.Forms.CrystalReportViewer();
             ((System.ComponentModel.ISupportInitialize)(this.inmobiliariaDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.inquilinosBindingSource)).BeginInit();
@@ -76,14 +76,14 @@
             this.tableAdapterManager.UpdateOrder = Reportes.InmobiliariaDataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
             this.tableAdapterManager.Valores_mensualesTableAdapter = null;
             // 
+            // cuenta_corrienteTableAdapter
+            // 
+            this.cuenta_corrienteTableAdapter.ClearBeforeFill = true;
+            // 
             // cuenta_corrienteBindingSource
             // 
             this.cuenta_corrienteBindingSource.DataMember = "Cuenta_corriente";
             this.cuenta_corrienteBindingSource.DataSource = this.inmobiliariaDataSet;
-            // 
-            // cuenta_corrienteTableAdapter
-            // 
-            this.cuenta_corrienteTableAdapter.ClearBeforeFill = true;
             // 
             // crystalReportViewer1
             // 
@@ -121,7 +121,7 @@
         private InmobiliariaDataSetTableAdapters.TableAdapterManager tableAdapterManager;
         private InmobiliariaDataSetTableAdapters.Cuenta_corrienteTableAdapter cuenta_corrienteTableAdapter;
         private System.Windows.Forms.BindingSource cuenta_corrienteBindingSource;
-        private CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
+        public CrystalDecisions.Windows.Forms.CrystalReportViewer crystalReportViewer1;
 
 
 

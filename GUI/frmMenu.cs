@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Entidades;
+using Reportes;
 
 
 namespace GUI
@@ -178,6 +179,29 @@ namespace GUI
             frmRegistrarPago regisPago = new frmRegistrarPago();
             regisPago.ShowDialog();
 
+        }
+
+        private void reporteCtaCteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+           
+        }
+
+        private void pagosRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReportePagosRealizados fpr = new frmReportePagosRealizados();
+            fpr.ShowDialog();
+        }
+
+        private void estadoCtaCteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporte1 fromCtacte = new frmReporte1();
+            fromCtacte.ShowDialog();
+        }
+
+        private void habilitadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmReporteInquilinosHabilitados ih = new frmReporteInquilinosHabilitados();
+            ih.ShowDialog();
         }
 
 
