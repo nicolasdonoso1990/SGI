@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Entidades.Propiedad>
+
+@{
+    ViewBag.Title = "Gestión de Propiedades";
+}
+
+<h2>SearchIndex</h2>
+
+<p>
+    @Html.ActionLink("Crear nueva", "Create")
+    @using (Html.BeginForm())
+    {
+    <p>
+        Title: @Html.TextBox("SearchString") <br />
+        <input type="submit" value="Filter" class="btn-info" />
+    </p>
+    }
+    
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.ciudad)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.direccion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.m2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.estado)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.ciudad)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.direccion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.m2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.descripcion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.estado)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.cod_propiedad }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cod_propiedad }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cod_propiedad })
+        </td>
+    </tr>
+}
+
+</table>
